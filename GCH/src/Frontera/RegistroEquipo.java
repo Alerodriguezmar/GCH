@@ -9,12 +9,12 @@ package Frontera;
  *
  * @author tech
  */
-public class RegistroAdmin extends javax.swing.JFrame {
+public class RegistroEquipo extends javax.swing.JFrame {
 
     /**
      * Creates new form RegistroAdmin
      */
-    public RegistroAdmin() {
+    public RegistroEquipo() {
         initComponents();
     }
 
@@ -29,63 +29,61 @@ public class RegistroAdmin extends javax.swing.JFrame {
 
         jProgressBar1 = new javax.swing.JProgressBar();
         jPanel1 = new javax.swing.JPanel();
-        adminNombreTF = new javax.swing.JTextField();
-        adminApellidoTF = new javax.swing.JTextField();
-        adminIdTF = new javax.swing.JTextField();
-        adminCelularTF = new javax.swing.JTextField();
-        adminEmailTF = new javax.swing.JTextField();
-        adminUsuarioTF = new javax.swing.JTextField();
-        adminContrasenniaTF = new javax.swing.JTextField();
+        equipoNombreTF = new javax.swing.JTextField();
+        equipoMarcaTF = new javax.swing.JTextField();
+        equipoTipoCB = new javax.swing.JComboBox<>();
+        equipoRegistroTF = new javax.swing.JTextField();
+        equipoCantidadTF = new javax.swing.JTextField();
+        equipoDescripcionTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registro administrador");
-        setPreferredSize(new java.awt.Dimension(780, 630));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        adminNombreTF.setBackground(new java.awt.Color(102, 102, 102));
+        equipoNombreTF.setBackground(new java.awt.Color(102, 102, 102));
 
-        adminApellidoTF.setBackground(new java.awt.Color(102, 102, 102));
+        equipoMarcaTF.setBackground(new java.awt.Color(102, 102, 102));
 
-        adminIdTF.setBackground(new java.awt.Color(102, 102, 102));
+        equipoTipoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Soporte de vida", "Quirúrgica", "Cuidados intensivos", "Terapia física", "Equipos de tratamiento", "Monitorización quirúrgica", "Monitorización de Cuidados intensivos", "Monitorización general", "Diagnósticos fisiológicos", "Analítica de laboratorio", "Accesorios de laboratorio", "Procesado de datos del paciente", "Otro" }));
+        equipoTipoCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                equipoTipoCBActionPerformed(evt);
+            }
+        });
 
-        adminCelularTF.setBackground(new java.awt.Color(102, 102, 102));
+        equipoRegistroTF.setBackground(new java.awt.Color(102, 102, 102));
 
-        adminEmailTF.setBackground(new java.awt.Color(102, 102, 102));
+        equipoCantidadTF.setBackground(new java.awt.Color(102, 102, 102));
 
-        adminUsuarioTF.setBackground(new java.awt.Color(102, 102, 102));
-
-        adminContrasenniaTF.setBackground(new java.awt.Color(102, 102, 102));
+        equipoDescripcionTF.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Nombres");
+        jLabel1.setText("Nombre");
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Apellidos");
+        jLabel2.setText("Marca");
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("No. Identificación");
+        jLabel3.setText("Tipo de uso");
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Celular");
+        jLabel4.setText("Registro Sanitario");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Email");
+        jLabel5.setText("Cantidad");
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Usuario");
-
-        jLabel7.setText("Contraseña");
+        jLabel6.setText("Descripción");
 
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
@@ -108,18 +106,17 @@ public class RegistroAdmin extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel6))
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(adminApellidoTF, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                    .addComponent(adminIdTF, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminCelularTF, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminEmailTF, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminUsuarioTF, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminContrasenniaTF, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminNombreTF))
-                .addContainerGap(413, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(equipoDescripcionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(equipoTipoCB, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(equipoMarcaTF)
+                        .addComponent(equipoRegistroTF, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(equipoCantidadTF, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(equipoNombreTF)))
+                .addContainerGap(326, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -132,37 +129,33 @@ public class RegistroAdmin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminNombreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(equipoNombreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminApellidoTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(equipoMarcaTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(equipoTipoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminCelularTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(equipoRegistroTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminEmailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(equipoCantidadTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminUsuarioTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(equipoDescripcionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(adminContrasenniaTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(125, 125, 125)
+                .addGap(86, 86, 86)
                 .addComponent(aceptarB)
                 .addGap(18, 18, 18)
                 .addComponent(cancelarB)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,6 +176,10 @@ public class RegistroAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_aceptarBActionPerformed
 
+    private void equipoTipoCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipoTipoCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_equipoTipoCBActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,41 +197,40 @@ public class RegistroAdmin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistroAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistroAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistroAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistroAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistroEquipo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistroAdmin().setVisible(true);
+                new RegistroEquipo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarB;
-    private javax.swing.JTextField adminApellidoTF;
-    private javax.swing.JTextField adminCelularTF;
-    private javax.swing.JTextField adminContrasenniaTF;
-    private javax.swing.JTextField adminEmailTF;
-    private javax.swing.JTextField adminIdTF;
-    private javax.swing.JTextField adminNombreTF;
-    private javax.swing.JTextField adminUsuarioTF;
     private javax.swing.JButton cancelarB;
+    private javax.swing.JTextField equipoCantidadTF;
+    private javax.swing.JTextField equipoDescripcionTF;
+    private javax.swing.JTextField equipoMarcaTF;
+    private javax.swing.JTextField equipoNombreTF;
+    private javax.swing.JTextField equipoRegistroTF;
+    private javax.swing.JComboBox<String> equipoTipoCB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables

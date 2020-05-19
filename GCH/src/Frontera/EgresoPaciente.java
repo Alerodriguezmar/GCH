@@ -61,16 +61,13 @@ public class EgresoPaciente extends javax.swing.JPanel {
         identificacionTF.setBackground(new java.awt.Color(102, 102, 102));
 
         nombre1L.setBackground(new java.awt.Color(0, 0, 0));
-        nombre1L.setForeground(new java.awt.Color(0, 0, 0));
         nombre1L.setText("Nombre 1");
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
 
         observacionTF.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Observaciones");
 
         aceptarB.setText("Aceptar");
@@ -83,32 +80,24 @@ public class EgresoPaciente extends javax.swing.JPanel {
         cancelarB.setText("Cancelar");
 
         nombre2L.setBackground(new java.awt.Color(0, 0, 0));
-        nombre2L.setForeground(new java.awt.Color(0, 0, 0));
         nombre2L.setText("Nombre 2");
 
         apellido1L.setBackground(new java.awt.Color(0, 0, 0));
-        apellido1L.setForeground(new java.awt.Color(0, 0, 0));
         apellido1L.setText("Apellido 1");
 
         apellido2L.setBackground(new java.awt.Color(0, 0, 0));
-        apellido2L.setForeground(new java.awt.Color(0, 0, 0));
         apellido2L.setText("Apellido 2");
 
         tipoAtencioL.setBackground(new java.awt.Color(0, 0, 0));
-        tipoAtencioL.setForeground(new java.awt.Color(0, 0, 0));
         tipoAtencioL.setText("Tipo de atención");
 
         tipoAtencionL.setBackground(new java.awt.Color(0, 0, 0));
-        tipoAtencionL.setForeground(new java.awt.Color(0, 0, 0));
         tipoAtencionL.setText("No. de cama");
 
-        regitroL.setForeground(new java.awt.Color(0, 0, 0));
         regitroL.setText("Registro");
 
-        fechaL.setForeground(new java.awt.Color(0, 0, 0));
         fechaL.setText("Fecha");
 
-        rethusL.setForeground(new java.awt.Color(0, 0, 0));
         rethusL.setText("ReTHUS");
 
         jCheckBox1.setText("Ventiladores");
@@ -183,7 +172,6 @@ public class EgresoPaciente extends javax.swing.JPanel {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Equipos usados");
 
         registroTF.setBackground(new java.awt.Color(102, 102, 102));
@@ -274,9 +262,9 @@ public class EgresoPaciente extends javax.swing.JPanel {
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(registroTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(regitroL))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(regitroL)
+                            .addComponent(registroTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(8, 8, 8)
                 .addComponent(equiposUsados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +285,7 @@ public class EgresoPaciente extends javax.swing.JPanel {
                                 .addComponent(fechaL)
                                 .addGap(17, 17, 17)
                                 .addComponent(rethusL)))))
-                .addGap(11, 11, 11))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

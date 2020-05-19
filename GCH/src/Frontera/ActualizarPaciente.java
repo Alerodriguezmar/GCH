@@ -78,19 +78,16 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         add(identificacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(581, 0, 145, -1));
 
         nombre1L.setBackground(new java.awt.Color(0, 0, 0));
-        nombre1L.setForeground(new java.awt.Color(0, 0, 0));
         nombre1L.setText("Nombre 1");
         add(nombre1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 78, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 6, -1, -1));
 
         observacionTF.setBackground(new java.awt.Color(102, 102, 102));
         add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 454, 234, 124));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Observaciones");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 466, -1, -1));
 
@@ -106,17 +103,14 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 540, -1, -1));
 
         nombre2L.setBackground(new java.awt.Color(0, 0, 0));
-        nombre2L.setForeground(new java.awt.Color(0, 0, 0));
         nombre2L.setText("Nombre 2");
         add(nombre2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 99, -1, -1));
 
         apellido1L.setBackground(new java.awt.Color(0, 0, 0));
-        apellido1L.setForeground(new java.awt.Color(0, 0, 0));
         apellido1L.setText("Apellido 1");
         add(apellido1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 120, -1, -1));
 
         apellido2L.setBackground(new java.awt.Color(0, 0, 0));
-        apellido2L.setForeground(new java.awt.Color(0, 0, 0));
         apellido2L.setText("Apellido 2");
         add(apellido2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 147, -1, -1));
 
@@ -129,12 +123,10 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         add(tipoAtencionCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 78, -1, -1));
 
         jLabel11.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Tipo de atención");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 83, -1, -1));
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("No. de cama");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 114, -1, -1));
 
@@ -145,15 +137,12 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         });
         add(noCamaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 109, 89, -1));
 
-        regitroL.setForeground(new java.awt.Color(0, 0, 0));
         regitroL.setText("Registro");
         add(regitroL, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 45, -1, -1));
 
-        fechaL.setForeground(new java.awt.Color(0, 0, 0));
         fechaL.setText("Fecha");
         add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 508, -1, -1));
 
-        rethusL.setForeground(new java.awt.Color(0, 0, 0));
         rethusL.setText("ReTHUS");
         add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 540, -1, -1));
 
@@ -246,13 +235,11 @@ public class ActualizarPaciente extends javax.swing.JPanel {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Equipos usados");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Equipos disponibles");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
 
@@ -305,7 +292,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
                     .addComponent(jCheckBox13)
                     .addComponent(jCheckBox14)
                     .addComponent(jCheckBox15))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         equiposAdicionarLayout.setVerticalGroup(
             equiposAdicionarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,7 +320,6 @@ public class ActualizarPaciente extends javax.swing.JPanel {
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Equipos adicionar");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
