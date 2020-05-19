@@ -1,4 +1,7 @@
 package Entidad;
+/*
+   @ autor Santiago Ladino
+*/
 
 public class personalMedico {
     
