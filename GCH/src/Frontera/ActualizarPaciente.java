@@ -292,7 +292,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
                     .addComponent(jCheckBox13)
                     .addComponent(jCheckBox14)
                     .addComponent(jCheckBox15))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         equiposAdicionarLayout.setVerticalGroup(
             equiposAdicionarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

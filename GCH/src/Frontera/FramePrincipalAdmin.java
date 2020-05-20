@@ -14,7 +14,7 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
     /**
      * Creates new form FramePrincipalPersonalMedico
      */
-    private RegistroAdmin ingresoA = new RegistroAdmin();
+   
     private RegistroPersonalMedico ingresoPM = new RegistroPersonalMedico();
      private RegistroEquipo ingresoE = new RegistroEquipo();
       private RegistroCamas ingresoC = new RegistroCamas();
@@ -38,7 +38,6 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
-        ingresoAdminnB = new javax.swing.JButton();
         ingresoPersonalB = new javax.swing.JButton();
         ingresoEquiposB = new javax.swing.JButton();
         ingresoCamas = new javax.swing.JButton();
@@ -58,18 +57,6 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
 
         jToolBar1.setRollover(true);
-
-        ingresoAdminnB.setText("Ingreso Admin");
-        ingresoAdminnB.setBorder(null);
-        ingresoAdminnB.setFocusable(false);
-        ingresoAdminnB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ingresoAdminnB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        ingresoAdminnB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresoAdminnBActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(ingresoAdminnB);
 
         ingresoPersonalB.setText("Ingreso Personal");
         ingresoPersonalB.setBorder(null);
@@ -191,13 +178,6 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
             this.dispose();
     }//GEN-LAST:event_logoutBActionPerformed
 
-    private void ingresoAdminnBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoAdminnBActionPerformed
-        panelPrincipal.setVisible(false);
-        panelPrincipal.removeAll();
-        panelPrincipal.add(ingresoA);
-        panelPrincipal.setVisible(true);
-    }//GEN-LAST:event_ingresoAdminnBActionPerformed
-
     private void reporteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteBActionPerformed
         panelPrincipal.setVisible(false);
         panelPrincipal.removeAll();
@@ -242,7 +222,6 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ingresoAdminnB;
     private javax.swing.JButton ingresoCamas;
     private javax.swing.JButton ingresoEquiposB;
     private javax.swing.JButton ingresoPersonalB;

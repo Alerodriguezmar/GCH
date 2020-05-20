@@ -52,6 +52,8 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         personalDireccionlTF = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         personalEmailTF.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
