@@ -34,6 +34,8 @@ public class RegistroCamas extends javax.swing.JPanel {
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         listaPabellonesCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Cuidados intensivos", "Cuidados intermedios" }));
 
         camaUbicacionTF.setBackground(new java.awt.Color(102, 102, 102));

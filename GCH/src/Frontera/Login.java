@@ -161,7 +161,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_ingresarBActionPerformed
 
     private void registrarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBActionPerformed
-        // TODO add your handling code here:
+       new RegistroAdmin().setVisible(true);
+            this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_registrarBActionPerformed
 
     /**

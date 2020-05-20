@@ -50,6 +50,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         jLabel4.setText("Equipos usados");
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(204, 204, 204));
         setMinimumSize(new java.awt.Dimension(755, 585));
         setPreferredSize(new java.awt.Dimension(755, 585));
 
