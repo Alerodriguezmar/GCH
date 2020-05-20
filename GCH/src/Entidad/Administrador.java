@@ -18,7 +18,7 @@ public class Administrador {
     private int nidentificacion;
     private int celular;
     private String usuario;
-    private String contrasena;
+    private String contrasenia;
 
     public Administrador() {
     }
@@ -79,12 +79,12 @@ public class Administrador {
         this.usuario = usuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
     
 }
