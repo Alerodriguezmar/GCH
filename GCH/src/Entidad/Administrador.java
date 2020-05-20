@@ -18,7 +18,7 @@ public class Administrador {
     private int nidentificacion;
     private int celular;
     private String usuario;
-    private String contraseña;
+    private String contrasena;
 
     public Administrador() {
     }
