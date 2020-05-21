@@ -35,7 +35,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         aceptarB = new javax.swing.JButton();
         personalTipoSangreTF = new javax.swing.JTextField();
         cancelarB = new javax.swing.JButton();
-        personalEspecialidadCB = new javax.swing.JComboBox<>();
+        personalCargoCB = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         personalReThusTF = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -61,7 +61,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
 
         personalUsuarioTF.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel7.setText("Contraseña");
+        jLabel7.setText("Usuario");
 
         personalContrasenniaTF.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -81,7 +81,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
 
         cancelarB.setText("Cancelar");
 
-        personalEspecialidadCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Asistente enfermería", "Asistente médico profesional", "Médico especialista", "Médico general", "Profesional en enfermería" }));
+        personalCargoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Asistente enfermería", "Asistente médico profesional", "Médico especialista", "Médico general", "Profesional en enfermería" }));
 
         jLabel8.setText("Contraseña");
 
@@ -104,7 +104,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombres");
 
-        jLabel10.setText("Especialidad");
+        jLabel10.setText("Cargo");
 
         personalApellidoTF.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -166,7 +166,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(personalReThusTF, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(personalTipoSangreTF, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(personalEspecialidadCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(personalCargoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -183,7 +183,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                     .addComponent(personalApellidoTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel10)
-                    .addComponent(personalEspecialidadCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(personalCargoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(personalIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -250,11 +250,11 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField personalApellidoTF;
+    private javax.swing.JComboBox<String> personalCargoCB;
     private javax.swing.JTextField personalCelularTF;
     private javax.swing.JTextField personalContrasenniaTF;
     private javax.swing.JTextField personalDireccionlTF;
     private javax.swing.JTextField personalEmailTF;
-    private javax.swing.JComboBox<String> personalEspecialidadCB;
     private javax.swing.JTextField personalIdTF;
     private javax.swing.JTextField personalNombreTF;
     private javax.swing.JTextField personalReThusTF;

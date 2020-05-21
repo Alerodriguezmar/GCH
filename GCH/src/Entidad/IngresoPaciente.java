@@ -14,7 +14,7 @@ public class IngresoPaciente {
     private int idIngreso;
     private Paciente paciente;
     private String observacion;
-    private personalMedico personalm;
+    private PersonalMedico personalm;
     /* private Cama cama; */
 
     public IngresoPaciente() {
@@ -44,11 +44,11 @@ public class IngresoPaciente {
         this.observacion = observacion;
     }
 
-    public personalMedico getPersonalm() {
+    public PersonalMedico getPersonalm() {
         return personalm;
     }
 
-    public void setPersonalm(personalMedico personalm) {
+    public void setPersonalm(PersonalMedico personalm) {
         this.personalm = personalm;
     }
 }
