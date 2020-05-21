@@ -15,14 +15,41 @@ public class Administrador {
     private String nombre2;
     private String apellido1;
     private String apellido2;
-    private int nidentificacion;
-    private int celular;
+    private String email;
+    private String nidentificacion;
+    private String celular;
     private String usuario;
     private String contrasenia;
 
     public Administrador() {
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNidentificacion() {
+        return nidentificacion;
+    }
+
+    public void setNidentificacion(String nidentificacion) {
+        this.nidentificacion = nidentificacion;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+    
+    
+    
     public String getNombre1() {
         return nombre1;
     }
@@ -53,22 +80,6 @@ public class Administrador {
 
     public void setApellido2(String apellido2) {
         this.apellido2 = apellido2;
-    }
-
-    public int getNidentificacion() {
-        return nidentificacion;
-    }
-
-    public void setNidentificacion(int nidentificacion) {
-        this.nidentificacion = nidentificacion;
-    }
-
-    public int getCelular() {
-        return celular;
-    }
-
-    public void setCelular(int celular) {
-        this.celular = celular;
     }
 
     public String getUsuario() {
