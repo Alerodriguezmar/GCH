@@ -9,14 +9,14 @@ import Entidad.PersonalMedico;
 
 /**
  *
- * @author DAVID
+ * @author Diego Irreño
  */
 public class ValidarRegistroPersonalMedico {
 
     public ValidarRegistroPersonalMedico() {
     }
     
-    public String VerificarRegistroAdministrador(PersonalMedico personal) {
+    public String VerificarRegistroPersonalMedico(PersonalMedico personal) {
         if(!VerificarLongitudNombre1personalMedico(personal.getNombre1())){
             return("Longitud primer nombre incorrecta");
         }
@@ -33,16 +33,16 @@ public class ValidarRegistroPersonalMedico {
             return("Identificación incorrecta");
         }
         if(!VerificarCargopersonalMedico(personal.getCargo())){/*Añadir verificar que sean numeros*/
-            return("Longitud celular incorrecta");
+            return("Longitud Cargo incorrecta");
         }
         if(!VerificarLongitudReTHUSpersonalMedico(personal.getReTHUS())){/*Añadir verificar que sean numeros*/
-            return("Longitud celular incorrecta");
+            return("Longitud ReTHUS incorrecta");
         }
         if(!VerificarLongitudEmailpersonalMedico(personal.getEmail())){
             return("Longitud email incorrecta");
         }
         if(!VerificarLongitudCelularpersonalMedico(personal.getCelular())){
-            return("Longitud email incorrecta");
+            return("Longitud Celular incorrecta");
         }
         if(!VerificarLongitudUsuariopersonalMedico(personal.getUsuario())){
             return("Longitud usuario incorrecta");
@@ -82,10 +82,10 @@ public class ValidarRegistroPersonalMedico {
         return(contrasenia.length() >= 3 && contrasenia.length() < 17);
     }
     public boolean VerificarCargopersonalMedico(String cargo){
-        return(cargo.length() >= 1);
+        return(cargo.length() >= 2 && cargo.length() < 32);
     }
-    public boolean VerificarLongitudReTHUSpersonalMedico(String ReTHUS){
-        return(ReTHUS.length()== 20);
+    public boolean VerificarLongitudReTHUSpersonalMedico(String reTHUS){
+        return(reTHUS.length() >= 2 && reTHUS.length() < 32);
     }
     
 }
