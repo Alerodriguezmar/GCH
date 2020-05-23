@@ -38,12 +38,15 @@ public class RegistroCamas extends javax.swing.JPanel {
 
         listaPabellonesCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Cuidados intensivos", "Cuidados intermedios" }));
 
-        camaUbicacionTF.setBackground(new java.awt.Color(102, 102, 102));
+        camaUbicacionTF.setBackground(new java.awt.Color(204, 204, 204));
+        camaUbicacionTF.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ubicación");
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Pabellón");
 
         aceptarB.setText("Aceptar");
