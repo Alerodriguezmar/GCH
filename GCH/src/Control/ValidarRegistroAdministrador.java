@@ -61,10 +61,12 @@ public class ValidarRegistroAdministrador {
         return(apellido2.length() >= 0 && apellido2.length() < 33);
     }
     public boolean VerificarLongitudNIAdmin(String ni){
-        return(ni.length() >= 5 && ni.length() < 13);
+        boolean isNum = isNumeric(ni);
+        return(ni.length() >= 5 && ni.length() < 13 && isNum);
     }
     public boolean VerificarLongitudCelularAdmin(String celular){
-        return(celular.length() >= 5 && celular.length() < 14);
+        boolean isNum = isNumeric(celular);
+        return(celular.length() >= 5 && celular.length() < 14 && isNum);
     }
     public boolean VerificarLongitudEmailAdmin(String email){
         return(email.length() >= 12 && email.length() < 30);
@@ -74,6 +76,17 @@ public class ValidarRegistroAdministrador {
     }
     public boolean VerificarLongitudContraseniaAdmin(String contrasenia){
         return(contrasenia.length() >= 3 && contrasenia.length() < 17);
+    }
+    
+    public static boolean isNumeric(String cadena) {
+        boolean resultado;
+        try {
+            Integer.parseInt(cadena);
+            resultado = true;
+        } catch (NumberFormatException excepcion) {
+            resultado = false;
+        }
+        return resultado;
     }
     
 }
