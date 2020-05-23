@@ -6,6 +6,7 @@
 package Frontera;
 
 import Control.ValidarRegistroAdministrador;
+import DAO.AdminDAO;
 import Entidad.Administrador;
 import java.util.HashSet;
 import java.util.Set;
@@ -55,6 +56,8 @@ public class RegistroAdmin extends javax.swing.JFrame {
         adminApellido2TF = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        ingresarAdminB = new javax.swing.JButton();
+        ingresarPersonalB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,6 +147,22 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jLabel10.setText("Dirección");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
+        ingresarAdminB.setText("Iniciar sesión administrador");
+        ingresarAdminB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingresarAdminBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ingresarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 180, -1));
+
+        ingresarPersonalB.setText("Iniciar sesión personal médico");
+        ingresarPersonalB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingresarPersonalBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ingresarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,6 +183,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
         Administrador admin = new Administrador();
+        AdminDAO dao = new AdminDAO();
         admin.setNombre1(adminNombre1TF.getText());
         admin.setNombre2(adminNombre2TF.getText());
         admin.setApellido1(adminApellido1TF.getText());
@@ -178,12 +198,29 @@ public class RegistroAdmin extends javax.swing.JFrame {
         System.out.println("-------");
         String resultado = validar.VerificarRegistroAdministrador(admin);
         System.out.println(resultado);
+                
+        if(resultado == "Datos ingresados correctamente"){
+            dao.crear(admin);
+            new Login().setVisible(true);
+                this.dispose();
+        }
+        
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
         new Login().setVisible(true);
             this.dispose();
     }//GEN-LAST:event_cancelarBActionPerformed
+
+    private void ingresarAdminBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarAdminBActionPerformed
+        new LoginAdmin().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_ingresarAdminBActionPerformed
+
+    private void ingresarPersonalBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarPersonalBActionPerformed
+        new Login().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_ingresarPersonalBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,6 +270,8 @@ public class RegistroAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField adminNombre2TF;
     private javax.swing.JTextField adminUsuarioTF;
     private javax.swing.JButton cancelarB;
+    private javax.swing.JButton ingresarAdminB;
+    private javax.swing.JButton ingresarPersonalB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

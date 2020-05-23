@@ -5,13 +5,16 @@
  */
 package Entidad;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  *
  * @author Diego
  */
-public class Sistema {
+public class Sistema implements Serializable {
     
     private ArrayList<Equipo>Equipos;
     private ArrayList<Paciente>Pacientes;

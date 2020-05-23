@@ -39,9 +39,10 @@ public class Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         registrarB = new javax.swing.JButton();
+        iniciarAdminB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Autenticación");
+        setTitle("Autenticación Personal Médico");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -56,15 +57,12 @@ public class Login extends javax.swing.JFrame {
         contraseniaTF.setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario");
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña");
 
         ingresarB.setBackground(new java.awt.Color(204, 204, 204));
-        ingresarB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarB.setText("Ingresar");
         ingresarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,17 +70,22 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Version 1.");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
 
         registrarB.setBackground(new java.awt.Color(204, 204, 204));
-        registrarB.setForeground(new java.awt.Color(0, 0, 0));
-        registrarB.setText("Registrar Admin");
+        registrarB.setText("Registrar un administrador");
         registrarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarBActionPerformed(evt);
+            }
+        });
+
+        iniciarAdminB.setText("Iniciar sesión administrador");
+        iniciarAdminB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iniciarAdminBActionPerformed(evt);
             }
         });
 
@@ -113,8 +116,10 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(ingresarB, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
-                                .addComponent(registrarB)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(registrarB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(iniciarAdminB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                         .addComponent(jLabel4)))
                 .addContainerGap())
         );
@@ -134,7 +139,9 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(ingresarB)
-                        .addGap(139, 139, 139)
+                        .addGap(105, 105, 105)
+                        .addComponent(iniciarAdminB)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(registrarB)))
                 .addGap(2, 2, 2)
                 .addComponent(jLabel3)
@@ -181,6 +188,11 @@ public class Login extends javax.swing.JFrame {
             this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_registrarBActionPerformed
 
+    private void iniciarAdminBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarAdminBActionPerformed
+        new LoginAdmin().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_iniciarAdminBActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -220,6 +232,7 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField contraseniaTF;
     private javax.swing.JButton ingresarB;
+    private javax.swing.JButton iniciarAdminB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

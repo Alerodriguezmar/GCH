@@ -5,12 +5,23 @@
  */
 package Entidad;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Diego
  */
-public class Camas {
+@Entity
+@Table(name = "Camas")
+public class Camas implements Serializable{
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCamas;
     private String Ubicacion;
     private String pabellon;

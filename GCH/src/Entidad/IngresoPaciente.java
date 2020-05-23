@@ -5,12 +5,23 @@
  */
 package Entidad;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author DAVID
  */
-public class IngresoPaciente {
+@Entity
+@Table(name = "Ingreso_Paciente")
+public class IngresoPaciente implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idIngreso;
     private Paciente paciente;
     private String observacion;
