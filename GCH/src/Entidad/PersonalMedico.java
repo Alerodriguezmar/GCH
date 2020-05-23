@@ -1,30 +1,87 @@
 package Entidad;
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /*
    @ autor Santiago Ladino
-*/
+ */
+@Entity
+@Table(name = "PersonalMedico")
+public class PersonalMedico implements Serializable {
 
-public class PersonalMedico {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String nombre1;
     private String nombre2;
     private String apellido1;
     private String apellido2;
-    private int id;
+    private String email;
+    private String direccion;
+    private String tipo_sangre;
+    private String celular;
     private String cargo;
     private String ReTHUS;
     private String nomUsuario;
     private String passwordAux;
-    public PersonalMedico(String nombre1,String nombre2, String apellido1,String apellido2,
-                          int id, String cargo, String ReTHUS,String nomUsuario,String  password){
+
+    public PersonalMedico() {
+    }
+
+    public PersonalMedico(String nombre1, String nombre2, String apellido1, String apellido2,
+            int id, String cargo, String ReTHUS, String nomUsuario, String password,String email,String direccion,String tipo_sangre,String celular) {
         this.nombre1 = nombre1;
-        if (nombre2!="NA") this.nombre2=nombre2;
+        if (nombre2 != "NA") {
+            this.nombre2 = nombre2;
+        }
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.id = id;
         this.cargo = cargo;
         this.ReTHUS = ReTHUS;
         this.passwordAux = password;
-        
+        this.email= email;
+        this.direccion= direccion;
+        this.tipo_sangre= tipo_sangre;
+        this.celular = celular;
+
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTipo_sangre() {
+        return tipo_sangre;
+    }
+
+    public void setTipo_sangre(String tipo_sangre) {
+        this.tipo_sangre = tipo_sangre;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 
     public String getNombre1() {
@@ -98,5 +155,5 @@ public class PersonalMedico {
     public void setPasswordAux(String passwordAux) {
         this.passwordAux = passwordAux;
     }
-    
+
 }
