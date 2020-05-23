@@ -5,14 +5,24 @@
  */
 package Entidad;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author andiazo
  */
-public class Administrador {
-    
-    
-    
+@Entity
+@Table(name = "Administrador")
+public class Administrador implements Serializable{
+   
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String nombre1;
     private String nombre2;
     private String apellido1;
@@ -49,9 +59,7 @@ public class Administrador {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-    
-    
-    
+
     public String getNombre1() {
         return nombre1;
     }
