@@ -5,6 +5,9 @@
  */
 package Frontera;
 
+import Control.ValidarRegistroEquipo;
+import Entidad.Equipo;
+
 /**
  *
  * @author user
@@ -158,7 +161,17 @@ public class RegistroEquipo extends javax.swing.JPanel {
     }//GEN-LAST:event_equipoTipoCBActionPerformed
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        // TODO add your handling code here:
+        Equipo equipo = new Equipo();
+        equipo.setNombreEquipo(equipoNombreTF.getText());
+        equipo.setMarca(equipoMarcaTF.getText());
+        equipo.setTipoUso(equipoTipoCB.getSelectedItem().toString());
+        equipo.setRegistroSanitario(equipoRegistroTF.getText());
+        equipo.setDescripcionEquipo(equipoDescripcionTF.getText());
+        
+        ValidarRegistroEquipo validar = new ValidarRegistroEquipo();
+        System.out.println("-------");
+        String resultado = validar.VerificarRegistroEquipo(equipo);
+        System.out.println(resultado);
     }//GEN-LAST:event_aceptarBActionPerformed
 
 

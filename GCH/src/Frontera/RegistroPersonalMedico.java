@@ -5,6 +5,9 @@
  */
 package Frontera;
 
+import Control.ValidarRegistroPersonalMedico;
+import Entidad.PersonalMedico;
+
 /**
  *
  * @author user
@@ -266,7 +269,24 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        // TODO add your handling code here:
+        PersonalMedico personal = new PersonalMedico();
+        personal.setNombre1(personalNombreTF.getText());
+        personal.setNombre2(personalNombreTF1.getText());
+        personal.setApellido1(personalApellidoTF.getText());
+        personal.setApellido2(personalApellidoTF1.getText());
+        personal.setId(Integer.parseInt(personalIdTF.getText()));
+        personal.setCelular(personalCelularTF.getText());
+        personal.setEmail(personalEmailTF.getText());
+        personal.setTipo_sangre(tipoSangreCB.getSelectedItem().toString());
+        personal.setCargo(personalCargoCB.getSelectedItem().toString());
+        personal.setReTHUS(personalReThusTF.getText());
+        personal.setNomUsuario(personalUsuarioTF.getText());
+        personal.setPasswordAux(personalContrasenniaTF.getText());
+        
+        ValidarRegistroPersonalMedico validar = new ValidarRegistroPersonalMedico();
+        System.out.println("-------");
+        String resultado = validar.VerificarRegistroPersonalMedico(personal);
+        System.out.println(resultado);
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void personalReThusTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalReThusTFActionPerformed
