@@ -18,7 +18,7 @@ public class ValidarRegistroPersonalMedico {
     
     public String VerificarRegistroPersonalMedico(PersonalMedico personal) {
         if(!VerificarLongitudNombre1personalMedico(personal.getNombre1())){
-            return("Longitud primer nombre incorrecta");
+            return("Longitud primer nombre incorrecta" );
         }
         if(!VerificarLongitudNombre2personalMedico(personal.getNombre2())){
             return("Longitud segundo nombre incorrecta");
@@ -29,13 +29,13 @@ public class ValidarRegistroPersonalMedico {
         if(!VerificarLongitudApellido2personalMedico(personal.getApellido2())){
             return("Longitud segundo apellido incorrecta");
         }
-        if(!VerificarLongitudNIpersonalMedico(Integer.toString(personal.getId()))){/*Añadir verificar que sean numeros*/
+        if(!VerificarLongitudNIpersonalMedico(Integer.toString(personal.getId()))){
             return("Identificación incorrecta");
         }
-        if(!VerificarCargopersonalMedico(personal.getCargo())){/*Añadir verificar que sean numeros*/
+        if(!VerificarCargopersonalMedico(personal.getCargo())){
             return("Longitud Cargo incorrecta");
         }
-        if(!VerificarLongitudReTHUSpersonalMedico(personal.getReTHUS())){/*Añadir verificar que sean numeros*/
+        if(!VerificarLongitudReTHUSpersonalMedico(personal.getReTHUS())){
             return("Longitud ReTHUS incorrecta");
         }
         if(!VerificarLongitudEmailpersonalMedico(personal.getEmail())){
