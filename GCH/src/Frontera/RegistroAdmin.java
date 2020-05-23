@@ -62,7 +62,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Celular");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
@@ -70,7 +69,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 120, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Email");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
 
@@ -78,14 +76,12 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(adminApellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 120, -1));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Usuario");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
 
         adminIdTF.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.add(adminIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 120, -1));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Contraseña");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
@@ -104,6 +100,11 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(adminEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 120, -1));
 
         cancelarB.setText("Cancelar");
+        cancelarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBActionPerformed(evt);
+            }
+        });
         jPanel1.add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 505, -1, -1));
 
         adminUsuarioTF.setBackground(new java.awt.Color(102, 102, 102));
@@ -113,21 +114,17 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(adminContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 120, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Primer Nombre");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 109, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Primer Apellido");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Segundo Nombre");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
@@ -135,7 +132,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(adminNombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 120, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Segundo Apellido");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
 
@@ -145,7 +141,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jTextField1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 120, -1));
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Dirección");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
@@ -184,6 +179,11 @@ public class RegistroAdmin extends javax.swing.JFrame {
         String resultado = validar.VerificarRegistroAdministrador(admin);
         System.out.println(resultado);
     }//GEN-LAST:event_aceptarBActionPerformed
+
+    private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
+        new Login().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_cancelarBActionPerformed
 
     /**
      * @param args the command line arguments
