@@ -5,18 +5,39 @@
  */
 package Entidad;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Diego
  */
-public class Equipo {
+@Entity
+@Table(name = "Equipo")
+
+public class Equipo implements Serializable{
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEquipo;
     private String nombreEquipo;
     private String Marca;
     private String RegistroSanitario;
     private String DescripcionEquipo;
-    private String EstadoEquipo;
+    private Boolean EstadoEquipo;
+    private String TipoUso;
+
+    public String getTipoUso() {
+        return TipoUso;
+    }
+
+    public void setTipoUso(String TipoUso) {
+        this.TipoUso = TipoUso;
+    }
 
     public Equipo() {
     }
@@ -61,11 +82,11 @@ public class Equipo {
         this.DescripcionEquipo = DescripcionEquipo;
     }
 
-    public String getEstadoEquipo() {
+    public Boolean getEstadoEquipo() {
         return EstadoEquipo;
     }
 
-    public void setEstadoEquipo(String EstadoEquipo) {
+    public void setEstadoEquipo(Boolean EstadoEquipo) {
         this.EstadoEquipo = EstadoEquipo;
     }
     
