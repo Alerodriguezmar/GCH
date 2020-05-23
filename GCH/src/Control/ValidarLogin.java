@@ -5,22 +5,30 @@
  */
 package Control;
 
+import DAO.UsuarioDAO;
+import Entidad.PersonalMedico;
+
 /**
  *
  * @author andiazo 
  */
 public class ValidarLogin {
-
+ private final UsuarioDAO dao = new UsuarioDAO();
     public ValidarLogin() {
     }
     
-    public String verificarLogin (Usuario usuario){
-        if(!VerificarLongitudNombre(usuario.getNombre())){
+    public String verificarLogin (PersonalMedico usuario){
+        if(!VerificarLongitudNombre(usuario.getNomUsuario())){
             return("Longitud nombre incorrecta");
         }
-        if(!VerificarLongitudPassword(usuario.getPassword())){
+        if(!VerificarLongitudPassword(usuario.getPasswordAux())){
             return("Longitud contraseña incorrecto");
-        }}
+        }
+    if (dao.leer(usuario) != null) {
+            return ("Bienvenido");
+        }
+        return ("Datos incorrectos");
+    }
         /*
         for(Usuario u: sistema.getUsuarios()){
             if(u.getNombre().equals(usuario.getNombre()) && u.getPassword().equals(usuario.getPassword())){
@@ -35,7 +43,7 @@ public class ValidarLogin {
     }
     
     public boolean VerificarLongitudPassword (String contrasenia){
-        return(contrasenia.length() >= 3 && contrasenia.length() < 6);
+        return(contrasenia.length() >= 3 && contrasenia.length() < 10);
     }
     
 }

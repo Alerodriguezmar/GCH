@@ -5,6 +5,9 @@
  */
 package Frontera;
 
+import Control.ValidarLogin;
+import Entidad.PersonalMedico;
+
 /**
  *
  * @author tech
@@ -157,7 +160,20 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_usuarioTFActionPerformed
 
     private void ingresarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarBActionPerformed
-        // TODO add your handling code here:
+        PersonalMedico usuario = new PersonalMedico();
+        usuario.setNomUsuario(usuarioTF.getText());
+         usuario.setPasswordAux(contraseniaTF.getText());
+         
+         ValidarLogin Validar = new ValidarLogin();
+         
+         System.out.println("---------------------------------------------------**-");
+         String resultado = Validar.verificarLogin(usuario);
+         if (resultado.equals("Bienvenido")){
+          new FramePrincipalPersonalMedico().setVisible(true);
+            this.dispose(); 
+         }
+         
+         System.out.println(resultado);         // TODO add your handling code here:
     }//GEN-LAST:event_ingresarBActionPerformed
 
     private void registrarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBActionPerformed

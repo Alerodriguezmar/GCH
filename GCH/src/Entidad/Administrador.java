@@ -11,6 +11,8 @@ package Entidad;
  */
 public class Administrador {
     
+    
+    
     private String nombre1;
     private String nombre2;
     private String apellido1;

@@ -44,10 +44,10 @@ public class ValidarRegistroPersonalMedico {
         if(!VerificarLongitudCelularpersonalMedico(personal.getCelular())){
             return("Longitud Celular incorrecta");
         }
-        if(!VerificarLongitudUsuariopersonalMedico(personal.getUsuario())){
+        if(!VerificarLongitudUsuariopersonalMedico(personal.getNomUsuario())){
             return("Longitud usuario incorrecta");
         }
-        if(!VerificarLongitudContraseniapersonalMedico(personal.getContrasenia())){
+        if(!VerificarLongitudContraseniapersonalMedico(personal.getPasswordAux())){
             return("Longitud contraseña incorrecta");
         }
         
