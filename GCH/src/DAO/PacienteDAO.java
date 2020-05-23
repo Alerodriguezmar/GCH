@@ -12,15 +12,6 @@ import java.sql.SQLException;
  */
 public class PacienteDAO {    
     
-    private static String query = "CREATE TABLE IF NOT EXISTS `GCH_Data`.`Paciente` (" +
-                                  "`idPaciente` INT(10) NOT NULL," +
-                                  "`nombre1` VARCHAR(16) NOT NULL," +
-                                  "`nombre2` VARCHAR(16) NULL DEFAULT NULL," +
-                                  "`apellido1` VARCHAR(16) NOT NULL," +
-                                  "`apellido2` VARCHAR(16) NULL DEFAULT NULL," +
-                                  "`tipo_sangre` VARCHAR(5) NOT NULL," +
-                                  "PRIMARY KEY (`idPaciente`))"; 
-    
     public PacienteDAO() {
     }
     
