@@ -6,6 +6,7 @@
 package Frontera;
 
 import Control.ValidarRegistroEquipo;
+import DAO.EquipoDAO;
 import Entidad.Equipo;
 
 /**
@@ -162,6 +163,7 @@ public class RegistroEquipo extends javax.swing.JPanel {
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
         Equipo equipo = new Equipo();
+        EquipoDAO dao = new EquipoDAO();
         equipo.setNombreEquipo(equipoNombreTF.getText());
         equipo.setMarca(equipoMarcaTF.getText());
         equipo.setTipoUso(equipoTipoCB.getSelectedItem().toString());
@@ -172,6 +174,11 @@ public class RegistroEquipo extends javax.swing.JPanel {
         System.out.println("-------");
         String resultado = validar.VerificarRegistroEquipo(equipo);
         System.out.println(resultado);
+        
+        if(resultado == "Datos ingresados correctamente"){
+            dao.crear(equipo);
+            System.out.println("Equipo creado correctamente");
+        }
     }//GEN-LAST:event_aceptarBActionPerformed
 
 
