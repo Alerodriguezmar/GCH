@@ -24,7 +24,7 @@ public class Paciente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPaciente;
     private String nombrePaciente1;
-    private String nombrePaceinte2;
+    private String nombrePaciente2;
     private String apellidoPaciente1;
     private String apellidoPaciente2;
     private String TipoSangre;
@@ -49,11 +49,11 @@ public class Paciente implements Serializable {
     }
 
     public String getNombrePaceinte2() {
-        return nombrePaceinte2;
+        return nombrePaciente2;
     }
 
     public void setNombrePaceinte2(String nombrePaceinte2) {
-        this.nombrePaceinte2 = nombrePaceinte2;
+        this.nombrePaciente2 = nombrePaceinte2;
     }
 
     public String getApellidoPaciente1() {
