@@ -5,6 +5,9 @@
  */
 package Frontera;
 
+import Control.ValidarLoginAdmin;
+import Entidad.Administrador;
+
 /**
  *
  * @author DAVID
@@ -59,6 +62,11 @@ public class LoginAdmin extends javax.swing.JFrame {
         iconLabel.setText(" ");
 
         ingresarB.setText("Ingresar");
+        ingresarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingresarBActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Version 1.");
 
@@ -167,6 +175,23 @@ public class LoginAdmin extends javax.swing.JFrame {
         new RegistroAdmin().setVisible(true);
             this.dispose();
     }//GEN-LAST:event_registrarAdminBActionPerformed
+
+    private void ingresarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarBActionPerformed
+        Administrador usuario = new Administrador();
+        usuario.setUsuario(usuarioAdminTF.getText());
+        usuario.setContrasenia(contraseniaAdminTF.getText());
+         
+         ValidarLoginAdmin Validar = new ValidarLoginAdmin();
+         
+         System.out.println("---------------------------------------------------**-");
+         String resultado = Validar.verificarLogin(usuario);
+         if (resultado.equals("Bienvenido")){
+          new FramePrincipalAdmin().setVisible(true);
+            this.dispose(); 
+         }
+         
+         System.out.println(resultado);
+    }//GEN-LAST:event_ingresarBActionPerformed
 
     /**
      * @param args the command line arguments

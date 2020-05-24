@@ -5,24 +5,24 @@
  */
 package Control;
 
-import DAO.PersonalMedicoDAO;
-import DAO.UsuarioDAO;
+import DAO.AdminDAO;
+import Entidad.Administrador;
 import Entidad.PersonalMedico;
 
 /**
  *
- * @author andiazo 
+ * @author DAVID
  */
-public class ValidarLogin {
- private final PersonalMedicoDAO dao = new PersonalMedicoDAO();
-    public ValidarLogin() {
+public class ValidarLoginAdmin {
+    private final AdminDAO dao = new AdminDAO();
+
+    public ValidarLoginAdmin() {
     }
-    
-    public String verificarLogin (PersonalMedico usuario){
-        if(!VerificarLongitudNombre(usuario.getNomUsuario())){
+    public String verificarLogin (Administrador usuario){
+        if(!VerificarLongitudNombre(usuario.getUsuario())){
             return("Longitud nombre incorrecta");
         }
-        if(!VerificarLongitudPassword(usuario.getPasswordAux())){
+        if(!VerificarLongitudPassword(usuario.getContrasenia())){
             return("Longitud contraseña incorrecto");
         }
     if (dao.leerd(usuario) != null) {

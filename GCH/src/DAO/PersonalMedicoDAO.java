@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import Entidad.Administrador;
 import Entidad.PersonalMedico;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -120,6 +121,26 @@ public class PersonalMedicoDAO {
         } finally {
             em.close();
             return ret;
+        }
+    }
+    
+    public PersonalMedico leerd(PersonalMedico par){
+        EntityManager em = emf.createEntityManager();
+        PersonalMedico usuario = null;
+        Query q = em.createQuery("SELECT u FROM PersonalMedico u " +
+                    "WHERE u.nomUsuario LIKE :nombre" +
+                    " AND u.passwordAux LIKE :password")
+                    .setParameter("nombre", par.getNomUsuario())
+                    .setParameter("password", par.getPasswordAux());
+        try {
+            usuario = (PersonalMedico) q.getSingleResult();
+        } catch (NonUniqueResultException e) {
+            usuario = (PersonalMedico) q.getResultList().get(0);
+        } catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            em.close();
+            return usuario;
         }
     }
 }

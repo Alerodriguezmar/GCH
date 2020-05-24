@@ -169,7 +169,7 @@ public class Login extends javax.swing.JFrame {
     private void ingresarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarBActionPerformed
         PersonalMedico usuario = new PersonalMedico();
         usuario.setNomUsuario(usuarioTF.getText());
-         usuario.setPasswordAux(contraseniaTF.getText());
+        usuario.setPasswordAux(contraseniaTF.getText());
          
          ValidarLogin Validar = new ValidarLogin();
          

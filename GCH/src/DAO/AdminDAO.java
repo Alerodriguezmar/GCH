@@ -51,11 +51,31 @@ public class AdminDAO {
             return ret;
         }
     }
-
+    
+    public Administrador leerd(Administrador par){
+        EntityManager em = emf.createEntityManager();
+        Administrador usuario = null;
+        Query q = em.createQuery("SELECT u FROM Administrador u " +
+                    "WHERE u.usuario LIKE :nombre" +
+                    " AND u.contrasenia LIKE :password")
+                    .setParameter("nombre", par.getUsuario())
+                    .setParameter("password", par.getContrasenia());
+        try {
+            usuario = (Administrador) q.getSingleResult();
+        } catch (NonUniqueResultException e) {
+            usuario = (Administrador) q.getResultList().get(0);
+        } catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            em.close();
+            return usuario;
+        }
+    }
+    
     public Administrador leer(Administrador par) {
         EntityManager em = emf.createEntityManager();
         Administrador usuario = null;
-        Query q = em.createQuery("SELECT u FROM personalMedico u " +
+        Query q = em.createQuery("SELECT u FROM Administrador u " +
                     "WHERE u.nombre1 LIKE :nombre1" +
                     " AND u.nombre2 LIKE :nombre2" +
                     " AND u.apellido1 LIKE :apellido1" +
