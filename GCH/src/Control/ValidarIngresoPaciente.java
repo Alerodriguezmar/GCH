@@ -10,64 +10,26 @@ public class ValidarIngresoPaciente {
     private int idPaciente;
     private int idPersonal;
     private int idCama;
+    private String nombre1;
+    private String nombre2;
+    private String apellido1;
+    private String apellido2;
+    private String tipoAtencion;
+    private String tipoSangre;
     private boolean Respirador;
     private boolean EquipoIntubacion;
     private boolean AspiradorSecreciones;
-    private boolean BobamasNutricion;
+    private boolean BombasNutricion;
     private boolean Monitor;
-    private boolean NombaInfucionContinua;
+    private boolean BombaInfucionContinua;
     private boolean Saturometros;
     private boolean EquipoOrotraqueal;
     private boolean BalasOxigeno;
     private int cantidadBalasOxigeno;
     private String observaciones;
 
-    public ValidarIngresoPaciente(int idIngreso, int idPaciente, int idPersonal, int idCama, boolean Respirador,
-            boolean EquipoIntubacion, boolean AspiradorSecreciones, boolean BobamasNutricion,
-            boolean Monitor, boolean NombaInfucionContinua, boolean Saturometros, boolean EquipoOrotraqueal,
-            boolean BalasOxigeno, int cantidadBalasOxigeno, String observaciones) {
-        if (Integer.toString(idIngreso).length()>2 && Integer.toString(idIngreso).length()<=10 ){
-            this.idIngreso = idIngreso;
-        } else {
-            System.out.println("Longitud de id ingreso incorrecta");
-            System.out.println("Longitud debe estar en 2 y 10 caractéres");
-        }
-        if (Integer.toString(idPaciente).length()>2 && Integer.toString(idPaciente).length()<=10 ){
-            this.idPaciente = idPaciente;
-        } else {
-            System.out.println("Longitud de id paciente incorrecta");
-            System.out.println("Longitud debe estar en 2 y 10 caractéres");
-        }
-        if (Integer.toString(idPersonal).length()>2 && Integer.toString(idPersonal).length()<=10 ) {
-            this.idPersonal = idPersonal;
-        } else{
-            System.out.println("Longitud de id del personal incorrecta");
-            System.out.println("Longitud debe estar en 2 y 10 caractéres");
-        }
-        if (Integer.toString(idCama).length()>2 && Integer.toString(idCama).length()<=10 ) {
-            this.idCama = idCama;
-        } else{
-            System.out.println("Longitud de id de la cama incorrecta");
-            System.out.println("Longitud debe estar en 2 y 10 caractéres");
-        }
-        if (this.idIngreso!=0 && this.idPaciente!=0 && this.idPersonal!=0 && this.idCama!=0){
-            this.Respirador = Respirador;
-            this.EquipoIntubacion = EquipoIntubacion;
-            this.AspiradorSecreciones = AspiradorSecreciones;
-            this.BobamasNutricion = BobamasNutricion;
-            this.Monitor = Monitor;
-            this.NombaInfucionContinua = NombaInfucionContinua;
-            this.Saturometros = Saturometros;
-            this.EquipoOrotraqueal = EquipoOrotraqueal;
-            this.BalasOxigeno = BalasOxigeno;
-            this.cantidadBalasOxigeno = cantidadBalasOxigeno;
-            this.observaciones = observaciones;
-        }
-
+    public ValidarIngresoPaciente() {
     }
-
-    
-   
 
     public int getIdIngreso() {
         return idIngreso;
@@ -77,16 +39,36 @@ public class ValidarIngresoPaciente {
         return idPaciente;
     }
 
-    public String getObservaciones() {
-        return observaciones;
-    }
-
     public int getIdPersonal() {
         return idPersonal;
     }
 
     public int getIdCama() {
         return idCama;
+    }
+
+    public String getNombre1() {
+        return nombre1;
+    }
+
+    public String getNombre2() {
+        return nombre2;
+    }
+
+    public String getApellido1() {
+        return apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public String getTipoAtencion() {
+        return tipoAtencion;
+    }
+
+    public String getTipoSangre() {
+        return tipoSangre;
     }
 
     public boolean isRespirador() {
@@ -101,16 +83,16 @@ public class ValidarIngresoPaciente {
         return AspiradorSecreciones;
     }
 
-    public boolean isBobamasNutricion() {
-        return BobamasNutricion;
+    public boolean isBombasNutricion() {
+        return BombasNutricion;
     }
 
     public boolean isMonitor() {
         return Monitor;
     }
 
-    public boolean isNombaInfucionContinua() {
-        return NombaInfucionContinua;
+    public boolean isBombaInfucionContinua() {
+        return BombaInfucionContinua;
     }
 
     public boolean isSaturometros() {
@@ -129,24 +111,90 @@ public class ValidarIngresoPaciente {
         return cantidadBalasOxigeno;
     }
 
+    public String getObservaciones() {
+        return observaciones;
+    }
+
     public void setIdIngreso(int idIngreso) {
-        this.idIngreso = idIngreso;
+        if (Integer.toString(idIngreso).length()>2 && Integer.toString(idIngreso).length()<=10 ){
+            this.idIngreso = idIngreso;
+        } else {
+            System.out.println("Longitud de id ingreso incorrecta");
+            System.out.println("Longitud debe estar en 2 y 10 caractéres");
+        }
     }
 
     public void setIdPaciente(int idPaciente) {
-        this.idPaciente = idPaciente;
-    }
-
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
+        if (Integer.toString(idPaciente).length()>2 && Integer.toString(idPaciente).length()<=10 ){
+            this.idPaciente = idPaciente;
+        } else {
+            System.out.println("Longitud de id paciente incorrecta");
+            System.out.println("Longitud debe estar en 2 y 10 caractéres");
+        }
     }
 
     public void setIdPersonal(int idPersonal) {
-        this.idPersonal = idPersonal;
+        if (Integer.toString(idPersonal).length()>2 && Integer.toString(idPersonal).length()<=10 ) {
+            this.idPersonal = idPersonal;
+        } else{
+            System.out.println("Longitud de id del personal incorrecta");
+            System.out.println("Longitud debe estar en 2 y 10 caractéres");
+        }
     }
 
     public void setIdCama(int idCama) {
-        this.idCama = idCama;
+        if (Integer.toString(idCama).length()>2 && Integer.toString(idCama).length()<=10 ) {
+            this.idCama = idCama;
+        } else{
+            System.out.println("Longitud de id de la cama incorrecta");
+            System.out.println("Longitud debe estar en 2 y 10 caractéres");
+        }
+    }
+
+    public void setNombre1(String nombre1) {
+        if (nombre1.length()>2 && nombre1.length()<=10 ) {
+            this.nombre1=nombre1;
+        } else{
+            System.out.println("Longitud del primer nombre incorrecta");
+            System.out.println("Longitud debe estar en 2 y 10 caractéres");
+        }
+    }
+
+    public void setNombre2(String nombre2) {
+        if (nombre2 != null){
+            if (nombre2.length()>2 && nombre2.length()<=10 ) {
+                this.nombre2=nombre2;
+            } else{
+                System.out.println("Longitud del segundo nombre incorrecta");
+                System.out.println("Longitud debe estar en 2 y 10 caractéres");
+            }
+        }
+    }
+
+    public void setApellido1(String apellido1) {
+        if (apellido1.length()>2 && apellido1.length()<=10 ) {
+            this.apellido1=apellido1;
+        } else{
+            System.out.println("Longitud del primer apellido incorrecta");
+            System.out.println("Longitud debe estar en 2 y 10 caractéres");
+        }
+    }
+
+    public void setApellido2(String apellido2) {
+        if (apellido2.length()>2 && apellido2.length()<=10 ) {
+            this.apellido2=apellido2;
+        } else{
+            System.out.println("Longitud del segundo apellido incorrecta");
+            System.out.println("Longitud debe estar en 2 y 10 caractéres");
+        }
+    }
+
+    public void setTipoAtencion(String tipoAtencion) {
+        this.tipoAtencion = tipoAtencion;
+    }
+
+    public void setTipoSangre(String tipoSangre) {
+        this.tipoSangre = tipoSangre;
     }
 
     public void setRespirador(boolean Respirador) {
@@ -161,16 +209,16 @@ public class ValidarIngresoPaciente {
         this.AspiradorSecreciones = AspiradorSecreciones;
     }
 
-    public void setBobamasNutricion(boolean BobamasNutricion) {
-        this.BobamasNutricion = BobamasNutricion;
+    public void setBombasNutricion(boolean BobamasNutricion) {
+        this.BombasNutricion = BobamasNutricion;
     }
 
     public void setMonitor(boolean Monitor) {
         this.Monitor = Monitor;
     }
 
-    public void setNombaInfucionContinua(boolean NombaInfucionContinua) {
-        this.NombaInfucionContinua = NombaInfucionContinua;
+    public void setBombaInfucionContinua(boolean NombaInfucionContinua) {
+        this.BombaInfucionContinua = NombaInfucionContinua;
     }
 
     public void setSaturometros(boolean Saturometros) {
@@ -188,5 +236,8 @@ public class ValidarIngresoPaciente {
     public void setCantidadBalasOxigeno(int cantidadBalasOxigeno) {
         this.cantidadBalasOxigeno = cantidadBalasOxigeno;
     }
-    
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }    
 }
