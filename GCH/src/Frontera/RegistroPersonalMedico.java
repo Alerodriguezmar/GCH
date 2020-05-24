@@ -6,6 +6,7 @@
 package Frontera;
 
 import Control.ValidarRegistroPersonalMedico;
+import DAO.PersonalMedicoDAO;
 import Entidad.PersonalMedico;
 
 /**
@@ -269,6 +270,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
+        PersonalMedicoDAO personalDAO = new PersonalMedicoDAO();
         PersonalMedico personal = new PersonalMedico();
         personal.setNombre1(personalNombreTF.getText());
         personal.setNombre2(personalNombreTF1.getText());
@@ -287,6 +289,9 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         System.out.println("-------");
         String resultado = validar.VerificarRegistroPersonalMedico(personal);
         System.out.println(resultado);
+        if(resultado=="Datos ingresados correctamente"){
+            personalDAO.crear(personal);
+        }
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void personalReThusTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalReThusTFActionPerformed

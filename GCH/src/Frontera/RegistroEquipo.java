@@ -10,7 +10,7 @@ import Entidad.Equipo;
 
 /**
  *
- * @author user
+ * @author Diero I
  */
 public class RegistroEquipo extends javax.swing.JPanel {
 
