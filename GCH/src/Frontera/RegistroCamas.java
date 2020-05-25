@@ -114,7 +114,7 @@ public class RegistroCamas extends javax.swing.JPanel {
         String resultado = validar.VerificarRegistroCamas(camas);
         System.out.println(resultado);
         
-        if(resultado == "Cama Registrada Correctamente"){
+        if("Cama Registrada Correctamente".equals(resultado)){
             dao.crear(camas);
         }
     }//GEN-LAST:event_aceptarBActionPerformed

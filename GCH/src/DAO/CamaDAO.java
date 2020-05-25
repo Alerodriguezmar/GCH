@@ -17,8 +17,8 @@ import javax.persistence.Query;
  * @author DAVID
  */
 public class CamaDAO {
-    private static EntityManagerFactory
-            emf = Persistence.createEntityManagerFactory("GCHPU");
+
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("GCHPU");
 
     public void crear(Camas object) {
         EntityManager em = emf.createEntityManager();
@@ -54,25 +54,41 @@ public class CamaDAO {
     public Camas leer(Camas par) {
         EntityManager em = emf.createEntityManager();
         Camas usuario = null;
-        Query q = em.createQuery("SELECT u FROM Camas u " +
-                    "WHERE u.idCamas LIKE :idCamas" +
-                    " AND u.Ubicacion LIKE :Ubicacion" +
-                    " AND u.pabellon LIKE :pabellon" +
-                    " AND u.estado LIKE :estado")
-                    .setParameter("idCamas", par.getIdCamas())
-                    .setParameter("Ubicacion", par.getUbicacion())
-                    .setParameter("pabellon", par.getPabellon())
-                    .setParameter("estado", par.isEstado());
+        Query q = em.createQuery("SELECT u FROM Camas u "
+                + "WHERE u.idCamas LIKE :idCamas"
+                + " AND u.Ubicacion LIKE :Ubicacion"
+                + " AND u.pabellon LIKE :pabellon"
+                + " AND u.estado LIKE :estado")
+                .setParameter("idCamas", par.getIdCamas())
+                .setParameter("Ubicacion", par.getUbicacion())
+                .setParameter("pabellon", par.getPabellon())
+                .setParameter("estado", par.isEstado());
         try {
             usuario = (Camas) q.getSingleResult();
         } catch (NonUniqueResultException e) {
             usuario = (Camas) q.getResultList().get(0);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             em.close();
             return usuario;
         }
+    }
+
+    public boolean leerE(Camas par) {
+        EntityManager em = emf.createEntityManager();
+        long no = 0;
+        Query q = em.createQuery("SELECT COUNT (u) FROM Camas u "
+                + "WHERE u.Ubicacion LIKE :ubicacion"
+                + " AND u.pabellon LIKE :pabellon")
+                .setParameter("pabellon", par.getPabellon())
+                .setParameter("ubicacion", par.getUbicacion());
+
+        no = (long) q.getSingleResult();
+
+        em.close();
+        return (no == 0);
+
     }
 
     public boolean actualizar(Camas object, Camas nuevoObjeto) {

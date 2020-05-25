@@ -1,26 +1,20 @@
 
 package Control;
 
+import DAO.CamaDAO;
 import Entidad.Camas;
 
 public class ValidarRegistroCamas {
+    private final CamaDAO dao = new CamaDAO();
     public ValidarRegistroCamas(){ 
     }
     
-    public String VerificarRegistroCamas(Camas cama){
-        if(!VerificarLongitudUbicacion(cama.getUbicacion())){
-        return ("Longitud Ubicacion Incorrecta"); 
+    public String VerificarRegistroCamas(Camas cama){ 
+         if (dao.leerE(cama) == true) {
+            return("Cama Registrada Correctamente");
         }
-        if(!VerificarLongitudPabellon(cama.getPabellon())){
-        return ("Longitud Ubicacion Incorrecta"); 
-        }
-        return("Cama Registrada Correctamente");
+          return ("La cama ya está Registrada"); 
     }
     
-    public boolean VerificarLongitudUbicacion(String Ubicacion){
-        return(Ubicacion.length() >= 2 && Ubicacion.length() <= 256); 
-    } 
-    public boolean VerificarLongitudPabellon(String Pabellon){
-        return(Pabellon.length() >= 2 && Pabellon.length() <= 256); 
-    } 
+  
 }
