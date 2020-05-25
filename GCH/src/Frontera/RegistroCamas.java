@@ -5,6 +5,10 @@
  */
 package Frontera;
 
+import Control.ValidarRegistroCamas;
+import DAO.CamaDAO;
+import Entidad.Camas;
+
 /**
  *
  * @author user
@@ -74,9 +78,9 @@ public class RegistroCamas extends javax.swing.JPanel {
                 .addContainerGap(234, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cancelarB)
-                    .addComponent(aceptarB, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cancelarB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(aceptarB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(62, 62, 62))
         );
         layout.setVerticalGroup(
@@ -99,7 +103,20 @@ public class RegistroCamas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        // TODO add your handling code here:
+        CamaDAO camaDAO = new CamaDAO();
+        Camas cama = new Camas();
+        
+        cama.setUbicacion(camaUbicacionTF.getText());
+        cama.setPabellon((String) listaPabellonesCB.getSelectedItem());
+        cama.setEstado(false);
+        
+        ValidarRegistroCamas validar = new ValidarRegistroCamas();
+        System.out.println("-------");
+        String resultado = validar.VerificarRegistroCamas(cama);
+        System.out.println(resultado);
+        if ("Cama Registrada".equals(resultado)) {
+            camaDAO.crear(cama);
+        }
     }//GEN-LAST:event_aceptarBActionPerformed
 
 

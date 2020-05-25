@@ -169,14 +169,14 @@ public class RegistroEquipo extends javax.swing.JPanel {
         equipo.setTipoUso(equipoTipoCB.getSelectedItem().toString());
         equipo.setRegistroSanitario(equipoRegistroTF.getText());
         equipo.setDescripcionEquipo(equipoDescripcionTF.getText());
-        equipo.setEstadoEquipo(true);
+        equipo.setEstadoEquipo(false);
         
         ValidarRegistroEquipo validar = new ValidarRegistroEquipo();
         System.out.println("-------");
         String resultado = validar.VerificarRegistroEquipo(equipo);
         System.out.println(resultado);
         
-        if(resultado == "Datos ingresados correctamente"){
+        if("Datos ingresados correctamente".equals(resultado)){
             for (int i = 1; i <= Integer.parseInt(equipoCantidadTF.getText()) ; i++) {
                 dao.crear(equipo);
             }

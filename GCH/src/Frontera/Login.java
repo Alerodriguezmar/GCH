@@ -47,14 +47,16 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        usuarioTF.setBackground(new java.awt.Color(102, 102, 102));
+        usuarioTF.setBackground(new java.awt.Color(204, 204, 204));
+        usuarioTF.setForeground(new java.awt.Color(0, 0, 0));
         usuarioTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioTFActionPerformed(evt);
             }
         });
 
-        contraseniaTF.setBackground(new java.awt.Color(102, 102, 102));
+        contraseniaTF.setBackground(new java.awt.Color(204, 204, 204));
+        contraseniaTF.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario");

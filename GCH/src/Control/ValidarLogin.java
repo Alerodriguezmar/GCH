@@ -6,7 +6,6 @@
 package Control;
 
 import DAO.PersonalMedicoDAO;
-import DAO.UsuarioDAO;
 import Entidad.PersonalMedico;
 
 /**

@@ -40,7 +40,7 @@ public class ValidarLoginAdmin {
     
     
     public boolean VerificarLongitudNombre (String nombre){
-        return(nombre.length() > 1 && nombre.length() <= 6);
+        return(nombre.length() > 1 && nombre.length() <= 8);
     }
     
     public boolean VerificarLongitudPassword (String contrasenia){
