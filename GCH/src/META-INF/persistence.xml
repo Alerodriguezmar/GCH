@@ -4,7 +4,6 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Entidad.PersonalMedico</class>
     <class>Entidad.Administrador</class>
-    <class>Entidad.Paciente</class>
     <class>Entidad.Camas</class>
     <class>Entidad.EgresoPaciente</class>
     <class>Entidad.Equipo</class>

@@ -5,6 +5,11 @@
  */
 package Frontera;
 
+import DAO.PacienteDAO;
+import Entidad.Paciente;
+import java.awt.Color;
+import static java.lang.Integer.parseInt;
+
 /**
  *
  * @author tech
@@ -53,6 +58,7 @@ public class EgresoPaciente extends javax.swing.JPanel {
         jCheckBox8 = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         registroTF = new javax.swing.JTextField();
+        BuscarB = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(755, 585));
@@ -181,6 +187,13 @@ public class EgresoPaciente extends javax.swing.JPanel {
             }
         });
 
+        BuscarB.setText("Buscar");
+        BuscarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarBActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -216,23 +229,22 @@ public class EgresoPaciente extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(apellido2L)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nombre1L)
-                                    .addComponent(nombre2L))
-                                .addGap(364, 364, 364)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(regitroL)))
-                            .addComponent(apellido1L))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(nombre1L)
+                            .addComponent(nombre2L))
+                        .addGap(364, 364, 364)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(registroTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(identificacionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 41, Short.MAX_VALUE))
+                            .addComponent(jLabel3)
+                            .addComponent(regitroL)))
+                    .addComponent(apellido1L)
+                    .addComponent(apellido2L))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(registroTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(identificacionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BuscarB))
+                .addGap(18, 82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,7 +276,9 @@ public class EgresoPaciente extends javax.swing.JPanel {
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(regitroL)
-                            .addComponent(registroTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(registroTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BuscarB)))
                 .addGap(8, 8, 8)
                 .addComponent(equiposUsados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,8 +323,21 @@ public class EgresoPaciente extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_registroTFActionPerformed
 
+    private void BuscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBActionPerformed
+        Paciente p = new Paciente();
+        PacienteDAO dao = new PacienteDAO();
+        p = dao.leerPorId(parseInt(identificacionTF.getText()));
+       
+        if(p.getNombrePaciente1()!=null){
+            nombre1L.setText("NOMBRE"+p.getNombrePaciente1());
+        } else {
+            nombre1L.setText("Paciente no encontrado");
+        }
+    }//GEN-LAST:event_BuscarBActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BuscarB;
     private javax.swing.JButton aceptarB;
     private javax.swing.JLabel apellido1L;
     private javax.swing.JLabel apellido2L;

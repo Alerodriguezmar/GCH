@@ -67,30 +67,27 @@
           <Group type="102" attributes="0">
               <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="apellido2L" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nombre1L" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nombre2L" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="364" pref="364" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="regitroL" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="apellido1L" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nombre1L" min="-2" max="-2" attributes="0"/>
+                          <Component id="nombre2L" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="364" pref="364" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="registroTF" min="-2" pref="145" max="-2" attributes="0"/>
-                          <Component id="identificacionTF" min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="regitroL" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Component id="apellido1L" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="apellido2L" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="18" pref="41" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="registroTF" min="-2" pref="145" max="-2" attributes="0"/>
+                  <Component id="identificacionTF" min="-2" pref="145" max="-2" attributes="0"/>
+                  <Component id="BuscarB" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="18" pref="82" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -131,6 +128,8 @@
                           <Component id="regitroL" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="registroTF" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="BuscarB" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -385,6 +384,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registroTFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BuscarB">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BuscarBActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

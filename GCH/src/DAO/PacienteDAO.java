@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Set;
 import static javax.swing.UIManager.getBoolean;
 import static javax.swing.UIManager.getInt;
 import static javax.swing.UIManager.getString;
@@ -37,7 +39,7 @@ public class PacienteDAO {
                        "Bomba_Infucion_Continua BOOLEAN NOT NULL WITH DEFAULT false," +
                        "Saturometros BOOLEAN NOT NULL WITH DEFAULT false," +
                        "Balas_Oxigeno BOOLEAN NOT NULL WITH DEFAULT false,"+
-                       "Egresado_? BOOLEAN NOT NULL WITH DEFAULT false,"+
+                       "Egresado BOOLEAN NOT NULL WITH DEFAULT false,"+
                        "Observaciones VARCHAR(250),"+
                        "PRIMARY KEY (idPaciente))";
         
@@ -153,7 +155,8 @@ public class PacienteDAO {
         } 
     }
     
-    public void leerPorId(int id){
+    public Paciente leerPorId(int id){
+        Paciente p = new Paciente();
         String query = "SELECT * FROM PACIENTE WHERE IDPACIENTE="+Integer.toString(id);
         String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
         String username = "root";
@@ -164,6 +167,11 @@ public class PacienteDAO {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
+            p.setNombrePaceinte2(getString("nombre1"));
+            p.setNombrePaciente1(getString("nombre2"));
+            p.setApellidoPaciente1(getString("apellido1"));
+            p.setApellidoPaciente2(getString("apellido2"));
+                
             System.out.println("Datos del paciente: ");
             while (res.next()) {
                 System.out.println(getInt("idPaciente") +
@@ -190,6 +198,7 @@ public class PacienteDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } 
+        return p;
     }
     
 }
