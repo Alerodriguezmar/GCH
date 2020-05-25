@@ -169,6 +169,7 @@ public class RegistroEquipo extends javax.swing.JPanel {
         equipo.setTipoUso(equipoTipoCB.getSelectedItem().toString());
         equipo.setRegistroSanitario(equipoRegistroTF.getText());
         equipo.setDescripcionEquipo(equipoDescripcionTF.getText());
+        equipo.setEstadoEquipo(true);
         
         ValidarRegistroEquipo validar = new ValidarRegistroEquipo();
         System.out.println("-------");
@@ -176,7 +177,9 @@ public class RegistroEquipo extends javax.swing.JPanel {
         System.out.println(resultado);
         
         if(resultado == "Datos ingresados correctamente"){
-            dao.crear(equipo);
+            for (int i = 1; i <= Integer.parseInt(equipoCantidadTF.getText()) ; i++) {
+                dao.crear(equipo);
+            }
             System.out.println("Equipo creado correctamente");
         }
     }//GEN-LAST:event_aceptarBActionPerformed
