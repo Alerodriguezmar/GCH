@@ -4,7 +4,11 @@ import Entidad.Paciente;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import static javax.swing.UIManager.getBoolean;
+import static javax.swing.UIManager.getInt;
+import static javax.swing.UIManager.getString;
 
 /**
  *
@@ -33,8 +37,11 @@ public class PacienteDAO {
                        "Bomba_Infucion_Continua BOOLEAN NOT NULL WITH DEFAULT false," +
                        "Saturometros BOOLEAN NOT NULL WITH DEFAULT false," +
                        "Balas_Oxigeno BOOLEAN NOT NULL WITH DEFAULT false,"+
+                       "Egresado_? BOOLEAN NOT NULL WITH DEFAULT false,"+
+                       "Observaciones VARCHAR(250),"+
                        "PRIMARY KEY (idPaciente))";
         
+        String table_name = "Paciente";
         String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
         String username = "root";
         String password = "123456";
@@ -43,10 +50,15 @@ public class PacienteDAO {
         try {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();
-            stmt.executeUpdate(query);
+            ResultSet res = conn.getMetaData().getTables(null, null, table_name.toUpperCase(), null);//Default schema name is "APP"
+            if(res.next()){
+                //do some thing;
+            }else{
+                stmt.executeUpdate(query);  
+                System.out.println("Table created");          
+            }
             conn.close();
             stmt.close();
-            System.out.println("Table created");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -54,7 +66,7 @@ public class PacienteDAO {
     }
     
     public void ingresar(int idp, String nombre1, String nombre2, String apellido1, String apellido2, String ts, String ta,
-                         boolean res, boolean ei, boolean as, boolean bn, boolean m, boolean bic, boolean s, boolean bo){
+                         boolean res, boolean ei, boolean as, boolean bn, boolean m, boolean bic, boolean s, boolean bo, String obs){
         String query = "INSERT INTO Paciente (" +
                        "idPaciente," +
                        "nombre1," +
@@ -70,7 +82,8 @@ public class PacienteDAO {
                        "Monitor," +
                        "Bomba_Infucion_Continua," +
                        "Saturometros," +
-                       "Balas_Oxigeno ) " + "VALUES (" +
+                       "Balas_Oxigeno,"
+                       + "Observaciones" + " ) " + "VALUES (" +
                        idp+","+
                        "'"+nombre1+"'"+","+
                        "'"+nombre2+"'"+","+
@@ -84,8 +97,7 @@ public class PacienteDAO {
                        bn+","+
                        m+","+
                        bic+","+
-                       s+","+bo+")";
-        System.out.print(query+"--->");
+                       s+","+bo+","+"'"+obs+"'"+")";
         String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
         String username = "root";
         String password = "123456";
@@ -98,7 +110,83 @@ public class PacienteDAO {
             conn.close();
             stmt.close();
             System.out.println("Datos ingresados");
-
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+    }
+    
+    public void leer(){
+        String query = "SELECT * FROM PACIENTE";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+            System.out.println("Datos del paciente: ");
+            while (res.next()) {
+                System.out.println(getInt("idPaciente") +
+                       getString("nombre1") + ", " +
+                       getString("nombre2") + ", " +
+                       getString("apellido1") + ", "+
+                       getString("apellido2") + ", "+
+                       getString("tipo_sangre") + ", " +
+                       getString("tipo_atencion") + ", " +
+                       getBoolean("Respirador") + ", " +
+                       getBoolean("Equipo_Intubacion") + ", " +
+                       getBoolean("Aspirador_Secreciones") + ", " +
+                       getBoolean("Bombas_Nutricion") + ", " +
+                       getBoolean("Monitor") + ", " +
+                       getBoolean("Bomba_Infucion_Continua") + ", " +
+                       getBoolean("Saturometros") + ", " +
+                       getBoolean("Balas_Oxigeno") 
+                       + ", " +getString("Observaciones"));
+            }
+            res.close();
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+    }
+    
+    public void leerPorId(int id){
+        String query = "SELECT * FROM PACIENTE WHERE IDPACIENTE="+Integer.toString(id);
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+            System.out.println("Datos del paciente: ");
+            while (res.next()) {
+                System.out.println(getInt("idPaciente") +
+                       getString("nombre1") + ", " +
+                       getString("nombre2") + ", " +
+                       getString("apellido1") + ", "+
+                       getString("apellido2") + ", "+
+                       getString("tipo_sangre") + ", " +
+                       getString("tipo_atencion") + ", " +
+                       getBoolean("Respirador") + ", " +
+                       getBoolean("Equipo_Intubacion") + ", " +
+                       getBoolean("Aspirador_Secreciones") + ", " +
+                       getBoolean("Bombas_Nutricion") + ", " +
+                       getBoolean("Monitor") + ", " +
+                       getBoolean("Bomba_Infucion_Continua") + ", " +
+                       getBoolean("Saturometros") + ", " +
+                       getBoolean("Balas_Oxigeno") 
+                       + ", " +getString("Observaciones"));
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } 

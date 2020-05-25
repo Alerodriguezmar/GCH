@@ -43,7 +43,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         logoutB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(780, 630));
+        setPreferredSize(new java.awt.Dimension(780, 850));
         setResizable(false);
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));

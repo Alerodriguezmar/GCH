@@ -25,6 +25,7 @@ public class ValidarIngresoPaciente {
     private boolean Saturometros;
     private boolean EquipoOrotraqueal;
     private boolean BalasOxigeno;
+    private boolean egresado;
     private int cantidadBalasOxigeno;
     private String observaciones;
 
@@ -106,6 +107,10 @@ public class ValidarIngresoPaciente {
     public boolean isBalasOxigeno() {
         return BalasOxigeno;
     }
+    
+    public boolean isEgresado(){
+        return egresado;
+    }
 
     public int getCantidadBalasOxigeno() {
         return cantidadBalasOxigeno;
@@ -114,7 +119,11 @@ public class ValidarIngresoPaciente {
     public String getObservaciones() {
         return observaciones;
     }
-
+    
+    public void setEgreso(){
+        
+    }
+    
     public void setIdIngreso(int idIngreso) {
         if (Integer.toString(idIngreso).length()>2 && Integer.toString(idIngreso).length()<=10 ){
             this.idIngreso = idIngreso;

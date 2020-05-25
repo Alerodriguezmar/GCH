@@ -59,7 +59,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(755, 585));
-        setPreferredSize(new java.awt.Dimension(755, 585));
+        setPreferredSize(new java.awt.Dimension(755, 885));
 
         nombre1TF.setBackground(new java.awt.Color(102, 102, 102));
         nombre1TF.addActionListener(new java.awt.event.ActionListener() {
@@ -430,6 +430,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
         PacienteDAO pdao = new PacienteDAO();
         IngresoPaciente ingresar = new IngresoPaciente();
+        pdao.crear();
         identificacionTFActionPerformed(evt);
         nombre1TFActionPerformed(evt);
         nombre2TFActionPerformed(evt);
@@ -452,7 +453,8 @@ public class IngresoPaciente extends javax.swing.JPanel {
                       this.validarIngresoPaciente.isRespirador(),this.validarIngresoPaciente.isEquipoIntubacion(),
                       this.validarIngresoPaciente.isAspiradorSecreciones(), this.validarIngresoPaciente.isBombasNutricion(),
                       this.validarIngresoPaciente.isMonitor(),this.validarIngresoPaciente.isBombaInfucionContinua(),
-                      this.validarIngresoPaciente.isSaturometros(),this.validarIngresoPaciente.isBalasOxigeno());
+                      this.validarIngresoPaciente.isSaturometros(),this.validarIngresoPaciente.isBalasOxigeno(),
+                      this.validarIngresoPaciente.getObservaciones());
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void tipoAtencionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAtencionCBActionPerformed
@@ -499,7 +501,6 @@ public class IngresoPaciente extends javax.swing.JPanel {
 
     private void nombre1TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre1TFActionPerformed
         this.validarIngresoPaciente.setNombre1(nombre1TF.getText());
-        System.out.println(nombre1TF.getText());
     }//GEN-LAST:event_nombre1TFActionPerformed
 
     private void nombre2TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre2TFActionPerformed
