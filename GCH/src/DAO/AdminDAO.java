@@ -14,7 +14,7 @@ import javax.persistence.Query;
 
 /**
  *
- * @author tech
+ * @author tech = julio
  */
 public class AdminDAO {
     private static EntityManagerFactory
