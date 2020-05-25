@@ -50,7 +50,7 @@ public class TestDiegoR {
         EquipoDAO dao= new EquipoDAO();
         ArrayList<Equipo> equipos = new ArrayList<Equipo>();
         Equipo a = new Equipo();
-        a.setNombreEquipo("Respi");  
+        a.setNombreEquipo("oxigeno");  
         a.setMarca("Bayer");
         a.setRegistroSanitario("154");
         a.setDescripcionEquipo("Super Bueno");
@@ -64,7 +64,9 @@ public class TestDiegoR {
             System.out.println(u.getMarca());
             System.out.println(u.getDescripcionEquipo());
             System.out.println("--------------------------------");
-            dao.crear(u);
+            for (int i = 1; i <= 10 ; i++) {
+                dao.crear(u);
+            }
         }
     }
     
