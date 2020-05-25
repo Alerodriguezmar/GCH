@@ -16,6 +16,7 @@ import javax.persistence.Table;
  *
  * @author Diego
  */
+
 @Entity
 @Table(name = "Camas")
 public class Camas implements Serializable{

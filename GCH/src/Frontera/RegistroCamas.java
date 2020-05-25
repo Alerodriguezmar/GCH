@@ -5,6 +5,10 @@
  */
 package Frontera;
 
+import Control.ValidarRegistroCamas;
+import DAO.CamaDAO;
+import Entidad.Camas;
+
 /**
  *
  * @author user
@@ -99,7 +103,20 @@ public class RegistroCamas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        // TODO add your handling code here:
+        Camas camas = new Camas(); 
+        CamaDAO dao = new CamaDAO();
+        camas.setUbicacion(camaUbicacionTF.getText());
+        camas.setPabellon(listaPabellonesCB.getSelectedItem().toString());
+        camas.setEstado(false);
+        
+        ValidarRegistroCamas validar = new ValidarRegistroCamas();
+        System.out.println("---------");
+        String resultado = validar.VerificarRegistroCamas(camas);
+        System.out.println(resultado);
+        
+        if(resultado == "Cama Registrada Correctamente"){
+            dao.crear(camas);
+        }
     }//GEN-LAST:event_aceptarBActionPerformed
 
 
