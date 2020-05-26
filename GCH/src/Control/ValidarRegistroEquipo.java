@@ -27,7 +27,7 @@ public class ValidarRegistroEquipo {
             return("Identificación incorrecta");
         }    
         if(!VerificarLongitudRegistroSanitarioEquipo(equipo.getRegistroSanitario())){/*Añadir verificar que sean numeros*/
-            return("Longitud Registr oSanitario incorrecta");
+            return("Longitud Registro Sanitario incorrecta");
         }
         if(!VerificarLongitudDescripcionEquipo(equipo.getDescripcionEquipo())){
             return("Longitud descripcion incorrecta");
@@ -47,7 +47,7 @@ public class ValidarRegistroEquipo {
         return(id.length() >= 1 && id.length() < 13);
     }
     public boolean VerificarLongitudDescripcionEquipo(String descr){
-        return(descr.length() >= 0 && descr.length() < 256);
+        return(descr.length() >= 1 && descr.length() < 256);
     }
     public boolean VerificarLongitudRegistroSanitarioEquipo(String reg){
         return(reg.length() >= 12 && reg.length() < 30);
