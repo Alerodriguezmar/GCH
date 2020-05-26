@@ -43,7 +43,6 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         logoutB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(780, 850));
         setResizable(false);
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
@@ -123,7 +122,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -137,15 +136,15 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE))
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
         );
 
         pack();

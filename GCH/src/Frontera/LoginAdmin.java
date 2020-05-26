@@ -47,102 +47,65 @@ public class LoginAdmin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setFocusCycleRoot(true);
         jPanel1.setPreferredSize(new java.awt.Dimension(504, 419));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario administrador");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
+        usuarioAdminTF.setBackground(new java.awt.Color(204, 204, 204));
+        usuarioAdminTF.setForeground(new java.awt.Color(0, 0, 0));
         usuarioAdminTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioAdminTFActionPerformed(evt);
             }
         });
+        jPanel1.add(usuarioAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 101, -1));
+
+        contraseniaAdminTF.setBackground(new java.awt.Color(204, 204, 204));
+        contraseniaAdminTF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(contraseniaAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 101, -1));
 
         iconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
         iconLabel.setText(" ");
+        jPanel1.add(iconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 182, -1, -1));
 
+        ingresarB.setBackground(new java.awt.Color(204, 204, 204));
+        ingresarB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarB.setText("Ingresar");
         ingresarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ingresarBActionPerformed(evt);
             }
         });
+        jPanel1.add(ingresarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 101, -1));
 
         jLabel3.setText("Version 1.");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 417, -1, -1));
 
+        registrarAdminB.setBackground(new java.awt.Color(204, 204, 204));
+        registrarAdminB.setForeground(new java.awt.Color(0, 0, 0));
         registrarAdminB.setText("Registrar un administrador");
         registrarAdminB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarAdminBActionPerformed(evt);
             }
         });
+        jPanel1.add(registrarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 359, 218, -1));
 
+        iniciarPersonalB.setBackground(new java.awt.Color(204, 204, 204));
+        iniciarPersonalB.setForeground(new java.awt.Color(0, 0, 0));
         iniciarPersonalB.setText("Iniciar sesión personal médico");
         iniciarPersonalB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iniciarPersonalBActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(247, Short.MAX_VALUE)
-                        .addComponent(iconLabel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ingresarB, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel2))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(usuarioAdminTF, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                                            .addComponent(contraseniaAdminTF)))
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(iniciarPersonalB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(registrarAdminB, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel3)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(usuarioAdminTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(contraseniaAdminTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(ingresarB)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(iconLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(iniciarPersonalB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(registrarAdminB)
-                        .addGap(31, 31, 31)))
-                .addComponent(jLabel3)
-                .addContainerGap())
-        );
+        jPanel1.add(iniciarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 320, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -7,10 +7,7 @@ package Frontera;
 
 import DAO.PacienteDAO;
 import Entidad.Paciente;
-import java.awt.Color;
-import static java.lang.Integer.parseInt;
-import java.util.HashSet;
-import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -55,7 +52,7 @@ public class EgresoPaciente extends javax.swing.JPanel {
         jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        bombaNutricionCB = new javax.swing.JCheckBox();
         jCheckBox7 = new javax.swing.JCheckBox();
         jCheckBox8 = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
@@ -65,48 +62,90 @@ public class EgresoPaciente extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(755, 585));
         setPreferredSize(new java.awt.Dimension(755, 585));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        identificacionTF.setBackground(new java.awt.Color(102, 102, 102));
+        identificacionTF.setBackground(new java.awt.Color(204, 204, 204));
+        identificacionTF.setForeground(new java.awt.Color(0, 0, 0));
+        identificacionTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                identificacionTFActionPerformed(evt);
+            }
+        });
+        add(identificacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 6, 145, -1));
 
         nombre1L.setBackground(new java.awt.Color(0, 0, 0));
+        nombre1L.setForeground(new java.awt.Color(0, 0, 0));
         nombre1L.setText("Nombre 1");
+        add(nombre1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 12, -1, -1));
 
         observacionTF.setBackground(new java.awt.Color(102, 102, 102));
+        add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 440, 234, 124));
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Observaciones");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 452, -1, -1));
 
+        aceptarB.setBackground(new java.awt.Color(204, 204, 204));
+        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 482, 83, -1));
 
+        cancelarB.setBackground(new java.awt.Color(204, 204, 204));
+        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
+        cancelarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBActionPerformed(evt);
+            }
+        });
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 521, -1, -1));
 
         nombre2L.setBackground(new java.awt.Color(0, 0, 0));
+        nombre2L.setForeground(new java.awt.Color(0, 0, 0));
         nombre2L.setText("Nombre 2");
+        add(nombre2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         apellido1L.setBackground(new java.awt.Color(0, 0, 0));
+        apellido1L.setForeground(new java.awt.Color(0, 0, 0));
         apellido1L.setText("Apellido 1");
+        add(apellido1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         apellido2L.setBackground(new java.awt.Color(0, 0, 0));
+        apellido2L.setForeground(new java.awt.Color(0, 0, 0));
         apellido2L.setText("Apellido 2");
+        add(apellido2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 81, -1, -1));
 
         tipoAtencioL.setBackground(new java.awt.Color(0, 0, 0));
+        tipoAtencioL.setForeground(new java.awt.Color(0, 0, 0));
         tipoAtencioL.setText("Tipo de atención");
+        add(tipoAtencioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 102, -1, -1));
 
         tipoAtencionL.setBackground(new java.awt.Color(0, 0, 0));
+        tipoAtencionL.setForeground(new java.awt.Color(0, 0, 0));
         tipoAtencionL.setText("No. de cama");
+        add(tipoAtencionL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 123, -1, -1));
 
+        regitroL.setForeground(new java.awt.Color(0, 0, 0));
         regitroL.setText("Registro");
+        add(regitroL, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 39, -1, -1));
 
+        fechaL.setForeground(new java.awt.Color(0, 0, 0));
         fechaL.setText("Fecha");
+        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 517, -1, -1));
 
+        rethusL.setForeground(new java.awt.Color(0, 0, 0));
         rethusL.setText("ReTHUS");
+        add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 549, -1, -1));
 
         jCheckBox1.setText("Ventiladores");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +162,12 @@ public class EgresoPaciente extends javax.swing.JPanel {
 
         jCheckBox5.setText("Bomba de infusión continua");
 
-        jCheckBox6.setText("Bomba de nutrición");
+        bombaNutricionCB.setText("Bomba de nutrición");
+        bombaNutricionCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bombaNutricionCBActionPerformed(evt);
+            }
+        });
 
         jCheckBox7.setText("aspirador de secreciones");
         jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +196,7 @@ public class EgresoPaciente extends javax.swing.JPanel {
                     .addComponent(jCheckBox3)
                     .addComponent(jCheckBox4)
                     .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6)
+                    .addComponent(bombaNutricionCB)
                     .addComponent(jCheckBox7))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -170,7 +214,7 @@ public class EgresoPaciente extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox6)
+                .addComponent(bombaNutricionCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -178,16 +222,21 @@ public class EgresoPaciente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        add(equiposUsados, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 209, -1, -1));
+
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         jLabel4.setText("Equipos usados");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 179, -1, -1));
 
-        registroTF.setBackground(new java.awt.Color(102, 102, 102));
+        registroTF.setBackground(new java.awt.Color(204, 204, 204));
+        registroTF.setForeground(new java.awt.Color(0, 0, 0));
         registroTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registroTFActionPerformed(evt);
             }
         });
+        add(registroTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 39, 145, -1));
 
         BuscarB.setText("Buscar");
         BuscarB.addActionListener(new java.awt.event.ActionListener() {
@@ -195,141 +244,28 @@ public class EgresoPaciente extends javax.swing.JPanel {
                 BuscarBActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(tipoAtencioL))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(tipoAtencionL))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(420, 420, 420)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(380, 380, 380)
-                        .addComponent(equiposUsados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel7)
-                        .addGap(6, 6, 6)
-                        .addComponent(observacionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fechaL)
-                            .addComponent(rethusL))
-                        .addGap(181, 181, 181)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(aceptarB, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cancelarB))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nombre1L)
-                            .addComponent(nombre2L))
-                        .addGap(364, 364, 364)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(regitroL)))
-                    .addComponent(apellido1L)
-                    .addComponent(apellido2L))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(registroTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(identificacionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BuscarB))
-                .addGap(18, 82, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(nombre1L)
-                                .addGap(5, 5, 5)
-                                .addComponent(nombre2L))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(identificacionTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(5, 5, 5)
-                        .addComponent(apellido1L)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(apellido2L)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tipoAtencioL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tipoAtencionL)
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(regitroL)
-                            .addComponent(registroTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BuscarB)))
-                .addGap(8, 8, 8)
-                .addComponent(equiposUsados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(aceptarB)
-                        .addGap(12, 12, 12)
-                        .addComponent(cancelarB))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(12, 12, 12)
-                                    .addComponent(jLabel7))
-                                .addComponent(observacionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(fechaL)
-                                .addGap(17, 17, 17)
-                                .addComponent(rethusL)))))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
+        add(BuscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 72, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
         Paciente p = new Paciente();
         PacienteDAO dao = new PacienteDAO();
         p = dao.leerPorId(identificacionTF.getText());
-        if(p.getNombrePaciente1() != null){
-            nombre1L.setText(p.getNombrePaciente1());
-            nombre2L.setText(p.getNombrePaceinte2());
-            apellido1L.setText(p.getApellidoPaciente1());
-            apellido2L.setText(p.getApellidoPaciente2());
+        if (p.getNombrePaciente1() != null) {
+            nombre1L.setText("Nombre 1: " + p.getNombrePaciente1());
+            nombre2L.setText("Nombre 2: " + p.getNombrePaceinte2());
+            apellido1L.setText("Apellido 1: " + p.getApellidoPaciente1());
+            apellido2L.setText("Apellido 2: " + p.getApellidoPaciente2());
+        } else {
+          //  JOptionPane.showMessageDialog(null, "Paciente no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
-        else{
-            nombre1L.setText("Paciente No encontrado");
-            nombre2L.setText("");
-            apellido1L.setText("");
-            apellido2L.setText("");
-        }
-        if(p.getNombrePaciente1() != null){
+        if (p.getNombrePaciente1() != null) {
             dao.ActualizarEstado(identificacionTF.getText());
-            nombre1L.setText("Paciente egresado con éxito");
-            nombre2L.setText("");
-            apellido1L.setText("");
-            apellido2L.setText("");
-            identificacionTF.setText("");
+           // JOptionPane.showMessageDialog(null, "Paciente egresado con éxito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+             System.out.println("Paciente egresado con éxito");
         } else {
             System.out.println("PACIENTE NO ENCONTRADO");
+            
         }
     }//GEN-LAST:event_aceptarBActionPerformed
 
@@ -353,20 +289,38 @@ public class EgresoPaciente extends javax.swing.JPanel {
         Paciente p = new Paciente();
         PacienteDAO dao = new PacienteDAO();
         p = dao.leerPorId(identificacionTF.getText());
-        if(p.getNombrePaciente1() != null){
-            nombre1L.setText(p.getNombrePaciente1());
-            nombre2L.setText(p.getNombrePaceinte2());
-            apellido1L.setText(p.getApellidoPaciente1());
-            apellido2L.setText(p.getApellidoPaciente2());
+        if (p.getNombrePaciente1() != null) {
+            nombre1L.setText("Nombre 1: " + p.getNombrePaciente1());
+            nombre2L.setText("Nombre 2: " + p.getNombrePaceinte2());
+            apellido1L.setText("Apellido 1: " + p.getApellidoPaciente1());
+            apellido2L.setText("Apellido 2: " + p.getApellidoPaciente2());
+        } else {
+           // JOptionPane.showMessageDialog(null, "Paciente no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            //  JOptionPane.showMessageDialog(null, "Mensaje dentro de la ventana", "Mensaje en la barra de titulo", JOptionPane.WARNING_MESSAGE);
+            System.out.println("Paciente no encontrado");
         }
-        else{
-            nombre1L.setText("Paciente No encontrado");
-            nombre2L.setText("");
-            apellido1L.setText("");
-            apellido2L.setText("");
-        }
-        
+
     }//GEN-LAST:event_BuscarBActionPerformed
+
+    private void identificacionTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_identificacionTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_identificacionTFActionPerformed
+
+    private void bombaNutricionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bombaNutricionCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bombaNutricionCBActionPerformed
+
+    private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
+        nombre1L.setText("Nombre 1");
+        nombre2L.setText("Nombre 2");
+        apellido1L.setText("Apellido 1");
+        apellido2L.setText("Apellido 2");
+        registroTF.setText("");
+        observacionTF.setText("");
+        identificacionTF.setText("");
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_cancelarBActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -374,6 +328,7 @@ public class EgresoPaciente extends javax.swing.JPanel {
     private javax.swing.JButton aceptarB;
     private javax.swing.JLabel apellido1L;
     private javax.swing.JLabel apellido2L;
+    private javax.swing.JCheckBox bombaNutricionCB;
     private javax.swing.JButton cancelarB;
     private javax.swing.JPanel equiposUsados;
     private javax.swing.JLabel fechaL;
@@ -383,7 +338,6 @@ public class EgresoPaciente extends javax.swing.JPanel {
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JLabel jLabel3;

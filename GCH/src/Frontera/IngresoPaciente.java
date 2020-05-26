@@ -9,13 +9,14 @@ import java.awt.event.ActionEvent;
  * @author tech
  */
 public class IngresoPaciente extends javax.swing.JPanel {
-    
+
     ValidarIngresoPaciente validarIngresoPaciente;
+
     public IngresoPaciente() {
         this.validarIngresoPaciente = new ValidarIngresoPaciente();
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -59,85 +60,116 @@ public class IngresoPaciente extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(755, 585));
-        setPreferredSize(new java.awt.Dimension(755, 885));
+        setPreferredSize(new java.awt.Dimension(765, 600));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        nombre1TF.setBackground(new java.awt.Color(102, 102, 102));
+        nombre1TF.setBackground(new java.awt.Color(204, 204, 204));
+        nombre1TF.setForeground(new java.awt.Color(0, 0, 0));
         nombre1TF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nombre1TFActionPerformed(evt);
             }
         });
+        add(nombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 27, 120, -1));
 
-        identificacionTF.setBackground(new java.awt.Color(102, 102, 102));
+        identificacionTF.setBackground(new java.awt.Color(204, 204, 204));
+        identificacionTF.setForeground(new java.awt.Color(0, 0, 0));
         identificacionTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 identificacionTFActionPerformed(evt);
             }
         });
+        add(identificacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 27, 120, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombre 1");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 33, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Tipo sangre");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 66, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 33, -1, -1));
 
-        observacionTF.setBackground(new java.awt.Color(102, 102, 102));
+        observacionTF.setBackground(new java.awt.Color(204, 204, 204));
+        observacionTF.setForeground(new java.awt.Color(0, 0, 0));
         observacionTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 observacionTFActionPerformed(evt);
             }
         });
+        add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 234, 124));
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Observaciones");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
 
+        aceptarB.setBackground(new java.awt.Color(204, 204, 204));
+        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 510, 83, -1));
 
+        cancelarB.setBackground(new java.awt.Color(204, 204, 204));
+        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
+        cancelarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBActionPerformed(evt);
+            }
+        });
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 550, -1, -1));
 
-        nombre2TF.setBackground(new java.awt.Color(102, 102, 102));
+        nombre2TF.setBackground(new java.awt.Color(204, 204, 204));
+        nombre2TF.setForeground(new java.awt.Color(0, 0, 0));
         nombre2TF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nombre2TFActionPerformed(evt);
             }
         });
+        add(nombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 60, 120, -1));
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Nombre 2");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 66, -1, -1));
 
-        apellido1TF.setBackground(new java.awt.Color(102, 102, 102));
+        apellido1TF.setBackground(new java.awt.Color(204, 204, 204));
+        apellido1TF.setForeground(new java.awt.Color(0, 0, 0));
         apellido1TF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 apellido1TFActionPerformed(evt);
             }
         });
+        add(apellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 93, 120, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Apellido 1");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 99, -1, -1));
 
         jLabel10.setBackground(new java.awt.Color(0, 0, 0));
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Apellido 2");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 132, -1, -1));
 
-        apellido2TF.setBackground(new java.awt.Color(102, 102, 102));
+        apellido2TF.setBackground(new java.awt.Color(204, 204, 204));
+        apellido2TF.setForeground(new java.awt.Color(0, 0, 0));
         apellido2TF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 apellido2TFActionPerformed(evt);
             }
         });
+        add(apellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 126, 120, -1));
 
         tipoSangreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O +", "O -", "A -", "A +", "B -", "B +", "AB -", "AB +" }));
         tipoSangreCB.addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -150,6 +182,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 tipoSangreCBActionPerformed(evt);
             }
         });
+        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 61, -1, -1));
 
         tipoAtencionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Uci (intermedio)", "Uci" }));
         tipoAtencionCB.addActionListener(new java.awt.event.ActionListener() {
@@ -157,14 +190,17 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 tipoAtencionCBActionPerformed(evt);
             }
         });
+        add(tipoAtencionCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 94, 120, -1));
 
         jLabel11.setBackground(new java.awt.Color(0, 0, 0));
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Tipo de atención");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 99, -1, -1));
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("No. de cama");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 132, -1, -1));
 
         noCamaCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"1","2","3","4","5","6","7","8","9","10"}));
         noCamaCB.addActionListener(new java.awt.event.ActionListener() {
@@ -172,15 +208,19 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 noCamaCBActionPerformed(evt);
             }
         });
+        add(noCamaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 127, 120, -1));
 
         regitroL.setForeground(new java.awt.Color(0, 0, 0));
         regitroL.setText("Registro");
+        add(regitroL, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
 
         fechaL.setForeground(new java.awt.Color(0, 0, 0));
         fechaL.setText("Fecha");
+        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, -1, -1));
 
         rethusL.setForeground(new java.awt.Color(0, 0, 0));
         rethusL.setText("ReTHUS");
+        add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, -1, -1));
 
         equiposT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -194,6 +234,8 @@ public class IngresoPaciente extends javax.swing.JPanel {
             }
         ));
         jScrollPane1.setViewportView(equiposT);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 316, 194));
 
         jCheckBox1.setText("Ventiladores");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -290,141 +332,19 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        add(equiposNecesarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
+
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Equipos necesarios");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 193, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Equipos disponibles");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(144, 144, 144))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel7)
-                        .addGap(41, 41, 41)
-                        .addComponent(observacionTF, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cancelarB, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(aceptarB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(nombre1TF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(nombre2TF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel9)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(apellido1TF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel10)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(apellido2TF, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(equiposNecesarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tipoSangreCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(identificacionTF)
-                                    .addComponent(tipoAtencionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rethusL)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(fechaL)
-                                        .addComponent(regitroL))))
-                            .addComponent(noCamaCB, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(regitroL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nombre1TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(identificacionTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nombre2TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8)
-                            .addComponent(tipoSangreCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(fechaL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rethusL)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(apellido1TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9)
-                    .addComponent(tipoAtencionCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(apellido2TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(noCamaCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(equiposNecesarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(observacionTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(aceptarB)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cancelarB)))
-                        .addGap(54, 54, 54))))
-        );
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 193, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -447,23 +367,24 @@ public class IngresoPaciente extends javax.swing.JPanel {
         tipoAtencionCBActionPerformed(evt);
         tipoSangreCBActionPerformed(evt);
         observacionTFActionPerformed(evt);
-        pdao.ingresar(this.validarIngresoPaciente.getIdPaciente(),this.validarIngresoPaciente.getNombre1(), this.validarIngresoPaciente.getNombre2(),
-                      this.validarIngresoPaciente.getApellido1(),this.validarIngresoPaciente.getApellido2(),
-                      this.validarIngresoPaciente.getTipoSangre(),this.validarIngresoPaciente.getTipoAtencion(),
-                      this.validarIngresoPaciente.isRespirador(),this.validarIngresoPaciente.isEquipoIntubacion(),
-                      this.validarIngresoPaciente.isAspiradorSecreciones(), this.validarIngresoPaciente.isBombasNutricion(),
-                      this.validarIngresoPaciente.isMonitor(),this.validarIngresoPaciente.isBombaInfucionContinua(),
-                      this.validarIngresoPaciente.isSaturometros(),this.validarIngresoPaciente.isBalasOxigeno(),
-                      this.validarIngresoPaciente.getObservaciones());
+        pdao.ingresar(this.validarIngresoPaciente.getIdPaciente(), this.validarIngresoPaciente.getNombre1(), this.validarIngresoPaciente.getNombre2(),
+                this.validarIngresoPaciente.getApellido1(), this.validarIngresoPaciente.getApellido2(),
+                this.validarIngresoPaciente.getTipoSangre(), this.validarIngresoPaciente.getTipoAtencion(),
+                this.validarIngresoPaciente.isRespirador(), this.validarIngresoPaciente.isEquipoIntubacion(),
+                this.validarIngresoPaciente.isAspiradorSecreciones(), this.validarIngresoPaciente.isBombasNutricion(),
+                this.validarIngresoPaciente.isMonitor(), this.validarIngresoPaciente.isBombaInfucionContinua(),
+                this.validarIngresoPaciente.isSaturometros(), this.validarIngresoPaciente.isBalasOxigeno(),
+                this.validarIngresoPaciente.getObservaciones());
+
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void tipoAtencionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAtencionCBActionPerformed
-        String itemSeleccionado = (String)tipoAtencionCB.getSelectedItem();
+        String itemSeleccionado = (String) tipoAtencionCB.getSelectedItem();
         if ("Uci (intermedio)".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoAtencion("Uci (intermedio)");        
+            this.validarIngresoPaciente.setTipoAtencion("Uci (intermedio)");
         }
         if ("Uci".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoAtencion("Uci");        
+            this.validarIngresoPaciente.setTipoAtencion("Uci");
         }
     }//GEN-LAST:event_tipoAtencionCBActionPerformed
 
@@ -478,7 +399,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
             this.validarIngresoPaciente.setAspiradorSecreciones(false);
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
-    
+
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
         if (jCheckBox7.isSelected()) {
             this.validarIngresoPaciente.setBombaInfucionContinua(true);
@@ -504,10 +425,9 @@ public class IngresoPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_nombre1TFActionPerformed
 
     private void nombre2TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre2TFActionPerformed
-        if(nombre2TF.getText() != null){
+        if (nombre2TF.getText() != null) {
             this.validarIngresoPaciente.setNombre2(nombre2TF.getText());
-        }
-        else if(nombre2TF.getText() == null){
+        } else if (nombre2TF.getText() == null) {
             this.validarIngresoPaciente.setNombre2(null);
         }
     }//GEN-LAST:event_nombre2TFActionPerformed
@@ -561,10 +481,9 @@ public class IngresoPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     private void observacionTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observacionTFActionPerformed
-        if(observacionTF.getText() != null){
+        if (observacionTF.getText() != null) {
             this.validarIngresoPaciente.setObservaciones(observacionTF.getText());
-        }
-        else if(observacionTF.getText() == null){
+        } else if (observacionTF.getText() == null) {
             this.validarIngresoPaciente.setObservaciones(null);
         }
     }//GEN-LAST:event_observacionTFActionPerformed
@@ -574,33 +493,52 @@ public class IngresoPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_identificacionTFActionPerformed
 
     private void tipoSangreCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoSangreCBActionPerformed
-        String itemSeleccionado = (String)tipoSangreCB.getSelectedItem();
+        String itemSeleccionado = (String) tipoSangreCB.getSelectedItem();
         if ("O +".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("O +");        
+            this.validarIngresoPaciente.setTipoSangre("O +");
         }
         if ("O -".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("O -");        
+            this.validarIngresoPaciente.setTipoSangre("O -");
         }
         if ("A +".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("A +");        
+            this.validarIngresoPaciente.setTipoSangre("A +");
         }
         if ("A -".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("A -");        
+            this.validarIngresoPaciente.setTipoSangre("A -");
         }
         if ("B +".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("B +");        
+            this.validarIngresoPaciente.setTipoSangre("B +");
         }
         if ("B -".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("B -");        
+            this.validarIngresoPaciente.setTipoSangre("B -");
         }
         if ("AB +".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("AB +");        
+            this.validarIngresoPaciente.setTipoSangre("AB +");
         }
         if ("AB -".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("AB -");        
+            this.validarIngresoPaciente.setTipoSangre("AB -");
         }
     }//GEN-LAST:event_tipoSangreCBActionPerformed
-    
+
+    private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
+        nombre1TF.setText("");
+        nombre2TF.setText("");
+        apellido1TF.setText("");
+        apellido2TF.setText("");
+        identificacionTF.setText("");
+        observacionTF.setText("");
+        this.jCheckBox1.setSelected(false);
+        this.jCheckBox2.setSelected(false);
+        this.jCheckBox3.setSelected(false);
+        this.jCheckBox4.setSelected(false);
+        this.jCheckBox5.setSelected(false);
+        this.jCheckBox6.setSelected(false);
+        this.jCheckBox7.setSelected(false);
+        this.jCheckBox8.setSelected(false);
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_cancelarBActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarB;
     private javax.swing.JTextField apellido1TF;
@@ -639,7 +577,5 @@ public class IngresoPaciente extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> tipoAtencionCB;
     private javax.swing.JComboBox<String> tipoSangreCB;
     // End of variables declaration//GEN-END:variables
-    
-    
-}
 
+}

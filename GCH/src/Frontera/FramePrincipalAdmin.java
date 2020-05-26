@@ -146,7 +146,7 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE))
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE))
         );
 
         pack();

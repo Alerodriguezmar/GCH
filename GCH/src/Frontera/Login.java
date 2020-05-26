@@ -47,22 +47,27 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        usuarioTF.setBackground(new java.awt.Color(102, 102, 102));
+        usuarioTF.setBackground(new java.awt.Color(204, 204, 204));
+        usuarioTF.setForeground(new java.awt.Color(0, 0, 0));
         usuarioTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioTFActionPerformed(evt);
             }
         });
 
-        contraseniaTF.setBackground(new java.awt.Color(102, 102, 102));
+        contraseniaTF.setBackground(new java.awt.Color(204, 204, 204));
+        contraseniaTF.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario");
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña");
 
         ingresarB.setBackground(new java.awt.Color(204, 204, 204));
+        ingresarB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarB.setText("Ingresar");
         ingresarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +80,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
 
         registrarB.setBackground(new java.awt.Color(204, 204, 204));
+        registrarB.setForeground(new java.awt.Color(0, 0, 0));
         registrarB.setText("Registrar un administrador");
         registrarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +88,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        iniciarAdminB.setBackground(new java.awt.Color(204, 204, 204));
+        iniciarAdminB.setForeground(new java.awt.Color(0, 0, 0));
         iniciarAdminB.setText("Iniciar sesión administrador");
         iniciarAdminB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -61,212 +61,152 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         tipoSangreCB = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        personalEmailTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalEmailTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalEmailTF.setForeground(new java.awt.Color(0, 0, 0));
+        add(personalEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 269, 120, -1));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Email");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 275, -1, -1));
 
-        personalUsuarioTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalUsuarioTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalUsuarioTF.setForeground(new java.awt.Color(0, 0, 0));
+        add(personalUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 314, 120, -1));
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Usuario");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 320, -1, -1));
 
-        personalContrasenniaTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalContrasenniaTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalContrasenniaTF.setForeground(new java.awt.Color(0, 0, 0));
+        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 359, 120, -1));
 
+        aceptarB.setBackground(new java.awt.Color(204, 204, 204));
+        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 459, 102, -1));
 
+        cancelarB.setBackground(new java.awt.Color(204, 204, 204));
+        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
+        cancelarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBActionPerformed(evt);
+            }
+        });
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 504, 102, -1));
 
         personalCargoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Asistente enfermería", "Asistente médico profesional", "Médico especialista", "Médico general", "Profesional en enfermería" }));
+        add(personalCargoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 181, -1, -1));
 
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Contraseña");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 365, -1, -1));
 
-        personalReThusTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalReThusTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalReThusTF.setForeground(new java.awt.Color(0, 0, 0));
         personalReThusTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalReThusTFActionPerformed(evt);
             }
         });
+        add(personalReThusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 224, 117, -1));
 
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Tipo de sangre");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 143, -1, -1));
 
-        personalNombreTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalNombreTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalNombreTF.setForeground(new java.awt.Color(0, 0, 0));
         personalNombreTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalNombreTFActionPerformed(evt);
             }
         });
+        add(personalNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 44, 120, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Primer nombre");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 50, -1, -1));
 
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Cargo");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 186, -1, -1));
 
-        personalApellidoTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalApellidoTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalApellidoTF.setForeground(new java.awt.Color(0, 0, 0));
+        add(personalApellidoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 89, 120, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Primer apellido");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 95, -1, -1));
 
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("ReTHUS");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 230, -1, -1));
 
-        personalIdTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalIdTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalIdTF.setForeground(new java.awt.Color(0, 0, 0));
+        add(personalIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 134, 120, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 140, -1, -1));
 
-        personalCelularTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalCelularTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalCelularTF.setForeground(new java.awt.Color(0, 0, 0));
+        add(personalCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 179, 120, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Celular");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 185, -1, -1));
 
-        personalDireccionlTF.setBackground(new java.awt.Color(102, 102, 102));
+        personalDireccionlTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalDireccionlTF.setForeground(new java.awt.Color(0, 0, 0));
+        add(personalDireccionlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 224, 120, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Dirección");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 230, -1, -1));
 
-        personalNombreTF1.setBackground(new java.awt.Color(102, 102, 102));
+        personalNombreTF1.setBackground(new java.awt.Color(204, 204, 204));
+        personalNombreTF1.setForeground(new java.awt.Color(0, 0, 0));
         personalNombreTF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalNombreTF1ActionPerformed(evt);
             }
         });
+        add(personalNombreTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 44, 116, -1));
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Segundo nombre");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 50, -1, -1));
 
-        personalApellidoTF1.setBackground(new java.awt.Color(102, 102, 102));
+        personalApellidoTF1.setBackground(new java.awt.Color(204, 204, 204));
+        personalApellidoTF1.setForeground(new java.awt.Color(0, 0, 0));
+        add(personalApellidoTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 89, 116, -1));
 
         jLabel13.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Segundo apellido");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 95, -1, -1));
 
         tipoSangreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O +", "O -", "A -", "A +", "B -", "B +", "AB -", "AB +" }));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(personalContrasenniaTF)
-                    .addComponent(personalApellidoTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                    .addComponent(personalIdTF)
-                    .addComponent(personalCelularTF)
-                    .addComponent(personalDireccionlTF)
-                    .addComponent(personalEmailTF)
-                    .addComponent(personalUsuarioTF)
-                    .addComponent(personalNombreTF, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(personalNombreTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(personalApellidoTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(146, 146, 146))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(personalReThusTF, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(146, 146, 146))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(personalCargoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(63, 63, 63))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(tipoSangreCB, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(aceptarB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cancelarB, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
-                .addGap(111, 111, 111))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(personalNombreTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(personalNombreTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(personalApellidoTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel13)
-                            .addComponent(personalApellidoTF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(personalIdTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(personalCelularTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(personalDireccionlTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(tipoSangreCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(personalCargoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(personalReThusTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personalEmailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personalUsuarioTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personalContrasenniaTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                .addComponent(aceptarB)
-                .addGap(18, 18, 18)
-                .addComponent(cancelarB)
-                .addGap(49, 49, 49))
-        );
+        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 138, 92, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -284,12 +224,12 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         personal.setReTHUS(personalReThusTF.getText());
         personal.setNomUsuario(personalUsuarioTF.getText());
         personal.setPasswordAux(personalContrasenniaTF.getText());
-        
+
         ValidarRegistroPersonalMedico validar = new ValidarRegistroPersonalMedico();
         System.out.println("-------");
         String resultado = validar.VerificarRegistroPersonalMedico(personal);
         System.out.println(resultado);
-        if(resultado=="Datos ingresados correctamente"){
+        if (resultado == "Datos ingresados correctamente") {
             personalDAO.crear(personal);
         }
     }//GEN-LAST:event_aceptarBActionPerformed
@@ -305,6 +245,22 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     private void personalNombreTF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalNombreTF1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_personalNombreTF1ActionPerformed
+
+    private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
+        personalApellidoTF.setText("");
+        personalApellidoTF1.setText("");
+        personalContrasenniaTF.setText("");
+        personalDireccionlTF.setText("");
+        personalEmailTF.setText("");
+        personalIdTF.setText("");
+        personalNombreTF.setText("");
+        personalNombreTF1.setText("");
+        personalReThusTF.setText("");
+        personalUsuarioTF.setText("");
+        personalCelularTF.setText("");
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelarBActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

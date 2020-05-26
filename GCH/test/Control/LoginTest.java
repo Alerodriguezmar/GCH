@@ -118,7 +118,7 @@ public class LoginTest {
         
         u.setNomUsuario("juan");
         u.setPasswordAux("315521");
-        assertEquals(USUARIO_AUTORIZADO,login.verificarLogin(u));
+        assertEquals(login.verificarLogin(u),USUARIO_AUTORIZADO);
          
          
      }

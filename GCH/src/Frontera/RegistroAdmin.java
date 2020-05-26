@@ -65,103 +65,131 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Celular");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
-        adminNombre1TF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 120, -1));
+        adminNombre1TF.setBackground(new java.awt.Color(204, 204, 204));
+        adminNombre1TF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 120, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Email");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 156, -1, -1));
 
-        adminApellido1TF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminApellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 120, -1));
+        adminApellido1TF.setBackground(new java.awt.Color(204, 204, 204));
+        adminApellido1TF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminApellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 120, -1));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Usuario");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
 
-        adminIdTF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 120, -1));
+        adminIdTF.setBackground(new java.awt.Color(204, 204, 204));
+        adminIdTF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 120, -1));
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Contraseña");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
 
-        adminCelularTF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 120, -1));
+        adminCelularTF.setBackground(new java.awt.Color(204, 204, 204));
+        adminCelularTF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 120, -1));
 
+        aceptarB.setBackground(new java.awt.Color(204, 204, 204));
+        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
-        jPanel1.add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 472, 83, -1));
+        jPanel1.add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 425, 83, -1));
 
-        adminEmailTF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 120, -1));
+        adminEmailTF.setBackground(new java.awt.Color(204, 204, 204));
+        adminEmailTF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 120, -1));
 
+        cancelarB.setBackground(new java.awt.Color(204, 204, 204));
+        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBActionPerformed(evt);
             }
         });
-        jPanel1.add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 505, -1, -1));
+        jPanel1.add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 458, -1, -1));
 
-        adminUsuarioTF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 120, -1));
+        adminUsuarioTF.setBackground(new java.awt.Color(204, 204, 204));
+        adminUsuarioTF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 120, -1));
 
-        adminContrasenniaTF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 120, -1));
+        adminContrasenniaTF.setBackground(new java.awt.Color(204, 204, 204));
+        adminContrasenniaTF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 120, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Primer Nombre");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 109, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 109, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Primer Apellido");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Segundo Nombre");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        adminNombre2TF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminNombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 120, -1));
+        adminNombre2TF.setBackground(new java.awt.Color(204, 204, 204));
+        adminNombre2TF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminNombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 120, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Segundo Apellido");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, -1, -1));
 
-        adminApellido2TF.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(adminApellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 120, -1));
+        adminApellido2TF.setBackground(new java.awt.Color(204, 204, 204));
+        adminApellido2TF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(adminApellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 120, -1));
 
-        jTextField1.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 120, -1));
+        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
 
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Dirección");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
+        ingresarAdminB.setBackground(new java.awt.Color(204, 204, 204));
+        ingresarAdminB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarAdminB.setText("Iniciar sesión administrador");
         ingresarAdminB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ingresarAdminBActionPerformed(evt);
             }
         });
-        jPanel1.add(ingresarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, 180, -1));
+        jPanel1.add(ingresarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 418, 218, -1));
 
+        ingresarPersonalB.setBackground(new java.awt.Color(204, 204, 204));
+        ingresarPersonalB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarPersonalB.setText("Iniciar sesión personal médico");
         ingresarPersonalB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ingresarPersonalBActionPerformed(evt);
             }
         });
-        jPanel1.add(ingresarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, -1, -1));
+        jPanel1.add(ingresarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 458, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
