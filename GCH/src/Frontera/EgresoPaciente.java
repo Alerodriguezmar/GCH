@@ -9,6 +9,8 @@ import DAO.PacienteDAO;
 import Entidad.Paciente;
 import java.awt.Color;
 import static java.lang.Integer.parseInt;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -304,7 +306,31 @@ public class EgresoPaciente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        // TODO add your handling code here:
+        Paciente p = new Paciente();
+        PacienteDAO dao = new PacienteDAO();
+        p = dao.leerPorId(identificacionTF.getText());
+        if(p.getNombrePaciente1() != null){
+            nombre1L.setText(p.getNombrePaciente1());
+            nombre2L.setText(p.getNombrePaceinte2());
+            apellido1L.setText(p.getApellidoPaciente1());
+            apellido2L.setText(p.getApellidoPaciente2());
+        }
+        else{
+            nombre1L.setText("Paciente No encontrado");
+            nombre2L.setText("");
+            apellido1L.setText("");
+            apellido2L.setText("");
+        }
+        if(p.getNombrePaciente1() != null){
+            dao.ActualizarEstado(identificacionTF.getText());
+            nombre1L.setText("Paciente egresado con éxito");
+            nombre2L.setText("");
+            apellido1L.setText("");
+            apellido2L.setText("");
+            identificacionTF.setText("");
+        } else {
+            System.out.println("PACIENTE NO ENCONTRADO");
+        }
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -326,13 +352,20 @@ public class EgresoPaciente extends javax.swing.JPanel {
     private void BuscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBActionPerformed
         Paciente p = new Paciente();
         PacienteDAO dao = new PacienteDAO();
-        p = dao.leerPorId(parseInt(identificacionTF.getText()));
-       
-        if(p.getNombrePaciente1()!=null){
-            nombre1L.setText("NOMBRE"+p.getNombrePaciente1());
-        } else {
-            nombre1L.setText("Paciente no encontrado");
+        p = dao.leerPorId(identificacionTF.getText());
+        if(p.getNombrePaciente1() != null){
+            nombre1L.setText(p.getNombrePaciente1());
+            nombre2L.setText(p.getNombrePaceinte2());
+            apellido1L.setText(p.getApellidoPaciente1());
+            apellido2L.setText(p.getApellidoPaciente2());
         }
+        else{
+            nombre1L.setText("Paciente No encontrado");
+            nombre2L.setText("");
+            apellido1L.setText("");
+            apellido2L.setText("");
+        }
+        
     }//GEN-LAST:event_BuscarBActionPerformed
 
 

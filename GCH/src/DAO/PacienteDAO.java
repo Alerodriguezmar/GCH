@@ -4,10 +4,9 @@ import Entidad.Paciente;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashSet;
-import java.util.Set;
 import static javax.swing.UIManager.getBoolean;
 import static javax.swing.UIManager.getInt;
 import static javax.swing.UIManager.getString;
@@ -20,7 +19,28 @@ public class PacienteDAO {
     
     public PacienteDAO() {
     }
+    /*
+    private static EntityManagerFactory
+            emf = Persistence.createEntityManagerFactory("GCHPU");
     
+    public Paciente leerp(Paciente par) {
+        EntityManager em = emf.createEntityManager();
+        Paciente usuario = null;
+        Query q = em.createQuery("SELECT u FROM Paciente u " +
+                    "WHERE u.idPaciente LIKE :idp")
+                    .setParameter("idp", par.getIdPaciente());
+        try {
+            usuario = (Paciente) q.getSingleResult();
+        } catch (NonUniqueResultException e) {
+            usuario = (Paciente) q.getResultList().get(0);
+        } catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            em.close();
+            return usuario;
+        }
+    }
+    */
     public void crear(){
         
         String query = "CREATE TABLE Paciente (" +
@@ -155,9 +175,9 @@ public class PacienteDAO {
         } 
     }
     
-    public Paciente leerPorId(int id){
+    public Paciente leerPorId(String id){
         Paciente p = new Paciente();
-        String query = "SELECT * FROM PACIENTE WHERE IDPACIENTE="+Integer.toString(id);
+        String query = "SELECT * FROM PACIENTE WHERE IDPACIENTE="+id;
         String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
         String username = "root";
         String password = "123456";
@@ -167,29 +187,30 @@ public class PacienteDAO {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
-            p.setNombrePaceinte2(getString("nombre1"));
-            p.setNombrePaciente1(getString("nombre2"));
-            p.setApellidoPaciente1(getString("apellido1"));
-            p.setApellidoPaciente2(getString("apellido2"));
                 
             System.out.println("Datos del paciente: ");
             while (res.next()) {
-                System.out.println(getInt("idPaciente") +
-                       getString("nombre1") + ", " +
-                       getString("nombre2") + ", " +
-                       getString("apellido1") + ", "+
-                       getString("apellido2") + ", "+
-                       getString("tipo_sangre") + ", " +
-                       getString("tipo_atencion") + ", " +
-                       getBoolean("Respirador") + ", " +
-                       getBoolean("Equipo_Intubacion") + ", " +
-                       getBoolean("Aspirador_Secreciones") + ", " +
-                       getBoolean("Bombas_Nutricion") + ", " +
-                       getBoolean("Monitor") + ", " +
-                       getBoolean("Bomba_Infucion_Continua") + ", " +
-                       getBoolean("Saturometros") + ", " +
-                       getBoolean("Balas_Oxigeno") 
-                       + ", " +getString("Observaciones"));
+                System.out.println(res.getInt("idPaciente") +
+                       res.getString("nombre1") + ", " +
+                       res.getString("nombre2") + ", " +
+                       res.getString("apellido1") + ", "+
+                       res.getString("apellido2") + ", "+
+                       res.getString("tipo_sangre") + ", " +
+                       res.getString("tipo_atencion") + ", " +
+                       res.getBoolean("Respirador") + ", " +
+                       res.getBoolean("Equipo_Intubacion") + ", " +
+                       res.getBoolean("Aspirador_Secreciones") + ", " +
+                       res.getBoolean("Bombas_Nutricion") + ", " +
+                       res.getBoolean("Monitor") + ", " +
+                       res.getBoolean("Bomba_Infucion_Continua") + ", " +
+                       res.getBoolean("Saturometros") + ", " +
+                       res.getBoolean("Balas_Oxigeno") 
+                       + ", " +res.getString("Observaciones"));
+                p.setNombrePaceinte2(res.getString("nombre2"));
+                p.setNombrePaciente1(res.getString("nombre1"));
+                p.setApellidoPaciente1(res.getString("apellido1"));
+                p.setApellidoPaciente2(res.getString("apellido2"));
+                
             }
             res.close();
             stmt.execute(query);
@@ -201,4 +222,24 @@ public class PacienteDAO {
         return p;
     }
     
+    public void ActualizarEstado(String id){
+        Paciente p = new Paciente();
+        String query = "UPDATE PACIENTE SET EGRESADO=TRUE WHERE IDPACIENTE="+id;
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.prepareStatement(query);
+            stmt.executeUpdate();                
+            System.out.println("Columna corregida: ");
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+    }
+     
 }
