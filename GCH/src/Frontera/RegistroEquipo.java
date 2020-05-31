@@ -37,50 +37,40 @@ public class RegistroEquipo extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         equipoMarcaTF = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        equipoNombreTF = new javax.swing.JTextField();
         equipoTipoCB = new javax.swing.JComboBox<>();
         equipoRegistroTF = new javax.swing.JTextField();
         aceptarB = new javax.swing.JButton();
         equipoCantidadTF = new javax.swing.JTextField();
         cancelarB = new javax.swing.JButton();
         equipoDescripcionTF = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        TipoDeEquipo = new javax.swing.JLabel();
+        TipoEquipo = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Marca");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 95, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Tipo de uso");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 139, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Registro Sanitario");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 183, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Cantidad");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 228, -1, -1));
 
         equipoMarcaTF.setBackground(new java.awt.Color(204, 204, 204));
-        equipoMarcaTF.setForeground(new java.awt.Color(0, 0, 0));
         add(equipoMarcaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 89, 268, -1));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Descripción");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 267, -1, -1));
-
-        equipoNombreTF.setBackground(new java.awt.Color(204, 204, 204));
-        equipoNombreTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(equipoNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 44, 268, -1));
 
         equipoTipoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Soporte de vida", "Quirúrgica", "Cuidados intensivos", "Terapia física", "Equipos de tratamiento", "Monitorización quirúrgica", "Monitorización de Cuidados intensivos", "Monitorización general", "Diagnósticos fisiológicos", "Analítica de laboratorio", "Accesorios de laboratorio", "Procesado de datos del paciente", "Otro" }));
         equipoTipoCB.addActionListener(new java.awt.event.ActionListener() {
@@ -88,14 +78,12 @@ public class RegistroEquipo extends javax.swing.JPanel {
                 equipoTipoCBActionPerformed(evt);
             }
         });
-        add(equipoTipoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 134, -1, -1));
+        add(equipoTipoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 134, 270, -1));
 
         equipoRegistroTF.setBackground(new java.awt.Color(204, 204, 204));
-        equipoRegistroTF.setForeground(new java.awt.Color(0, 0, 0));
         add(equipoRegistroTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 177, 268, -1));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,11 +93,9 @@ public class RegistroEquipo extends javax.swing.JPanel {
         add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 83, -1));
 
         equipoCantidadTF.setBackground(new java.awt.Color(204, 204, 204));
-        equipoCantidadTF.setForeground(new java.awt.Color(0, 0, 0));
         add(equipoCantidadTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 222, 268, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,13 +105,14 @@ public class RegistroEquipo extends javax.swing.JPanel {
         add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 445, -1, -1));
 
         equipoDescripcionTF.setBackground(new java.awt.Color(204, 204, 204));
-        equipoDescripcionTF.setForeground(new java.awt.Color(0, 0, 0));
         add(equipoDescripcionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 267, 196, 120));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Nombre");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 50, -1, -1));
+        TipoDeEquipo.setBackground(new java.awt.Color(0, 0, 0));
+        TipoDeEquipo.setText("Tipo De Equipo");
+        add(TipoDeEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 50, -1, -1));
+
+        TipoEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ventilador Mecanico", "Saturometro", "Bala de Oxigeno", "Monitor Cardiaco", "Bomba Infusion Continua", "Bomba Nutricion Enteral", "Aspirador De Secreciones","Equipo De Intuacion" }));
+        add(TipoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 270, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void equipoTipoCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipoTipoCBActionPerformed
@@ -135,7 +122,7 @@ public class RegistroEquipo extends javax.swing.JPanel {
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
         Equipo equipo = new Equipo();
         EquipoDAO dao = new EquipoDAO();
-        equipo.setNombreEquipo(equipoNombreTF.getText());
+        equipo.setTipoDeEquipo(TipoEquipo.getSelectedItem().toString());
         equipo.setMarca(equipoMarcaTF.getText());
         equipo.setTipoUso(equipoTipoCB.getSelectedItem().toString());
         equipo.setRegistroSanitario(equipoRegistroTF.getText());
@@ -159,21 +146,20 @@ public class RegistroEquipo extends javax.swing.JPanel {
         equipoCantidadTF.setText("");
         equipoDescripcionTF.setText("");
         equipoMarcaTF.setText("");
-        equipoNombreTF.setText("");
         equipoRegistroTF.setText("");    
     }//GEN-LAST:event_cancelarBActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TipoDeEquipo;
+    private javax.swing.JComboBox<String> TipoEquipo;
     private javax.swing.JButton aceptarB;
     private javax.swing.JButton cancelarB;
     private javax.swing.JTextField equipoCantidadTF;
     private javax.swing.JTextField equipoDescripcionTF;
     private javax.swing.JTextField equipoMarcaTF;
-    private javax.swing.JTextField equipoNombreTF;
     private javax.swing.JTextField equipoRegistroTF;
     private javax.swing.JComboBox<String> equipoTipoCB;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -37,8 +37,6 @@ public class RegistroCamas extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        TipoEquipo = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,12 +72,6 @@ public class RegistroCamas extends javax.swing.JPanel {
             }
         });
         add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 80, -1));
-
-        jLabel1.setText("Tipo De Equipo");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
-
-        TipoEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ventilador Mecanico", "Saturometro", "Bala de Oxigeno", "Monitor Cardiaco", "Bomba Infusion Continua", "Bomba Nutricion Enteral", "Aspirador De Secreciones","Equipo De Intuacion"  }));
-        add(TipoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 160, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -107,11 +99,9 @@ public class RegistroCamas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> TipoEquipo;
     private javax.swing.JButton aceptarB;
     private javax.swing.JTextField camaUbicacionTF;
     private javax.swing.JButton cancelarB;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JComboBox<String> listaPabellonesCB;

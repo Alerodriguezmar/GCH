@@ -89,6 +89,10 @@ public class Equipo implements Serializable{
     public void setEstadoEquipo(Boolean EstadoEquipo) {
         this.EstadoEquipo = EstadoEquipo;
     }
+
+    public void setTipoDeEquipo(String toString) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
