@@ -10,6 +10,7 @@ import DAO.AdminDAO;
 import Entidad.Administrador;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,10 +55,17 @@ public class RegistroAdmin extends javax.swing.JFrame {
         adminNombre2TF = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         adminApellido2TF = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         ingresarAdminB = new javax.swing.JButton();
         ingresarPersonalB = new javax.swing.JButton();
+        mensajeUsuario = new javax.swing.JLabel();
+        mensajeUsuario1 = new javax.swing.JLabel();
+        mensajeUsuario2 = new javax.swing.JLabel();
+        mensajeUsuario3 = new javax.swing.JLabel();
+        mensajeUsuario5 = new javax.swing.JLabel();
+        mensajeUsuario6 = new javax.swing.JLabel();
+        mensajeUsuario7 = new javax.swing.JLabel();
+        mensajeUsuario8 = new javax.swing.JLabel();
+        mensajeUsuario9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,7 +75,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Celular");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         adminNombre1TF.setBackground(new java.awt.Color(204, 204, 204));
         adminNombre1TF.setForeground(new java.awt.Color(0, 0, 0));
@@ -97,7 +105,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
 
         adminCelularTF.setBackground(new java.awt.Color(204, 204, 204));
         adminCelularTF.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(adminCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 120, -1));
+        jPanel1.add(adminCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
         aceptarB.setForeground(new java.awt.Color(0, 0, 0));
@@ -163,14 +171,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         adminApellido2TF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminApellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 120, -1));
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
-
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Dirección");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
-
         ingresarAdminB.setBackground(new java.awt.Color(204, 204, 204));
         ingresarAdminB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarAdminB.setText("Iniciar sesión administrador");
@@ -191,6 +191,42 @@ public class RegistroAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(ingresarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 458, -1, -1));
 
+        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 95, -1, -1));
+
+        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 96, -1, -1));
+
+        mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 137, -1, -1));
+
+        mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 178, -1, -1));
+
+        mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
+
+        mensajeUsuario6.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario6.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 137, -1, -1));
+
+        mensajeUsuario7.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario7.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 178, -1, -1));
+
+        mensajeUsuario8.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario8.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 216, -1, -1));
+
+        mensajeUsuario9.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario9.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 257, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -209,6 +245,21 @@ public class RegistroAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ingresarPersonalBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarPersonalBActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ingresarPersonalBActionPerformed
+
+    private void ingresarAdminBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarAdminBActionPerformed
+        new LoginAdmin().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ingresarAdminBActionPerformed
+
+    private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_cancelarBActionPerformed
+
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
         Administrador admin = new Administrador();
         AdminDAO dao = new AdminDAO();
@@ -221,34 +272,65 @@ public class RegistroAdmin extends javax.swing.JFrame {
         admin.setEmail(adminEmailTF.getText());
         admin.setUsuario(adminUsuarioTF.getText());
         admin.setContrasenia(adminContrasenniaTF.getText());
-        
+
         ValidarRegistroAdministrador validar = new ValidarRegistroAdministrador();
         System.out.println("-------");
         String resultado = validar.VerificarRegistroAdministrador(admin);
-        System.out.println(resultado);
-                
-        if(resultado == "Datos ingresados correctamente"){
-            dao.crear(admin);
-            new Login().setVisible(true);
-                this.dispose();
+
+        if (!validar.VerificarLongitudNombre1Admin(adminNombre1TF.getText())) {
+            mensajeUsuario1.setText("Longitud primer nombre incorrecta");
+        } else {
+            mensajeUsuario1.setText("");
         }
-        
+        if (!validar.VerificarLongitudNombre2Admin(adminNombre2TF.getText())) {
+            mensajeUsuario2.setText("Longitud segundo nombre incorrecta");
+        } else {
+            mensajeUsuario2.setText("");
+        }
+        if (!validar.VerificarLongitudApellido1Admin(adminApellido1TF.getText())) {
+            mensajeUsuario.setText("Longitud primer apellido incorrecta");
+        } else {
+            mensajeUsuario.setText("");
+        }
+        if (!validar.VerificarLongitudApellido2Admin(adminApellido2TF.getText())) {
+            mensajeUsuario6.setText("Longitud segundo apellido incorrecta");
+        } else {
+            mensajeUsuario6.setText("");
+        }
+        if (!validar.VerificarLongitudEmailAdmin(adminEmailTF.getText())) {
+            mensajeUsuario7.setText("Formato de correo incorrecto");
+        } else {
+            mensajeUsuario7.setText("");
+        }
+        if (!validar.VerificarLongitudNIAdmin(adminIdTF.getText())) {
+            mensajeUsuario3.setText("Formato de correo incorrecto");
+        } else {
+            mensajeUsuario3.setText("");
+        }
+        if (!validar.VerificarLongitudCelularAdmin(adminCelularTF.getText())) {
+            mensajeUsuario5.setText("Longitud celular incorrecta");
+        } else {
+            mensajeUsuario5.setText("");
+        }
+         if (!validar.VerificarLongitudUsuarioAdmin(adminUsuarioTF.getText())) {
+            mensajeUsuario8.setText("Longitud usuario incorrecta");
+        } else {
+            mensajeUsuario8.setText("");
+        }
+          if (!validar.VerificarLongitudContraseniaAdmin(adminContrasenniaTF.getText())) {
+            mensajeUsuario9.setText("Longitud contraseña incorrecta o\n"+" incluye caracteres especiales");
+        } else {
+            mensajeUsuario9.setText("");
+        }
+
+        if("Datos ingresados correctamente".equals(resultado)){
+            dao.crear(admin);
+             JOptionPane.showMessageDialog(null, "Adminitrador Registrado", "", JOptionPane.INFORMATION_MESSAGE);
+            new Login().setVisible(true);
+            this.dispose();
+        }
+        System.out.println(resultado);
     }//GEN-LAST:event_aceptarBActionPerformed
-
-    private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
-        new Login().setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_cancelarBActionPerformed
-
-    private void ingresarAdminBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarAdminBActionPerformed
-        new LoginAdmin().setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_ingresarAdminBActionPerformed
-
-    private void ingresarPersonalBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarPersonalBActionPerformed
-        new Login().setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_ingresarPersonalBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,7 +383,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
     private javax.swing.JButton ingresarAdminB;
     private javax.swing.JButton ingresarPersonalB;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -311,6 +392,14 @@ public class RegistroAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel mensajeUsuario;
+    private javax.swing.JLabel mensajeUsuario1;
+    private javax.swing.JLabel mensajeUsuario2;
+    private javax.swing.JLabel mensajeUsuario3;
+    private javax.swing.JLabel mensajeUsuario5;
+    private javax.swing.JLabel mensajeUsuario6;
+    private javax.swing.JLabel mensajeUsuario7;
+    private javax.swing.JLabel mensajeUsuario8;
+    private javax.swing.JLabel mensajeUsuario9;
     // End of variables declaration//GEN-END:variables
 }

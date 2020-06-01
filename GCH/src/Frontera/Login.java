@@ -7,6 +7,7 @@ package Frontera;
 
 import Control.ValidarLogin;
 import Entidad.PersonalMedico;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,12 +41,15 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         registrarB = new javax.swing.JButton();
         iniciarAdminB = new javax.swing.JButton();
+        mensajeUsuario1 = new javax.swing.JLabel();
+        mensajeUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autenticación Personal Médico");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         usuarioTF.setBackground(new java.awt.Color(204, 204, 204));
         usuarioTF.setForeground(new java.awt.Color(0, 0, 0));
@@ -54,17 +58,21 @@ public class Login extends javax.swing.JFrame {
                 usuarioTFActionPerformed(evt);
             }
         });
+        jPanel1.add(usuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 73, 116, -1));
 
         contraseniaTF.setBackground(new java.awt.Color(204, 204, 204));
         contraseniaTF.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(contraseniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 118, 116, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 79, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 124, -1, -1));
 
         ingresarB.setBackground(new java.awt.Color(204, 204, 204));
         ingresarB.setForeground(new java.awt.Color(0, 0, 0));
@@ -74,10 +82,13 @@ public class Login extends javax.swing.JFrame {
                 ingresarBActionPerformed(evt);
             }
         });
+        jPanel1.add(ingresarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 177, 122, -1));
 
         jLabel3.setText("Version 1.");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 408, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 177, -1, -1));
 
         registrarB.setBackground(new java.awt.Color(204, 204, 204));
         registrarB.setForeground(new java.awt.Color(0, 0, 0));
@@ -87,6 +98,7 @@ public class Login extends javax.swing.JFrame {
                 registrarBActionPerformed(evt);
             }
         });
+        jPanel1.add(registrarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 348, 201, -1));
 
         iniciarAdminB.setBackground(new java.awt.Color(204, 204, 204));
         iniciarAdminB.setForeground(new java.awt.Color(0, 0, 0));
@@ -96,65 +108,15 @@ public class Login extends javax.swing.JFrame {
                 iniciarAdminBActionPerformed(evt);
             }
         });
+        jPanel1.add(iniciarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 309, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(usuarioTF, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                            .addComponent(contraseniaTF))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(ingresarB, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(registrarB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(iniciarAdminB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                        .addComponent(jLabel4)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(usuarioTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contraseniaTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(ingresarB)
-                        .addGap(105, 105, 105)
-                        .addComponent(iniciarAdminB)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(registrarB)))
-                .addGap(2, 2, 2)
-                .addComponent(jLabel3)
-                .addContainerGap())
-        );
+        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario1.setForeground(new java.awt.Color(204, 0, 0));
+        jPanel1.add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 148, -1, -1));
+
+        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario.setForeground(new java.awt.Color(204, 0, 0));
+        jPanel1.add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,27 +140,40 @@ public class Login extends javax.swing.JFrame {
         PersonalMedico usuario = new PersonalMedico();
         usuario.setNomUsuario(usuarioTF.getText());
         usuario.setPasswordAux(contraseniaTF.getText());
-         
-         ValidarLogin Validar = new ValidarLogin();
-         
-         System.out.println("---------------------------------------------------**-");
-         String resultado = Validar.verificarLogin(usuario);
-         if (resultado.equals("Bienvenido")){
-          new FramePrincipalPersonalMedico().setVisible(true);
-            this.dispose(); 
-         }
-         
-         System.out.println(resultado);         // TODO add your handling code here:
+
+        ValidarLogin Validar = new ValidarLogin();
+
+        System.out.println("---------------------------------------------------**-");
+        String resultado = Validar.verificarLogin(usuario);
+        
+        if (!Validar.VerificarLongitudNombre(usuarioTF.getText())) {
+            mensajeUsuario.setText("Longitud de nombre incorrecta");
+        } else {
+            mensajeUsuario.setText("");
+        }
+        if (!Validar.VerificarLongitudPassword(contraseniaTF.getText())) {
+            mensajeUsuario1.setText("Longitud de contraseña incorrecto");
+        } else {
+            mensajeUsuario1.setText("");
+        }
+        if (resultado.equals("Bienvenido")) {
+            new FramePrincipalPersonalMedico().setVisible(true);
+            this.dispose();
+        }
+        if (resultado.equals("Datos incorrectos")) {
+            JOptionPane.showMessageDialog(null, "Datos incorrectos", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+        System.out.println(resultado);         // TODO add your handling code here:
     }//GEN-LAST:event_ingresarBActionPerformed
 
     private void registrarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBActionPerformed
-       new RegistroAdmin().setVisible(true);
-            this.dispose();        // TODO add your handling code here:
+        new RegistroAdmin().setVisible(true);
+        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_registrarBActionPerformed
 
     private void iniciarAdminBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarAdminBActionPerformed
         new LoginAdmin().setVisible(true);
-            this.dispose();
+        this.dispose();
     }//GEN-LAST:event_iniciarAdminBActionPerformed
 
     /**
@@ -246,6 +221,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel mensajeUsuario;
+    private javax.swing.JLabel mensajeUsuario1;
     private javax.swing.JButton registrarB;
     private javax.swing.JTextField usuarioTF;
     // End of variables declaration//GEN-END:variables

@@ -7,6 +7,7 @@ package Frontera;
 
 import Control.ValidarLoginAdmin;
 import Entidad.Administrador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,6 +32,7 @@ public class LoginAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        mensajeUsuario1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         usuarioAdminTF = new javax.swing.JTextField();
@@ -40,6 +42,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         registrarAdminB = new javax.swing.JButton();
         iniciarPersonalB = new javax.swing.JButton();
+        mensajeUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autenticación Administrador");
@@ -49,13 +52,17 @@ public class LoginAdmin extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(504, 419));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario1.setForeground(new java.awt.Color(255, 51, 51));
+        jPanel1.add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
+
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario administrador");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         usuarioAdminTF.setBackground(new java.awt.Color(204, 204, 204));
         usuarioAdminTF.setForeground(new java.awt.Color(0, 0, 0));
@@ -64,11 +71,11 @@ public class LoginAdmin extends javax.swing.JFrame {
                 usuarioAdminTFActionPerformed(evt);
             }
         });
-        jPanel1.add(usuarioAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 101, -1));
+        jPanel1.add(usuarioAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 101, -1));
 
         contraseniaAdminTF.setBackground(new java.awt.Color(204, 204, 204));
         contraseniaAdminTF.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(contraseniaAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 101, -1));
+        jPanel1.add(contraseniaAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 101, -1));
 
         iconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
         iconLabel.setText(" ");
@@ -107,19 +114,19 @@ public class LoginAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(iniciarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 320, -1, -1));
 
+        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario.setForeground(new java.awt.Color(255, 51, 51));
+        jPanel1.add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 97, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -145,14 +152,25 @@ public class LoginAdmin extends javax.swing.JFrame {
         usuario.setContrasenia(contraseniaAdminTF.getText());
          
          ValidarLoginAdmin Validar = new ValidarLoginAdmin();
-         
+           if (!Validar.VerificarLongitudNombre(usuarioAdminTF.getText())) {
+            mensajeUsuario.setText("Longitud de nombre incorrecta");
+        }else{
+        mensajeUsuario.setText("");
+        }
+        if (!Validar.VerificarLongitudPassword(contraseniaAdminTF.getText())) {
+            mensajeUsuario1.setText("Longitud de contraseña incorrecto");
+        }else{
+        mensajeUsuario1.setText("");
+        }
          System.out.println("---------------------------------------------------**-");
          String resultado = Validar.verificarLogin(usuario);
          if (resultado.equals("Bienvenido")){
           new FramePrincipalAdmin().setVisible(true);
             this.dispose(); 
          }
-         
+         if (resultado.equals("Datos incorrectos")) {
+            JOptionPane.showMessageDialog(null, "Datos incorrectos", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
          System.out.println(resultado);
     }//GEN-LAST:event_ingresarBActionPerformed
 
@@ -200,6 +218,8 @@ public class LoginAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel mensajeUsuario;
+    private javax.swing.JLabel mensajeUsuario1;
     private javax.swing.JButton registrarAdminB;
     private javax.swing.JTextField usuarioAdminTF;
     // End of variables declaration//GEN-END:variables

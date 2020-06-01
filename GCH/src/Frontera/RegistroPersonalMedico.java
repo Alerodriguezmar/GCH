@@ -8,6 +8,7 @@ package Frontera;
 import Control.ValidarRegistroPersonalMedico;
 import DAO.PersonalMedicoDAO;
 import Entidad.PersonalMedico;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -59,30 +60,43 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         personalApellidoTF1 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         tipoSangreCB = new javax.swing.JComboBox<>();
+        mensajeUsuario = new javax.swing.JLabel();
+        mensajeUsuario1 = new javax.swing.JLabel();
+        mensajeUsuario2 = new javax.swing.JLabel();
+        mensajeUsuario3 = new javax.swing.JLabel();
+        mensajeUsuario4 = new javax.swing.JLabel();
+        mensajeUsuario6 = new javax.swing.JLabel();
+        mensajeUsuario7 = new javax.swing.JLabel();
+        mensajeUsuario8 = new javax.swing.JLabel();
+        mensajeUsuario9 = new javax.swing.JLabel();
+        mensajeUsuario10 = new javax.swing.JLabel();
+        mensajeUsuario11 = new javax.swing.JLabel();
+        mensajeUsuario12 = new javax.swing.JLabel();
+        mensajeUsuario5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         personalEmailTF.setBackground(new java.awt.Color(204, 204, 204));
         personalEmailTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 269, 120, -1));
+        add(personalEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 120, -1));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Email");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 275, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         personalUsuarioTF.setBackground(new java.awt.Color(204, 204, 204));
         personalUsuarioTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 314, 120, -1));
+        add(personalUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 120, -1));
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Usuario");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 320, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
         personalContrasenniaTF.setBackground(new java.awt.Color(204, 204, 204));
         personalContrasenniaTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 359, 120, -1));
+        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 120, -1));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
         aceptarB.setForeground(new java.awt.Color(0, 0, 0));
@@ -92,7 +106,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 459, 102, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 102, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
         cancelarB.setForeground(new java.awt.Color(0, 0, 0));
@@ -102,14 +116,19 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 cancelarBActionPerformed(evt);
             }
         });
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 504, 102, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 102, -1));
 
         personalCargoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Asistente enfermería", "Asistente médico profesional", "Médico especialista", "Médico general", "Profesional en enfermería" }));
-        add(personalCargoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 181, -1, -1));
+        personalCargoCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personalCargoCBActionPerformed(evt);
+            }
+        });
+        add(personalCargoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
 
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Contraseña");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 365, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
 
         personalReThusTF.setBackground(new java.awt.Color(204, 204, 204));
         personalReThusTF.setForeground(new java.awt.Color(0, 0, 0));
@@ -118,11 +137,11 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 personalReThusTFActionPerformed(evt);
             }
         });
-        add(personalReThusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 224, 117, -1));
+        add(personalReThusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 117, -1));
 
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Tipo de sangre");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 143, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
 
         personalNombreTF.setBackground(new java.awt.Color(204, 204, 204));
         personalNombreTF.setForeground(new java.awt.Color(0, 0, 0));
@@ -131,56 +150,56 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 personalNombreTFActionPerformed(evt);
             }
         });
-        add(personalNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 44, 120, -1));
+        add(personalNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 120, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Primer nombre");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 50, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Cargo");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 186, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
 
         personalApellidoTF.setBackground(new java.awt.Color(204, 204, 204));
         personalApellidoTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalApellidoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 89, 120, -1));
+        add(personalApellidoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 85, 120, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Primer apellido");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 95, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("ReTHUS");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 230, -1, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, -1, -1));
 
         personalIdTF.setBackground(new java.awt.Color(204, 204, 204));
         personalIdTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 134, 120, -1));
+        add(personalIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 120, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 140, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         personalCelularTF.setBackground(new java.awt.Color(204, 204, 204));
         personalCelularTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 179, 120, -1));
+        add(personalCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 120, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Celular");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 185, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
         personalDireccionlTF.setBackground(new java.awt.Color(204, 204, 204));
         personalDireccionlTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalDireccionlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 224, 120, -1));
+        add(personalDireccionlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 120, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Dirección");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 230, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
         personalNombreTF1.setBackground(new java.awt.Color(204, 204, 204));
         personalNombreTF1.setForeground(new java.awt.Color(0, 0, 0));
@@ -189,24 +208,76 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 personalNombreTF1ActionPerformed(evt);
             }
         });
-        add(personalNombreTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 44, 116, -1));
+        add(personalNombreTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 116, -1));
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Segundo nombre");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 50, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, -1, -1));
 
         personalApellidoTF1.setBackground(new java.awt.Color(204, 204, 204));
         personalApellidoTF1.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalApellidoTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 89, 116, -1));
+        add(personalApellidoTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 116, -1));
 
         jLabel13.setBackground(new java.awt.Color(0, 0, 0));
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Segundo apellido");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 95, -1, -1));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, -1, -1));
 
-        tipoSangreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O +", "O -", "A -", "A +", "B -", "B +", "AB -", "AB +" }));
-        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 138, 92, -1));
+        tipoSangreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "O +", "O -", "A -", "A +", "B -", "B +", "AB -", "AB +" }));
+        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 92, -1));
+
+        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 67, -1, -1));
+
+        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 66, -1, -1));
+
+        mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 113, -1, -1));
+
+        mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 117, -1, -1));
+
+        mensajeUsuario4.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario4.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 156, -1, -1));
+
+        mensajeUsuario6.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario6.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 197, -1, -1));
+
+        mensajeUsuario7.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario7.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 204, -1, -1));
+
+        mensajeUsuario8.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario8.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
+
+        mensajeUsuario9.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario9.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, -1, -1));
+
+        mensajeUsuario10.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario10.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 287, -1, -1));
+
+        mensajeUsuario11.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario11.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario11, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 337, -1, -1));
+
+        mensajeUsuario12.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario12.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario12, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 386, -1, -1));
+
+        mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 165, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -229,8 +300,78 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         System.out.println("-------");
         String resultado = validar.VerificarRegistroPersonalMedico(personal);
         System.out.println(resultado);
+        
+        if (!validar.VerificarLongitudNombre1personalMedico(personalNombreTF.getText())) {
+            mensajeUsuario.setText("Longitud primer nombre incorrecta");
+        } else {
+            mensajeUsuario.setText("");
+        }
+          if (!validar.VerificarLongitudNombre2personalMedico(personalNombreTF1.getText())) {
+            mensajeUsuario1.setText("Longitud segundo nombre incorrecta");
+        } else {
+            mensajeUsuario1.setText("");
+        }
+            if (!validar.VerificarLongitudApellido1personalMedico(personalApellidoTF.getText())) {
+            mensajeUsuario2.setText("Longitud primer apellido incorrecta");
+        } else {
+            mensajeUsuario2.setText("");
+        }
+            if (!validar.VerificarLongitudApellido2personalMedico(personalApellidoTF1.getText())) {
+            mensajeUsuario3.setText("Longitud segundo apellido incorrecta");
+        } else {
+            mensajeUsuario3.setText("");
+        }    
+            if (!validar.VerificarLongitudNIpersonalMedico(personalIdTF.getText())) {
+            mensajeUsuario4.setText("Logitud de identificación incorrecta");
+        } else {
+            mensajeUsuario4.setText("");
+        }    
+         if (!validar.VerificarLongitudCelularpersonalMedico(personalCelularTF.getText())) {
+            mensajeUsuario6.setText("Longitud Celular incorrecta");
+        } else {
+            mensajeUsuario6.setText("");
+        }  
+            if (" ".equals(tipoSangreCB.getSelectedItem().toString())) {
+            mensajeUsuario5.setText("No se ha seleccionado un tipo de sangre");
+        } else {
+            mensajeUsuario5.setText("");
+        } 
+             if (!validar.VerificarLongitudCelularpersonalMedico(personalCelularTF.getText())) {
+            mensajeUsuario8.setText("Longitud dirección incorrecta");
+        } else {
+            mensajeUsuario8.setText("");
+        } 
+            
+           if (" ".equals(personalCargoCB.getSelectedItem().toString())) {
+            mensajeUsuario7.setText("No se ha seleccionado un cargo");
+        } else {
+            mensajeUsuario7.setText("");
+        } 
+                if (!validar.VerificarLongitudDireccionpersonalMedico(personalDireccionlTF.getText())) {
+            mensajeUsuario10.setText("Formato de correo incorrecto");
+        } else {
+            mensajeUsuario10.setText("");
+        } 
+                    if (!validar.VerificarLongitudReTHUSpersonalMedico(personalReThusTF.getText())) {
+            mensajeUsuario9.setText("Longitud ReTHUS incorrecta");
+        } else {
+            mensajeUsuario9.setText("");
+        } 
+                if (!validar.VerificarLongitudUsuariopersonalMedico(personalUsuarioTF.getText())) {
+            mensajeUsuario11.setText("Longitud usuario incorrecta");
+        } else {
+            mensajeUsuario11.setText("");
+        } 
+                     if (!validar.VerificarLongitudContraseniapersonalMedico(personalContrasenniaTF.getText())) {
+            mensajeUsuario12.setText("Longitud contraseña incorrecta");
+        } else {
+            mensajeUsuario12.setText("");
+        }  
+         
         if (resultado == "Datos ingresados correctamente") {
             personalDAO.crear(personal);
+            JOptionPane.showMessageDialog(null,personalCargoCB.getSelectedItem().toString() +" Registrado", "", JOptionPane.INFORMATION_MESSAGE);
+            borrar();
         }
     }//GEN-LAST:event_aceptarBActionPerformed
 
@@ -247,10 +388,19 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     }//GEN-LAST:event_personalNombreTF1ActionPerformed
 
     private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
-        personalApellidoTF.setText("");
+        borrar();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelarBActionPerformed
+
+    private void personalCargoCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalCargoCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_personalCargoCBActionPerformed
+    public void borrar(){
+      personalApellidoTF.setText("");
         personalApellidoTF1.setText("");
         personalContrasenniaTF.setText("");
-        personalDireccionlTF.setText("");
+         personalDireccionlTF.setText("");
         personalEmailTF.setText("");
         personalIdTF.setText("");
         personalNombreTF.setText("");
@@ -258,10 +408,22 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         personalReThusTF.setText("");
         personalUsuarioTF.setText("");
         personalCelularTF.setText("");
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarBActionPerformed
-
+        tipoSangreCB.setSelectedItem(" ");
+        personalCargoCB.setSelectedItem(" ");
+        mensajeUsuario.setText("");
+        mensajeUsuario1.setText("");
+        mensajeUsuario2.setText("");
+        mensajeUsuario3.setText("");
+        mensajeUsuario4.setText("");
+        mensajeUsuario5.setText("");
+        mensajeUsuario6.setText("");
+        mensajeUsuario7.setText("");
+        mensajeUsuario8.setText("");
+        mensajeUsuario9.setText("");
+        mensajeUsuario10.setText("");
+        mensajeUsuario11.setText("");
+        mensajeUsuario12.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarB;
@@ -279,6 +441,19 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel mensajeUsuario;
+    private javax.swing.JLabel mensajeUsuario1;
+    private javax.swing.JLabel mensajeUsuario10;
+    private javax.swing.JLabel mensajeUsuario11;
+    private javax.swing.JLabel mensajeUsuario12;
+    private javax.swing.JLabel mensajeUsuario2;
+    private javax.swing.JLabel mensajeUsuario3;
+    private javax.swing.JLabel mensajeUsuario4;
+    private javax.swing.JLabel mensajeUsuario5;
+    private javax.swing.JLabel mensajeUsuario6;
+    private javax.swing.JLabel mensajeUsuario7;
+    private javax.swing.JLabel mensajeUsuario8;
+    private javax.swing.JLabel mensajeUsuario9;
     private javax.swing.JTextField personalApellidoTF;
     private javax.swing.JTextField personalApellidoTF1;
     private javax.swing.JComboBox<String> personalCargoCB;
