@@ -8,6 +8,7 @@ package Frontera;
 import Control.ValidarRegistroCamas;
 import DAO.CamaDAO;
 import Entidad.Camas;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,12 +38,14 @@ public class RegistroCamas extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
+        mensajeUsuario = new javax.swing.JLabel();
+        mensajeUsuario1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         listaPabellonesCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Cuidados intensivos", "Cuidados intermedios" }));
-        add(listaPabellonesCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 160, -1));
+        add(listaPabellonesCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 170, -1));
 
         camaUbicacionTF.setBackground(new java.awt.Color(204, 204, 204));
         add(camaUbicacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 138, 166, -1));
@@ -56,47 +59,82 @@ public class RegistroCamas extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, 20));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
+        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 301, 83, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 301, 100, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
+        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBActionPerformed(evt);
             }
         });
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 80, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 100, -1));
+
+        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 165, -1, -1));
+
+        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 205, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        Camas camas = new Camas(); 
+        Camas camas = new Camas();
         CamaDAO dao = new CamaDAO();
         camas.setUbicacion(camaUbicacionTF.getText());
         camas.setPabellon(listaPabellonesCB.getSelectedItem().toString());
         camas.setEstado(false);
-        
+
         ValidarRegistroCamas validar = new ValidarRegistroCamas();
         System.out.println("---------");
         String resultado = validar.VerificarRegistroCamas(camas);
-        System.out.println(resultado);
+
+        if (" ".equals(listaPabellonesCB.getSelectedItem().toString())) {
+            mensajeUsuario1.setText("No se ha seleccionado el pabellón");
+        } else {
+            mensajeUsuario1.setText("");
+        }
         
-        if("Cama Registrada Correctamente".equals(resultado)){
+        if ("La cama ya está Registrada".equals(resultado)) {
+            mensajeUsuario.setText("La cama ya está Registrada");
+        } else {
+            mensajeUsuario.setText("");
+        }
+         if (!validar.isCama(camaUbicacionTF.getText())) {
+            mensajeUsuario.setText("No hay ubicación de la cama");
+        } else {
+            mensajeUsuario.setText("");
+        }
+        if ("Cama Registrada Correctamente".equals(resultado) && !(" ".equals(listaPabellonesCB.getSelectedItem().toString()))) {
             dao.crear(camas);
+            System.out.println(resultado);
+            JOptionPane.showMessageDialog(null, "Cama Registrada", "", JOptionPane.INFORMATION_MESSAGE);
+            borrar();
+        } else {
+            System.out.println("No se pudo registrar la cama");
         }
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
-  camaUbicacionTF.setText("");
-       
-            // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarBActionPerformed
+        borrar();
 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cancelarBActionPerformed
+    public void borrar() {
+        listaPabellonesCB.setSelectedItem(" ");
+        camaUbicacionTF.setText("");
+        mensajeUsuario.setText("");
+        mensajeUsuario1.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarB;
@@ -105,5 +143,7 @@ public class RegistroCamas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JComboBox<String> listaPabellonesCB;
+    private javax.swing.JLabel mensajeUsuario;
+    private javax.swing.JLabel mensajeUsuario1;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,7 +23,7 @@ public class ValidarLoginAdmin {
             return("Longitud nombre incorrecta");
         }
         if(!VerificarLongitudPassword(usuario.getContrasenia())){
-            return("Longitud contraseña incorrecto");
+            return("Longitud contraseña incorrecta");
         }
     if (dao.leerd(usuario) != null) {
             return ("Bienvenido");
@@ -40,11 +40,11 @@ public class ValidarLoginAdmin {
     
     
     public boolean VerificarLongitudNombre (String nombre){
-        return(nombre.length() > 1 && nombre.length() <= 6);
+        return(nombre.length() >= 5 && nombre.length() <= 32);
     }
     
     public boolean VerificarLongitudPassword (String contrasenia){
-        return(contrasenia.length() >= 3 && contrasenia.length() < 10);
+        return(contrasenia.length() >= 5);
     }
     
 }

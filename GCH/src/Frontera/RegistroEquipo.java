@@ -8,6 +8,7 @@ package Frontera;
 import Control.ValidarRegistroEquipo;
 import DAO.EquipoDAO;
 import Entidad.Equipo;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,6 +46,12 @@ public class RegistroEquipo extends javax.swing.JPanel {
         equipoDescripcionTF = new javax.swing.JTextField();
         TipoDeEquipo = new javax.swing.JLabel();
         TipoEquipo = new javax.swing.JComboBox<>();
+        mensajeUsuario = new javax.swing.JLabel();
+        mensajeUsuario1 = new javax.swing.JLabel();
+        mensajeUsuario2 = new javax.swing.JLabel();
+        mensajeUsuario3 = new javax.swing.JLabel();
+        mensajeUsuario4 = new javax.swing.JLabel();
+        mensajeUsuario5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,8 +118,32 @@ public class RegistroEquipo extends javax.swing.JPanel {
         TipoDeEquipo.setText("Tipo De Equipo");
         add(TipoDeEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 50, -1, -1));
 
-        TipoEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ventilador Mecanico", "Saturometro", "Bala de Oxigeno", "Monitor Cardiaco", "Bomba Infusion Continua", "Bomba Nutricion Enteral", "Aspirador De Secreciones","Equipo De Intuacion" }));
+        TipoEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ","Ventilador Mecanico", "Saturometro", "Bala de Oxigeno", "Monitor Cardiaco", "Bomba Infusion Continua", "Bomba Nutricion Enteral", "Aspirador De Secreciones","Equipo De Intuacion" }));
         add(TipoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 270, -1));
+
+        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 75, -1, -1));
+
+        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 115, -1, -1));
+
+        mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 159, -1, -1));
+
+        mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 201, -1, -1));
+
+        mensajeUsuario4.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario4.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 248, -1, -1));
+
+        mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
+        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 385, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void equipoTipoCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipoTipoCBActionPerformed
@@ -122,33 +153,83 @@ public class RegistroEquipo extends javax.swing.JPanel {
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
         Equipo equipo = new Equipo();
         EquipoDAO dao = new EquipoDAO();
-        equipo.setTipoDeEquipo(TipoEquipo.getSelectedItem().toString());
+        int cantidad = 0;
+        equipo.setNombreEquipo(TipoEquipo.getSelectedItem().toString());
         equipo.setMarca(equipoMarcaTF.getText());
         equipo.setTipoUso(equipoTipoCB.getSelectedItem().toString());
         equipo.setRegistroSanitario(equipoRegistroTF.getText());
         equipo.setDescripcionEquipo(equipoDescripcionTF.getText());
         equipo.setEstadoEquipo(true);
-        
+
         ValidarRegistroEquipo validar = new ValidarRegistroEquipo();
         System.out.println("-------");
         String resultado = validar.VerificarRegistroEquipo(equipo);
         System.out.println(resultado);
-        
-        if(resultado == "Datos ingresados correctamente"){
-            for (int i = 1; i <= Integer.parseInt(equipoCantidadTF.getText()) ; i++) {
+        if (" ".equals(TipoEquipo.getSelectedItem().toString())) {
+            mensajeUsuario.setText("No se ha seleccionado el tipo de equipo");
+        } else {
+            mensajeUsuario.setText("");
+        }
+        if (!validar.VerificarLongitudMarca(equipoMarcaTF.getText())) {
+            mensajeUsuario1.setText("Longitud marca incorrecta");
+        } else {
+            mensajeUsuario1.setText("");
+        }
+        if (" ".equals(equipoTipoCB.getSelectedItem().toString())) {
+            mensajeUsuario2.setText("No se ha seleccionado el tipo de uso");
+        } else {
+            mensajeUsuario2.setText("");
+        }
+        if (!validar.VerificarLongitudRegistroSanitarioEquipo(equipoRegistroTF.getText())) {
+            mensajeUsuario3.setText("Longitud Registro Sanitario incorrecta");
+        } else {
+            mensajeUsuario3.setText("");
+        }
+        //por mejorar
+        if (equipoCantidadTF.getText().length() == 0) {
+            mensajeUsuario4.setText("No hay Cantidad");
+        } else {
+            if (!validar.VerificarLongitudCantidadEquipo(Integer.parseInt(equipoCantidadTF.getText()))) {
+                mensajeUsuario4.setText("Longitud de cantidad incorrecta");
+                cantidad = 0;
+            } else {
+                mensajeUsuario4.setText("");
+                cantidad = Integer.parseInt(equipoCantidadTF.getText());
+            }
+        }
+        if (!validar.VerificarLongitudRegistroSanitarioEquipo(equipoDescripcionTF.getText())) {
+            mensajeUsuario4.setText("Longitud de descripción incorrecta");
+        } else {
+            mensajeUsuario4.setText("");
+        }
+
+        if (resultado == "Datos ingresados correctamente" && validar.VerificarLongitudCantidadEquipo(cantidad)) {
+            for (int i = 1; i <= Integer.parseInt(equipoCantidadTF.getText()); i++) {
                 dao.crear(equipo);
             }
-            System.out.println("Equipo creado correctamente");
+            System.out.println("Equipos registrados correctamente");
+            JOptionPane.showMessageDialog(null, "Equipos registrados correctamente", "", JOptionPane.INFORMATION_MESSAGE);
+            borrar();
         }
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
+        borrar();
+    }//GEN-LAST:event_cancelarBActionPerformed
+    public void borrar() {
         equipoCantidadTF.setText("");
         equipoDescripcionTF.setText("");
         equipoMarcaTF.setText("");
-        equipoRegistroTF.setText("");    
-    }//GEN-LAST:event_cancelarBActionPerformed
-
+        equipoRegistroTF.setText("");
+        equipoTipoCB.setSelectedItem(" ");
+        TipoEquipo.setSelectedItem(" ");
+        mensajeUsuario.setText("");
+        mensajeUsuario1.setText("");
+        mensajeUsuario2.setText("");
+        mensajeUsuario3.setText("");
+        mensajeUsuario4.setText("");
+        mensajeUsuario5.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TipoDeEquipo;
@@ -165,5 +246,11 @@ public class RegistroEquipo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel mensajeUsuario;
+    private javax.swing.JLabel mensajeUsuario1;
+    private javax.swing.JLabel mensajeUsuario2;
+    private javax.swing.JLabel mensajeUsuario3;
+    private javax.swing.JLabel mensajeUsuario4;
+    private javax.swing.JLabel mensajeUsuario5;
     // End of variables declaration//GEN-END:variables
 }

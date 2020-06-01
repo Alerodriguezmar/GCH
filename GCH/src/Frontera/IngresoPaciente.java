@@ -57,6 +57,15 @@ public class IngresoPaciente extends javax.swing.JPanel {
         jCheckBox8 = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        mensajeUsuario = new javax.swing.JLabel();
+        mensajeUsuario1 = new javax.swing.JLabel();
+        mensajeUsuario2 = new javax.swing.JLabel();
+        mensajeUsuario3 = new javax.swing.JLabel();
+        mensajeUsuario4 = new javax.swing.JLabel();
+        mensajeUsuario5 = new javax.swing.JLabel();
+        mensajeUsuario6 = new javax.swing.JLabel();
+        mensajeUsuario7 = new javax.swing.JLabel();
+        mensajeUsuario8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(755, 585));
@@ -89,7 +98,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Tipo sangre");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 66, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -136,12 +145,12 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 nombre2TFActionPerformed(evt);
             }
         });
-        add(nombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 60, 120, -1));
+        add(nombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 65, 120, -1));
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 0));
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Nombre 2");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 66, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         apellido1TF.setBackground(new java.awt.Color(204, 204, 204));
         apellido1TF.setForeground(new java.awt.Color(0, 0, 0));
@@ -150,17 +159,17 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 apellido1TFActionPerformed(evt);
             }
         });
-        add(apellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 93, 120, -1));
+        add(apellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 105, 120, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Apellido 1");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 99, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         jLabel10.setBackground(new java.awt.Color(0, 0, 0));
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Apellido 2");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 132, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         apellido2TF.setBackground(new java.awt.Color(204, 204, 204));
         apellido2TF.setForeground(new java.awt.Color(0, 0, 0));
@@ -169,7 +178,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 apellido2TFActionPerformed(evt);
             }
         });
-        add(apellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 126, 120, -1));
+        add(apellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 145, 120, -1));
 
         tipoSangreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "O +", "O -", "A -", "A +", "B -", "B +", "AB -", "AB +" }));
         tipoSangreCB.addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -182,7 +191,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 tipoSangreCBActionPerformed(evt);
             }
         });
-        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 61, -1, -1));
+        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 65, -1, -1));
 
         tipoAtencionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Uci (intermedio)", "Uci" }));
         tipoAtencionCB.addActionListener(new java.awt.event.ActionListener() {
@@ -190,17 +199,17 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 tipoAtencionCBActionPerformed(evt);
             }
         });
-        add(tipoAtencionCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 94, 120, -1));
+        add(tipoAtencionCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 120, -1));
 
         jLabel11.setBackground(new java.awt.Color(0, 0, 0));
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Tipo de atención");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 99, -1, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("No. de cama");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 132, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
 
         noCamaCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"1","2","3","4","5","6","7","8","9","10"}));
         noCamaCB.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +217,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
                 noCamaCBActionPerformed(evt);
             }
         });
-        add(noCamaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(382, 127, 120, -1));
+        add(noCamaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 120, -1));
 
         regitroL.setForeground(new java.awt.Color(0, 0, 0));
         regitroL.setText("Registro");
@@ -345,6 +354,51 @@ public class IngresoPaciente extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Equipos disponibles");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 193, -1, -1));
+
+        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario.setText("jLabel6");
+        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 91, -1, -1));
+
+        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario1.setText("jLabel6");
+        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 131, -1, -1));
+
+        mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario2.setText("jLabel6");
+        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 52, -1, -1));
+
+        mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario3.setText("jLabel6");
+        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 171, -1, -1));
+
+        mensajeUsuario4.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario4.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario4.setText("jLabel6");
+        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 52, -1, -1));
+
+        mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario5.setText("jLabel6");
+        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 89, -1, -1));
+
+        mensajeUsuario6.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario6.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario6.setText("jLabel6");
+        add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 52, -1, -1));
+
+        mensajeUsuario7.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario7.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario7.setText("jLabel6");
+        add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 124, -1, -1));
+
+        mensajeUsuario8.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario8.setForeground(new java.awt.Color(255, 0, 0));
+        mensajeUsuario8.setText("jLabel6");
+        add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 165, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -568,6 +622,15 @@ public class IngresoPaciente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel mensajeUsuario;
+    private javax.swing.JLabel mensajeUsuario1;
+    private javax.swing.JLabel mensajeUsuario2;
+    private javax.swing.JLabel mensajeUsuario3;
+    private javax.swing.JLabel mensajeUsuario4;
+    private javax.swing.JLabel mensajeUsuario5;
+    private javax.swing.JLabel mensajeUsuario6;
+    private javax.swing.JLabel mensajeUsuario7;
+    private javax.swing.JLabel mensajeUsuario8;
     private javax.swing.JComboBox<String> noCamaCB;
     private javax.swing.JTextField nombre1TF;
     private javax.swing.JTextField nombre2TF;

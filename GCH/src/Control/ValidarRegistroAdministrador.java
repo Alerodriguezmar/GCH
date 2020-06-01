@@ -49,33 +49,33 @@ public class ValidarRegistroAdministrador {
     }
     
     public boolean VerificarLongitudNombre1Admin(String nombre1){
-        return(nombre1.length() >= 2 && nombre1.length() < 20);
+        return(nombre1.length() >= 4 && nombre1.length() <= 14);
     }
     public boolean VerificarLongitudNombre2Admin(String nombre2){
-        return(nombre2.length() >= 0 && nombre2.length() < 20);
+        return(nombre2.length() <= 14);
     }
     public boolean VerificarLongitudApellido1Admin(String apellido1){
-        return(apellido1.length() >= 2 && apellido1.length() < 33);
+        return(apellido1.length() >= 4 && apellido1.length() <= 14);
     }
     public boolean VerificarLongitudApellido2Admin(String apellido2){
-        return(apellido2.length() >= 0 && apellido2.length() < 33);
+        return(apellido2.length() <= 14);
     }
     public boolean VerificarLongitudNIAdmin(String ni){
         boolean isNum = isNumeric(ni);
-        return(ni.length() >= 5 && ni.length() < 13 && isNum);
+        return(ni.length() >= 4 && ni.length() < 12 && isNum);
     }
     public boolean VerificarLongitudCelularAdmin(String celular){
         boolean isNum = isNumeric(celular);
-        return(celular.length() >= 5 && celular.length() < 14 && isNum);
+        return(celular.length() == 10 && isNum);
     }
     public boolean VerificarLongitudEmailAdmin(String email){
-        return(email.length() >= 12 && email.length() < 30);
+        return(email.length() >= 8 && email.matches("[-\\w\\.]+@\\w+\\.\\w+"));
     }
     public boolean VerificarLongitudUsuarioAdmin(String usuario){
-        return(usuario.length() >= 4 && usuario.length() < 33);
+        return(usuario.length() >= 5 && usuario.length() < 33);
     }
     public boolean VerificarLongitudContraseniaAdmin(String contrasenia){
-        return(contrasenia.length() >= 3 && contrasenia.length() < 17);
+        return(contrasenia.length() >= 5 && !contrasenia.matches(".*[^A-Za-z_0-9].*") );
     }
     
     public static boolean isNumeric(String cadena) {
