@@ -21,18 +21,18 @@ public class ValidarLogin {
     
     public String verificarLogin (PersonalMedico usuario){
         if(!VerificarLongitudNombre(usuario.getNomUsuario())){
-          //  JOptionPane.showMessageDialog(null, "Longitud nombre incorrecta", "Advertencia", JOptionPane.WARNING_MESSAGE);   
+          JOptionPane.showMessageDialog(null, "Longitud nombre incorrecta", "Advertencia", JOptionPane.WARNING_MESSAGE);   
             return("Longitud nombre incorrecta");
         }
         if(!VerificarLongitudPassword(usuario.getPasswordAux())){
-          // JOptionPane.showMessageDialog(null, "Longitud contraseña incorrecto", "Advertencia", JOptionPane.WARNING_MESSAGE);   
+          JOptionPane.showMessageDialog(null, "Longitud contraseña incorrecto", "Advertencia", JOptionPane.WARNING_MESSAGE);   
             return("Longitud contraseña incorrecto");
          
         }
     if (dao.leerd(usuario) != null) {
             return ("Bienvenido");
         }
-    // JOptionPane.showMessageDialog(null, "Datos incorrectos", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Datos incorrectos", "Advertencia", JOptionPane.WARNING_MESSAGE);
         return ("Datos incorrectos");
     }
         /*

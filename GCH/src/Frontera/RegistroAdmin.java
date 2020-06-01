@@ -22,6 +22,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
      */
     public RegistroAdmin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

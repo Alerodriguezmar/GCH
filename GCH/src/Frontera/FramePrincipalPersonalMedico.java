@@ -21,6 +21,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
       private Login login = new Login();
     public FramePrincipalPersonalMedico() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

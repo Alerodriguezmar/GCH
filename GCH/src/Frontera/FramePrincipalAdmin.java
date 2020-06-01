@@ -23,6 +23,7 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
     
     public FramePrincipalAdmin() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

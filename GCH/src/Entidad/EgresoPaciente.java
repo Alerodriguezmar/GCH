@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 /**
  *
@@ -16,32 +17,33 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "Egreso Paciente")
+@Table(name = "EgresoPacientes")
 public class EgresoPaciente implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idRegistro;
-    private int idPaciente;
+    private long id;
+    @ManyToOne
+    private IngresoPaciente ingresoP;
     private String Observaciones;
     
     public EgresoPaciente(){ 
     }
 
-    public int getIdRegistro() {
-        return idRegistro;
+    public IngresoPaciente getIngresoP() {
+        return ingresoP;
     }
 
-    public void setIdRegistro(int idRegistro) {
-        this.idRegistro = idRegistro;
+    public void setIngresoP(IngresoPaciente ingresoP) {
+        this.ingresoP = ingresoP;
+    }
+    
+    public long getId() {
+        return id;
     }
 
-    public int getIdPaciente() {
-        return idPaciente;
-    }
-
-    public void setIdPaciente(int idPaciente) {
-        this.idPaciente = idPaciente;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getObservaciones() {
