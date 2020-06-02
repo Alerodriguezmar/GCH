@@ -80,7 +80,26 @@ public class EquipoDAO {
             return usuario;
         }
     }
-
+ //consulta para revisar si equipos disponibles disponibles
+      public Equipo leerDisponibles() {
+        EntityManager em = emf.createEntityManager();
+        Equipo usuario = null;
+        
+        Query q = em.createQuery("SELECT COUNT (u) FROM Equipo u "
+                + "WHERE u.EstadoEquipo LIKE :estado")
+                .setParameter("estado", "0");
+                
+        try {
+            usuario = (Equipo) q.getSingleResult();
+        } catch (NonUniqueResultException e) {
+            usuario = (Equipo) q.getResultList().get(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            em.close();
+            return usuario;
+        }
+    }
     public boolean actualizar(Equipo object, Equipo nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();

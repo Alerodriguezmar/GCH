@@ -48,11 +48,11 @@ public class Paciente implements Serializable {
         this.nombre1 = nombrePaciente1;
     }
 
-    public String getNombrePaceinte2() {
+    public String getNombrePaciente2() {
         return nombre2;
     }
 
-    public void setNombrePaceinte2(String nombrePaceinte2) {
+    public void setNombrePaciente2(String nombrePaceinte2) {
         this.nombre2 = nombrePaceinte2;
     }
 

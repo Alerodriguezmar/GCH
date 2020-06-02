@@ -90,6 +90,26 @@ public class CamaDAO {
         return (no == 0);
 
     }
+    //consulta para revisar camas disponibles
+      public Camas leerDisponibles() {
+        EntityManager em = emf.createEntityManager();
+        Camas usuario = null;
+        
+        Query q = em.createQuery("SELECT COUNT (u) FROM Camas u "
+                + "WHERE u.estado LIKE :estado")
+                .setParameter("estado", "0");
+                
+        try {
+            usuario = (Camas) q.getSingleResult();
+        } catch (NonUniqueResultException e) {
+            usuario = (Camas) q.getResultList().get(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            em.close();
+            return usuario;
+        }
+    }
 
     public boolean actualizar(Camas object, Camas nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
