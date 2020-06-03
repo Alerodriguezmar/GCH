@@ -25,7 +25,18 @@ public class EgresoPaciente implements Serializable {
     private long id;
     @ManyToOne
     private IngresoPaciente ingresoP;
-    private String Observaciones;
+    private String Observaciones; 
+    private String fecha;
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+    
+    
     
     public EgresoPaciente(){ 
     }

@@ -1,34 +1,74 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package DAO;
 
 import Entidad.Paciente;
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import static javax.swing.UIManager.getBoolean;
-import static javax.swing.UIManager.getInt;
-import static javax.swing.UIManager.getString;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.NonUniqueResultException;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 /**
  *
- * @author Santiago Ladino 
+ * @author DAVID
  */
-public class PacienteDAO {    
-    
-    public PacienteDAO() {
-    }
-    /*
-    private static EntityManagerFactory
+public class PacienteDAO {
+   private static EntityManagerFactory
             emf = Persistence.createEntityManagerFactory("GCHPU");
-    
-    public Paciente leerp(Paciente par) {
+
+    public void crear(Paciente object) {
+
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        try {
+            em.persist(object);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+    }
+
+    public boolean eliminar(Paciente object) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        boolean ret = false;
+        try {
+            em.remove(object);
+            em.getTransaction().commit();
+            ret = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+            return ret;
+        }
+    }
+
+    public Paciente leer(Paciente par) {
         EntityManager em = emf.createEntityManager();
         Paciente usuario = null;
-        Query q = em.createQuery("SELECT u FROM Paciente u " +
-                    "WHERE u.idPaciente LIKE :idp")
-                    .setParameter("idp", par.getIdPaciente());
+        Query q = em.createQuery("SELECT u FROM Pacientes u " +
+                    "WHERE u.idPaciente LIKE :idPaciente" +
+                    " AND u.nombre1 LIKE :nombre1" +
+                    " AND u.nombre2 LIKE :nombre2" +
+                    " AND u.apellido1 LIKE :apellido1" +
+                    " AND u.apellido2 LIKE :apellido2"+ 
+                    " AND u.TipoSangre LIKE :TipoSangre")
+                    .setParameter("idPaciente", par.getIdPaciente())
+                    .setParameter("nombre1", par.getNombrePaciente1())
+                    .setParameter("nombre2", par.getNombrePaciente2())
+                    .setParameter("apellido1", par.getApellidoPaciente1())
+                    .setParameter("apellido2", par.getApellidoPaciente2())
+                    .setParameter("TipoSangre", par.getTipoSangre());
+                   
         try {
             usuario = (Paciente) q.getSingleResult();
         } catch (NonUniqueResultException e) {
@@ -40,206 +80,28 @@ public class PacienteDAO {
             return usuario;
         }
     }
-    */
-    public void crear(){
-        
-        String query = "CREATE TABLE Paciente (" +
-                       "idPaciente INT NOT NULL," +
-                       "nombre1 VARCHAR(16) NOT NULL," +
-                       "nombre2 VARCHAR(16)," +
-                       "apellido1 VARCHAR(16) NOT NULL," +
-                       "apellido2 VARCHAR(16)," +
-                       "tipo_sangre VARCHAR(5) NOT NULL," +
-                       "tipo_atencion varchar(50) not null," +
-                       "Respirador BOOLEAN NOT NULL WITH DEFAULT false," +
-                       "Equipo_Intubacion BOOLEAN NOT NULL WITH DEFAULT false," +
-                       "Aspirador_Secreciones BOOLEAN NOT NULL WITH DEFAULT false," +
-                       "Bombas_Nutricion BOOLEAN NOT NULL WITH DEFAULT false," +
-                       "Monitor BOOLEAN NOT NULL WITH DEFAULT false," +
-                       "Bomba_Infucion_Continua BOOLEAN NOT NULL WITH DEFAULT false," +
-                       "Saturometros BOOLEAN NOT NULL WITH DEFAULT false," +
-                       "Balas_Oxigeno BOOLEAN NOT NULL WITH DEFAULT false,"+
-                       "Egresado BOOLEAN NOT NULL WITH DEFAULT false,"+
-                       "Observaciones VARCHAR(250),"+
-                       "PRIMARY KEY (idPaciente))";
-        
-        String table_name = "Paciente";
-        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
-        String username = "root";
-        String password = "123456";
-        Connection conn = null;
-        Statement stmt = null;
-        try {
-            conn = DriverManager.getConnection(url, username, password);
-            stmt = conn.createStatement();
-            ResultSet res = conn.getMetaData().getTables(null, null, table_name.toUpperCase(), null);//Default schema name is "APP"
-            if(res.next()){
-                //do some thing;
-            }else{
-                stmt.executeUpdate(query);  
-                System.out.println("Table created");          
-            }
-            conn.close();
-            stmt.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }       
-    }
     
-    public void ingresar(int idp, String nombre1, String nombre2, String apellido1, String apellido2, String ts, String ta,
-                         boolean res, boolean ei, boolean as, boolean bn, boolean m, boolean bic, boolean s, boolean bo, String obs){
-        String query = "INSERT INTO Paciente (" +
-                       "idPaciente," +
-                       "nombre1," +
-                       "nombre2," +
-                       "apellido1," +
-                       "apellido2," +
-                       "tipo_sangre," +
-                       "tipo_atencion," +
-                       "Respirador," +
-                       "Equipo_Intubacion," +
-                       "Aspirador_Secreciones," +
-                       "Bombas_Nutricion," +
-                       "Monitor," +
-                       "Bomba_Infucion_Continua," +
-                       "Saturometros," +
-                       "Balas_Oxigeno,"
-                       + "Observaciones" + " ) " + "VALUES (" +
-                       idp+","+
-                       "'"+nombre1+"'"+","+
-                       "'"+nombre2+"'"+","+
-                       "'"+apellido1+"'"+","+
-                       "'"+apellido2+"'"+","+
-                       "'"+ts+"'"+","+
-                       "'"+ta+"'"+","+
-                       res+","+
-                       ei+","+
-                       as+","+
-                       bn+","+
-                       m+","+
-                       bic+","+
-                       s+","+bo+","+"'"+obs+"'"+")";
-        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
-        String username = "root";
-        String password = "123456";
-        Connection conn = null;
-        Statement stmt = null;
+    public boolean actualizar(Paciente object, Paciente nuevoObjeto) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        boolean ret = false;
         try {
-            conn = DriverManager.getConnection(url, username, password);
-            stmt = conn.createStatement();
-            stmt.execute(query);
-            conn.close();
-            stmt.close();
-            System.out.println("Datos ingresados");
-        } catch (SQLException e) {
+            object = leer(object);
+            object.setIdPaciente(nuevoObjeto.getIdPaciente());
+            object.setNombrePaciente1(nuevoObjeto.getNombrePaciente1());
+            object.setNombrePaciente2(nuevoObjeto.getNombrePaciente2());
+            object.setApellidoPaciente1(nuevoObjeto.getApellidoPaciente1());
+            object.setApellidoPaciente2(nuevoObjeto.getApellidoPaciente2());
+            object.setTipoSangre(nuevoObjeto.getTipoSangre());
+            em.merge(object);
+            em.getTransaction().commit();
+            ret = true;
+        } catch (Exception e) {
             e.printStackTrace();
-        } 
-    }
-    
-    public void leer(){
-        String query = "SELECT * FROM PACIENTE";
-        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
-        String username = "root";
-        String password = "123456";
-        Connection conn = null;
-        Statement stmt = null;
-        try {
-            conn = DriverManager.getConnection(url, username, password);
-            stmt = conn.createStatement();
-            ResultSet res = stmt.executeQuery(query);
-            System.out.println("Datos del paciente: ");
-            while (res.next()) {
-                System.out.println(getInt("idPaciente") +
-                       getString("nombre1") + ", " +
-                       getString("nombre2") + ", " +
-                       getString("apellido1") + ", "+
-                       getString("apellido2") + ", "+
-                       getString("tipo_sangre") + ", " +
-                       getString("tipo_atencion") + ", " +
-                       getBoolean("Respirador") + ", " +
-                       getBoolean("Equipo_Intubacion") + ", " +
-                       getBoolean("Aspirador_Secreciones") + ", " +
-                       getBoolean("Bombas_Nutricion") + ", " +
-                       getBoolean("Monitor") + ", " +
-                       getBoolean("Bomba_Infucion_Continua") + ", " +
-                       getBoolean("Saturometros") + ", " +
-                       getBoolean("Balas_Oxigeno") 
-                       + ", " +getString("Observaciones"));
-            }
-            res.close();
-            conn.close();
-            stmt.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } 
-    }
-    
-    public Paciente leerPorId(String id){
-        Paciente p = new Paciente();
-        String query = "SELECT * FROM PACIENTE WHERE IDPACIENTE="+id;
-        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
-        String username = "root";
-        String password = "123456";
-        Connection conn = null;
-        Statement stmt = null;
-        try {
-            conn = DriverManager.getConnection(url, username, password);
-            stmt = conn.createStatement();
-            ResultSet res = stmt.executeQuery(query);
-                
-            System.out.println("Datos del paciente: ");
-            while (res.next()) {
-                System.out.println(res.getInt("idPaciente") +
-                       res.getString("nombre1") + ", " +
-                       res.getString("nombre2") + ", " +
-                       res.getString("apellido1") + ", "+
-                       res.getString("apellido2") + ", "+
-                       res.getString("tipo_sangre") + ", " +
-                       res.getString("tipo_atencion") + ", " +
-                       res.getBoolean("Respirador") + ", " +
-                       res.getBoolean("Equipo_Intubacion") + ", " +
-                       res.getBoolean("Aspirador_Secreciones") + ", " +
-                       res.getBoolean("Bombas_Nutricion") + ", " +
-                       res.getBoolean("Monitor") + ", " +
-                       res.getBoolean("Bomba_Infucion_Continua") + ", " +
-                       res.getBoolean("Saturometros") + ", " +
-                       res.getBoolean("Balas_Oxigeno") 
-                       + ", " +res.getString("Observaciones"));
-                p.setNombrePaceinte2(res.getString("nombre2"));
-                p.setNombrePaciente1(res.getString("nombre1"));
-                p.setApellidoPaciente1(res.getString("apellido1"));
-                p.setApellidoPaciente2(res.getString("apellido2"));
-                
-            }
-            res.close();
-            stmt.execute(query);
-            conn.close();
-            stmt.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } 
-        return p;
-    }
-    
-    public void ActualizarEstado(String id){
-        Paciente p = new Paciente();
-        String query = "UPDATE PACIENTE SET EGRESADO=TRUE WHERE IDPACIENTE="+id;
-        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
-        String username = "root";
-        String password = "123456";
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        try {
-            conn = DriverManager.getConnection(url, username, password);
-            stmt = conn.prepareStatement(query);
-            stmt.executeUpdate();                
-            System.out.println("Columna corregida: ");
-            conn.close();
-            stmt.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } 
-    }
-     
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+            return ret;
+        }
+    } 
 }

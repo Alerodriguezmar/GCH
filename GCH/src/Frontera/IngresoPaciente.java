@@ -1,7 +1,7 @@
 package Frontera;
 
 import Control.ValidarIngresoPaciente;
-import DAO.PacienteDAO;
+import DAO.PacienteDAO_prov;
 import java.awt.event.ActionEvent;
 
 /**
@@ -402,7 +402,7 @@ public class IngresoPaciente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        PacienteDAO pdao = new PacienteDAO();
+        PacienteDAO_prov pdao = new PacienteDAO_prov();
         IngresoPaciente ingresar = new IngresoPaciente();
         pdao.crear();
         identificacionTFActionPerformed(evt);

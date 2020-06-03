@@ -1,7 +1,7 @@
 
 package test;
 
-import DAO.PacienteDAO;
+import DAO.PacienteDAO_prov;
 import Entidad.Paciente;
 import java.util.ArrayList;
 import org.junit.After;
@@ -43,7 +43,7 @@ public class testSantiago {
     
     @Test
      public void initData() {
-     PacienteDAO dao = new PacienteDAO();
+     PacienteDAO_prov dao = new PacienteDAO_prov();
      Paciente p = new Paciente();
      dao.crear();
      }

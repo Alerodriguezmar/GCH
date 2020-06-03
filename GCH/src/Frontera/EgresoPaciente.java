@@ -5,7 +5,7 @@
  */
 package Frontera;
 
-import DAO.PacienteDAO;
+import DAO.PacienteDAO_prov;
 import Entidad.Paciente;
 import javax.swing.JOptionPane;
 
@@ -249,11 +249,11 @@ public class EgresoPaciente extends javax.swing.JPanel {
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
         Paciente p = new Paciente();
-        PacienteDAO dao = new PacienteDAO();
+        PacienteDAO_prov dao = new PacienteDAO_prov();
         p = dao.leerPorId(identificacionTF.getText());
         if (p.getNombrePaciente1() != null) {
             nombre1L.setText("Nombre 1: " + p.getNombrePaciente1());
-            nombre2L.setText("Nombre 2: " + p.getNombrePaceinte2());
+            nombre2L.setText("Nombre 2: " + p.getNombrePaciente2());
             apellido1L.setText("Apellido 1: " + p.getApellidoPaciente1());
             apellido2L.setText("Apellido 2: " + p.getApellidoPaciente2());
         } else {
@@ -287,11 +287,11 @@ public class EgresoPaciente extends javax.swing.JPanel {
 
     private void BuscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBActionPerformed
         Paciente p = new Paciente();
-        PacienteDAO dao = new PacienteDAO();
+        PacienteDAO_prov dao = new PacienteDAO_prov();
         p = dao.leerPorId(identificacionTF.getText());
         if (p.getNombrePaciente1() != null) {
             nombre1L.setText("Nombre 1: " + p.getNombrePaciente1());
-            nombre2L.setText("Nombre 2: " + p.getNombrePaceinte2());
+            nombre2L.setText("Nombre 2: " + p.getNombrePaciente2());
             apellido1L.setText("Apellido 1: " + p.getApellidoPaciente1());
             apellido2L.setText("Apellido 2: " + p.getApellidoPaciente2());
         } else {
