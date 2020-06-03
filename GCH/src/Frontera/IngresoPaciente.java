@@ -421,24 +421,24 @@ public class IngresoPaciente extends javax.swing.JPanel {
         tipoAtencionCBActionPerformed(evt);
         tipoSangreCBActionPerformed(evt);
         observacionTFActionPerformed(evt);
-        pdao.ingresar(this.validarIngresoPaciente.getIdPaciente(), this.validarIngresoPaciente.getNombre1(), this.validarIngresoPaciente.getNombre2(),
+        /*pdao.ingresar(this.validarIngresoPaciente.getIdPaciente(), this.validarIngresoPaciente.getNombre1(), this.validarIngresoPaciente.getNombre2(),
                 this.validarIngresoPaciente.getApellido1(), this.validarIngresoPaciente.getApellido2(),
                 this.validarIngresoPaciente.getTipoSangre(), this.validarIngresoPaciente.getTipoAtencion(),
                 this.validarIngresoPaciente.isRespirador(), this.validarIngresoPaciente.isEquipoIntubacion(),
                 this.validarIngresoPaciente.isAspiradorSecreciones(), this.validarIngresoPaciente.isBombasNutricion(),
                 this.validarIngresoPaciente.isMonitor(), this.validarIngresoPaciente.isBombaInfucionContinua(),
                 this.validarIngresoPaciente.isSaturometros(), this.validarIngresoPaciente.isBalasOxigeno(),
-                this.validarIngresoPaciente.getObservaciones());
+                this.validarIngresoPaciente.getObservaciones());*/
 
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void tipoAtencionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAtencionCBActionPerformed
         String itemSeleccionado = (String) tipoAtencionCB.getSelectedItem();
         if ("Uci (intermedio)".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoAtencion("Uci (intermedio)");
+        //    this.validarIngresoPaciente.setTipoAtencion("Uci (intermedio)");
         }
         if ("Uci".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoAtencion("Uci");
+        //    this.validarIngresoPaciente.setTipoAtencion("Uci");
         }
     }//GEN-LAST:event_tipoAtencionCBActionPerformed
 
@@ -448,25 +448,25 @@ public class IngresoPaciente extends javax.swing.JPanel {
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected()) {
-            this.validarIngresoPaciente.setAspiradorSecreciones(true);
+        //    this.validarIngresoPaciente.setAspiradorSecreciones(true);
         } else {
-            this.validarIngresoPaciente.setAspiradorSecreciones(false);
+        //    this.validarIngresoPaciente.setAspiradorSecreciones(false);
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
         if (jCheckBox7.isSelected()) {
-            this.validarIngresoPaciente.setBombaInfucionContinua(true);
+        //    this.validarIngresoPaciente.setBombaInfucionContinua(true);
         } else {
-            this.validarIngresoPaciente.setBombaInfucionContinua(false);
+        //    this.validarIngresoPaciente.setBombaInfucionContinua(false);
         }
     }//GEN-LAST:event_jCheckBox7ActionPerformed
 
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
         if (jCheckBox8.isSelected()) {
-            this.validarIngresoPaciente.setEquipoIntubacion(true);
+        //    this.validarIngresoPaciente.setEquipoIntubacion(true);
         } else {
-            this.validarIngresoPaciente.setEquipoIntubacion(false);
+        //    this.validarIngresoPaciente.setEquipoIntubacion(false);
         }
     }//GEN-LAST:event_jCheckBox8ActionPerformed
 
@@ -475,102 +475,102 @@ public class IngresoPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_tipoSangreCBComponentAdded
 
     private void nombre1TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre1TFActionPerformed
-        this.validarIngresoPaciente.setNombre1(nombre1TF.getText());
+        //this.validarIngresoPaciente.setNombre1(nombre1TF.getText());
     }//GEN-LAST:event_nombre1TFActionPerformed
 
     private void nombre2TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre2TFActionPerformed
         if (nombre2TF.getText() != null) {
-            this.validarIngresoPaciente.setNombre2(nombre2TF.getText());
+        //    this.validarIngresoPaciente.setNombre2(nombre2TF.getText());
         } else if (nombre2TF.getText() == null) {
-            this.validarIngresoPaciente.setNombre2(null);
+        //    this.validarIngresoPaciente.setNombre2(null);
         }
     }//GEN-LAST:event_nombre2TFActionPerformed
 
     private void apellido1TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellido1TFActionPerformed
-        this.validarIngresoPaciente.setApellido1(apellido1TF.getText());
+        //this.validarIngresoPaciente.setApellido1(apellido1TF.getText());
     }//GEN-LAST:event_apellido1TFActionPerformed
 
     private void apellido2TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellido2TFActionPerformed
-        this.validarIngresoPaciente.setApellido2(apellido2TF.getText());
+        //this.validarIngresoPaciente.setApellido2(apellido2TF.getText());
     }//GEN-LAST:event_apellido2TFActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         if (jCheckBox2.isSelected()) {
-            this.validarIngresoPaciente.setSaturometros(true);
+            //this.validarIngresoPaciente.setSaturometros(true);
         } else {
-            this.validarIngresoPaciente.setSaturometros(false);
+            //this.validarIngresoPaciente.setSaturometros(false);
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         if (jCheckBox3.isSelected()) {
-            this.validarIngresoPaciente.setBalasOxigeno(true);
+            //this.validarIngresoPaciente.setBalasOxigeno(true);
         } else {
-            this.validarIngresoPaciente.setBalasOxigeno(false);
+            //this.validarIngresoPaciente.setBalasOxigeno(false);
         }
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
         if (jCheckBox4.isSelected()) {
-            this.validarIngresoPaciente.setMonitor(true);
+            //this.validarIngresoPaciente.setMonitor(true);
         } else {
-            this.validarIngresoPaciente.setMonitor(false);
+            //this.validarIngresoPaciente.setMonitor(false);
         }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
         if (jCheckBox5.isSelected()) {
-            this.validarIngresoPaciente.setBombaInfucionContinua(true);
+            //this.validarIngresoPaciente.setBombaInfucionContinua(true);
         } else {
-            this.validarIngresoPaciente.setBombaInfucionContinua(false);
+            //this.validarIngresoPaciente.setBombaInfucionContinua(false);
         }
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
         if (jCheckBox6.isSelected()) {
-            this.validarIngresoPaciente.setBombasNutricion(true);
+            //this.validarIngresoPaciente.setBombasNutricion(true);
         } else {
-            this.validarIngresoPaciente.setBombasNutricion(false);
+            //this.validarIngresoPaciente.setBombasNutricion(false);
         }
     }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     private void observacionTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_observacionTFActionPerformed
         if (observacionTF.getText() != null) {
-            this.validarIngresoPaciente.setObservaciones(observacionTF.getText());
+            //this.validarIngresoPaciente.setObservaciones(observacionTF.getText());
         } else if (observacionTF.getText() == null) {
-            this.validarIngresoPaciente.setObservaciones(null);
+            //this.validarIngresoPaciente.setObservaciones(null);
         }
     }//GEN-LAST:event_observacionTFActionPerformed
 
     private void identificacionTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_identificacionTFActionPerformed
-        this.validarIngresoPaciente.setIdPaciente(Integer.parseInt(identificacionTF.getText().trim()));
+        //this.validarIngresoPaciente.setIdPaciente(Integer.parseInt(identificacionTF.getText().trim()));
     }//GEN-LAST:event_identificacionTFActionPerformed
 
     private void tipoSangreCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoSangreCBActionPerformed
         String itemSeleccionado = (String) tipoSangreCB.getSelectedItem();
         if ("O +".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("O +");
+            //this.validarIngresoPaciente.setTipoSangre("O +");
         }
         if ("O -".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("O -");
+            //this.validarIngresoPaciente.setTipoSangre("O -");
         }
         if ("A +".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("A +");
+            //this.validarIngresoPaciente.setTipoSangre("A +");
         }
         if ("A -".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("A -");
+            //this.validarIngresoPaciente.setTipoSangre("A -");
         }
         if ("B +".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("B +");
+            //this.validarIngresoPaciente.setTipoSangre("B +");
         }
         if ("B -".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("B -");
+            //this.validarIngresoPaciente.setTipoSangre("B -");
         }
         if ("AB +".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("AB +");
+            //this.validarIngresoPaciente.setTipoSangre("AB +");
         }
         if ("AB -".equals(itemSeleccionado)) {
-            this.validarIngresoPaciente.setTipoSangre("AB -");
+            //this.validarIngresoPaciente.setTipoSangre("AB -");
         }
     }//GEN-LAST:event_tipoSangreCBActionPerformed
 
