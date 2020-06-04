@@ -2,6 +2,7 @@ package Control;
 
 import DAO.CamaDAO;
 import DAO.EquipoDAO;
+import DAO.IngresoPacienteDAO;
 import DAO.PacienteDAO;
 import Entidad.Paciente;
 /**
@@ -12,8 +13,9 @@ public class ValidarIngresoPaciente {
 
     private final CamaDAO daoC = new CamaDAO();
     private final EquipoDAO daoE = new EquipoDAO();
-     private final PacienteDAO daoP = new PacienteDAO();
-    
+    private final PacienteDAO daoP = new PacienteDAO();
+    private final IngresoPacienteDAO daoIE = new IngresoPacienteDAO();
+     
     public ValidarIngresoPaciente(){
     }
     //verificacion del paciente
@@ -90,7 +92,7 @@ public class ValidarIngresoPaciente {
     }
     //revisa si el paciente ya está registrado
      public boolean VerificarIsRegistrado(String id) {
-        return (daoP.leerPorId(id) != null);
+        return (daoP.leerPorId(id)!= null);
     }
     
 }

@@ -109,4 +109,44 @@ public class PacienteDAO {
             return ret;
         }
     } 
+
+    public Paciente leerPorId(String id){
+        Paciente p = new Paciente();
+        String query = "SELECT * FROM PACIENTES WHERE IDPACIENTE="+id;
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos del paciente: ");
+            while (res.next()) {
+                System.out.println(res.getInt("idPaciente") +
+                        res.getString("nombre1") + ", " +
+                        res.getString("nombre2") + ", " +
+                        res.getString("apellido1") + ", "+
+                        res.getString("apellido2") + ", "+
+                        res.getString("tiposangre"));
+                //creo paciente
+                        p.setNombrePaciente2(res.getString("nombre2"));
+                        p.setNombrePaciente1(res.getString("nombre1"));
+                        p.setApellidoPaciente1(res.getString("apellido1"));
+                        p.setApellidoPaciente2(res.getString("apellido2"));   
+                        p.setTipoSangre(res.getString("tiposangre"));
+
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return p;
+    }
+    
 }
