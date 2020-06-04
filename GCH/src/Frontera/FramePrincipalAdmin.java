@@ -5,6 +5,9 @@
  */
 package Frontera;
 
+import DAO.PacienteDAO;
+import Entidad.Paciente;
+
 /**
  *
  * @author tech

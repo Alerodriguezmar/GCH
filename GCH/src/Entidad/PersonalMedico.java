@@ -15,7 +15,6 @@ import javax.persistence.Table;
 public class PersonalMedico implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre1;
     private String nombre2;

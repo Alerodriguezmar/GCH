@@ -13,6 +13,8 @@ import Entidad.Camas;
 import Entidad.IngresoPaciente;
 import Entidad.Paciente;
 import Entidad.PersonalMedico;
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -50,25 +52,43 @@ public class testTables {
     //
      @Test
      public void hello() {
-         PersonalMedico personal = new PersonalMedico();
-         personal.setId(1234567890);
-         personal.setNombre1("Santiago");
+         /*
+         PersonalMedico personalm = new PersonalMedico();
          Paciente paciente = new Paciente();
-         paciente.setIdPaciente(1234567891);
-         paciente.setNombrePaciente1("Santi");
          Camas cama = new Camas();
-         cama.setUbicacion("Uzi");
-         IngresoPaciente ip = new IngresoPaciente();
-         ip.setPaciente(paciente);
-         ip.setPersonalm(personal);
-         ip.setCama(cama);
-         PersonalMedicoDAO pmd = new PersonalMedicoDAO();
-         pmd.crear(personal);
-         PacienteDAO pd = new PacienteDAO();
-         pd.crear(paciente);
-         CamaDAO cd = new CamaDAO();
-         cd.crear(cama);
-         IngresoPacienteDAO ing = new IngresoPacienteDAO();
-         ing.crear(ip);
+         IngresoPaciente ingp = new IngresoPaciente();
+         IngresoPaciente ingp2 = new IngresoPaciente();
+         
+         personalm.setId(54321);
+         personalm.setNombre1("David");
+         
+         paciente.setIdPaciente(12345);
+         paciente.setNombrePaciente1("Juan");
+         
+         cama.setUbicacion("Pabellon A");
+         
+         ingp.setPaciente(paciente);
+         ingp.setPersonalm(personalm);
+         ingp.setCama(cama);
+         ingp.setEstado(true);
+         
+         ingp2.setPaciente(paciente);
+         ingp2.setPersonalm(personalm);
+         ingp2.setCama(cama);
+         ingp2.setEstado(false);
+         
+         //DAO
+         PacienteDAO pdao = new PacienteDAO();
+         pdao.crear(paciente);
+         PersonalMedicoDAO pmdao = new PersonalMedicoDAO();
+         pmdao.crear(personalm);
+         CamaDAO cdao = new CamaDAO();
+         cdao.crear(cama);
+         IngresoPacienteDAO idao = new IngresoPacienteDAO();
+         idao.crear(ingp);
+         idao.crear(ingp2);*/
+         PacienteDAO pdao2 = new PacienteDAO();
+         Paciente prueba = pdao2.leerPorId("12345");
+         
      }
 }

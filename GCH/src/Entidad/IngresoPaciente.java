@@ -32,7 +32,18 @@ public class IngresoPaciente implements Serializable {
     private Camas cama;
     private String observacion;
     private String fecha;
+    private boolean estado;
 
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    
+    
     public String getFecha() {
         return fecha;
     }
