@@ -2,6 +2,7 @@ package Control;
 
 import DAO.CamaDAO;
 import DAO.EquipoDAO;
+import DAO.PacienteDAO;
 import Entidad.Paciente;
 /**
  *
@@ -11,7 +12,7 @@ public class ValidarIngresoPaciente {
 
     private final CamaDAO daoC = new CamaDAO();
     private final EquipoDAO daoE = new EquipoDAO();
-    
+     private final PacienteDAO daoP = new PacienteDAO();
     
     public ValidarIngresoPaciente(){
     }
@@ -29,19 +30,21 @@ public class ValidarIngresoPaciente {
         if(!VerificarLongitudApellido2(paciente.getApellidoPaciente2())){
             return("Longitud segundo apellido incorrecta");
         }
-        if(!VerificarLongitudId(paciente.getIdPaciente())){/*Añadir verificar que sean numeros*/
+        if(!VerificarLongitudId(paciente.getIdPaciente())){
             return("Logitud Identificación incorrecta");
         }
-        if(!VerificarSelectTipoSangre(paciente.getTipoSangre())){/*Añadir verificar que sean numeros*/
+        if(!VerificarSelectTipoSangre(paciente.getTipoSangre())){
             return("No se ha seleccionado tipo de sangre");
         }
-          if(!VerificarCamasDisponibles()){/*Añadir verificar que sean numeros*/
+          if(!VerificarCamasDisponibles()){
             return("No hay camas Disponibles");
         }
-           if(!VerificarEquiposDisponibles()){/*Añadir verificar que sean numeros*/
+           if(!VerificarEquiposDisponibles()){
             return("No hay equipos disponibles");
         }
-        
+         if(VerificarIsRegistrado(String.valueOf(paciente.getIdPaciente()))){
+            return("Paciente está registrado");
+        }
         return("Datos del paciente ingresados correctamente");
     }
 //metodos
@@ -84,6 +87,10 @@ public class ValidarIngresoPaciente {
     //revisa si hay disponibles equipos
     public boolean VerificarEquiposDisponibles() {
         return (daoE.leerDisponibles() != null);
+    }
+    //revisa si el paciente ya está registrado
+     public boolean VerificarIsRegistrado(String id) {
+        return (daoP.leerPorId(id) != null);
     }
     
 }
