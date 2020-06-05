@@ -6,6 +6,11 @@
 package DAO;
 
 import Entidad.Equipo;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NonUniqueResultException;
@@ -122,6 +127,48 @@ public class EquipoDAO {
             em.close();
             return ret;
         }
+    }
+    
+    public Equipo leerEquiposDisp(String nombre){
+        Equipo eq = new Equipo();
+        String query = "SELECT * FROM EQUIPO WHERE NOMBREEQUIPO="+"'"+nombre+"'"+" AND EstadoEquipo=0";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos del equipo: ");
+            if (res.next()) {
+                System.out.println(res.getInt("idEquipo") +
+                        res.getString("nombreEquipo") + ", " +
+                        res.getString("Marca") + ", " +
+                        res.getString("RegistroSanitario") + ", " +
+                        res.getString("DescripcionEquipo") + ", " +
+                        res.getBoolean("EstadoEquipo") + ", " + 
+                        res.getString("TipoUso"));
+                //creo paciente
+                        eq.setIdEquipo(res.getInt("idEquipo"));
+                        eq.setNombreEquipo(res.getString("nombreEquipo"));
+                        eq.setMarca(res.getString("Marca"));
+                        eq.setRegistroSanitario(res.getString("RegistroSanitario"));
+                        eq.setEstadoEquipo(res.getBoolean("EstadoEquipo"));
+                        eq.setTipoUso(res.getString("TipoUso"));
+                        
+
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return eq;
     }
 }
 

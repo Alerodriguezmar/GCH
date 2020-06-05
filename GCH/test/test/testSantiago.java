@@ -1,7 +1,9 @@
 
 package test;
 
+import DAO.EquipoDAO;
 import DAO.PacienteDAO_prov;
+import Entidad.Equipo;
 import Entidad.Paciente;
 import java.util.ArrayList;
 import org.junit.After;
@@ -41,11 +43,22 @@ public class testSantiago {
     // @Test
     // public void hello() {}
     
-    @Test
+    /*@Test
      public void initData() {
      PacienteDAO_prov dao = new PacienteDAO_prov();
      Paciente p = new Paciente();
      dao.crear();
-     }
+     }*/
+    
+    @Test
+    public void intData(){
+        Equipo eq = new Equipo();
+        EquipoDAO eqdao = new EquipoDAO();
+        String nombree = "ASPIRADOR";
+        eq = eqdao.leerEquiposDisp(nombree);
+        System.out.println(Integer.toString(eq.getIdEquipo()) + " Nombre: " + eq.getNombreEquipo());
+        
+    }
+    
     
 }

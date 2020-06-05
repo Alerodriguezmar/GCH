@@ -6,6 +6,11 @@
 package DAO;
 
 import Entidad.Camas;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NonUniqueResultException;
@@ -111,6 +116,42 @@ public class CamaDAO {
         }
     }
 
+    public Camas leerCamasDisp(){
+        Camas c = new Camas();
+        String query = "SELECT * FROM CAMAS WHERE ESTADO=0";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos de la cama: ");
+            if (res.next()) {
+                System.out.println(res.getInt("idCamas") +
+                        res.getString("Ubicacion") + ", " +
+                        res.getString("pabellon") + ", " +
+                        res.getBoolean("estado"));
+                //creo paciente
+                        c.setIdCamas(res.getInt("idCamas"));
+                        c.setUbicacion(res.getString("Ubicacion"));
+                        c.setPabellon(res.getString("pabellon"));
+                        c.setEstado(res.getBoolean("estado"));
+
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return c;
+    }
+       
     public boolean actualizar(Camas object, Camas nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();

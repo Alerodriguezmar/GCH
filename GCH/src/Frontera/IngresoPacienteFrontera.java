@@ -2,13 +2,18 @@ package Frontera;
 
 import Control.ValidarIngresoPaciente;
 import DAO.CamaDAO;
+import DAO.EquipoDAO;
 import DAO.IngresoPacienteDAO;
 import DAO.PacienteDAO;
 import DAO.PacienteDAO_prov;
+import Entidad.Camas;
+import Entidad.Equipo;
 import Entidad.IngresoPaciente;
 import Entidad.Paciente;
 import java.awt.event.ActionEvent;
 import static java.lang.Integer.parseInt;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -18,6 +23,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
 
     ValidarIngresoPaciente validarIngresoPaciente;
     Paciente paciente = new Paciente();
+    Camas cama = new Camas(); 
     
     public IngresoPacienteFrontera() {
         //this.validarIngresoPaciente = new ValidarIngresoPaciente();
@@ -424,6 +430,14 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 pacientedao.crear(paciente);
             }
             //VERIFICAR SI LA CAMA ESTÁ DISPONIBLE
+        cama = camadao.leerCamasDisp();
+        if(cama.getIdCamas()==0){
+            System.out.println("NO HAY CAMAS DISPONIBLES");
+        } else {
+            //Setear cama.estado a false
+            
+        }
+            
             
             //CONSULTAR SI LOS EQUIPOS ESTÁN DISPONIBLES
             
@@ -447,6 +461,9 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected()) {
         //    this.validarIngresoPaciente.setAspiradorSecreciones(true);
+            Equipo aspirador = new Equipo();
+            EquipoDAO eqdao = new EquipoDAO();
+            
         } else {
         //    this.validarIngresoPaciente.setAspiradorSecreciones(false);
         }
