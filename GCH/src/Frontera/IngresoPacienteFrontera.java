@@ -1,6 +1,7 @@
 package Frontera;
 
 import Control.ValidarIngresoPaciente;
+import DAO.CamaDAO;
 import DAO.IngresoPacienteDAO;
 import DAO.PacienteDAO;
 import DAO.PacienteDAO_prov;
@@ -426,14 +427,24 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         PacienteDAO pacientedao = new PacienteDAO();
         IngresoPaciente ingresoP = new IngresoPaciente();
         IngresoPacienteDAO ingresoPdao = new IngresoPacienteDAO();
+        CamaDAO camadao = new CamaDAO();
          
         try {
             Integer.parseInt(identificacionTF.getText());
-            paciente.setIdPaciente(parseInt(identificacionTF.getText()));
-            paciente.setNombrePaciente1("");
-            paciente.setNombrePaciente2("");
-            paciente.setApellidoPaciente1("");
-            paciente.setApellidoPaciente2("");
+            Paciente pac = pacientedao.leerPorId(identificacionTF.getText());
+            if(pac.getNombrePaciente1() != null){
+                paciente = pac;
+            } else {
+                paciente.setIdPaciente(parseInt(identificacionTF.getText()));
+                paciente.setNombrePaciente1(nombre1TF.getText());
+                paciente.setNombrePaciente2(nombre2TF.getText());
+                paciente.setApellidoPaciente1(apellido1TF.getText());
+                paciente.setApellidoPaciente2(apellido2TF.getText());
+                pacientedao.crear(paciente);
+            }
+            //VERIFICAR SI LA CAMA ESTÁ DISPONIBLE
+            //CONSULTAR SI LOS EQUIPOS ESTÁN DISPONIBLES
+            
             //paciente.setTipoSangre(tipoSangreCB.getSelectedItem());
         } catch (NumberFormatException excepcion) {
             System.out.println("Identificación debe ser numérica");

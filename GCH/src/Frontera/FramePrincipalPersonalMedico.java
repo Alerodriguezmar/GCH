@@ -16,7 +16,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
      */
      private IngresoPacienteFrontera ingresoP = new IngresoPacienteFrontera();
      private ActualizarPaciente actualizarP = new ActualizarPaciente();
-      private EgresoPaciente egresoP = new EgresoPaciente();
+      private EgresoPacienteFrontera egresoP = new EgresoPacienteFrontera();
       private GenerarReportes genReportes = new GenerarReportes();
       private Login login = new Login();
     public FramePrincipalPersonalMedico() {

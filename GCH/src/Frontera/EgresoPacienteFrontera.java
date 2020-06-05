@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author tech
  */
-public class EgresoPaciente extends javax.swing.JPanel {
+public class EgresoPacienteFrontera extends javax.swing.JPanel {
 
     /**
      * Creates new form IngresoPaciente
      */
-    public EgresoPaciente() {
+    public EgresoPacienteFrontera() {
         initComponents();
     }
 
@@ -65,7 +65,6 @@ public class EgresoPaciente extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         identificacionTF.setBackground(new java.awt.Color(204, 204, 204));
-        identificacionTF.setForeground(new java.awt.Color(0, 0, 0));
         identificacionTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 identificacionTFActionPerformed(evt);
@@ -74,24 +73,20 @@ public class EgresoPaciente extends javax.swing.JPanel {
         add(identificacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 6, 145, -1));
 
         nombre1L.setBackground(new java.awt.Color(0, 0, 0));
-        nombre1L.setForeground(new java.awt.Color(0, 0, 0));
         nombre1L.setText("Nombre 1");
         add(nombre1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 12, -1, -1));
 
         observacionTF.setBackground(new java.awt.Color(102, 102, 102));
         add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 440, 234, 124));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Observaciones");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 452, -1, -1));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +96,6 @@ public class EgresoPaciente extends javax.swing.JPanel {
         add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 482, 83, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,39 +105,31 @@ public class EgresoPaciente extends javax.swing.JPanel {
         add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 521, -1, -1));
 
         nombre2L.setBackground(new java.awt.Color(0, 0, 0));
-        nombre2L.setForeground(new java.awt.Color(0, 0, 0));
         nombre2L.setText("Nombre 2");
         add(nombre2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         apellido1L.setBackground(new java.awt.Color(0, 0, 0));
-        apellido1L.setForeground(new java.awt.Color(0, 0, 0));
         apellido1L.setText("Apellido 1");
         add(apellido1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         apellido2L.setBackground(new java.awt.Color(0, 0, 0));
-        apellido2L.setForeground(new java.awt.Color(0, 0, 0));
         apellido2L.setText("Apellido 2");
         add(apellido2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 81, -1, -1));
 
         tipoAtencioL.setBackground(new java.awt.Color(0, 0, 0));
-        tipoAtencioL.setForeground(new java.awt.Color(0, 0, 0));
         tipoAtencioL.setText("Tipo de atención");
         add(tipoAtencioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 102, -1, -1));
 
         tipoAtencionL.setBackground(new java.awt.Color(0, 0, 0));
-        tipoAtencionL.setForeground(new java.awt.Color(0, 0, 0));
         tipoAtencionL.setText("No. de cama");
         add(tipoAtencionL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 123, -1, -1));
 
-        regitroL.setForeground(new java.awt.Color(0, 0, 0));
         regitroL.setText("Registro");
         add(regitroL, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 39, -1, -1));
 
-        fechaL.setForeground(new java.awt.Color(0, 0, 0));
         fechaL.setText("Fecha");
         add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 517, -1, -1));
 
-        rethusL.setForeground(new java.awt.Color(0, 0, 0));
         rethusL.setText("ReTHUS");
         add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 549, -1, -1));
 
@@ -230,7 +216,6 @@ public class EgresoPaciente extends javax.swing.JPanel {
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 179, -1, -1));
 
         registroTF.setBackground(new java.awt.Color(204, 204, 204));
-        registroTF.setForeground(new java.awt.Color(0, 0, 0));
         registroTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registroTFActionPerformed(evt);
