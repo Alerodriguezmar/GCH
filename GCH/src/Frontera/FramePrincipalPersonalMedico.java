@@ -14,11 +14,11 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
     /**
      * Creates new form FramePrincipalPersonalMedico
      */
-     private IngresoPacienteFrontera ingresoP = new IngresoPacienteFrontera();
-     private ActualizarPaciente actualizarP = new ActualizarPaciente();
-      private EgresoPacienteFrontera egresoP = new EgresoPacienteFrontera();
-      private GenerarReportes genReportes = new GenerarReportes();
-      private Login login = new Login();
+    private IngresoPacienteFrontera ingresoP = new IngresoPacienteFrontera();
+    private ActualizarPaciente actualizarP = new ActualizarPaciente();
+    private EgresoPacienteFrontera egresoP = new EgresoPacienteFrontera();
+    private GenerarReportes genReportes = new GenerarReportes();
+    private Login login = new Login();
     public FramePrincipalPersonalMedico() {
         initComponents();
         setLocationRelativeTo(null);

@@ -28,6 +28,16 @@ public class Camas implements Serializable{
     private String pabellon;
     private boolean estado;
 
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+    
+    
+    
     public Camas() {
     }
 
@@ -53,15 +63,5 @@ public class Camas implements Serializable{
 
     public void setPabellon(String pabellon) {
         this.pabellon = pabellon;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-    
-    
+    }   
 }

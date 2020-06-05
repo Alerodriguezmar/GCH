@@ -17,9 +17,10 @@ import static java.lang.Integer.parseInt;
 public class IngresoPacienteFrontera extends javax.swing.JPanel {
 
     ValidarIngresoPaciente validarIngresoPaciente;
-
+    Paciente paciente = new Paciente();
+    
     public IngresoPacienteFrontera() {
-        this.validarIngresoPaciente = new ValidarIngresoPaciente();
+        //this.validarIngresoPaciente = new ValidarIngresoPaciente();
         initComponents();
     }
 
@@ -45,8 +46,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         tipoSangreCB = new javax.swing.JComboBox<>();
         tipoAtencionCB = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        noCamaCB = new javax.swing.JComboBox<>();
         regitroL = new javax.swing.JLabel();
         fechaL = new javax.swing.JLabel();
         rethusL = new javax.swing.JLabel();
@@ -71,7 +70,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         mensajeUsuario5 = new javax.swing.JLabel();
         mensajeUsuario6 = new javax.swing.JLabel();
         mensajeUsuario7 = new javax.swing.JLabel();
-        mensajeUsuario8 = new javax.swing.JLabel();
         buscarB = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -185,7 +183,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         });
         add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 65, -1, -1));
 
-        tipoAtencionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Uci (intermedio)", "Uci" }));
+        tipoAtencionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ucim", "Uci" }));
         tipoAtencionCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoAtencionCBActionPerformed(evt);
@@ -196,18 +194,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         jLabel11.setBackground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Tipo de atención");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
-
-        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("No. de cama");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
-
-        noCamaCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"1","2","3","4","5","6","7","8","9","10"}));
-        noCamaCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noCamaCBActionPerformed(evt);
-            }
-        });
-        add(noCamaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 120, -1));
 
         regitroL.setText("Registro");
         add(regitroL, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, -1, -1));
@@ -380,11 +366,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         mensajeUsuario7.setText("jLabel6");
         add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 124, -1, -1));
 
-        mensajeUsuario8.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario8.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario8.setText("jLabel6");
-        add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 165, -1, -1));
-
         buscarB.setText("Buscar");
         buscarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -423,11 +404,11 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 this.validarIngresoPaciente.isSaturometros(), this.validarIngresoPaciente.isBalasOxigeno(),
                 this.validarIngresoPaciente.getObservaciones());*/
         
-        Paciente paciente = new Paciente();
         PacienteDAO pacientedao = new PacienteDAO();
         IngresoPaciente ingresoP = new IngresoPaciente();
         IngresoPacienteDAO ingresoPdao = new IngresoPacienteDAO();
         CamaDAO camadao = new CamaDAO();
+        tipoSangreCBActionPerformed(evt);
          
         try {
             Integer.parseInt(identificacionTF.getText());
@@ -443,6 +424,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 pacientedao.crear(paciente);
             }
             //VERIFICAR SI LA CAMA ESTÁ DISPONIBLE
+            
             //CONSULTAR SI LOS EQUIPOS ESTÁN DISPONIBLES
             
             //paciente.setTipoSangre(tipoSangreCB.getSelectedItem());
@@ -453,17 +435,14 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
 
     private void tipoAtencionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAtencionCBActionPerformed
         String itemSeleccionado = (String) tipoAtencionCB.getSelectedItem();
-        if ("Uci (intermedio)".equals(itemSeleccionado)) {
+        if ("Ucim".equals(itemSeleccionado)) {
         //    this.validarIngresoPaciente.setTipoAtencion("Uci (intermedio)");
+        
         }
         if ("Uci".equals(itemSeleccionado)) {
         //    this.validarIngresoPaciente.setTipoAtencion("Uci");
         }
     }//GEN-LAST:event_tipoAtencionCBActionPerformed
-
-    private void noCamaCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noCamaCBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_noCamaCBActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected()) {
@@ -569,27 +548,35 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         String itemSeleccionado = (String) tipoSangreCB.getSelectedItem();
         if ("O +".equals(itemSeleccionado)) {
             //this.validarIngresoPaciente.setTipoSangre("O +");
+            this.paciente.setTipoSangre("O +");
         }
         if ("O -".equals(itemSeleccionado)) {
             //this.validarIngresoPaciente.setTipoSangre("O -");
+            this.paciente.setTipoSangre("O -");
         }
         if ("A +".equals(itemSeleccionado)) {
             //this.validarIngresoPaciente.setTipoSangre("A +");
+            this.paciente.setTipoSangre("A +");
         }
         if ("A -".equals(itemSeleccionado)) {
             //this.validarIngresoPaciente.setTipoSangre("A -");
+            this.paciente.setTipoSangre("A -");
         }
         if ("B +".equals(itemSeleccionado)) {
             //this.validarIngresoPaciente.setTipoSangre("B +");
+            this.paciente.setTipoSangre("B +");
         }
         if ("B -".equals(itemSeleccionado)) {
             //this.validarIngresoPaciente.setTipoSangre("B -");
+            this.paciente.setTipoSangre("B -");
         }
         if ("AB +".equals(itemSeleccionado)) {
             //this.validarIngresoPaciente.setTipoSangre("AB +");
+            this.paciente.setTipoSangre("AB +");
         }
         if ("AB -".equals(itemSeleccionado)) {
             //this.validarIngresoPaciente.setTipoSangre("AB -");
+            this.paciente.setTipoSangre("AB -");
         }
     }//GEN-LAST:event_tipoSangreCBActionPerformed
 
@@ -615,12 +602,13 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private void buscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBActionPerformed
         String identificacion = identificacionTF.getText();
         PacienteDAO pdao = new PacienteDAO();
-        Paciente paciente = pdao.leerPorId(identificacion);
-        if(paciente.getNombrePaciente1()!= null){
-            nombre1TF.setText(paciente.getNombrePaciente1());
-            nombre2TF.setText(paciente.getNombrePaciente2());
-            apellido1TF.setText(paciente.getApellidoPaciente1());
-            apellido2TF.setText(paciente.getApellidoPaciente2());
+        Paciente paciente1 = pdao.leerPorId(identificacion);
+        if(paciente1.getNombrePaciente1()!= null){
+            nombre1TF.setText(paciente1.getNombrePaciente1());
+            nombre2TF.setText(paciente1.getNombrePaciente2());
+            apellido1TF.setText(paciente1.getApellidoPaciente1());
+            apellido2TF.setText(paciente1.getApellidoPaciente2());
+            tipoSangreCB.setSelectedItem(paciente1.getTipoSangre());
         } else {
             System.out.println("¡PACIENTE NO ENCONTRADO!");
         }
@@ -647,7 +635,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -664,8 +651,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JLabel mensajeUsuario5;
     private javax.swing.JLabel mensajeUsuario6;
     private javax.swing.JLabel mensajeUsuario7;
-    private javax.swing.JLabel mensajeUsuario8;
-    private javax.swing.JComboBox<String> noCamaCB;
     private javax.swing.JTextField nombre1TF;
     private javax.swing.JTextField nombre2TF;
     private javax.swing.JTextField observacionTF;
