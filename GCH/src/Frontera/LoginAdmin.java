@@ -37,13 +37,13 @@ public class LoginAdmin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         usuarioAdminTF = new javax.swing.JTextField();
-        contraseniaAdminTF = new javax.swing.JTextField();
         iconLabel = new javax.swing.JLabel();
         ingresarB = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         registrarAdminB = new javax.swing.JButton();
         iniciarPersonalB = new javax.swing.JButton();
         mensajeUsuario = new javax.swing.JLabel();
+        contraseniaAdminTF = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autenticación Administrador");
@@ -57,16 +57,13 @@ public class LoginAdmin extends javax.swing.JFrame {
         mensajeUsuario1.setForeground(new java.awt.Color(255, 51, 51));
         jPanel1.add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario administrador");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         usuarioAdminTF.setBackground(new java.awt.Color(204, 204, 204));
-        usuarioAdminTF.setForeground(new java.awt.Color(0, 0, 0));
         usuarioAdminTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioAdminTFActionPerformed(evt);
@@ -74,16 +71,11 @@ public class LoginAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(usuarioAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 101, -1));
 
-        contraseniaAdminTF.setBackground(new java.awt.Color(204, 204, 204));
-        contraseniaAdminTF.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(contraseniaAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 101, -1));
-
         iconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
         iconLabel.setText(" ");
         jPanel1.add(iconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(264, 182, -1, -1));
 
         ingresarB.setBackground(new java.awt.Color(204, 204, 204));
-        ingresarB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarB.setText("Ingresar");
         ingresarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +88,6 @@ public class LoginAdmin extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 417, -1, -1));
 
         registrarAdminB.setBackground(new java.awt.Color(204, 204, 204));
-        registrarAdminB.setForeground(new java.awt.Color(0, 0, 0));
         registrarAdminB.setText("Registrar un administrador");
         registrarAdminB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +97,6 @@ public class LoginAdmin extends javax.swing.JFrame {
         jPanel1.add(registrarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 359, 218, -1));
 
         iniciarPersonalB.setBackground(new java.awt.Color(204, 204, 204));
-        iniciarPersonalB.setForeground(new java.awt.Color(0, 0, 0));
         iniciarPersonalB.setText("Iniciar sesión personal médico");
         iniciarPersonalB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +108,9 @@ public class LoginAdmin extends javax.swing.JFrame {
         mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario.setForeground(new java.awt.Color(255, 51, 51));
         jPanel1.add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 97, -1, -1));
+
+        contraseniaAdminTF.setText("jPasswordField1");
+        jPanel1.add(contraseniaAdminTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 100, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,7 +143,7 @@ public class LoginAdmin extends javax.swing.JFrame {
     private void ingresarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarBActionPerformed
         Administrador usuario = new Administrador();
         usuario.setUsuario(usuarioAdminTF.getText());
-        usuario.setContrasenia(contraseniaAdminTF.getText());
+        usuario.setContrasenia(String.valueOf(contraseniaAdminTF.getPassword()));
          
          ValidarLoginAdmin Validar = new ValidarLoginAdmin();
            if (!Validar.VerificarLongitudNombre(usuarioAdminTF.getText())) {
@@ -158,7 +151,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         }else{
         mensajeUsuario.setText("");
         }
-        if (!Validar.VerificarLongitudPassword(contraseniaAdminTF.getText())) {
+        if (!Validar.VerificarLongitudPassword(String.valueOf(contraseniaAdminTF.getPassword()))) {
             mensajeUsuario1.setText("Longitud de contraseña incorrecto");
         }else{
         mensajeUsuario1.setText("");
@@ -211,7 +204,7 @@ public class LoginAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField contraseniaAdminTF;
+    private javax.swing.JPasswordField contraseniaAdminTF;
     private javax.swing.JLabel iconLabel;
     private javax.swing.JButton ingresarB;
     private javax.swing.JButton iniciarPersonalB;

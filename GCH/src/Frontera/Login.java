@@ -34,7 +34,6 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         usuarioTF = new javax.swing.JTextField();
-        contraseniaTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ingresarB = new javax.swing.JButton();
@@ -44,6 +43,7 @@ public class Login extends javax.swing.JFrame {
         iniciarAdminB = new javax.swing.JButton();
         mensajeUsuario1 = new javax.swing.JLabel();
         mensajeUsuario = new javax.swing.JLabel();
+        contraseniaTF = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autenticación Personal Médico");
@@ -53,7 +53,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         usuarioTF.setBackground(new java.awt.Color(204, 204, 204));
-        usuarioTF.setForeground(new java.awt.Color(0, 0, 0));
         usuarioTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioTFActionPerformed(evt);
@@ -61,22 +60,15 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(usuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 73, 116, -1));
 
-        contraseniaTF.setBackground(new java.awt.Color(204, 204, 204));
-        contraseniaTF.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(contraseniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 118, 116, -1));
-
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Usuario");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 79, -1, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Contraseña");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 124, -1, -1));
 
         ingresarB.setBackground(new java.awt.Color(204, 204, 204));
-        ingresarB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarB.setText("Ingresar");
         ingresarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,7 +84,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 177, -1, -1));
 
         registrarB.setBackground(new java.awt.Color(204, 204, 204));
-        registrarB.setForeground(new java.awt.Color(0, 0, 0));
         registrarB.setText("Registrar un administrador");
         registrarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +93,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(registrarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 348, 201, -1));
 
         iniciarAdminB.setBackground(new java.awt.Color(204, 204, 204));
-        iniciarAdminB.setForeground(new java.awt.Color(0, 0, 0));
         iniciarAdminB.setText("Iniciar sesión administrador");
         iniciarAdminB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +108,7 @@ public class Login extends javax.swing.JFrame {
         mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario.setForeground(new java.awt.Color(204, 0, 0));
         jPanel1.add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, -1, -1));
+        jPanel1.add(contraseniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,7 +131,7 @@ public class Login extends javax.swing.JFrame {
     private void ingresarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarBActionPerformed
         PersonalMedico usuario = new PersonalMedico();
         usuario.setNomUsuario(usuarioTF.getText());
-        usuario.setPasswordAux(contraseniaTF.getText());
+        usuario.setPasswordAux(String.valueOf(contraseniaTF.getPassword()));
 
         ValidarLogin Validar = new ValidarLogin();
 
@@ -152,7 +143,7 @@ public class Login extends javax.swing.JFrame {
         } else {
             mensajeUsuario.setText("");
         }
-        if (!Validar.VerificarLongitudPassword(contraseniaTF.getText())) {
+        if (!Validar.VerificarLongitudPassword(String.valueOf(contraseniaTF.getPassword()))) {
             mensajeUsuario1.setText("Longitud de contraseña incorrecto");
         } else {
             mensajeUsuario1.setText("");
@@ -214,7 +205,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField contraseniaTF;
+    private javax.swing.JPasswordField contraseniaTF;
     private javax.swing.JButton ingresarB;
     private javax.swing.JButton iniciarAdminB;
     private javax.swing.JLabel jLabel1;

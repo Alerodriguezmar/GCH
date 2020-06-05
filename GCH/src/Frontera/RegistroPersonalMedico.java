@@ -36,7 +36,6 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         personalUsuarioTF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        personalContrasenniaTF = new javax.swing.JTextField();
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
         personalCargoCB = new javax.swing.JComboBox<>();
@@ -73,33 +72,25 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         mensajeUsuario11 = new javax.swing.JLabel();
         mensajeUsuario12 = new javax.swing.JLabel();
         mensajeUsuario5 = new javax.swing.JLabel();
+        personalContrasenniaTF = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         personalEmailTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalEmailTF.setForeground(new java.awt.Color(0, 0, 0));
         add(personalEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 120, -1));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Email");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         personalUsuarioTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalUsuarioTF.setForeground(new java.awt.Color(0, 0, 0));
         add(personalUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 120, -1));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Usuario");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
 
-        personalContrasenniaTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalContrasenniaTF.setForeground(new java.awt.Color(0, 0, 0));
-        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 120, -1));
-
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +100,6 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 102, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,12 +116,10 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         });
         add(personalCargoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Contraseña");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
 
         personalReThusTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalReThusTF.setForeground(new java.awt.Color(0, 0, 0));
         personalReThusTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalReThusTFActionPerformed(evt);
@@ -139,12 +127,10 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         });
         add(personalReThusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 117, -1));
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Tipo de sangre");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
 
         personalNombreTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalNombreTF.setForeground(new java.awt.Color(0, 0, 0));
         personalNombreTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalNombreTFActionPerformed(evt);
@@ -153,56 +139,44 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         add(personalNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 120, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Primer nombre");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Cargo");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
 
         personalApellidoTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalApellidoTF.setForeground(new java.awt.Color(0, 0, 0));
         add(personalApellidoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 85, 120, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Primer apellido");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("ReTHUS");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, -1, -1));
 
         personalIdTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalIdTF.setForeground(new java.awt.Color(0, 0, 0));
         add(personalIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 120, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         personalCelularTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalCelularTF.setForeground(new java.awt.Color(0, 0, 0));
         add(personalCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 120, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Celular");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
 
         personalDireccionlTF.setBackground(new java.awt.Color(204, 204, 204));
-        personalDireccionlTF.setForeground(new java.awt.Color(0, 0, 0));
         add(personalDireccionlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 120, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Dirección");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
         personalNombreTF1.setBackground(new java.awt.Color(204, 204, 204));
-        personalNombreTF1.setForeground(new java.awt.Color(0, 0, 0));
         personalNombreTF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalNombreTF1ActionPerformed(evt);
@@ -211,16 +185,13 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         add(personalNombreTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 116, -1));
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Segundo nombre");
         add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, -1, -1));
 
         personalApellidoTF1.setBackground(new java.awt.Color(204, 204, 204));
-        personalApellidoTF1.setForeground(new java.awt.Color(0, 0, 0));
         add(personalApellidoTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 116, -1));
 
         jLabel13.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Segundo apellido");
         add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, -1, -1));
 
@@ -278,6 +249,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
         add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 165, -1, -1));
+        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 120, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -294,7 +266,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         personal.setCargo(personalCargoCB.getSelectedItem().toString());
         personal.setReTHUS(personalReThusTF.getText());
         personal.setNomUsuario(personalUsuarioTF.getText());
-        personal.setPasswordAux(personalContrasenniaTF.getText());
+        personal.setPasswordAux(String.valueOf(personalContrasenniaTF.getPassword()));
 
         ValidarRegistroPersonalMedico validar = new ValidarRegistroPersonalMedico();
         System.out.println("-------");
@@ -362,7 +334,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         } else {
             mensajeUsuario11.setText("");
         } 
-                     if (!validar.VerificarLongitudContraseniapersonalMedico(personalContrasenniaTF.getText())) {
+                     if (!validar.VerificarLongitudContraseniapersonalMedico(String.valueOf(personalContrasenniaTF.getPassword()))) {
             mensajeUsuario12.setText("Longitud contraseña incorrecta");
         } else {
             mensajeUsuario12.setText("");
@@ -458,7 +430,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     private javax.swing.JTextField personalApellidoTF1;
     private javax.swing.JComboBox<String> personalCargoCB;
     private javax.swing.JTextField personalCelularTF;
-    private javax.swing.JTextField personalContrasenniaTF;
+    private javax.swing.JPasswordField personalContrasenniaTF;
     private javax.swing.JTextField personalDireccionlTF;
     private javax.swing.JTextField personalEmailTF;
     private javax.swing.JTextField personalIdTF;

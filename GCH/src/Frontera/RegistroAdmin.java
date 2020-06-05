@@ -48,7 +48,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         adminEmailTF = new javax.swing.JTextField();
         cancelarB = new javax.swing.JButton();
         adminUsuarioTF = new javax.swing.JTextField();
-        adminContrasenniaTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -67,6 +66,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
         mensajeUsuario7 = new javax.swing.JLabel();
         mensajeUsuario8 = new javax.swing.JLabel();
         mensajeUsuario9 = new javax.swing.JLabel();
+        adminContrasenniaTF = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,42 +74,33 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Celular");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         adminNombre1TF.setBackground(new java.awt.Color(204, 204, 204));
-        adminNombre1TF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 120, -1));
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Email");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 156, -1, -1));
 
         adminApellido1TF.setBackground(new java.awt.Color(204, 204, 204));
-        adminApellido1TF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminApellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 120, -1));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Usuario");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
 
         adminIdTF.setBackground(new java.awt.Color(204, 204, 204));
-        adminIdTF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 120, -1));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Contraseña");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
 
         adminCelularTF.setBackground(new java.awt.Color(204, 204, 204));
-        adminCelularTF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,11 +110,9 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 425, 83, -1));
 
         adminEmailTF.setBackground(new java.awt.Color(204, 204, 204));
-        adminEmailTF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 120, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,47 +122,34 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 458, -1, -1));
 
         adminUsuarioTF.setBackground(new java.awt.Color(204, 204, 204));
-        adminUsuarioTF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 120, -1));
 
-        adminContrasenniaTF.setBackground(new java.awt.Color(204, 204, 204));
-        adminContrasenniaTF.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(adminContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 120, -1));
-
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Primer Nombre");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 109, -1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Primer Apellido");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("No. Identificación");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Segundo Nombre");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         adminNombre2TF.setBackground(new java.awt.Color(204, 204, 204));
-        adminNombre2TF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminNombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 120, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Segundo Apellido");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, -1, -1));
 
         adminApellido2TF.setBackground(new java.awt.Color(204, 204, 204));
-        adminApellido2TF.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(adminApellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 120, -1));
 
         ingresarAdminB.setBackground(new java.awt.Color(204, 204, 204));
-        ingresarAdminB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarAdminB.setText("Iniciar sesión administrador");
         ingresarAdminB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +159,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(ingresarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 418, 218, -1));
 
         ingresarPersonalB.setBackground(new java.awt.Color(204, 204, 204));
-        ingresarPersonalB.setForeground(new java.awt.Color(0, 0, 0));
         ingresarPersonalB.setText("Iniciar sesión personal médico");
         ingresarPersonalB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,6 +202,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
         mensajeUsuario9.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario9.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 257, -1, -1));
+        jPanel1.add(adminContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 120, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -272,7 +248,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
         admin.setCelular(adminCelularTF.getText());
         admin.setEmail(adminEmailTF.getText());
         admin.setUsuario(adminUsuarioTF.getText());
-        admin.setContrasenia(adminContrasenniaTF.getText());
+        admin.setContrasenia(String.valueOf(adminContrasenniaTF.getPassword()));
 
         ValidarRegistroAdministrador validar = new ValidarRegistroAdministrador();
         System.out.println("-------");
@@ -318,7 +294,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
         } else {
             mensajeUsuario8.setText("");
         }
-          if (!validar.VerificarLongitudContraseniaAdmin(adminContrasenniaTF.getText())) {
+          if (!validar.VerificarLongitudContraseniaAdmin(String.valueOf(adminContrasenniaTF.getPassword()))) {
             mensajeUsuario9.setText("Longitud contraseña incorrecta o\n"+" incluye caracteres especiales");
         } else {
             mensajeUsuario9.setText("");
@@ -374,7 +350,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField adminApellido1TF;
     private javax.swing.JTextField adminApellido2TF;
     private javax.swing.JTextField adminCelularTF;
-    private javax.swing.JTextField adminContrasenniaTF;
+    private javax.swing.JPasswordField adminContrasenniaTF;
     private javax.swing.JTextField adminEmailTF;
     private javax.swing.JTextField adminIdTF;
     private javax.swing.JTextField adminNombre1TF;
