@@ -9,6 +9,7 @@
     <class>Entidad.Equipo</class>
     <class>Entidad.IngresoPaciente</class>
     <class>Entidad.Paciente</class>
+    <class>Entidad.EquiposUsados</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/GCHDB_JPA"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

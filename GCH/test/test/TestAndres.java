@@ -7,7 +7,9 @@ package test;
  */
 
 import DAO.AdminDAO;
+import DAO.CamaDAO;
 import Entidad.Administrador;
+import Entidad.Camas;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -48,7 +50,7 @@ public class TestAndres {
     // public void hello() {}
     @Test
     public void initData() {
-        AdminDAO dao= new AdminDAO();
+        /*AdminDAO dao= new AdminDAO();
         ArrayList<Administrador> administradores = new ArrayList<Administrador>();
         Administrador a = new Administrador();
         a.setNombre1("juan");  
@@ -67,6 +69,10 @@ public class TestAndres {
             System.out.println(u.getContrasenia());
             System.out.println("--------------------------------");
             dao.crear(u);
-        }
+        }*/
+        Camas cama;
+        CamaDAO cdao = new CamaDAO();
+        cama = cdao.leerCamasDisp();
+        System.out.println(cama.getIdCamas());
     }
 }

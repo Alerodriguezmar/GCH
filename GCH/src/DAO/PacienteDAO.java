@@ -132,6 +132,7 @@ public class PacienteDAO {
                         res.getString("apellido2") + ", "+
                         res.getString("tiposangre"));
                 //creo paciente
+                        p.setIdPaciente(res.getInt("idPaciente"));
                         p.setNombrePaciente2(res.getString("nombre2"));
                         p.setNombrePaciente1(res.getString("nombre1"));
                         p.setApellidoPaciente1(res.getString("apellido1"));

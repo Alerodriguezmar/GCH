@@ -6,19 +6,21 @@ import DAO.EquipoDAO;
 import DAO.EquiposUsadosDAO;
 import DAO.IngresoPacienteDAO;
 import DAO.PacienteDAO;
-import DAO.PacienteDAO_prov;
+import DAO.PersonalMedicoDAO;
 import Entidad.Camas;
 import Entidad.Equipo;
 import Entidad.EquiposUsados;
 import Entidad.IngresoPaciente;
 import Entidad.Paciente;
-import java.awt.event.ActionEvent;
+import Entidad.PersonalMedico;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+
 /**
  *
  * @author tech
  */
+
 public class IngresoPacienteFrontera extends javax.swing.JPanel {
 
     private ValidarIngresoPaciente validarIngresoPaciente;
@@ -411,28 +413,55 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 this.validarIngresoPaciente.isSaturometros(), this.validarIngresoPaciente.isBalasOxigeno(),
                 this.validarIngresoPaciente.getObservaciones());*/
         
+        PersonalMedico persm = new PersonalMedico();
+        PersonalMedicoDAO persmDAO = new PersonalMedicoDAO();
         PacienteDAO pacientedao = new PacienteDAO();
         IngresoPaciente ingresoP = new IngresoPaciente();
         IngresoPacienteDAO ingresoPdao = new IngresoPacienteDAO();
         CamaDAO camadao = new CamaDAO();
-        Equipo eqaux = new Equipo();
+        Equipo eqaux;
         EquipoDAO eqdao = new EquipoDAO();
         EquiposUsados equs = new EquiposUsados();
         EquiposUsadosDAO equsdao = new EquiposUsadosDAO();
+
+        persm = persmDAO.leerPorId("1");
+        System.out.println(persm.getNombre1());
+        
+        identificacionTFActionPerformed(evt);
+        nombre1TFActionPerformed(evt);
+        nombre2TFActionPerformed(evt);
+        apellido1TFActionPerformed(evt);
+        apellido2TFActionPerformed(evt);
+        jCheckBox1ActionPerformed(evt);
+        jCheckBox2ActionPerformed(evt);
+        jCheckBox3ActionPerformed(evt);
+        jCheckBox4ActionPerformed(evt);
+        jCheckBox5ActionPerformed(evt);
+        jCheckBox6ActionPerformed(evt);
+        jCheckBox7ActionPerformed(evt);
+        jCheckBox8ActionPerformed(evt);
+        tipoAtencionCBActionPerformed(evt);
         tipoSangreCBActionPerformed(evt);
+        observacionTFActionPerformed(evt);
+        
          
         try {
+            
             Integer.parseInt(identificacionTF.getText());
             Paciente pac = pacientedao.leerPorId(identificacionTF.getText());
             if(pac.getNombrePaciente1() != null){
+                System.out.println("Paciente guardado en BD");
                 paciente = pac;
+            
             } else {
+                
                 paciente.setIdPaciente(parseInt(identificacionTF.getText()));
                 paciente.setNombrePaciente1(nombre1TF.getText());
                 paciente.setNombrePaciente2(nombre2TF.getText());
                 paciente.setApellidoPaciente1(apellido1TF.getText());
                 paciente.setApellidoPaciente2(apellido2TF.getText());
                 pacientedao.crear(paciente);
+                System.out.println("Paciente registrado en BD");
             }
             
             //VERIFICAR SI LA CAMA ESTÁ DISPONIBLE
@@ -444,19 +473,17 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
             
             } else {
                 
-                //Setear cama.estado a false
-                //CONSULTAR SI LOS EQUIPOS ESTÁN DISPONIBLES
                 ingresoP.setPaciente(paciente);
                 ingresoP.setCama(cama);
                 ingresoP.setEstado(true);
                 ingresoP.setFecha("D/M/A");
                 ingresoP.setObservacion(observacionTF.getText());
-                //ingresoP.setPersonalm(personalm);
+                ingresoP.setPersonalm(persm);
                 
                 cama.setEstado(false);
                 
                 ingresoPdao.crear(ingresoP);
-                
+                //CONSULTAR SI LOS EQUIPOS ESTÁN DISPONIBLES
                 for(Equipo eq:equipos){
                 
                     equs.setEquipo(eq);

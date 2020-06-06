@@ -118,7 +118,7 @@ public class CamaDAO {
 
     public Camas leerCamasDisp(){
         Camas c = new Camas();
-        String query = "SELECT * FROM CAMAS WHERE ESTADO=0";
+        String query = "SELECT * FROM CAMAS WHERE ESTADO = 0";
         String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
         String username = "root";
         String password = "123456";
@@ -129,7 +129,7 @@ public class CamaDAO {
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
                 
-            System.out.println("Datos de la cama: ");
+            System.out.println("Datos de la CAMA: ");
             if (res.next()) {
                 System.out.println(res.getInt("idCamas") +
                         res.getString("Ubicacion") + ", " +

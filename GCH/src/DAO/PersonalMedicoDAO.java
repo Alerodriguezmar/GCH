@@ -7,6 +7,11 @@ package DAO;
 
 import Entidad.Administrador;
 import Entidad.PersonalMedico;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NonUniqueResultException;
@@ -143,4 +148,59 @@ public class PersonalMedicoDAO {
             return usuario;
         }
     }
+    
+    public PersonalMedico leerPorId(String id){
+        PersonalMedico p = new PersonalMedico();
+        String query = "SELECT * FROM PERSONALMEDICO WHERE ID="+id;
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos del personal medico: ");
+            while (res.next()) {
+                System.out.println(res.getInt("id") +
+                        res.getString("nombre1") + ", " +
+                        res.getString("nombre2") + ", " +
+                        res.getString("apellido1") + ", "+
+                        res.getString("apellido2") + ", "+
+                        res.getString("tipo_sangre")+ ", " + 
+                        res.getString("email")+ ", " + 
+                        res.getString("direccion")+ ", " + 
+                        res.getString("celular")+ ", " + 
+                        res.getString("cargo")+ ", " + 
+                        res.getString("reTHUS")+ ", " + 
+                        res.getString("nomUsuario")+ ", " + 
+                        res.getString("passwordAux"));
+                //creo personal
+                        p.setId(res.getInt("id"));
+                        p.setNombre1(res.getString("nombre1"));
+                        p.setNombre2(res.getString("nombre2"));
+                        p.setApellido1(res.getString("apellido1"));
+                        p.setApellido2(res.getString("apellido2"));   
+                        p.setTipo_sangre(res.getString("tipo_sangre"));
+                        p.setEmail(res.getString("email"));
+                        p.setDireccion(res.getString("direccion"));
+                        p.setCelular(res.getString("celular"));
+                        p.setCargo(res.getString("cargo"));
+                        p.setNomUsuario(res.getString("nomUsuario"));
+                        p.setReTHUS(res.getString("reTHUS"));
+                        p.setPasswordAux(res.getString("passwordAux"));
+
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return p;
+    }
 }
+
