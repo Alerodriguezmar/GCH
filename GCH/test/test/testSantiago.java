@@ -56,9 +56,6 @@ public class testSantiago {
         EquipoDAO eqdao = new EquipoDAO();
         String nombree = "ASPIRADOR";
         eq = eqdao.leerEquiposDisp(nombree);
-        System.out.println(Integer.toString(eq.getIdEquipo()) + " Nombre: " + eq.getNombreEquipo());
-        
-    }
-    
-    
+        System.out.println(Integer.toString(eq.getIdEquipo()) + " Nombre: " + eq.getNombreEquipo());   
+    }   
 }

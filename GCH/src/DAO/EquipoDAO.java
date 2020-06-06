@@ -22,8 +22,8 @@ import javax.persistence.Query;
  * @author Diego
  */
 public class EquipoDAO {
-      private static EntityManagerFactory
-            emf = Persistence.createEntityManagerFactory("GCHPU");
+    private static EntityManagerFactory
+        emf = Persistence.createEntityManagerFactory("GCHPU");
 
     public void crear(Equipo object) {
 
