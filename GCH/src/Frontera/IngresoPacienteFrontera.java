@@ -461,6 +461,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 paciente.setNombrePaciente2(nombre2TF.getText());
                 paciente.setApellidoPaciente1(apellido1TF.getText());
                 paciente.setApellidoPaciente2(apellido2TF.getText());
+                paciente.setTipoSangre(tipoSangreCB.getSelectedItem().toString());
                 pacientedao.crear(paciente);
                 System.out.println("Paciente registrado con éxito en BD");
             }
