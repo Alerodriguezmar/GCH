@@ -423,6 +423,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         EquipoDAO eqdao = new EquipoDAO();
         EquiposUsados equs = new EquiposUsados();
         EquiposUsadosDAO equsdao = new EquiposUsadosDAO();
+        Camas camaaux = new Camas();
 
         persm = persmDAO.leerPorId("1");
         System.out.println(persm.getNombre1());
@@ -480,12 +481,13 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 ingresoP.setObservacion(observacionTF.getText());
                 ingresoP.setPersonalm(persm);
                 
-                cama.setEstado(false);
+                camaaux = cama;
+                camaaux.setEstado(true);
+                camadao.actualizar(cama, camaaux);
                 
                 ingresoPdao.crear(ingresoP);
                 //CONSULTAR SI LOS EQUIPOS ESTÁN DISPONIBLES
                 for(Equipo eq:equipos){
-                
                     equs.setEquipo(eq);
                     equs.setIngresoP(ingresoP);
                     equsdao.crear(equs);
@@ -493,6 +495,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                     eqaux.setEstadoEquipo(true);
                     eqdao.actualizar(eq, eqaux);
                 }
+                System.out.println("INGRESADO CON EXITO");
             }   
             
         } catch (NumberFormatException excepcion) {

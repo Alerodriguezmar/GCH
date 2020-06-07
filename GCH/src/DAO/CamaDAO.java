@@ -157,7 +157,7 @@ public class CamaDAO {
         em.getTransaction().begin();
         boolean ret = false;
         try {
-            object = leer(object);
+            object = leerPorId(object);
             object.setIdCamas(nuevoObjeto.getIdCamas());
             object.setUbicacion(nuevoObjeto.getUbicacion());
             object.setPabellon(nuevoObjeto.getPabellon());
@@ -172,5 +172,41 @@ public class CamaDAO {
             em.close();
             return ret;
         }
+    }
+    
+    public Camas leerPorId(Camas cama){
+        Camas c = new Camas();
+        String query = "SELECT * FROM CAMAS WHERE IDCAMAS ="+cama.getIdCamas();
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos de la CAMA: ");
+            if (res.next()) {
+                System.out.println(res.getInt("idCamas") +
+                        res.getString("Ubicacion") + ", " +
+                        res.getString("pabellon") + ", " +
+                        res.getBoolean("estado"));
+                //creo paciente
+                        c.setIdCamas(res.getInt("idCamas"));
+                        c.setUbicacion(res.getString("Ubicacion"));
+                        c.setPabellon(res.getString("pabellon"));
+                        c.setEstado(res.getBoolean("estado"));
+
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return c;
     }
 }
