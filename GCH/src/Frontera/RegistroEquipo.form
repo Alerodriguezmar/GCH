@@ -217,7 +217,7 @@
     <Component class="javax.swing.JComboBox" name="TipoEquipo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot; &quot;,&quot;Ventilador Mecanico&quot;, &quot;Saturometro&quot;, &quot;Bala de Oxigeno&quot;, &quot;Monitor Cardiaco&quot;, &quot;Bomba Infusion Continua&quot;, &quot;Bomba Nutricion Enteral&quot;, &quot;Aspirador De Secreciones&quot;,&quot;Equipo De Intuacion&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot; &quot;,&quot;VENTILADOR MECANICO&quot;, &quot;SATUROMETRO&quot;, &quot;BALA OXIGENO&quot;, &quot;MONITOR&quot;, &quot;BOMBA INFUSION CONTINUA&quot;, &quot;BOMBA NUTRICION ENTERAL&quot;, &quot;ASPIRADOR DE SECRECIONES&quot;,&quot;EQUIPO DE INTUBACION&quot; })" type="code"/>
         </Property>
       </Properties>
       <AuxValues>

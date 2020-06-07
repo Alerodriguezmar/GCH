@@ -461,7 +461,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 paciente.setApellidoPaciente1(apellido1TF.getText());
                 paciente.setApellidoPaciente2(apellido2TF.getText());
                 pacientedao.crear(paciente);
-                System.out.println("Paciente registrado en BD");
+                System.out.println("Paciente registrado con éxito en BD");
             }
             
             //VERIFICAR SI LA CAMA ESTÁ DISPONIBLE
@@ -492,7 +492,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                     eqaux = eq;
                     eqaux.setEstadoEquipo(true);
                     eqdao.actualizar(eq, eqaux);
-                
                 }
             }   
             
@@ -518,13 +517,13 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected()) {
         //    this.validarIngresoPaciente.setAspiradorSecreciones(true);
-            Equipo aspirador = new Equipo();
+            Equipo ventilador = new Equipo();
             EquipoDAO eqdao = new EquipoDAO();
-            aspirador = eqdao.leerEquiposDisp("ASPIRADOR SECRECIONES");
-            if(aspirador.getNombreEquipo()!=null){
-                equipos.add(aspirador);
+            ventilador = eqdao.leerEquiposDisp("VENTILADOR MECANICO");
+            if(ventilador.getNombreEquipo()!=null){
+                equipos.add(ventilador);
             } else {
-                System.out.println("ASPIRADOR NO DISPONIBLE");
+                System.out.println("VENTILADOR MECANICO NO DISPONIBLE");
             }
             
         } else {
@@ -537,11 +536,11 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         //    this.validarIngresoPaciente.(true);
             Equipo aspiradorSec = new Equipo();
             EquipoDAO eqdao = new EquipoDAO();
-            aspiradorSec = eqdao.leerEquiposDisp("ASPIRADOR SECRECIONES");
+            aspiradorSec = eqdao.leerEquiposDisp("ASPIRADOR DE SECRECIONES");
             if(aspiradorSec.getNombreEquipo()!=null){
                 equipos.add(aspiradorSec);
             } else {
-                System.out.println("ASPIRADOR SECRECIONES NO DISPONIBLE");
+                System.out.println("ASPIRADOR DE SECRECIONES NO DISPONIBLE");
             }
         } else {
         //    this.validarIngresoPaciente.setBombaInfucionContinua(false);
@@ -551,6 +550,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
         if (jCheckBox8.isSelected()) {
         //    this.validarIngresoPaciente.setEquipoIntubacion(true);
+            
             Equipo eqIntub= new Equipo();
             EquipoDAO eqdao = new EquipoDAO();
             eqIntub = eqdao.leerEquiposDisp("EQUIPO DE INTUBACION");
@@ -591,6 +591,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         if (jCheckBox2.isSelected()) {
             //this.validarIngresoPaciente.setSaturometros(true);
+       
             Equipo saturometro;
             EquipoDAO eqdao = new EquipoDAO();
             saturometro = eqdao.leerEquiposDisp("SATUROMETRO");
@@ -607,6 +608,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         if (jCheckBox3.isSelected()) {
             //this.validarIngresoPaciente.setBalasOxigeno(true);
+            
             Equipo balaOxig;
             EquipoDAO eqdao = new EquipoDAO();
             balaOxig = eqdao.leerEquiposDisp("BALA OXIGENO");
@@ -639,13 +641,14 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
         if (jCheckBox5.isSelected()) {
             //this.validarIngresoPaciente.setBombaInfucionContinua(true);
+            
             Equipo bombaInfC;
             EquipoDAO eqdao = new EquipoDAO();
-            bombaInfC = eqdao.leerEquiposDisp("BOMBA INFUCION CONTINUA");
+            bombaInfC = eqdao.leerEquiposDisp("BOMBA INFUSION CONTINUA");
             if(bombaInfC.getNombreEquipo()!=null){
                 equipos.add(bombaInfC);
             } else {
-                System.out.println("BOMBA INFUCION CONTINUA NO DISPONIBLE");
+                System.out.println("BOMBA INFUSION CONTINUA NO DISPONIBLE");
             }
         } else {
             //this.validarIngresoPaciente.setBombaInfucionContinua(false);
@@ -657,11 +660,11 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
             //this.validarIngresoPaciente.setBombasNutricion(true);
             Equipo bombaNutricion;
             EquipoDAO eqdao = new EquipoDAO();
-            bombaNutricion = eqdao.leerEquiposDisp("BOMBA NUTRICION");
+            bombaNutricion = eqdao.leerEquiposDisp("BOMBA NUTRICION ENTERAL");
             if(bombaNutricion.getNombreEquipo()!=null){
                 equipos.add(bombaNutricion);
             } else {
-                System.out.println("BOMBA NUTRICION NO DISPONIBLE");
+                System.out.println("BOMBA NUTRICION ENTERAL NO DISPONIBLE");
             }
         } else {
             //this.validarIngresoPaciente.setBombasNutricion(false);

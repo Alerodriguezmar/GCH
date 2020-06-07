@@ -57,23 +57,24 @@ public class EquipoDAO {
         }
     }
 
-    public Equipo leer(Equipo par) {
+    public Equipo leerE(Equipo par) {
         EntityManager em = emf.createEntityManager();
         Equipo usuario = null;
         Query q = em.createQuery("SELECT u FROM Equipo u " +
-                    "WHERE u.nombreEquipo LIKE :nombreEquipo" +
+                    " WHERE CAST(u.idEquipo as CHAR) LIKE :idEquipo" +
+                    " AND u.nombreEquipo LIKE :nombreEquipo" +
                     " AND u.Marca LIKE :Marca" +
                     " AND u.RegistroSanitario LIKE :RegistroSanitario" +
-                    " AND u.DescripcionEquipo LIKE :DescripcionEquipo" +
-                    " AND u.EstadoEquipo LIKE :EstadoEquipo"+ 
-                    " AND u.TipoUso LIKE :TipoUso")
+                    " AND u.DescripcionEquipo LIKE :DescripcionEquipo"+ 
+                    " AND u.EstadoEquipo LIKE :EstadoEquipo"
+                    + " AND u.TipoUso LIKE :TipoUso")
                     .setParameter("nombreEquipo", par.getNombreEquipo())
                     .setParameter("Marca", par.getMarca())
                     .setParameter("RegistroSanitario", par.getRegistroSanitario())
                     .setParameter("DescripcionEquipo", par.getDescripcionEquipo())
                     .setParameter("EstadoEquipo", par.getEstadoEquipo())
-                    .setParameter("TipoUso", par.getTipoUso());
-                   
+                    .setParameter("TipoUso", par.getTipoUso())
+                    .setParameter("idEquipo", par.getIdEquipo()) ;
         try {
             usuario = (Equipo) q.getSingleResult();
         } catch (NonUniqueResultException e) {
@@ -84,6 +85,49 @@ public class EquipoDAO {
             em.close();
             return usuario;
         }
+    }
+    
+    //otro metodo LEER
+    public Equipo leer(Equipo equipo){
+        Equipo eq = new Equipo();
+        String query = "SELECT * FROM EQUIPO WHERE NOMBREEQUIPO="+"'"+equipo.getNombreEquipo()+"'"+" AND IDEQUIPO="+equipo.getIdEquipo();
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos del equipo: ");
+            if (res.next()) {
+                System.out.println(res.getInt("idEquipo") +
+                        res.getString("nombreEquipo") + ", " +
+                        res.getString("Marca") + ", " +
+                        res.getString("RegistroSanitario") + ", " +
+                        res.getString("DescripcionEquipo") + ", " +
+                        res.getBoolean("EstadoEquipo") + ", " + 
+                        res.getString("TipoUso"));
+                //creo paciente
+                        eq.setIdEquipo(res.getInt("idEquipo"));
+                        eq.setNombreEquipo(res.getString("nombreEquipo"));
+                        eq.setMarca(res.getString("Marca"));
+                        eq.setRegistroSanitario(res.getString("RegistroSanitario"));
+                        eq.setEstadoEquipo(res.getBoolean("EstadoEquipo"));
+                        eq.setTipoUso(res.getString("TipoUso"));
+                        
+
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return eq;
     }
  //consulta para revisar si equipos disponibles disponibles
       public Equipo leerDisponibles() {
@@ -111,6 +155,7 @@ public class EquipoDAO {
         boolean ret = false;
         try {
             object = leer(object);
+            object.setIdEquipo(nuevoObjeto.getIdEquipo());
             object.setNombreEquipo(nuevoObjeto.getNombreEquipo());
             object.setMarca(nuevoObjeto.getMarca());
             object.setRegistroSanitario(nuevoObjeto.getRegistroSanitario());

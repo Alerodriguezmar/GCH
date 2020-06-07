@@ -70,9 +70,12 @@ public class TestAndres {
             System.out.println("--------------------------------");
             dao.crear(u);
         }*/
-        Camas cama;
+        Camas cama,c;
         CamaDAO cdao = new CamaDAO();
+        c = cdao.leerCamasDisp();
         cama = cdao.leerCamasDisp();
+        cama.setEstado(true);
+        cdao.actualizar(c, cama);
         System.out.println(cama.getIdCamas());
     }
 }

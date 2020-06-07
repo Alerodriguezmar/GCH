@@ -60,7 +60,7 @@ public class CamaDAO {
         EntityManager em = emf.createEntityManager();
         Camas usuario = null;
         Query q = em.createQuery("SELECT u FROM Camas u "
-                + "WHERE u.idCamas LIKE :idCamas"
+                + "WHERE CAST(u.idCamas as VARCHAR(10)) LIKE :idCamas"
                 + " AND u.Ubicacion LIKE :Ubicacion"
                 + " AND u.pabellon LIKE :pabellon"
                 + " AND u.estado LIKE :estado")

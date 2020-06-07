@@ -118,7 +118,7 @@ public class RegistroEquipo extends javax.swing.JPanel {
         TipoDeEquipo.setText("Tipo De Equipo");
         add(TipoDeEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 50, -1, -1));
 
-        TipoEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ","Ventilador Mecanico", "Saturometro", "Bala de Oxigeno", "Monitor Cardiaco", "Bomba Infusion Continua", "Bomba Nutricion Enteral", "Aspirador De Secreciones","Equipo De Intuacion" }));
+        TipoEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ","VENTILADOR MECANICO", "SATUROMETRO", "BALA OXIGENO", "MONITOR", "BOMBA INFUSION CONTINUA", "BOMBA NUTRICION ENTERAL", "ASPIRADOR DE SECRECIONES","EQUIPO DE INTUBACION" }));
         add(TipoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 270, -1));
 
         mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
@@ -159,7 +159,7 @@ public class RegistroEquipo extends javax.swing.JPanel {
         equipo.setTipoUso(equipoTipoCB.getSelectedItem().toString());
         equipo.setRegistroSanitario(equipoRegistroTF.getText());
         equipo.setDescripcionEquipo(equipoDescripcionTF.getText());
-        equipo.setEstadoEquipo(true);
+        equipo.setEstadoEquipo(false);
 
         ValidarRegistroEquipo validar = new ValidarRegistroEquipo();
         System.out.println("-------");
