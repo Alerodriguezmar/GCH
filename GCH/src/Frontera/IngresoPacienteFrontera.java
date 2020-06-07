@@ -14,7 +14,10 @@ import Entidad.IngresoPaciente;
 import Entidad.Paciente;
 import Entidad.PersonalMedico;
 import static java.lang.Integer.parseInt;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -508,11 +511,16 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 System.out.println("NO HAY CAMAS DISPONIBLES");
             
             } else {
-                
+                //Tomar fecha
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                String fecha = now.format(dtf);
+                System.out.println(fecha);
+                //Generar Ingreso
                 ingresoP.setPaciente(paciente);
                 ingresoP.setCama(cama);
                 ingresoP.setEstado(true);
-                ingresoP.setFecha("D/M/A");
+                ingresoP.setFecha(fecha);
                 ingresoP.setObservacion(observacionTF.getText());
                 ingresoP.setPersonalm(persm);
                 
@@ -836,4 +844,16 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> tipoSangreCB;
     // End of variables declaration//GEN-END:variables
 
+    public void mostrar(){
+        //EquipoDAO edao = new EquipoDAO;
+        List<Equipo> eqs = new ArrayList();
+        String matriz[][]=new String[eqs.size()][3];
+        for(int i = 0; i<4; i++){
+            matriz[i][0] = Integer.toString(eqs.get(i).getIdEquipo());
+            matriz[i][1] = eqs.get(i).getNombreEquipo();
+            matriz[i][2] = Integer.toString(10);//10 se debe reemplazar por la consulta SQL
+        }
+                
+    }
+    
 }

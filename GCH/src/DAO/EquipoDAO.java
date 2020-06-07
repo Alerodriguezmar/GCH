@@ -215,6 +215,42 @@ public class EquipoDAO {
         } 
         return eq;
     }
+    
+    //Leer Equipos con x nombre disponibles
+    public int leerNombreDisp(String nombre){
+        int N = 0;
+        String query = "SELECT COUNT(ESTADOEQUIPO) FROM EQUIPO WHERE NOMBREEQUIPO="+"'"+nombre+"'"+" AND estadoEquipo=0";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos del equipo: ");
+            if (res.next()) {
+                System.out.println(res.getInt("idEquipo") +
+                        res.getString("nombreEquipo") + ", " +
+                        res.getString("Marca") + ", " +
+                        res.getString("RegistroSanitario") + ", " +
+                        res.getString("DescripcionEquipo") + ", " +
+                        res.getBoolean("EstadoEquipo") + ", " + 
+                        res.getString("TipoUso"));
+                //creo paciente
+                       
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return N;
+    }
 }
 
     
