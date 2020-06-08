@@ -5,6 +5,13 @@
  */
 package Frontera;
 
+import DAO.EquipoDAO;
+import DAO.PersonalMedicoDAO;
+import Entidad.Equipo;
+import Entidad.PersonalMedico;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author tech
@@ -69,12 +76,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         jlabel6.setText("Fecha");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
+            mostrarEquipo(),
             new String [] {
                 "Equipos", "Cantidad"
             }
@@ -97,12 +99,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         registroEquiposT.setViewportView(jTable2);
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
+            mostrarPersonal(),
             new String [] {
                 "Personal", "Cantidad"
             }
@@ -286,4 +283,31 @@ public class GenerarReportes extends javax.swing.JPanel {
     private javax.swing.JScrollPane registroPersonalT;
     private javax.swing.JScrollPane registroUciT;
     // End of variables declaration//GEN-END:variables
+    public String [][] mostrarPersonal(){
+        PersonalMedicoDAO pmdao = new PersonalMedicoDAO();
+        List<PersonalMedico> pms = new ArrayList();
+        PersonalMedico p = new PersonalMedico();
+        p.setCargo("MÉDICO GENERAL");
+        pms.add(p);
+        String[][] matriz=new String[pms.size()][2];
+        for(int i = 0; i<pms.size(); i++){
+            matriz[i][0] = pms.get(i).getCargo();
+            matriz[i][1] = Integer.toString(10);//10 se debe reemplazar por la consulta SQL
+        }
+        return matriz;        
+    }
+    public String [][] mostrarEquipo(){
+        EquipoDAO edao = new EquipoDAO();
+        List<Equipo> eqs = new ArrayList();
+        Equipo e = new Equipo();
+        e.setNombreEquipo("VENTILADOR");
+        eqs.add(e);
+        String[][] matriz=new String[eqs.size()][2];
+        for(int i = 0; i<eqs.size(); i++){
+            matriz[i][0] = eqs.get(i).getNombreEquipo();
+            matriz[i][1] = Integer.toString(10);//10 se debe reemplazar por la consulta SQL
+        }
+        return matriz;        
+    }
 }
+

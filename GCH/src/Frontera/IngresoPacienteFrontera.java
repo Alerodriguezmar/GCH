@@ -216,14 +216,9 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
 
         equiposT.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
+            mostrar(),
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "EQUIPO", "CANTIDAD"
             }
         ));
         jScrollPane1.setViewportView(equiposT);
@@ -844,16 +839,20 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> tipoSangreCB;
     // End of variables declaration//GEN-END:variables
 
-    public void mostrar(){
-        //EquipoDAO edao = new EquipoDAO;
+  
+    public String [][] mostrar(){
+        EquipoDAO edao = new EquipoDAO();
         List<Equipo> eqs = new ArrayList();
-        String matriz[][]=new String[eqs.size()][3];
-        for(int i = 0; i<4; i++){
+        Equipo e = new Equipo();
+        e.setIdEquipo(30);
+        e.setNombreEquipo("VENTILADOR");
+        eqs.add(e);
+        String[][] matriz=new String[eqs.size()][3];
+        for(int i = 0; i<eqs.size(); i++){
             matriz[i][0] = Integer.toString(eqs.get(i).getIdEquipo());
             matriz[i][1] = eqs.get(i).getNombreEquipo();
             matriz[i][2] = Integer.toString(10);//10 se debe reemplazar por la consulta SQL
         }
-                
+        return matriz;        
     }
-    
 }
