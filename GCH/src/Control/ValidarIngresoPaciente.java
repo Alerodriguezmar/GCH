@@ -67,7 +67,8 @@ public class ValidarIngresoPaciente {
     }
 
     public boolean VerificarLongitudId(int id) {
-        return (id >= 4 && id < 13);
+        String a = String.valueOf(id);
+        return ( a.length() >= 2 &&  a.length() < 13);
     }
 
     public boolean VerificarSelectTipoSangre(String tipoSangre) {
