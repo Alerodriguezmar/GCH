@@ -52,11 +52,19 @@ public class Camas {
          ArrayList<Entidad.Camas> Cama = new ArrayList<Entidad.Camas>();
         
          Entidad.Camas b = new Entidad.Camas();
-        b.setIdCamas(1);
+         Entidad.Camas a = new Entidad.Camas();
+        b.setIdCamas(23);
         b.setEstado(false);
-        b.setPabellon("5");
-        b.setUbicacion("Izquierdo Inferior");
-
+        b.setPabellon("Cuidados intermedios");
+        b.setUbicacion("256");
+        
+        a.setIdCamas(56);
+        a.setEstado(true);
+        a.setPabellon("Cuidados Intensivos");
+        a.setUbicacion("659");
+        
+        
+        Cama.add(a);
         Cama.add(b);
      
         for (Entidad.Camas u: Cama){

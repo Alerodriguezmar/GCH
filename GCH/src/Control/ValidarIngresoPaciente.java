@@ -38,9 +38,11 @@ public class ValidarIngresoPaciente {
         if(!VerificarSelectTipoSangre(paciente.getTipoSangre())){
             return("No se ha seleccionado tipo de sangre");
         }
+        
           if(!VerificarCamasDisponibles()){
             return("No hay camas Disponibles");
         }
+          
            if(!VerificarEquiposDisponibles()){
             return("No hay equipos disponibles");
         }
@@ -49,6 +51,9 @@ public class ValidarIngresoPaciente {
         }
         return("Datos del paciente ingresados correctamente");
     }
+    
+    
+    
 //metodos
     public boolean VerificarLongitudNombre1(String nombre1) {
         return (nombre1.length() >= 4 && nombre1.length() <= 14);
@@ -87,6 +92,7 @@ public class ValidarIngresoPaciente {
     public boolean VerificarCamasDisponibles() {
         return (daoC.leerDisponibles() != null);
     }
+    
     //revisa si hay disponibles equipos
     public boolean VerificarEquiposDisponibles() {
         return (daoE.leerDisponibles() != null);

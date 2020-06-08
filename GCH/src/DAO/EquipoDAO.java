@@ -136,7 +136,7 @@ public class EquipoDAO {
         
         Query q = em.createQuery("SELECT COUNT (u) FROM Equipo u "
                 + "WHERE u.EstadoEquipo LIKE :estado")
-                .setParameter("estado", "0");
+                .setParameter("estado", false);
                 
         try {
             usuario = (Equipo) q.getSingleResult();

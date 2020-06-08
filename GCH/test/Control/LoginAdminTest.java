@@ -21,7 +21,7 @@ public class LoginAdminTest {
     
     private static ValidarLoginAdmin loginAdmin = new ValidarLoginAdmin();
     private String LONG_NOMBRE_INCORRECTA = "Longitud nombre incorrecta";
-    private String LONG_PASSWORD_INCORRECTA = "Longitud contraseña incorrecto";
+    private String LONG_PASSWORD_INCORRECTA = "Longitud contraseña incorrecta";
     private String DATOS_INCORRECTO = "Datos incorrectos";
     private String USUARIO_AUTORIZADO = "Bienvenido";
     
@@ -56,7 +56,7 @@ public class LoginAdminTest {
         u.setContrasenia("1234567");
         assertEquals(loginAdmin.verificarLogin(u),LONG_NOMBRE_INCORRECTA);
         
-        u.setUsuario("Alejandro");
+        u.setUsuario("Ale");
         u.setContrasenia("123456");
         assertEquals(loginAdmin.verificarLogin(u),LONG_NOMBRE_INCORRECTA);   
     }
@@ -69,8 +69,8 @@ public class LoginAdminTest {
         u.setContrasenia("12");
         assertEquals(loginAdmin.verificarLogin(u),LONG_PASSWORD_INCORRECTA);
         
-        u.setUsuario("Andi");
-        u.setContrasenia("12345678912");
+        u.setUsuario("Andin");
+        u.setContrasenia("123");
         assertEquals(loginAdmin.verificarLogin(u),LONG_PASSWORD_INCORRECTA); 
         
     }
@@ -90,7 +90,7 @@ public class LoginAdminTest {
     public void testcontrasenia(){
         Administrador u = new Administrador();
         u.setUsuario("Santi");
-        u.setContrasenia("1234");
+        u.setContrasenia("12345");
         assertEquals(loginAdmin.verificarLogin(u),DATOS_INCORRECTO);
         
     }
@@ -99,7 +99,7 @@ public class LoginAdminTest {
      public void testDatos(){
         Administrador u = new Administrador();
         u.setUsuario("Henry");
-        u.setContrasenia("1234");
+        u.setContrasenia("12345");
         assertEquals(loginAdmin.verificarLogin(u),DATOS_INCORRECTO);
         
     }

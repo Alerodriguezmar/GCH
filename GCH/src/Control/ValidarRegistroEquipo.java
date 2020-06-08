@@ -37,13 +37,13 @@ public class ValidarRegistroEquipo {
     }
 
     public boolean VerificarLongitudDescripcionEquipo(String descr) {
-        return (descr.length() >= 0 && descr.length() < 257);
+        return (descr.length() > 0 && descr.length() < 257);
     }
       public boolean VerificarLongitudCantidadEquipo(int cant) {
         return (cant > 0 );
     }
     public boolean VerificarLongitudRegistroSanitarioEquipo(String reg) {
-        return (reg.length() >= 12 && reg.length() < 31);
+        return (reg.length() >= 6 && reg.length() < 31);
     }
 
 }

@@ -79,8 +79,8 @@ public class RegistroAdminTest {
         a.setApellido1("perez");
         a.setApellido2("alvear");
         a.setEmail("andiazo@unalco");
-        a.setCelular("313220222");
-        a.setNidentificacion("1264");
+        a.setCelular("3132202222");
+        a.setNidentificacion("124");
         a.setUsuario("andiazo");
         a.setContrasenia("123456");
         assertEquals(registroAdmin.VerificarRegistroAdministrador(a),INDENTIFICACION_INCORRECTA);
@@ -127,7 +127,7 @@ public class RegistroAdminTest {
         a.setApellido1("perez");
         a.setApellido2("alvear");
         a.setEmail("andiazo@unalco");
-        a.setCelular("311289725");
+        a.setCelular("3112897257");
         a.setNidentificacion("12645");
         a.setUsuario("and");
         a.setContrasenia("123456");
@@ -146,7 +146,7 @@ public class RegistroAdminTest {
         a.setApellido1("perez");
         a.setApellido2("alvear");
         a.setEmail("andiazo@unalco");
-        a.setCelular("311289725");
+        a.setCelular("3112897257");
         a.setNidentificacion("12645");
         a.setUsuario("andinazo");
         a.setContrasenia("23");
@@ -164,7 +164,7 @@ public class RegistroAdminTest {
         a.setApellido1("perez");
         a.setApellido2("alvear");
         a.setEmail("andiazo@unalco");
-        a.setCelular("311289725");
+        a.setCelular("3112897257");
         a.setNidentificacion("12645");
         a.setUsuario("andinazo");
         a.setContrasenia("23456");

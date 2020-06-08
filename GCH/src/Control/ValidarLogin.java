@@ -22,11 +22,11 @@ public class ValidarLogin {
     public String verificarLogin (PersonalMedico usuario){
         if(!VerificarLongitudNombre(usuario.getNomUsuario())){
           //  JOptionPane.showMessageDialog(null, "Longitud nombre incorrecta", "Advertencia", JOptionPane.WARNING_MESSAGE);   
-            return("Longitud de nombre incorrecta");
+            return("Longitud nombre incorrecta");
         }
         if(!VerificarLongitudPassword(usuario.getPasswordAux())){
           // JOptionPane.showMessageDialog(null, "Longitud contraseña incorrecto", "Advertencia", JOptionPane.WARNING_MESSAGE);   
-            return("Longitud de contraseña incorrecto");
+            return("Longitud contraseña incorrecto");
         }
     if (dao.leerd(usuario) != null) {
             return ("Bienvenido");
@@ -45,11 +45,11 @@ public class ValidarLogin {
     
     
     public boolean VerificarLongitudNombre (String nombre){
-        return(nombre.length() >= 5 && nombre.length() <= 32);
+        return(nombre.length() >= 4 && nombre.length() <= 30);
     }
     
     public boolean VerificarLongitudPassword (String contrasenia){
-        return(contrasenia.length() >= 5 );
+        return(contrasenia.length() >= 4 );
     }
     
 }

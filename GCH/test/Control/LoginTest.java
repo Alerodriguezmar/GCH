@@ -70,7 +70,7 @@ public class LoginTest {
         assertEquals(login.verificarLogin(u),LONG_PASSWORD_INCORRECTA);
         
         u.setNomUsuario("Andi");
-        u.setPasswordAux("12345678912");
+        u.setPasswordAux("123");
         assertEquals(login.verificarLogin(u),LONG_PASSWORD_INCORRECTA); 
         
     }

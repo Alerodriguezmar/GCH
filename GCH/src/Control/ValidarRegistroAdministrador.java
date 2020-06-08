@@ -66,10 +66,10 @@ public class ValidarRegistroAdministrador {
     }
     public boolean VerificarLongitudCelularAdmin(String celular){
         boolean isNum = isNumeric(celular);
-        return(celular.length() == 10 && isNum);
+        return(celular.length() == 10);
     }
     public boolean VerificarLongitudEmailAdmin(String email){
-        return(email.length() >= 8 && email.matches("[-\\w\\.]+@\\w+\\.\\w+"));
+        return(email.length() >= 8 /*&& email.matches("[-\\w\\.]+@\\w+\\.\\w+")*/);
     }
     public boolean VerificarLongitudUsuarioAdmin(String usuario){
         return(usuario.length() >= 5 && usuario.length() < 33);

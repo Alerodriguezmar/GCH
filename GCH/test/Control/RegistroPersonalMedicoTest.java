@@ -49,7 +49,7 @@ public class RegistroPersonalMedicoTest {
         b.setCelular("3112698969");
         b.setCargo("Asistente Enfermeria");
         b.setId(1036895699);
-        b.setReTHUS("8369869");
+        b.setReTHUS("8369869123");
         b.setNomUsuario("Sofro");
         b.setPasswordAux("Sof123");
     
@@ -96,8 +96,8 @@ public class RegistroPersonalMedicoTest {
         b.setTipo_sangre("O+");
         b.setCelular("3112698969");
         b.setCargo("Asistente Enfermeria");
-        b.setId(1039);
-        b.setReTHUS("8369869");
+        b.setId(103);
+        b.setReTHUS("8369869123");
         b.setNomUsuario("Sofro");
         b.setPasswordAux("Sof123");
     
@@ -120,7 +120,7 @@ public class RegistroPersonalMedicoTest {
         b.setCelular("3112");
         b.setCargo("Asistente Enfermeria");
         b.setId(1036895699);
-        b.setReTHUS("8369869");
+        b.setReTHUS("8369869123");
         b.setNomUsuario("Sofro");
         b.setPasswordAux("Sof123");
     
@@ -143,7 +143,7 @@ public class RegistroPersonalMedicoTest {
         b.setCelular("3112897257");
         b.setCargo("Asistente Enfermeria");
         b.setId(1036895699);
-        b.setReTHUS("8369869");
+        b.setReTHUS("8369869123");
         b.setNomUsuario("So");
         b.setPasswordAux("Sof123");
     
@@ -165,9 +165,9 @@ public class RegistroPersonalMedicoTest {
         b.setCelular("3112897257");
         b.setCargo("Asistente Enfermeria");
         b.setId(1036895699);
-        b.setReTHUS("8369869");
+        b.setReTHUS("8369869123");
         b.setNomUsuario("Sofro");
-        b.setPasswordAux("So");
+        b.setPasswordAux("So@");
     
         assertEquals(RegistroMedico.VerificarRegistroPersonalMedico(b), LONG_CONTRASENIA_INCORRECTA);  
              

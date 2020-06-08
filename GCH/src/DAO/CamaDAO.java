@@ -102,7 +102,7 @@ public class CamaDAO {
         
         Query q = em.createQuery("SELECT COUNT (u) FROM Camas u "
                 + "WHERE u.estado LIKE :estado")
-                .setParameter("estado", "0");
+                .setParameter("estado", false);
                 
         try {
             usuario = (Camas) q.getSingleResult();

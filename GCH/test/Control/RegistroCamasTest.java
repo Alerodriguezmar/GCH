@@ -20,6 +20,7 @@ import static org.junit.Assert.*;
 public class RegistroCamasTest {
     
     private static ValidarRegistroCamas regisCamas = new ValidarRegistroCamas();
+    private String UBICACION_INCORRECTA = "No hay ubicación de la cama";
     private String REGISTRO_EXISTENTE = "La cama ya está Registrada";
     private String REGISTRO_COMPLETO = "Cama Registrada Correctamente";
     
@@ -51,11 +52,13 @@ public class RegistroCamasTest {
     public void LongitudUbicacionPabellon() {
     
         Camas b = new Camas();
-        b.setIdCamas(1);
+         
+        b.setIdCamas(3);
         b.setEstado(false);
-        b.setPabellon("5");
-        b.setUbicacion("Izquierdo Inferior");
-        assertEquals( REGISTRO_EXISTENTE,regisCamas.VerificarRegistroCamas(b));
+        b.setPabellon("Cuidados intensivos");
+        b.setUbicacion("");
+        
+        assertEquals( regisCamas.VerificarRegistroCamas(b),UBICACION_INCORRECTA);
     
     }
     
@@ -65,16 +68,28 @@ public class RegistroCamasTest {
     public void RegistroCompleto(){
         Camas b = new Camas();
         b.setEstado(true);
-        b.setPabellon("Pabellon 4");
-        b.setUbicacion("Segundo piso izq");
+        b.setPabellon("Cuidados Intensivos");
+        b.setUbicacion("5");
         assertEquals(regisCamas.VerificarRegistroCamas(b), REGISTRO_COMPLETO);
         
          Camas c = new Camas();
         c.setEstado(true);
-        c.setPabellon("Pabellon 7");
-        c.setUbicacion("Primer Piso Der.");
+        c.setPabellon("Cuidados intermedios");
+        c.setUbicacion("7");
         assertEquals(regisCamas.VerificarRegistroCamas(b), REGISTRO_COMPLETO);
         
     }
+    
+    
+    @Test
+    public void RegistroExist(){
+        Camas b = new Camas();
+
+        b.setEstado(false);
+        b.setPabellon("Cuidados intermedios");
+        b.setUbicacion("256");
+        assertEquals(regisCamas.VerificarRegistroCamas(b), REGISTRO_EXISTENTE);
+    }
+    
     }
 
