@@ -203,8 +203,7 @@ public class EquipoDAO {
                         eq.setRegistroSanitario(res.getString("RegistroSanitario"));
                         eq.setEstadoEquipo(res.getBoolean("EstadoEquipo"));
                         eq.setTipoUso(res.getString("TipoUso"));
-                        
-
+         
             }
             res.close();
             stmt.execute(query);
@@ -217,9 +216,9 @@ public class EquipoDAO {
     }
     
     //Leer Equipos con x nombre disponibles
-    public int leerNombreDisp(String nombre){
-        int N = 0;
-        String query = "SELECT COUNT(ESTADOEQUIPO) FROM EQUIPO WHERE NOMBREEQUIPO="+"'"+nombre+"'"+" AND estadoEquipo=0";
+    public long leerEq(String nomeq) {
+        long eq=-1;
+        String query = "SELECT COUNT(ESTADOEQUIPO) AS CANTIDAD FROM ROOT.EQUIPO WHERE NOMBREEQUIPO='"+nomeq+"' AND ESTADOEQUIPO=0";
         String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
         String username = "root";
         String password = "123456";
@@ -232,15 +231,7 @@ public class EquipoDAO {
                 
             System.out.println("Datos del equipo: ");
             if (res.next()) {
-                System.out.println(res.getInt("idEquipo") +
-                        res.getString("nombreEquipo") + ", " +
-                        res.getString("Marca") + ", " +
-                        res.getString("RegistroSanitario") + ", " +
-                        res.getString("DescripcionEquipo") + ", " +
-                        res.getBoolean("EstadoEquipo") + ", " + 
-                        res.getString("TipoUso"));
-                //creo paciente
-                       
+                eq=res.getLong("CANTIDAD");
             }
             res.close();
             stmt.execute(query);
@@ -249,7 +240,7 @@ public class EquipoDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } 
-        return N;
+        return eq;
     }
 }
 
