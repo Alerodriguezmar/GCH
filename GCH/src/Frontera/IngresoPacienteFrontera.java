@@ -14,7 +14,10 @@ import Entidad.IngresoPaciente;
 import Entidad.Paciente;
 import Entidad.PersonalMedico;
 import static java.lang.Integer.parseInt;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -77,7 +80,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         mensajeUsuario3 = new javax.swing.JLabel();
         mensajeUsuario4 = new javax.swing.JLabel();
         mensajeUsuario5 = new javax.swing.JLabel();
-        mensajeUsuario6 = new javax.swing.JLabel();
         mensajeUsuario7 = new javax.swing.JLabel();
         buscarB = new javax.swing.JButton();
 
@@ -214,14 +216,9 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
 
         equiposT.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
+            mostrar(),
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "EQUIPO", "CANTIDAD"
             }
         ));
         jScrollPane1.setViewportView(equiposT);
@@ -337,42 +334,30 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
 
         mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario.setText("jLabel6");
         add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 91, -1, -1));
 
         mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario1.setText("jLabel6");
         add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 131, -1, -1));
 
         mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario2.setText("jLabel6");
         add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 52, -1, -1));
 
         mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario3.setText("jLabel6");
         add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 171, -1, -1));
 
         mensajeUsuario4.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario4.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario4.setText("jLabel6");
         add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 52, -1, -1));
 
         mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario5.setText("jLabel6");
         add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 89, -1, -1));
-
-        mensajeUsuario6.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario6.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario6.setText("jLabel6");
-        add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 52, -1, -1));
 
         mensajeUsuario7.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario7.setForeground(new java.awt.Color(255, 0, 0));
-        mensajeUsuario7.setText("jLabel6");
         add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 124, -1, -1));
 
         buscarB.setText("Buscar");
@@ -424,7 +409,8 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         EquiposUsados equs = new EquiposUsados();
         EquiposUsadosDAO equsdao = new EquiposUsadosDAO();
         Camas camaaux = new Camas();
-
+        ValidarIngresoPaciente validar = new ValidarIngresoPaciente();
+        
         persm = persmDAO.leerPorId("1");
         System.out.println(persm.getNombre1());
         
@@ -445,7 +431,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         tipoSangreCBActionPerformed(evt);
         observacionTFActionPerformed(evt);
         
-         
+        
         try {
             
             Integer.parseInt(identificacionTF.getText());
@@ -455,14 +441,61 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 paciente = pac;
             
             } else {
-                
-                paciente.setIdPaciente(parseInt(identificacionTF.getText()));
-                paciente.setNombrePaciente1(nombre1TF.getText());
-                paciente.setNombrePaciente2(nombre2TF.getText());
-                paciente.setApellidoPaciente1(apellido1TF.getText());
-                paciente.setApellidoPaciente2(apellido2TF.getText());
-                pacientedao.crear(paciente);
-                System.out.println("Paciente registrado con éxito en BD");
+                  if (!validar.VerificarLongitudId(identificacionTF.getText())) {
+                    mensajeUsuario4.setText("Longitud de identificación incorrecta");
+                } else {
+                    paciente.setIdPaciente(parseInt(identificacionTF.getText()));
+                    mensajeUsuario4.setText("");
+                }
+                //validar nombre 1
+                if (!validar.VerificarLongitudNombre1(nombre1TF.getText())) {
+                    mensajeUsuario2.setText("Longitud primer nombre incorrecta");
+                } else {
+                    paciente.setNombrePaciente1(nombre1TF.getText());
+                    mensajeUsuario2.setText("");
+                }
+                //validar nombre 2 
+                if (!validar.VerificarLongitudNombre2(nombre2TF.getText())) {
+                    mensajeUsuario.setText("Longitud primer nombre incorrecta");
+                } else {
+                    paciente.setNombrePaciente2(nombre2TF.getText());
+                    mensajeUsuario.setText("");
+                }
+                //validar apellido 1
+                if (!validar.VerificarLongitudApellido1(apellido1TF.getText())) {
+                    mensajeUsuario1.setText("Longitud primer nombre incorrecta");
+                } else {
+                    paciente.setApellidoPaciente1(apellido1TF.getText());
+                    mensajeUsuario1.setText("");
+                }
+                //validar apellido 2
+                if (!validar.VerificarLongitudApellido2(apellido2TF.getText())) {
+                    mensajeUsuario3.setText("Longitud primer nombre incorrecta");
+                } else {
+                    paciente.setApellidoPaciente2(apellido2TF.getText());
+                    mensajeUsuario3.setText("");
+                }
+                //validar Tipo de Sangre
+                if (!validar.VerificarSelectTipoSangre(tipoSangreCB.getSelectedItem().toString())) {
+                    mensajeUsuario5.setText("No se ha seleccionado un tipo de sangre");
+                } else {
+                    paciente.setTipoSangre(tipoSangreCB.getSelectedItem().toString());
+                    mensajeUsuario5.setText("");
+                }
+                //validar Tipo de Atención
+                if (!validar.VerificarSelectTipoAtencion(tipoAtencionCB.getSelectedItem().toString())) {
+                    mensajeUsuario7.setText("No se ha seleccionado un tipo de atención");
+                } else {
+
+                    mensajeUsuario7.setText("");
+                }
+                String resultado = validar.VerificarIngresoPaciente_(paciente);
+                if ("Datos del paciente ingresados correctamente".equals(resultado)) {
+                    pacientedao.crear(paciente);
+                    System.out.println("Paciente registrado con éxito en BD");
+
+                }       
+              
             }
             
             //VERIFICAR SI LA CAMA ESTÁ DISPONIBLE
@@ -473,11 +506,16 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 System.out.println("NO HAY CAMAS DISPONIBLES");
             
             } else {
-                
+                //Tomar fecha
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                String fecha = now.format(dtf);
+                System.out.println(fecha);
+                //Generar Ingreso
                 ingresoP.setPaciente(paciente);
                 ingresoP.setCama(cama);
                 ingresoP.setEstado(true);
-                ingresoP.setFecha("D/M/A");
+                ingresoP.setFecha(fecha);
                 ingresoP.setObservacion(observacionTF.getText());
                 ingresoP.setPersonalm(persm);
                 
@@ -791,7 +829,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JLabel mensajeUsuario3;
     private javax.swing.JLabel mensajeUsuario4;
     private javax.swing.JLabel mensajeUsuario5;
-    private javax.swing.JLabel mensajeUsuario6;
     private javax.swing.JLabel mensajeUsuario7;
     private javax.swing.JTextField nombre1TF;
     private javax.swing.JTextField nombre2TF;
@@ -802,4 +839,48 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> tipoSangreCB;
     // End of variables declaration//GEN-END:variables
 
+  
+    public String [][] mostrar(){
+        EquipoDAO edao = new EquipoDAO();
+        List<Equipo> eqs = new ArrayList();
+        
+        String[] nombres = new String[] {"EQUIPO DE INTUBACION", "SATUROMETRO", "BALA OXIGENO", "MONITOR", "BOMBA INFUSION CONTINUA", "BOMBA NUTRICION ENTERAL", "ASPIRADOR DE SECRECIONES","VENTILADOR MECANICO" };
+        for(int i = 0; i < nombres.length; i++){
+            Equipo e = new Equipo();
+            e.setIdEquipo(i);
+            e.setNombreEquipo(nombres[i]);
+            eqs.add(e);
+          
+        }
+        
+        String[][] matriz=new String[eqs.size()][3];
+        for(int i = 0; i<eqs.size(); i++){
+            matriz[i][0] = Integer.toString(eqs.get(i).getIdEquipo());
+            matriz[i][1] = eqs.get(i).getNombreEquipo();
+            matriz[i][2] = Long.toString(edao.leerEq(eqs.get(i).getNombreEquipo()));//10 se debe reemplazar por la consulta SQL
+            
+            
+        }
+        
+        return matriz;
+        
+        /*EquipoDAO edao = new EquipoDAO();
+        List<Equipo> eqs = new ArrayList();
+        Equipo e = new Equipo();
+        String[] nombres;
+        nombres = new String[] {"EQUIPO DE INTUBACION", "SATUROMETRO", "BALA OXIGENO", "MONITOR", "BOMBA INFUSION CONTINUA", "BOMBA NUTRICION ENTERAL", "ASPIRADOR DE SECRECIONES","VENTILADOR MECANICO" };
+        for(int i = 0; i < nombres.length; i++){
+            e.setIdEquipo(i);
+            e.setNombreEquipo(nombres[i]);
+            eqs.add(e);
+        }
+        
+        String[][] matriz=new String[eqs.size()][3];
+        for(int i = 0; i<eqs.size(); i++){
+            matriz[i][0] = Integer.toString(eqs.get(i).getIdEquipo());
+            matriz[i][1] = eqs.get(i).getNombreEquipo();
+            matriz[i][2] = Long.toString(edao.leerEq(eqs.get(i).getNombreEquipo()));//10 se debe reemplazar por la consulta SQL
+        }
+        return matriz;       */ 
+    }
 }

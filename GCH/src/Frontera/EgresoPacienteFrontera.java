@@ -337,4 +337,5 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JLabel tipoAtencioL;
     private javax.swing.JLabel tipoAtencionL;
     // End of variables declaration//GEN-END:variables
+
 }

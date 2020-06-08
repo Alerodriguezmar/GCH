@@ -32,7 +32,7 @@ public class ValidarIngresoPaciente {
         if(!VerificarLongitudApellido2(paciente.getApellidoPaciente2())){
             return("Longitud segundo apellido incorrecta");
         }
-        if(!VerificarLongitudId(paciente.getIdPaciente())){
+        if(!VerificarLongitudId(String.valueOf(paciente.getIdPaciente()))){
             return("Logitud Identificación incorrecta");
         }
         if(!VerificarSelectTipoSangre(paciente.getTipoSangre())){
@@ -49,6 +49,26 @@ public class ValidarIngresoPaciente {
          if(VerificarIsRegistrado(String.valueOf(paciente.getIdPaciente()))){
             return("Paciente está registrado");
         }
+        return("Datos del paciente ingresados correctamente");
+    }
+    //verificacion del paciente metodo corto
+     public String VerificarIngresoPaciente_(Paciente paciente) {
+        if(!VerificarLongitudNombre1(paciente.getNombrePaciente1())){
+            return("Longitud primer nombre incorrecta");
+        }
+        if(!VerificarLongitudNombre2(paciente.getNombrePaciente2())){
+            return("Longitud segundo nombre incorrecta");
+        }
+        if(!VerificarLongitudApellido1(paciente.getApellidoPaciente1())){
+            return("Longitud primer apellido incorrecta");
+        }
+        if(!VerificarLongitudApellido2(paciente.getApellidoPaciente2())){
+            return("Longitud segundo apellido incorrecta");
+        }
+        if(!VerificarLongitudId(String.valueOf(paciente.getIdPaciente()))){
+            return("Logitud Identificación incorrecta");
+        }
+        
         return("Datos del paciente ingresados correctamente");
     }
     
@@ -71,10 +91,10 @@ public class ValidarIngresoPaciente {
         return (apellido2.length() <= 14);
     }
 
-    public boolean VerificarLongitudId(int id) {
-        String a = String.valueOf(id);
-        return ( a.length() >= 2 &&  a.length() < 13);
+    public boolean VerificarLongitudId(String id) {
+        return ( id.length() >= 2 &&  id.length() < 13);
     }
+    
 
     public boolean VerificarSelectTipoSangre(String tipoSangre) {
         return (tipoSangre.isEmpty());

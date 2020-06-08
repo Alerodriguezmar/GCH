@@ -203,8 +203,35 @@ public class EquipoDAO {
                         eq.setRegistroSanitario(res.getString("RegistroSanitario"));
                         eq.setEstadoEquipo(res.getBoolean("EstadoEquipo"));
                         eq.setTipoUso(res.getString("TipoUso"));
-                        
-
+         
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return eq;
+    }
+    
+    //Leer Equipos con x nombre disponibles
+    public long leerEq(String nomeq) {
+        long eq=-1;
+        String query = "SELECT COUNT(ESTADOEQUIPO) AS CANTIDAD FROM ROOT.EQUIPO WHERE NOMBREEQUIPO='"+nomeq+"' AND ESTADOEQUIPO=0";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos del equipo: ");
+            if (res.next()) {
+                eq=res.getLong("CANTIDAD");
             }
             res.close();
             stmt.execute(query);

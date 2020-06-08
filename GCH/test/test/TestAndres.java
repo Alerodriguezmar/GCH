@@ -8,8 +8,10 @@ package test;
 
 import DAO.AdminDAO;
 import DAO.CamaDAO;
+import DAO.EquipoDAO;
 import Entidad.Administrador;
 import Entidad.Camas;
+import Entidad.Equipo;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -69,13 +71,21 @@ public class TestAndres {
             System.out.println(u.getContrasenia());
             System.out.println("--------------------------------");
             dao.crear(u);
-        }*/
+        }*//*
         Camas cama,c;
         CamaDAO cdao = new CamaDAO();
         c = cdao.leerCamasDisp();
         cama = cdao.leerCamasDisp();
         cama.setEstado(true);
         cdao.actualizar(c, cama);
-        System.out.println(cama.getIdCamas());
+        System.out.println(cama.getIdCamas());*/
+        EquipoDAO edao = new EquipoDAO();
+        Equipo equipo = new Equipo();
+        equipo.setNombreEquipo("VENTILADOR MECANICO");
+        equipo.setEstadoEquipo(false);
+        String nomeq = "VENTILADOR MECANICO";
+        long n;
+        n=edao.leerEq(nomeq);
+        System.out.println(n);
     }
 }
