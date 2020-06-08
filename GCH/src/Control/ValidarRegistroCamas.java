@@ -6,6 +6,7 @@ import Entidad.Camas;
 
 public class ValidarRegistroCamas {
     private final CamaDAO dao = new CamaDAO();
+    
     public ValidarRegistroCamas(){ 
     }
     
@@ -21,6 +22,6 @@ public class ValidarRegistroCamas {
     }
     
    public boolean isCama(String ubicacion){
-   return(ubicacion.length()>0);
+   return(ubicacion.length()<=0);
    }
 }
