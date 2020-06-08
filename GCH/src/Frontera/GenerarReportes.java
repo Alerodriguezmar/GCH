@@ -300,8 +300,23 @@ public class GenerarReportes extends javax.swing.JPanel {
         EquipoDAO edao = new EquipoDAO();
         List<Equipo> eqs = new ArrayList();
         Equipo e = new Equipo();
-        e.setNombreEquipo("VENTILADOR");
+        e.setNombreEquipo("VENTILADOR MECANICO");
         eqs.add(e);
+        e.setNombreEquipo("SATUROMETRO");
+        eqs.add(e);
+        e.setNombreEquipo("BALA OXIGENO");
+        eqs.add(e);
+        e.setNombreEquipo("MONITOR");
+        eqs.add(e);
+        e.setNombreEquipo("BOMBA INFUSION CONTINUA");
+        eqs.add(e);
+        e.setNombreEquipo("BOMBA NUTRICION ENTERAL");
+        eqs.add(e);
+        e.setNombreEquipo("ASPIRADOR DE SECRECIONES");
+        eqs.add(e);
+        e.setNombreEquipo("EQUIPO DE INTUBACION");
+        eqs.add(e);
+        
         String[][] matriz=new String[eqs.size()][2];
         for(int i = 0; i<eqs.size(); i++){
             matriz[i][0] = eqs.get(i).getNombreEquipo();

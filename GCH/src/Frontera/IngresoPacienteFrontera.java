@@ -844,14 +844,19 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         EquipoDAO edao = new EquipoDAO();
         List<Equipo> eqs = new ArrayList();
         Equipo e = new Equipo();
-        e.setIdEquipo(30);
-        e.setNombreEquipo("VENTILADOR");
-        eqs.add(e);
+        String[] nombres;
+        nombres = new String[] {"EQUIPO DE INTUBACION", "SATUROMETRO", "BALA OXIGENO", "MONITOR", "BOMBA INFUSION CONTINUA", "BOMBA NUTRICION ENTERAL", "ASPIRADOR DE SECRECIONES","VENTILADOR MECANICO" };
+        for(int i = 0; i < nombres.length; i++){
+            e.setIdEquipo(i);
+            e.setNombreEquipo(nombres[i]);
+            eqs.add(e);
+        }
+        
         String[][] matriz=new String[eqs.size()][3];
         for(int i = 0; i<eqs.size(); i++){
             matriz[i][0] = Integer.toString(eqs.get(i).getIdEquipo());
             matriz[i][1] = eqs.get(i).getNombreEquipo();
-            matriz[i][2] = Integer.toString(10);//10 se debe reemplazar por la consulta SQL
+            matriz[i][2] = Long.toString(edao.leerEq(eqs.get(i).getNombreEquipo()));//10 se debe reemplazar por la consulta SQL
         }
         return matriz;        
     }
