@@ -94,7 +94,7 @@ public class IngresoPacienteDAO {
         em.getTransaction().begin();
         boolean ret = false;
         try {
-//            object = leerPorId(Long.toString(object.getIdIngreso()));
+            object = leerPorId(Long.toString(object.getIdIngreso()));
             object.setIdIngreso(nuevoObjeto.getIdIngreso());
             object.setPaciente(nuevoObjeto.getPaciente());
             object.setPersonalm(nuevoObjeto.getPersonalm());

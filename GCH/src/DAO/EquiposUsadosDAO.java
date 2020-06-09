@@ -5,7 +5,14 @@
  */
 package DAO;
 
+import Entidad.Equipo;
 import Entidad.EquiposUsados;
+import DAO.EquipoDAO;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NonUniqueResultException;
@@ -92,5 +99,39 @@ public class EquiposUsadosDAO {
             em.close();
             return ret;
         }
+    }
+    //metodo
+    /////selecta
+    //while(){ actualizar E}
+    public void actualizarEquipos (String idingreso) {
+        
+        String query = "SELECT * FROM EquiposUsados WHERE INGRESOP_IDINGRESO=" + idingreso;
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos de la CAMA: ");
+            while (res.next()) {
+                Equipo equipo = new Equipo();
+                EquipoDAO edao = new EquipoDAO();
+                equipo = edao.leerPorId(Integer.toString(res.getInt("Equipo_idEquipo")));
+                edao.actualizarEstadoF(equipo, equipo);
+                System.out.println("Equipo id: "+Integer.toString(equipo.getIdEquipo()) + " Estado Actualizado");
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        
     }
 }

@@ -149,6 +149,7 @@ public class EquipoDAO {
             return usuario;
         }
     }
+      
     public boolean actualizar(Equipo object, Equipo nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -242,6 +243,68 @@ public class EquipoDAO {
         } 
         return eq;
     }
+    
+    public boolean actualizarEstadoF(Equipo object, Equipo nuevoObjeto) {
+        
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        boolean ret = false;
+        try {
+            object = leerPorId(Integer.toString(object.getIdEquipo()));
+            object.setIdEquipo(nuevoObjeto.getIdEquipo());
+            object.setNombreEquipo(nuevoObjeto.getNombreEquipo());
+            object.setMarca(nuevoObjeto.getMarca());
+            object.setRegistroSanitario(nuevoObjeto.getRegistroSanitario());
+            object.setDescripcionEquipo(nuevoObjeto.getDescripcionEquipo());
+            object.setEstadoEquipo(false);
+            object.setTipoUso(nuevoObjeto.getTipoUso());
+            em.merge(object);
+            em.getTransaction().commit();
+            ret = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+            return ret;
+        }
+    }
+
+    public Equipo leerPorId(String idEquipo) {
+        Equipo c = new Equipo();
+        String query = "SELECT * FROM EQUIPO WHERE IDEQUIPO ="+idEquipo;
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos de la CAMA: ");
+            if (res.next()) {
+                System.out.println("EQUIPO ENCONTRADO");
+                //creo paciente
+                        c.setIdEquipo(res.getInt("idEquipo"));
+                        c.setDescripcionEquipo(res.getString("DescripcionEquipo"));
+                        c.setTipoUso(res.getString("TipoUso"));
+                        c.setEstadoEquipo(res.getBoolean("EstadoEquipo"));
+                        c.setMarca(res.getString("Marca"));
+                        c.setRegistroSanitario(res.getString("RegistroSanitario"));
+                        c.setNombreEquipo(res.getString("nombreEquipo"));
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return c;
+    }
+    
 }
 
     

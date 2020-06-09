@@ -7,6 +7,7 @@ package Frontera;
 
 import DAO.CamaDAO;
 import DAO.EgresoPacienteDAO;
+import DAO.EquiposUsadosDAO;
 import DAO.IngresoPacienteDAO;
 import DAO.PacienteDAO_prov;
 import Entidad.Camas;
@@ -175,6 +176,10 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
             egreso.setObservaciones(observacionTF.getText());
             egreso.setIngresoP(this.ingp);
             edao.crear(egreso);
+            
+            //Actualizar equipos
+            EquiposUsadosDAO equsdao = new EquiposUsadosDAO();
+            equsdao.actualizarEquipos(Long.toString(this.ingp.getIdIngreso()));
             
             //actualizo estado ingreso
             ingpaux = this.ingp;
