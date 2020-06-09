@@ -17,11 +17,11 @@ public class ValidarRegistroCamas {
         }
         if (dao.leerE(cama) == true) {
             return("Cama Registrada Correctamente");
-        }
+        } 
           return ("La cama ya está Registrada"); 
     }
     
    public boolean isCama(String ubicacion){
-   return(ubicacion.length()<=0);
+    return(ubicacion.length()<=0);
    }
 }

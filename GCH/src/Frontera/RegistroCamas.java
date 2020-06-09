@@ -44,7 +44,7 @@ public class RegistroCamas extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        listaPabellonesCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Cuidados intensivos", "Cuidados intermedios" }));
+        listaPabellonesCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "UCI", "UCIM" }));
         add(listaPabellonesCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 170, -1));
 
         camaUbicacionTF.setBackground(new java.awt.Color(204, 204, 204));
@@ -59,7 +59,6 @@ public class RegistroCamas extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, 20));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setForeground(new java.awt.Color(0, 0, 0));
         aceptarB.setText("Aceptar");
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,7 +68,6 @@ public class RegistroCamas extends javax.swing.JPanel {
         add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 301, 100, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setForeground(new java.awt.Color(0, 0, 0));
         cancelarB.setText("Cancelar");
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,18 +101,27 @@ public class RegistroCamas extends javax.swing.JPanel {
         } else {
             mensajeUsuario1.setText("");
         }
-        
         if ("La cama ya está Registrada".equals(resultado)) {
             mensajeUsuario.setText("La cama ya está Registrada");
         } else {
             mensajeUsuario.setText("");
         }
-         if (!validar.isCama(camaUbicacionTF.getText())) {
-            mensajeUsuario.setText("No hay ubicación de la cama");
-        } else {
-            mensajeUsuario.setText("");
+        //if (!validar.isCama(camaUbicacionTF.getText())) {
+          //  mensajeUsuario.setText("No hay ubicación de la cama");
+        //} else {
+           // mensajeUsuario.setText("");
+        //}
+        //REVISAR
+        boolean b = false;
+        if(" ".equals(listaPabellonesCB.getSelectedItem().toString())){
+            b = true;
         }
-        if ("Cama Registrada Correctamente".equals(resultado) && !(" ".equals(listaPabellonesCB.getSelectedItem().toString()))) {
+        else {
+            b = false;
+        }       
+        System.out.println(b);
+        
+        if ("Cama Registrada Correctamente".equals(resultado) && b == false) {
             dao.crear(camas);
             System.out.println(resultado);
             JOptionPane.showMessageDialog(null, "Cama Registrada", "", JOptionPane.INFORMATION_MESSAGE);

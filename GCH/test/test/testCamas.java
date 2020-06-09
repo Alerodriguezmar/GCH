@@ -45,11 +45,22 @@ public class testCamas {
     //
     // @Test
     // public void hello() {}
-    @Test
+    /*@Test
     public void initData() {
         CamaDAO cdao = new CamaDAO();
         Camas cama = new Camas();
         cama = cdao.leerCamasDisp();
         System.out.println("ID: "+Integer.toString(cama.getIdCamas()) + " PABELLON: "+ cama.getPabellon()+" UBICACION: "+cama.getUbicacion()+" ESTADO: "+Boolean.toString(cama.isEstado()));
     }
+*/
+    @Test
+    public void init(){
+        Camas cama = new Camas();
+        cama.setEstado(false);
+        cama.setPabellon("UCIM");
+        cama.setUbicacion("201");
+        CamaDAO cdao = new CamaDAO();
+        cdao.crear(cama);
+    }
+    
 }

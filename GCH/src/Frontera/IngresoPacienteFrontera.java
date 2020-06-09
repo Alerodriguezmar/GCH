@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -534,12 +535,21 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                     eqdao.actualizar(eq, eqaux);
                 }
                 System.out.println("INGRESADO CON EXITO");
+                
+                DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                    mostrar(),
+                    new String [] {
+                      "ID", "EQUIPO", "CANTIDAD"
+                        }
+                    );
+                
+                equiposT.setModel(model);
             }   
             
         } catch (NumberFormatException excepcion) {
             
             System.out.println("Identificación debe ser numérica");
-        
+           
         }
         
     }//GEN-LAST:event_aceptarBActionPerformed

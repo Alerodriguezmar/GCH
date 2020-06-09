@@ -85,9 +85,9 @@ public class RegistroCamasTest {
     public void RegistroExist(){
         Camas b = new Camas();
 
-        b.setEstado(false);
-        b.setPabellon("Cuidados intermedios");
-        b.setUbicacion("256");
+        b.setEstado(true);
+        b.setPabellon("UCIM");
+        b.setUbicacion("201");
         assertEquals(regisCamas.VerificarRegistroCamas(b), REGISTRO_EXISTENTE);
     }
     

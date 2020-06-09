@@ -46,16 +46,6 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         regitroL = new javax.swing.JLabel();
         fechaL = new javax.swing.JLabel();
         rethusL = new javax.swing.JLabel();
-        equiposUsados = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        bombaNutricionCB = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jLabel4 = new javax.swing.JLabel();
         registroTF = new javax.swing.JTextField();
         BuscarB = new javax.swing.JButton();
 
@@ -81,10 +71,10 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 12, -1, -1));
 
         observacionTF.setBackground(new java.awt.Color(102, 102, 102));
-        add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 440, 234, 124));
+        add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 234, 124));
 
         jLabel7.setText("Observaciones");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 452, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
         aceptarB.setText("Aceptar");
@@ -93,7 +83,7 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 482, 83, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 83, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
         cancelarB.setText("Cancelar");
@@ -102,7 +92,7 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
                 cancelarBActionPerformed(evt);
             }
         });
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(616, 521, -1, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 280, -1, -1));
 
         nombre2L.setBackground(new java.awt.Color(0, 0, 0));
         nombre2L.setText("Nombre 2");
@@ -128,92 +118,10 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         add(regitroL, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 39, -1, -1));
 
         fechaL.setText("Fecha");
-        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 517, -1, -1));
+        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, -1));
 
         rethusL.setText("ReTHUS");
-        add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 549, -1, -1));
-
-        jCheckBox1.setText("Ventiladores");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox2.setText("Saturometros");
-
-        jCheckBox3.setText("Balas de oxigeno");
-
-        jCheckBox4.setText("monitor cardíaco");
-
-        jCheckBox5.setText("Bomba de infusión continua");
-
-        bombaNutricionCB.setText("Bomba de nutrición");
-        bombaNutricionCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bombaNutricionCBActionPerformed(evt);
-            }
-        });
-
-        jCheckBox7.setText("aspirador de secreciones");
-        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox7ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox8.setText("equipo de intubacón");
-        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox8ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout equiposUsadosLayout = new javax.swing.GroupLayout(equiposUsados);
-        equiposUsados.setLayout(equiposUsadosLayout);
-        equiposUsadosLayout.setHorizontalGroup(
-            equiposUsadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(equiposUsadosLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(equiposUsadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox8)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(bombaNutricionCB)
-                    .addComponent(jCheckBox7))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-        equiposUsadosLayout.setVerticalGroup(
-            equiposUsadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(equiposUsadosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bombaNutricionCB)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        add(equiposUsados, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 209, -1, -1));
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel4.setText("Equipos usados");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 179, -1, -1));
+        add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, -1, -1));
 
         registroTF.setBackground(new java.awt.Color(204, 204, 204));
         registroTF.addActionListener(new java.awt.event.ActionListener() {
@@ -254,18 +162,6 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_aceptarBActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox7ActionPerformed
-
-    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox8ActionPerformed
-
     private void registroTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registroTFActionPerformed
@@ -291,10 +187,6 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_identificacionTFActionPerformed
 
-    private void bombaNutricionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bombaNutricionCBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bombaNutricionCBActionPerformed
-
     private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
         nombre1L.setText("Nombre 1");
         nombre2L.setText("Nombre 2");
@@ -313,20 +205,10 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JButton aceptarB;
     private javax.swing.JLabel apellido1L;
     private javax.swing.JLabel apellido2L;
-    private javax.swing.JCheckBox bombaNutricionCB;
     private javax.swing.JButton cancelarB;
-    private javax.swing.JPanel equiposUsados;
     private javax.swing.JLabel fechaL;
     private javax.swing.JTextField identificacionTF;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel nombre1L;
     private javax.swing.JLabel nombre2L;
