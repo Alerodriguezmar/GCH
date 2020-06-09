@@ -202,5 +202,32 @@ public class PersonalMedicoDAO {
         } 
         return p;
     }
+    //Leer PersonalM con x nombre disponibles
+    public long leerPersMporCargo(String nomeq) {
+        long eq=-1;
+        String query = "SELECT COUNT(CARGO) AS CANTIDAD FROM ROOT.PERSONALMEDICO WHERE CARGO='"+nomeq+"'";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos del equipo: ");
+            if (res.next()) {
+                eq=res.getLong("CANTIDAD");
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return eq;
+    }
 }
 

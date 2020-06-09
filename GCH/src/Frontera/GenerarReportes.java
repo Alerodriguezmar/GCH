@@ -299,7 +299,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         String[][] matriz=new String[pms.size()][2];
         for(int i = 0; i<pms.size(); i++){
             matriz[i][0] = pms.get(i).getCargo();
-            matriz[i][1] = Integer.toString(10);//10 se debe reemplazar por la consulta SQL
+            matriz[i][1] = Long.toString(pmdao.leerPersMporCargo(pms.get(i).getCargo()));//10 se debe reemplazar por la consulta SQL
         }
         return matriz;        
     }
