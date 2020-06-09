@@ -69,7 +69,7 @@ public class IngresoPaciente implements Serializable {
         return idIngreso;
     }
 
-    public void setIdIngreso(int idIngreso) {
+    public void setIdIngreso(long idIngreso) {
         this.idIngreso = idIngreso;
     }
 

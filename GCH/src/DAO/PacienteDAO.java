@@ -124,7 +124,7 @@ public class PacienteDAO {
             ResultSet res = stmt.executeQuery(query);
                 
             System.out.println("Datos del paciente: ");
-            while (res.next()) {
+            if (res.next()) {
                 System.out.println(res.getInt("idPaciente") +
                         res.getString("nombre1") + ", " +
                         res.getString("nombre2") + ", " +

@@ -23,8 +23,10 @@ public class EgresoPaciente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    
     @ManyToOne
     private IngresoPaciente ingresoP;
+    
     private String Observaciones; 
     private String fecha;
 

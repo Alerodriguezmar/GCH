@@ -5,8 +5,10 @@
  */
 package DAO;
 
+import Entidad.Camas;
 import Entidad.IngresoPaciente;
 import Entidad.Paciente;
+import Entidad.PersonalMedico;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -92,13 +94,15 @@ public class IngresoPacienteDAO {
         em.getTransaction().begin();
         boolean ret = false;
         try {
-            object = leer(object);
-            object.setIdIngreso((int) nuevoObjeto.getIdIngreso());
+//            object = leerPorId(Long.toString(object.getIdIngreso()));
+            object.setIdIngreso(nuevoObjeto.getIdIngreso());
             object.setPaciente(nuevoObjeto.getPaciente());
             object.setPersonalm(nuevoObjeto.getPersonalm());
             object.setFecha(nuevoObjeto.getFecha());
-            object.setObservacion(nuevoObjeto.getObservacion());
+            object.setObservacion("PRUEBA");
             object.setCama(nuevoObjeto.getCama());
+            object.setEstado(false);
+            
             em.merge(object);
             em.getTransaction().commit();
             ret = true;
@@ -111,8 +115,8 @@ public class IngresoPacienteDAO {
         }
     }
     
-    public Paciente leerPacientePorId(String id){
-        
+    
+    public Paciente leerPacientePorId(String id){    
         System.out.println("BUSCANDO PACIENTE...");
         Paciente p = new Paciente();
         String query = "SELECT * FROM INGRESO_PACIENTE WHERE PACIENTE_IDPACIENTE="+id+" AND ESTADO = 1";
@@ -167,4 +171,118 @@ public class IngresoPacienteDAO {
         } 
         return p;
     }
+    
+    //BUSCAR SELECT * FROM INGRESOPACIENTE WHERE PACIENTE_IDPACIENTE = idpaciente AND ESTADO = true;
+    public IngresoPaciente leerPorPaciente(String id){
+        System.out.println("BUSCANDO PACIENTE EN INGRESO_PACIENTE...");
+        IngresoPaciente ingp = new IngresoPaciente();
+        String query = "SELECT * FROM INGRESO_PACIENTE WHERE PACIENTE_IDPACIENTE="+id+" AND ESTADO = 1";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            if(res.next() == true){
+                System.out.println("ID: " + Long.toString(res.getLong("idIngreso")) + 
+                        " IdPaciente: " + Integer.toString(res.getInt("Paciente_IdPaciente")) +
+                        " IdPersonalm: " + Integer.toString(res.getInt("personalm_id")) +
+                        " IdCama: " + Integer.toString(res.getInt("cama_idcamas")) + 
+                        " Fecha: " + res.getString("fecha") +
+                        " Observacion: " + res.getString("observacion") +
+                        " Estado: " + Boolean.toString(res.getBoolean("estado")));
+                //CREO INGRESOPACIENTE
+                    Paciente paciente = new Paciente();
+                    PacienteDAO pdao = new PacienteDAO();
+                    paciente = pdao.leerPorId(Integer.toString(res.getInt("Paciente_IdPaciente")));
+                    
+                    Camas cama = new Camas();
+                    CamaDAO cdao = new CamaDAO();
+                    cama = cdao.leerPorId(Integer.toString(res.getInt("cama_idcamas")));
+                    
+                    PersonalMedico personalm = new PersonalMedico();
+                    PersonalMedicoDAO perdao = new PersonalMedicoDAO();
+                    personalm = perdao.leerPorId(Integer.toString(res.getInt("personalm_id")));
+                    
+                    ingp.setIdIngreso(res.getLong("idIngreso"));
+                    ingp.setPaciente(paciente);
+                    ingp.setCama(cama);
+                    ingp.setPersonalm(personalm);
+                    ingp.setFecha(res.getString("fecha"));
+                    ingp.setObservacion(res.getString("observacion"));
+                    ingp.setEstado(res.getBoolean("estado"));
+                   
+            }else{ 
+                System.out.println("INGRESO_PACIENTE NO ENCONTRADO");          
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return ingp;
+    }
+    
+    public IngresoPaciente leerPorId(String id){
+        System.out.println("BUSCANDO PACIENTE EN INGRESO_PACIENTE...");
+        IngresoPaciente ingp = new IngresoPaciente();
+        String query = "SELECT * FROM INGRESO_PACIENTE WHERE IDINGRESO="+id;
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            if(res.next() == true){
+                System.out.println("ID: " + Long.toString(res.getLong("idIngreso")) + 
+                        " IdPaciente: " + Integer.toString(res.getInt("Paciente_IdPaciente")) +
+                        " IdPersonalm: " + Integer.toString(res.getInt("personalm_id")) +
+                        " IdCama: " + Integer.toString(res.getInt("cama_idcamas")) + 
+                        " Fecha: " + res.getString("fecha") +
+                        " Observacion: " + res.getString("observacion") +
+                        " Estado: " + Boolean.toString(res.getBoolean("estado")));
+                //CREO INGRESOPACIENTE
+                    Paciente paciente = new Paciente();
+                    PacienteDAO pdao = new PacienteDAO();
+                    paciente = pdao.leerPorId(Integer.toString(res.getInt("Paciente_IdPaciente")));
+                    
+                    Camas cama = new Camas();
+                    CamaDAO cdao = new CamaDAO();
+                    cama = cdao.leerPorId(Integer.toString(res.getInt("cama_idcamas")));
+                    
+                    PersonalMedico personalm = new PersonalMedico();
+                    PersonalMedicoDAO perdao = new PersonalMedicoDAO();
+                    personalm = perdao.leerPorId(Integer.toString(res.getInt("personalm_id")));
+                    
+                    ingp.setIdIngreso(res.getLong("idIngreso"));
+                    ingp.setPaciente(paciente);
+                    ingp.setCama(cama);
+                    ingp.setPersonalm(personalm);
+                    ingp.setFecha(res.getString("fecha"));
+                    ingp.setObservacion(res.getString("observacion"));
+                    ingp.setEstado(res.getBoolean("estado"));
+                   
+            }else{ 
+                System.out.println("INGRESO_PACIENTE NO ENCONTRADO");          
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return ingp;
+    }
+    
 }

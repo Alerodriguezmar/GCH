@@ -157,7 +157,7 @@ public class CamaDAO {
         em.getTransaction().begin();
         boolean ret = false;
         try {
-            object = leerPorId(object);
+            object = leerPorId(Integer.toString(object.getIdCamas()));
             object.setIdCamas(nuevoObjeto.getIdCamas());
             object.setUbicacion(nuevoObjeto.getUbicacion());
             object.setPabellon(nuevoObjeto.getPabellon());
@@ -174,9 +174,9 @@ public class CamaDAO {
         }
     }
     
-    public Camas leerPorId(Camas cama){
+    public Camas leerPorId(String idCama){
         Camas c = new Camas();
-        String query = "SELECT * FROM CAMAS WHERE IDCAMAS ="+cama.getIdCamas();
+        String query = "SELECT * FROM CAMAS WHERE IDCAMAS ="+idCama;
         String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
         String username = "root";
         String password = "123456";

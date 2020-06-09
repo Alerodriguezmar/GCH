@@ -9,9 +9,12 @@ package test;
 import DAO.AdminDAO;
 import DAO.CamaDAO;
 import DAO.EquipoDAO;
+import DAO.IngresoPacienteDAO;
 import Entidad.Administrador;
 import Entidad.Camas;
 import Entidad.Equipo;
+import Entidad.IngresoPaciente;
+import Entidad.Paciente;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -78,7 +81,7 @@ public class TestAndres {
         cama = cdao.leerCamasDisp();
         cama.setEstado(true);
         cdao.actualizar(c, cama);
-        System.out.println(cama.getIdCamas());*/
+        System.out.println(cama.getIdCamas());
         EquipoDAO edao = new EquipoDAO();
         Equipo equipo = new Equipo();
         equipo.setNombreEquipo("VENTILADOR MECANICO");
@@ -86,6 +89,13 @@ public class TestAndres {
         String nomeq = "VENTILADOR MECANICO";
         long n;
         n=edao.leerEq(nomeq);
-        System.out.println(n);
+        System.out.println(n);*/
+        IngresoPacienteDAO idao = new IngresoPacienteDAO();
+        Paciente p = new Paciente();
+        IngresoPaciente ip = new IngresoPaciente();
+        
+        ip = idao.leerPorPaciente("12345");
+        System.out.println(Long.toString(ip.getIdIngreso()) + " " + ip.getPaciente().getNombrePaciente1());
+                
     }
 }

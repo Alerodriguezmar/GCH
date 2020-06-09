@@ -5,16 +5,27 @@
  */
 package Frontera;
 
+import DAO.CamaDAO;
+import DAO.EgresoPacienteDAO;
+import DAO.IngresoPacienteDAO;
 import DAO.PacienteDAO_prov;
+import Entidad.Camas;
+import Entidad.EgresoPaciente;
 import Entidad.Paciente;
 import javax.swing.JOptionPane;
+import Entidad.IngresoPaciente;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Observable;
 
 /**
  *
  * @author tech
  */
 public class EgresoPacienteFrontera extends javax.swing.JPanel {
-
+    
+    private Paciente paciente = new Paciente();
+    private IngresoPaciente ingp = new IngresoPaciente();
     /**
      * Creates new form IngresoPaciente
      */
@@ -43,10 +54,8 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         apellido2L = new javax.swing.JLabel();
         tipoAtencioL = new javax.swing.JLabel();
         tipoAtencionL = new javax.swing.JLabel();
-        regitroL = new javax.swing.JLabel();
         fechaL = new javax.swing.JLabel();
         rethusL = new javax.swing.JLabel();
-        registroTF = new javax.swing.JTextField();
         BuscarB = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -114,22 +123,11 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         tipoAtencionL.setText("No. de cama");
         add(tipoAtencionL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 123, -1, -1));
 
-        regitroL.setText("Registro");
-        add(regitroL, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 39, -1, -1));
-
         fechaL.setText("Fecha");
         add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, -1));
 
         rethusL.setText("ReTHUS");
         add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, -1, -1));
-
-        registroTF.setBackground(new java.awt.Color(204, 204, 204));
-        registroTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registroTFActionPerformed(evt);
-            }
-        });
-        add(registroTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 39, 145, -1));
 
         BuscarB.setText("Buscar");
         BuscarB.addActionListener(new java.awt.event.ActionListener() {
@@ -137,50 +135,89 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
                 BuscarBActionPerformed(evt);
             }
         });
-        add(BuscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 72, -1, -1));
+        add(BuscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        Paciente p = new Paciente();
-        PacienteDAO_prov dao = new PacienteDAO_prov();
-        p = dao.leerPorId(identificacionTF.getText());
-        if (p.getNombrePaciente1() != null) {
-            nombre1L.setText("Nombre 1: " + p.getNombrePaciente1());
-            nombre2L.setText("Nombre 2: " + p.getNombrePaciente2());
-            apellido1L.setText("Apellido 1: " + p.getApellidoPaciente1());
-            apellido2L.setText("Apellido 2: " + p.getApellidoPaciente2());
-        } else {
-          //  JOptionPane.showMessageDialog(null, "Paciente no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
-        if (p.getNombrePaciente1() != null) {
-            dao.ActualizarEstado(identificacionTF.getText());
-           // JOptionPane.showMessageDialog(null, "Paciente egresado con éxito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
-             System.out.println("Paciente egresado con éxito");
-        } else {
-            System.out.println("PACIENTE NO ENCONTRADO");
+        /*
+        IF(INGRESO != NULL){
+            //EGRESO(INGRESO, OBS);
+            INGRESO.SETESTADO(FALSE);
+            IDAO.ACTUALIZAR(INGRESO);
+        
+            INGRESO.GETCAMA
+            CAMAUX = CDAO.LEER(GETCAMA)
+            CAMAUX.SETESTADO(FALSE);
+            CDAO.ACTUALIZAR(CAMA, CAMAUX);
+        
+        
+            LISTA<EQUSADOS> = SELECT * EQUIPOS USADOS WHERE INGRESOP_IDINGRESO=INGRESO.GETID():
+            FOR(EQ IN EQUSADOS){
+                EQUIPO = EDAO.LEERPORID(EQ.GETEQUIPO_IDEQUIPO)
+                EQUIPO.SETESTADO(FALSE);
+                EDAO.ACTUALIZAR(EQUIPO);
+            } ELSE {"no se puede egresar"}
+        */
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                String fecha = now.format(dtf);
+        
+        if(this.ingp.getIdIngreso()!=0){
+            IngresoPaciente ingpaux = new IngresoPaciente();
+            IngresoPacienteDAO idao = new IngresoPacienteDAO();
             
+            Camas camaaux = new Camas();
+            CamaDAO cdao = new CamaDAO();
+            
+            EgresoPacienteDAO edao = new EgresoPacienteDAO();
+            EgresoPaciente egreso = new EgresoPaciente();
+            egreso.setFecha(fecha);
+            egreso.setObservaciones(observacionTF.getText());
+            egreso.setIngresoP(this.ingp);
+            edao.crear(egreso);
+            
+            //actualizo estado ingreso
+            ingpaux = this.ingp;
+            ingpaux.setEstado(false);
+            idao.actualizar(ingp, ingpaux);
+            
+            //actualizo estado cama
+            camaaux = this.ingp.getCama();
+            camaaux.setEstado(false);
+            cdao.actualizar(this.ingp.getCama(), camaaux);
+            
+            limpiar();
+            
+        } else {
+            System.out.println("NO SE PUEDE EGRESAR, INGRESO NO DISPONIBLE");
         }
     }//GEN-LAST:event_aceptarBActionPerformed
 
-    private void registroTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registroTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_registroTFActionPerformed
-
     private void BuscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarBActionPerformed
-        Paciente p = new Paciente();
-        PacienteDAO_prov dao = new PacienteDAO_prov();
-        p = dao.leerPorId(identificacionTF.getText());
-        if (p.getNombrePaciente1() != null) {
-            nombre1L.setText("Nombre 1: " + p.getNombrePaciente1());
-            nombre2L.setText("Nombre 2: " + p.getNombrePaciente2());
-            apellido1L.setText("Apellido 1: " + p.getApellidoPaciente1());
-            apellido2L.setText("Apellido 2: " + p.getApellidoPaciente2());
-        } else {
-           // JOptionPane.showMessageDialog(null, "Paciente no encontrado", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            //  JOptionPane.showMessageDialog(null, "Mensaje dentro de la ventana", "Mensaje en la barra de titulo", JOptionPane.WARNING_MESSAGE);
-            System.out.println("Paciente no encontrado");
+        
+        //BUSCAR SELECT * FROM INGRESOPACIENTE WHERE PACIENTE_IDPACIENTE = idpaciente AND ESTADO = true;
+        //if(ingresopaciente != null){ Paciente P = Pdao.leerporid(P.getIdPaciente()) }
+        //else{ sout("PACIENTE SIN INGRESOS ACTIVOS") }
+        
+        String idpaciente = identificacionTF.getText();
+        IngresoPacienteDAO ingpdao = new IngresoPacienteDAO();
+        this.ingp = ingpdao.leerPorPaciente(idpaciente);
+        if(this.ingp.getIdIngreso() != 0){
+            this.paciente = ingp.getPaciente();
+            nombre1L.setText("Nombre 1: " + this.paciente.getNombrePaciente1());
+            nombre2L.setText("Nombre 2: " + this.paciente.getNombrePaciente2());
+            apellido1L.setText("Apellido 1: " + this.paciente.getApellidoPaciente1());
+            apellido2L.setText("Apellido 2: " + this.paciente.getApellidoPaciente2());
+            tipoAtencioL.setText("Tipo de atencion: " + this.ingp.getCama().getPabellon());
+            tipoAtencionL.setText("No. de Cama: " + Integer.toString(this.ingp.getCama().getIdCamas()));
+            fechaL.setText("Fecha: " + this.ingp.getFecha());
+            rethusL.setText("reTHUS: " + this.ingp.getPersonalm().getReTHUS());
         }
-
+        else {
+            System.out.println("PACIENTE SIN INGRESOS ACTIVOS");
+        }
+        
+        
     }//GEN-LAST:event_BuscarBActionPerformed
 
     private void identificacionTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_identificacionTFActionPerformed
@@ -188,17 +225,18 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
     }//GEN-LAST:event_identificacionTFActionPerformed
 
     private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
+        limpiar();
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_cancelarBActionPerformed
+    public void limpiar(){
         nombre1L.setText("Nombre 1");
         nombre2L.setText("Nombre 2");
         apellido1L.setText("Apellido 1");
         apellido2L.setText("Apellido 2");
-        registroTF.setText("");
         observacionTF.setText("");
         identificacionTF.setText("");
-
-// TODO add your handling code here:
-    }//GEN-LAST:event_cancelarBActionPerformed
-
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarB;
@@ -213,8 +251,6 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JLabel nombre1L;
     private javax.swing.JLabel nombre2L;
     private javax.swing.JTextField observacionTF;
-    private javax.swing.JTextField registroTF;
-    private javax.swing.JLabel regitroL;
     private javax.swing.JLabel rethusL;
     private javax.swing.JLabel tipoAtencioL;
     private javax.swing.JLabel tipoAtencionL;
