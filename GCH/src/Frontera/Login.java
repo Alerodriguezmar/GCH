@@ -7,6 +7,7 @@ package Frontera;
 
 import Control.ValidarLogin;
 import Entidad.PersonalMedico;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,17 +34,17 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        usuarioTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        usuarioTF = new javax.swing.JTextField();
         ingresarB = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         registrarB = new javax.swing.JButton();
         iniciarAdminB = new javax.swing.JButton();
         mensajeUsuario1 = new javax.swing.JLabel();
         mensajeUsuario = new javax.swing.JLabel();
         contraseniaTF = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Autenticación Personal Médico");
@@ -52,54 +53,78 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        usuarioTF.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(63, 191, 168));
+        jLabel1.setText("Personal Médico");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
+
+        usuarioTF.setBackground(new java.awt.Color(16, 65, 56));
+        usuarioTF.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
+        usuarioTF.setForeground(new java.awt.Color(63, 191, 168));
+        usuarioTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usuarioTF.setText("Usuario");
+        usuarioTF.setBorder(null);
+        usuarioTF.setFocusCycleRoot(true);
+        usuarioTF.setOpaque(false);
+        usuarioTF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
+        usuarioTF.setSelectionColor(new java.awt.Color(63, 191, 168));
+        usuarioTF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                usuarioTFFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                usuarioTFFocusLost(evt);
+            }
+        });
         usuarioTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usuarioTFActionPerformed(evt);
             }
         });
-        jPanel1.add(usuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 73, 116, -1));
+        jPanel1.add(usuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 360, 60));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Usuario");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 79, -1, -1));
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Contraseña");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 124, -1, -1));
-
-        ingresarB.setBackground(new java.awt.Color(204, 204, 204));
-        ingresarB.setText("Ingresar");
+        ingresarB.setBackground(new java.awt.Color(18, 62, 54));
+        ingresarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Iniciar_sesion.png"))); // NOI18N
+        ingresarB.setBorder(null);
+        ingresarB.setContentAreaFilled(false);
+        ingresarB.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ingresarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ingresarBActionPerformed(evt);
             }
         });
-        jPanel1.add(ingresarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 177, 122, -1));
+        jPanel1.add(ingresarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 680, 220, -1));
 
-        jLabel3.setText("Version 1.");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 408, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 177, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(18, 62, 54));
+        jLabel3.setText("Version 2.");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 940, -1, -1));
 
         registrarB.setBackground(new java.awt.Color(204, 204, 204));
+        registrarB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        registrarB.setForeground(new java.awt.Color(63, 191, 168));
         registrarB.setText("Registrar un administrador");
+        registrarB.setBorder(null);
+        registrarB.setContentAreaFilled(false);
         registrarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarBActionPerformed(evt);
             }
         });
-        jPanel1.add(registrarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 348, 201, -1));
+        jPanel1.add(registrarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 830, 230, 30));
 
         iniciarAdminB.setBackground(new java.awt.Color(204, 204, 204));
-        iniciarAdminB.setText("Iniciar sesión administrador");
+        iniciarAdminB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        iniciarAdminB.setForeground(new java.awt.Color(63, 191, 168));
+        iniciarAdminB.setText("Iniciar cómo administrador");
+        iniciarAdminB.setBorder(null);
+        iniciarAdminB.setContentAreaFilled(false);
         iniciarAdminB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iniciarAdminBActionPerformed(evt);
             }
         });
-        jPanel1.add(iniciarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 309, -1, -1));
+        jPanel1.add(iniciarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 770, 240, -1));
 
         mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario1.setForeground(new java.awt.Color(204, 0, 0));
@@ -108,7 +133,39 @@ public class Login extends javax.swing.JFrame {
         mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario.setForeground(new java.awt.Color(204, 0, 0));
         jPanel1.add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, -1, -1));
-        jPanel1.add(contraseniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 110, -1));
+
+        contraseniaTF.setBackground(new java.awt.Color(16, 65, 56));
+        contraseniaTF.setEchoChar('\u25CF');
+        contraseniaTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        contraseniaTF.setForeground(new java.awt.Color(63, 191, 168));
+        contraseniaTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contraseniaTF.setText("contraseña");
+        contraseniaTF.setBorder(null);
+        contraseniaTF.setOpaque(false);
+        contraseniaTF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
+        contraseniaTF.setSelectionColor(new java.awt.Color(63, 191, 168));
+        contraseniaTF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                contraseniaTFFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                contraseniaTFFocusLost(evt);
+            }
+        });
+        contraseniaTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraseniaTFActionPerformed(evt);
+            }
+        });
+        jPanel1.add(contraseniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 550, 360, 70));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
+
+        Fondo.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        Fondo.setForeground(new java.awt.Color(63, 191, 168));
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Login.jpg"))); // NOI18N
+        Fondo.setRequestFocusEnabled(false);
+        Fondo.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, -20, 850, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,9 +181,15 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usuarioTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usuarioTFActionPerformed
+    private void iniciarAdminBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarAdminBActionPerformed
+        new LoginAdmin().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_iniciarAdminBActionPerformed
+
+    private void registrarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBActionPerformed
+        new RegistroAdmin().setVisible(true);
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_registrarBActionPerformed
 
     private void ingresarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarBActionPerformed
         PersonalMedico usuario = new PersonalMedico();
@@ -137,7 +200,7 @@ public class Login extends javax.swing.JFrame {
 
         System.out.println("---------------------------------------------------**-");
         String resultado = Validar.verificarLogin(usuario);
-        
+
         if (!Validar.VerificarLongitudNombre(usuarioTF.getText())) {
             mensajeUsuario.setText("Longitud de nombre incorrecta");
         } else {
@@ -158,15 +221,45 @@ public class Login extends javax.swing.JFrame {
         System.out.println(resultado);         // TODO add your handling code here:
     }//GEN-LAST:event_ingresarBActionPerformed
 
-    private void registrarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBActionPerformed
-        new RegistroAdmin().setVisible(true);
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_registrarBActionPerformed
+    private void contraseniaTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseniaTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraseniaTFActionPerformed
 
-    private void iniciarAdminBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarAdminBActionPerformed
-        new LoginAdmin().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_iniciarAdminBActionPerformed
+    private void usuarioTFFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioTFFocusGained
+        if(usuarioTF.getText().trim().toLowerCase().equals("usuario"))
+        {
+            usuarioTF.setText("");
+            usuarioTF.setForeground(new java.awt.Color(63, 191, 168));
+        }
+    }//GEN-LAST:event_usuarioTFFocusGained
+
+    private void usuarioTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usuarioTFActionPerformed
+
+    private void usuarioTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usuarioTFFocusLost
+        if(usuarioTF.getText().trim().toLowerCase().equals("usuario")||usuarioTF.getText().trim().toLowerCase().equals(""))
+        {
+            usuarioTF.setText("Usuario");
+            usuarioTF.setForeground(new java.awt.Color(63, 191, 168));
+        }
+    }//GEN-LAST:event_usuarioTFFocusLost
+
+    private void contraseniaTFFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_contraseniaTFFocusGained
+        if(contraseniaTF.getText().trim().toLowerCase().equals("contraseña"))
+        {
+            contraseniaTF.setText("");
+            contraseniaTF.setForeground(new java.awt.Color(63, 191, 168));
+        }
+    }//GEN-LAST:event_contraseniaTFFocusGained
+
+    private void contraseniaTFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_contraseniaTFFocusLost
+        if(contraseniaTF.getText().trim().toLowerCase().equals("contraseña")||contraseniaTF.getText().trim().toLowerCase().equals(""))
+        {
+            contraseniaTF.setText("contraseña");
+            contraseniaTF.setForeground(new java.awt.Color(63, 191, 168));
+        }
+    }//GEN-LAST:event_contraseniaTFFocusLost
 
     /**
      * @param args the command line arguments
@@ -205,13 +298,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JPasswordField contraseniaTF;
     private javax.swing.JButton ingresarB;
     private javax.swing.JButton iniciarAdminB;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel mensajeUsuario;
     private javax.swing.JLabel mensajeUsuario1;

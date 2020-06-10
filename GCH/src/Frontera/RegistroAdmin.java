@@ -36,27 +36,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        adminNombre1TF = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        adminApellido1TF = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        adminIdTF = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        adminCelularTF = new javax.swing.JTextField();
-        aceptarB = new javax.swing.JButton();
-        adminEmailTF = new javax.swing.JTextField();
-        cancelarB = new javax.swing.JButton();
-        adminUsuarioTF = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        adminNombre2TF = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        adminApellido2TF = new javax.swing.JTextField();
-        ingresarAdminB = new javax.swing.JButton();
-        ingresarPersonalB = new javax.swing.JButton();
         mensajeUsuario = new javax.swing.JLabel();
         mensajeUsuario1 = new javax.swing.JLabel();
         mensajeUsuario2 = new javax.swing.JLabel();
@@ -66,157 +45,239 @@ public class RegistroAdmin extends javax.swing.JFrame {
         mensajeUsuario7 = new javax.swing.JLabel();
         mensajeUsuario8 = new javax.swing.JLabel();
         mensajeUsuario9 = new javax.swing.JLabel();
+        mensajeUsuario10 = new javax.swing.JLabel();
+        adminNombre1TF = new javax.swing.JTextField();
+        adminApellido1TF = new javax.swing.JTextField();
+        adminIdTF = new javax.swing.JTextField();
+        adminCelularTF = new javax.swing.JTextField();
+        aceptarB = new javax.swing.JButton();
+        adminEmailTF = new javax.swing.JTextField();
+        cancelarB = new javax.swing.JButton();
+        adminUsuarioTF = new javax.swing.JTextField();
+        adminNombre2TF = new javax.swing.JTextField();
+        adminApellido2TF = new javax.swing.JTextField();
+        ingresarAdminB = new javax.swing.JButton();
+        ingresarPersonalB = new javax.swing.JButton();
         adminContrasenniaTF = new javax.swing.JPasswordField();
+        adminContrasenniaTF1 = new javax.swing.JPasswordField();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Celular");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        mensajeUsuario.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 455, -1, -1));
 
-        adminNombre1TF.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 120, -1));
+        mensajeUsuario1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario1.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
 
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Email");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 156, -1, -1));
+        mensajeUsuario2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario2.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 375, -1, -1));
 
-        adminApellido1TF.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(adminApellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 120, -1));
+        mensajeUsuario3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario3.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 630, -1, -1));
 
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Usuario");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
+        mensajeUsuario5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario5.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 295, -1, -1));
 
-        adminIdTF.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(adminIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 120, -1));
+        mensajeUsuario6.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario6.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 545, -1, -1));
 
-        jLabel7.setText("Contraseña");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
+        mensajeUsuario7.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario7.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 380, -1, -1));
 
-        adminCelularTF.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(adminCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
+        mensajeUsuario8.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario8.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 465, -1, -1));
+
+        mensajeUsuario9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario9.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 545, -1, -1));
+
+        mensajeUsuario10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario10.setForeground(new java.awt.Color(255, 102, 102));
+        jPanel1.add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 630, -1, 0));
+
+        adminNombre1TF.setBackground(new java.awt.Color(16, 65, 56));
+        adminNombre1TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminNombre1TF.setForeground(new java.awt.Color(63, 191, 168));
+        adminNombre1TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminNombre1TF.setBorder(null);
+        adminNombre1TF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
+        adminNombre1TF.setSelectionColor(new java.awt.Color(63, 191, 168));
+        adminNombre1TF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminNombre1TFActionPerformed(evt);
+            }
+        });
+        jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 370, 60));
+
+        adminApellido1TF.setBackground(new java.awt.Color(16, 65, 56));
+        adminApellido1TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminApellido1TF.setForeground(new java.awt.Color(63, 191, 168));
+        adminApellido1TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminApellido1TF.setBorder(null);
+        adminApellido1TF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
+        adminApellido1TF.setSelectionColor(new java.awt.Color(63, 191, 168));
+        jPanel1.add(adminApellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 395, 370, 50));
+
+        adminIdTF.setBackground(new java.awt.Color(16, 65, 56));
+        adminIdTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminIdTF.setForeground(new java.awt.Color(63, 191, 168));
+        adminIdTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminIdTF.setBorder(null);
+        adminIdTF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
+        adminIdTF.setSelectionColor(new java.awt.Color(63, 191, 168));
+        jPanel1.add(adminIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, 370, 50));
+
+        adminCelularTF.setBackground(new java.awt.Color(63, 191, 168));
+        adminCelularTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminCelularTF.setForeground(new java.awt.Color(16, 65, 56));
+        adminCelularTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminCelularTF.setBorder(null);
+        adminCelularTF.setSelectedTextColor(new java.awt.Color(63, 191, 168));
+        adminCelularTF.setSelectionColor(new java.awt.Color(16, 65, 56));
+        jPanel1.add(adminCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 235, 370, 50));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setText("Aceptar");
+        aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
+        aceptarB.setBorder(null);
+        aceptarB.setBorderPainted(false);
+        aceptarB.setContentAreaFilled(false);
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
-        jPanel1.add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 425, 83, -1));
+        jPanel1.add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 680, 240, 90));
 
-        adminEmailTF.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(adminEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 120, -1));
+        adminEmailTF.setBackground(new java.awt.Color(63, 191, 168));
+        adminEmailTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminEmailTF.setForeground(new java.awt.Color(16, 65, 56));
+        adminEmailTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminEmailTF.setBorder(null);
+        adminEmailTF.setSelectedTextColor(new java.awt.Color(63, 191, 168));
+        adminEmailTF.setSelectionColor(new java.awt.Color(16, 65, 56));
+        jPanel1.add(adminEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 320, 370, 50));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setText("Cancelar");
+        cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
+        cancelarB.setBorder(null);
+        cancelarB.setBorderPainted(false);
+        cancelarB.setContentAreaFilled(false);
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBActionPerformed(evt);
             }
         });
-        jPanel1.add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(539, 458, -1, -1));
+        jPanel1.add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 680, 250, 90));
 
-        adminUsuarioTF.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(adminUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 120, -1));
+        adminUsuarioTF.setBackground(new java.awt.Color(63, 191, 168));
+        adminUsuarioTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminUsuarioTF.setForeground(new java.awt.Color(16, 65, 56));
+        adminUsuarioTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminUsuarioTF.setBorder(null);
+        adminUsuarioTF.setSelectedTextColor(new java.awt.Color(63, 191, 168));
+        adminUsuarioTF.setSelectionColor(new java.awt.Color(16, 65, 56));
+        jPanel1.add(adminUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 405, 370, 50));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Primer Nombre");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 109, -1));
+        adminNombre2TF.setBackground(new java.awt.Color(16, 65, 56));
+        adminNombre2TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminNombre2TF.setForeground(new java.awt.Color(63, 191, 168));
+        adminNombre2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminNombre2TF.setBorder(null);
+        adminNombre2TF.setPreferredSize(new java.awt.Dimension(6, 19));
+        adminNombre2TF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
+        adminNombre2TF.setSelectionColor(new java.awt.Color(63, 191, 168));
+        jPanel1.add(adminNombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 313, 370, 50));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Primer Apellido");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, -1, -1));
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("No. Identificación");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
-
-        jLabel8.setText("Segundo Nombre");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
-
-        adminNombre2TF.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(adminNombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 120, -1));
-
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Segundo Apellido");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, -1, -1));
-
-        adminApellido2TF.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(adminApellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 120, -1));
+        adminApellido2TF.setBackground(new java.awt.Color(16, 65, 56));
+        adminApellido2TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminApellido2TF.setForeground(new java.awt.Color(63, 191, 168));
+        adminApellido2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminApellido2TF.setBorder(null);
+        adminApellido2TF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
+        adminApellido2TF.setSelectionColor(new java.awt.Color(63, 191, 168));
+        jPanel1.add(adminApellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 360, 50));
 
         ingresarAdminB.setBackground(new java.awt.Color(204, 204, 204));
+        ingresarAdminB.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        ingresarAdminB.setForeground(new java.awt.Color(63, 191, 168));
         ingresarAdminB.setText("Iniciar sesión administrador");
+        ingresarAdminB.setBorder(null);
+        ingresarAdminB.setContentAreaFilled(false);
         ingresarAdminB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ingresarAdminBActionPerformed(evt);
             }
         });
-        jPanel1.add(ingresarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 418, 218, -1));
+        jPanel1.add(ingresarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 330, -1));
 
         ingresarPersonalB.setBackground(new java.awt.Color(204, 204, 204));
+        ingresarPersonalB.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        ingresarPersonalB.setForeground(new java.awt.Color(63, 191, 168));
         ingresarPersonalB.setText("Iniciar sesión personal médico");
+        ingresarPersonalB.setBorder(null);
+        ingresarPersonalB.setContentAreaFilled(false);
         ingresarPersonalB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ingresarPersonalBActionPerformed(evt);
             }
         });
-        jPanel1.add(ingresarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 458, -1, -1));
+        jPanel1.add(ingresarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 370, 30));
 
-        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 95, -1, -1));
+        adminContrasenniaTF.setBackground(new java.awt.Color(63, 191, 168));
+        adminContrasenniaTF.setEchoChar('\u25CF');
+        adminContrasenniaTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminContrasenniaTF.setForeground(new java.awt.Color(16, 65, 56));
+        adminContrasenniaTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminContrasenniaTF.setBorder(null);
+        adminContrasenniaTF.setSelectedTextColor(new java.awt.Color(63, 191, 168));
+        adminContrasenniaTF.setSelectionColor(new java.awt.Color(16, 65, 56));
+        jPanel1.add(adminContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 485, 370, 50));
 
-        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 96, -1, -1));
+        adminContrasenniaTF1.setBackground(new java.awt.Color(63, 191, 168));
+        adminContrasenniaTF1.setEchoChar('\u25CF');
+        adminContrasenniaTF1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminContrasenniaTF1.setForeground(new java.awt.Color(16, 65, 56));
+        adminContrasenniaTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adminContrasenniaTF1.setBorder(null);
+        adminContrasenniaTF1.setSelectedTextColor(new java.awt.Color(63, 191, 168));
+        adminContrasenniaTF1.setSelectionColor(new java.awt.Color(16, 65, 56));
+        jPanel1.add(adminContrasenniaTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 570, 370, 50));
 
-        mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 137, -1, -1));
-
-        mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 178, -1, -1));
-
-        mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
-
-        mensajeUsuario6.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario6.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 137, -1, -1));
-
-        mensajeUsuario7.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario7.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 178, -1, -1));
-
-        mensajeUsuario8.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario8.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 216, -1, -1));
-
-        mensajeUsuario9.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
-        mensajeUsuario9.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(483, 257, -1, -1));
-        jPanel1.add(adminContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 120, -1));
+        Fondo.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        Fondo.setForeground(new java.awt.Color(63, 191, 168));
+        Fondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Registro_Admin.jpg"))); // NOI18N
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 800));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 676, Short.MAX_VALUE)
+            .addGap(0, 1582, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -309,6 +370,10 @@ public class RegistroAdmin extends javax.swing.JFrame {
         System.out.println(resultado);
     }//GEN-LAST:event_aceptarBActionPerformed
 
+    private void adminNombre1TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminNombre1TFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminNombre1TFActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -346,11 +411,13 @@ public class RegistroAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JButton aceptarB;
     private javax.swing.JTextField adminApellido1TF;
     private javax.swing.JTextField adminApellido2TF;
     private javax.swing.JTextField adminCelularTF;
     private javax.swing.JPasswordField adminContrasenniaTF;
+    private javax.swing.JPasswordField adminContrasenniaTF1;
     private javax.swing.JTextField adminEmailTF;
     private javax.swing.JTextField adminIdTF;
     private javax.swing.JTextField adminNombre1TF;
@@ -359,18 +426,10 @@ public class RegistroAdmin extends javax.swing.JFrame {
     private javax.swing.JButton cancelarB;
     private javax.swing.JButton ingresarAdminB;
     private javax.swing.JButton ingresarPersonalB;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel mensajeUsuario;
     private javax.swing.JLabel mensajeUsuario1;
+    private javax.swing.JLabel mensajeUsuario10;
     private javax.swing.JLabel mensajeUsuario2;
     private javax.swing.JLabel mensajeUsuario3;
     private javax.swing.JLabel mensajeUsuario5;
