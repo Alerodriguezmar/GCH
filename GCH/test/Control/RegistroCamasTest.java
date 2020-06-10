@@ -68,13 +68,13 @@ public class RegistroCamasTest {
     public void RegistroCompleto(){
         Camas b = new Camas();
         b.setEstado(true);
-        b.setPabellon("Cuidados Intensivos");
+        b.setPabellon("UCI");
         b.setUbicacion("5");
         assertEquals(regisCamas.VerificarRegistroCamas(b), REGISTRO_COMPLETO);
         
          Camas c = new Camas();
         c.setEstado(true);
-        c.setPabellon("Cuidados intermedios");
+        c.setPabellon("UCI");
         c.setUbicacion("7");
         assertEquals(regisCamas.VerificarRegistroCamas(b), REGISTRO_COMPLETO);
         

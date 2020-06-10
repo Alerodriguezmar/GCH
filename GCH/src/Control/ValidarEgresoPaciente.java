@@ -31,13 +31,17 @@ public class ValidarEgresoPaciente {
         if(!VerificarLongitudRegistro(String.valueOf(ingreso.getIdIngreso()))){
             return("Longitud idetificacion incorrecta");   
         } 
+        
+        if(VerificarLongitudDescripcionEgreso(ingreso.getObservacion())){
+            return("longitud Descripcion Incorrecta");
+        }
 
         return ("El paciente fue dado de Alta");
     }
     
     
       public boolean VerificarLongitudDescripcionEgreso(String descr) {
-        return (descr.length() >= 0 && descr.length() < 257);
+        return (descr.length() <= 0 && descr.length() < 257);
         
       }
       

@@ -38,14 +38,19 @@ public class ValidarIngresoPaciente {
         if(!VerificarSelectTipoSangre(paciente.getTipoSangre())){
             return("No se ha seleccionado tipo de sangre");
         }
-        
-          if(!VerificarCamasDisponibles()){
+         
+              if(!VerificarEquiposDisponibles()== false ){
+            return("No hay equipos disponibles");
+        }
+              
+          if(!VerificarCamasDisponibles()== true){
             return("No hay camas Disponibles");
         }
           
-           if(!VerificarEquiposDisponibles()){
-            return("No hay equipos disponibles");
-        }
+       
+          
+          
+         
          if(VerificarIsRegistrado(String.valueOf(paciente.getIdPaciente()))){
             return("Paciente está registrado");
         }

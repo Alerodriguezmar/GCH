@@ -53,8 +53,9 @@ public class Paciente {
         a.setNombrePaciente2("alejandro");
         a.setApellidoPaciente1("Rodriguez");
         a.setApellidoPaciente2("Martinez");
-        a.setTipoSangre("");
+        a.setTipoSangre("O +");
         a.setIdPaciente(123456);
+        
              
             Pacientes.add(a);
               for (Entidad.Paciente u: Pacientes ){

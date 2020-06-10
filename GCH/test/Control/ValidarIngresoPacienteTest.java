@@ -57,40 +57,38 @@ public class ValidarIngresoPacienteTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
+    /*
     @Test
     public void PacienteRegistrado() {
-    
     Paciente a = new Paciente();
+    a.setIdPaciente(123456);
     a.setNombrePaciente1("Dego");
     a.setNombrePaciente2("alejandro");
     a.setApellidoPaciente1("Rodriguez");
     a.setApellidoPaciente2("Martinez");
     a.setTipoSangre("");
-    a.setIdPaciente(123456);
-    
-   
-    assertEquals(ingreso.VerificarIngresoPaciente(a), PACIENTE_REGISTRADO);
+    assertEquals(ingreso.VerificarIngresoPaciente(a),PACIENTE_REGISTRADO );
     }
     
-    
+    */
     
      @Test
     public void LongitudIdIncorrecto() {
-    
+        
     Paciente a = new Paciente();
-    a.setIdPaciente(145698);
+    a.setIdPaciente(1);
     a.setNombrePaciente1("Dego");
     a.setNombrePaciente2("alejandro");
     a.setApellidoPaciente1("Rodriguez");
     a.setApellidoPaciente2("Martinez");
     a.setTipoSangre("");
- 
-    
+    assertEquals(ingreso.VerificarIngresoPaciente(a),INDENTIFICACION_INCORRECTA);
+
    
-    assertEquals(ingreso.VerificarIngresoPaciente(a), INDENTIFICACION_INCORRECTA);
+ 
     }
     
-    /*
+    
     @Test
     public void LongitudNombreIncorrecto() {
     
@@ -102,9 +100,8 @@ public class ValidarIngresoPacienteTest {
     a.setApellidoPaciente2("Martinez");
     a.setTipoSangre("");
  
-    
-   
     assertEquals(ingreso.VerificarIngresoPaciente(a), LONG_PRIMER_NOMBRE_INCORRECTA);
+    
     }
     
     
@@ -122,11 +119,13 @@ public class ValidarIngresoPacienteTest {
     
    
     assertEquals(ingreso.VerificarIngresoPaciente(a), LONG_PRIMER_APELLIDO_INCORRECTA);
+   
     }
     
     
       @Test
     public void TipoDeSangre() {
+        
     
     Paciente a = new Paciente();
     a.setIdPaciente(12345);
@@ -138,9 +137,49 @@ public class ValidarIngresoPacienteTest {
  
     
    
-    assertEquals(ingreso.VerificarIngresoPaciente(a), LONG_PRIMER_APELLIDO_INCORRECTA);
+    assertEquals(ingreso.VerificarIngresoPaciente(a), SELECCION_SANGRE);
+        
     }
     
-   */ 
+   
+    @Test
+    public void NohayCamas(){
+    Paciente a = new Paciente();
+    a.setIdPaciente(123456);
+    a.setNombrePaciente1("Dego");
+    a.setNombrePaciente2("alejandro");
+    a.setApellidoPaciente1("Rodriguez");
+    a.setApellidoPaciente2("Martinez");
+    a.setTipoSangre("");
+    assertEquals(ingreso.VerificarIngresoPaciente(a),CAMAS_NO_DISPONIBLES);
+    }   
+    
+    @Test
+    public void NohayEquipos(){
+        Paciente a = new Paciente();
+    a.setIdPaciente(123456);
+    a.setNombrePaciente1("Dego");
+    a.setNombrePaciente2("alejandro");
+    a.setApellidoPaciente1("Rodriguez");
+    a.setApellidoPaciente2("Martinez");
+    a.setTipoSangre("");
+
+    assertEquals(ingreso.VerificarIngresoPaciente(a),CAMAS_NO_DISPONIBLES);
+        
+    }
+    
+    @Test
+    public void RegistroCompleto(){
+    Paciente a = new Paciente();
+    a.setIdPaciente(123456);
+    a.setNombrePaciente1("Dego");
+    a.setNombrePaciente2("alejandro");
+    a.setApellidoPaciente1("Rodriguez");
+    a.setApellidoPaciente2("Martinez");
+    a.setTipoSangre("");
+
+    assertEquals(ingreso.VerificarIngresoPaciente(a),CAMAS_NO_DISPONIBLES);
+    }
+    
     
 }

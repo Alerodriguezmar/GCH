@@ -55,12 +55,12 @@ public class Camas {
          Entidad.Camas a = new Entidad.Camas();
         b.setIdCamas(23);
         b.setEstado(false);
-        b.setPabellon("Cuidados intermedios");
-        b.setUbicacion("256");
+        b.setPabellon("UCIM");
+        b.setUbicacion("201");
         
         a.setIdCamas(56);
         a.setEstado(true);
-        a.setPabellon("Cuidados Intensivos");
+        a.setPabellon("UCI");
         a.setUbicacion("659");
         
         
