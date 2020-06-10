@@ -209,4 +209,60 @@ public class CamaDAO {
         } 
         return c;
     }
+    
+    public long leerCamasDisponibles(String nomca) {
+        long eq=-1;
+        String query = "SELECT COUNT(PABELLON) AS CANTIDAD FROM ROOT.CAMAS WHERE PABELLON='"+nomca+"' AND ESTADO=0";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("CANTIDAD DE LAS CAMAS DISPONIBLES: ");
+            if (res.next()) {
+                eq=res.getLong("CANTIDAD");
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return eq;
+    }
+    
+    public long leerCamasOcupadas(String nomca) {
+        long eq=-1;
+        String query = "SELECT COUNT(PABELLON) AS CANTIDAD FROM ROOT.CAMAS WHERE PABELLON='"+nomca+"' AND ESTADO=1";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("CANTIDAD DE LAS CAMAS DISPONIBLES: ");
+            if (res.next()) {
+                eq=res.getLong("CANTIDAD");
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return eq;
+    }
+    
 }
+

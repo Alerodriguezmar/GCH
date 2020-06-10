@@ -5,10 +5,13 @@
  */
 package Frontera;
 
+import DAO.CamaDAO;
 import DAO.EquipoDAO;
 import DAO.PersonalMedicoDAO;
 import Entidad.Equipo;
 import Entidad.PersonalMedico;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +26,13 @@ public class GenerarReportes extends javax.swing.JPanel {
      */
     public GenerarReportes() {
         initComponents();
+        
+        //Tomar fecha
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+                LocalDateTime now = LocalDateTime.now();
+                String fecha = now.format(dtf);
+                
+        fechaL.setText("Fecha: "+fecha);
     }
 
     /**
@@ -38,15 +48,15 @@ public class GenerarReportes extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
-        jlabel6 = new javax.swing.JLabel();
+        fechaL = new javax.swing.JLabel();
         registroEquiposT = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         registroPersonalT = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         registroUciT = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        jTableUCI = new javax.swing.JTable();
         registoUcimT = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        jTableUCIM = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -73,7 +83,7 @@ public class GenerarReportes extends javax.swing.JPanel {
 
         cancelarB.setText("Cancelar");
 
-        jlabel6.setText("Fecha");
+        fechaL.setText("Fecha");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             mostrarEquipo(),
@@ -121,12 +131,8 @@ public class GenerarReportes extends javax.swing.JPanel {
         });
         registroPersonalT.setViewportView(jTable3);
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {"Disponibles", null},
-                {"Ocupadas", null}
-            },
+        jTableUCI.setModel(new javax.swing.table.DefaultTableModel(
+            mostrarCamaUCI(),
             new String [] {
                 "Estado", "Cantidad"
             }
@@ -146,14 +152,10 @@ public class GenerarReportes extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        registroUciT.setViewportView(jTable4);
+        registroUciT.setViewportView(jTableUCI);
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {"Disponibles", null},
-                {"Ocupadas", null}
-            },
+        jTableUCIM.setModel(new javax.swing.table.DefaultTableModel(
+            mostrarCamaUCIM(),
             new String [] {
                 "Estado", "Cantidad"
             }
@@ -173,7 +175,7 @@ public class GenerarReportes extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        registoUcimT.setViewportView(jTable5);
+        registoUcimT.setViewportView(jTableUCIM);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
@@ -207,7 +209,7 @@ public class GenerarReportes extends javax.swing.JPanel {
                         .addGap(111, 111, 111)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
-                            .addComponent(jlabel6)
+                            .addComponent(fechaL)
                             .addComponent(registoUcimT, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(registroUciT, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
@@ -229,7 +231,7 @@ public class GenerarReportes extends javax.swing.JPanel {
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addComponent(jlabel6)))
+                        .addComponent(fechaL)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -267,6 +269,7 @@ public class GenerarReportes extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarB;
     private javax.swing.JButton cancelarB;
+    private javax.swing.JLabel fechaL;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -275,9 +278,8 @@ public class GenerarReportes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JLabel jlabel6;
+    private javax.swing.JTable jTableUCI;
+    private javax.swing.JTable jTableUCIM;
     private javax.swing.JScrollPane registoUcimT;
     private javax.swing.JScrollPane registroEquiposT;
     private javax.swing.JScrollPane registroPersonalT;
@@ -322,5 +324,30 @@ public class GenerarReportes extends javax.swing.JPanel {
         }
         return matriz;        
     }
+    
+    public String[][] mostrarCamaUCI(){
+        CamaDAO cdao = new CamaDAO();
+        String[][] matriz = new String[2][2];
+        
+        matriz[0][0] = "Disponible: ";
+        matriz[0][1] = Long.toString(cdao.leerCamasDisponibles("UCI"));
+        matriz[1][0] = "Ocupado: ";
+        matriz[1][1] = Long.toString(cdao.leerCamasOcupadas("UCI"));
+                
+        return matriz;
+    }
+    
+    public String[][] mostrarCamaUCIM(){
+        CamaDAO cdao = new CamaDAO();
+        String[][] matriz = new String[2][2];
+        
+        matriz[0][0] = "Disponible: ";
+        matriz[0][1] = Long.toString(cdao.leerCamasDisponibles("UCIM"));
+        matriz[1][0] = "Ocupado: ";
+        matriz[1][1] = Long.toString(cdao.leerCamasOcupadas("UCIM"));
+                
+        return matriz;
+    }
+    
 }
 
