@@ -478,14 +478,14 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 }
                 //validar Tipo de Sangre
                 if (!validar.VerificarSelectTipoSangre(tipoSangreCB.getSelectedItem().toString())) {
-                    mensajeUsuario5.setText("No se ha seleccionado un tipo de sangre");
+                    mensajeUsuario5.setText("");
                 } else {
                     paciente.setTipoSangre(tipoSangreCB.getSelectedItem().toString());
                     mensajeUsuario5.setText("");
                 }
                 //validar Tipo de Atención
                 if (!validar.VerificarSelectTipoAtencion(tipoAtencionCB.getSelectedItem().toString())) {
-                    mensajeUsuario7.setText("No se ha seleccionado un tipo de atención");
+                    mensajeUsuario7.setText("");
                 } else {
 
                     mensajeUsuario7.setText("");
