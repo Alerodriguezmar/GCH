@@ -107,39 +107,38 @@ public class RegistroAdmin extends javax.swing.JFrame {
         mensajeUsuario10.setForeground(new java.awt.Color(255, 102, 102));
         jPanel1.add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 630, -1, 0));
 
-        adminNombre1TF.setBackground(new java.awt.Color(16, 65, 56));
+        adminNombre1TF.setBackground(new java.awt.Color(63, 191, 168));
         adminNombre1TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        adminNombre1TF.setForeground(new java.awt.Color(63, 191, 168));
+        adminNombre1TF.setForeground(new java.awt.Color(255, 255, 255));
         adminNombre1TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         adminNombre1TF.setBorder(null);
         adminNombre1TF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
-        adminNombre1TF.setSelectionColor(new java.awt.Color(63, 191, 168));
+        adminNombre1TF.setSelectionColor(new java.awt.Color(255, 255, 255));
         adminNombre1TF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminNombre1TFActionPerformed(evt);
             }
         });
-        jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 370, 60));
+        jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 370, 60));
 
-        adminApellido1TF.setBackground(new java.awt.Color(16, 65, 56));
+        adminApellido1TF.setBackground(new java.awt.Color(63, 191, 168));
         adminApellido1TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        adminApellido1TF.setForeground(new java.awt.Color(63, 191, 168));
+        adminApellido1TF.setForeground(new java.awt.Color(255, 255, 255));
         adminApellido1TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         adminApellido1TF.setBorder(null);
         adminApellido1TF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
-        adminApellido1TF.setSelectionColor(new java.awt.Color(63, 191, 168));
-        jPanel1.add(adminApellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 395, 370, 50));
+        adminApellido1TF.setSelectionColor(new java.awt.Color(255, 255, 255));
+        jPanel1.add(adminApellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 370, 50));
 
-        adminIdTF.setBackground(new java.awt.Color(16, 65, 56));
+        adminIdTF.setBackground(new java.awt.Color(63, 191, 168));
         adminIdTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        adminIdTF.setForeground(new java.awt.Color(63, 191, 168));
+        adminIdTF.setForeground(new java.awt.Color(255, 255, 255));
         adminIdTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         adminIdTF.setBorder(null);
         adminIdTF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
-        adminIdTF.setSelectionColor(new java.awt.Color(63, 191, 168));
-        jPanel1.add(adminIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, 370, 50));
+        adminIdTF.setSelectionColor(new java.awt.Color(255, 255, 255));
+        jPanel1.add(adminIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 570, 370, 50));
 
-        adminCelularTF.setBackground(new java.awt.Color(63, 191, 168));
         adminCelularTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         adminCelularTF.setForeground(new java.awt.Color(16, 65, 56));
         adminCelularTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -158,9 +157,8 @@ public class RegistroAdmin extends javax.swing.JFrame {
                 aceptarBActionPerformed(evt);
             }
         });
-        jPanel1.add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 680, 240, 90));
+        jPanel1.add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 690, 190, 70));
 
-        adminEmailTF.setBackground(new java.awt.Color(63, 191, 168));
         adminEmailTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         adminEmailTF.setForeground(new java.awt.Color(16, 65, 56));
         adminEmailTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -179,9 +177,8 @@ public class RegistroAdmin extends javax.swing.JFrame {
                 cancelarBActionPerformed(evt);
             }
         });
-        jPanel1.add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 680, 250, 90));
+        jPanel1.add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 690, 190, 70));
 
-        adminUsuarioTF.setBackground(new java.awt.Color(63, 191, 168));
         adminUsuarioTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         adminUsuarioTF.setForeground(new java.awt.Color(16, 65, 56));
         adminUsuarioTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -190,28 +187,28 @@ public class RegistroAdmin extends javax.swing.JFrame {
         adminUsuarioTF.setSelectionColor(new java.awt.Color(16, 65, 56));
         jPanel1.add(adminUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 405, 370, 50));
 
-        adminNombre2TF.setBackground(new java.awt.Color(16, 65, 56));
+        adminNombre2TF.setBackground(new java.awt.Color(63, 191, 168));
         adminNombre2TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        adminNombre2TF.setForeground(new java.awt.Color(63, 191, 168));
+        adminNombre2TF.setForeground(new java.awt.Color(255, 255, 255));
         adminNombre2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         adminNombre2TF.setBorder(null);
         adminNombre2TF.setPreferredSize(new java.awt.Dimension(6, 19));
         adminNombre2TF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
-        adminNombre2TF.setSelectionColor(new java.awt.Color(63, 191, 168));
-        jPanel1.add(adminNombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 313, 370, 50));
+        adminNombre2TF.setSelectionColor(new java.awt.Color(255, 255, 255));
+        jPanel1.add(adminNombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 325, 370, 50));
 
-        adminApellido2TF.setBackground(new java.awt.Color(16, 65, 56));
+        adminApellido2TF.setBackground(new java.awt.Color(63, 191, 168));
         adminApellido2TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        adminApellido2TF.setForeground(new java.awt.Color(63, 191, 168));
+        adminApellido2TF.setForeground(new java.awt.Color(255, 255, 255));
         adminApellido2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         adminApellido2TF.setBorder(null);
         adminApellido2TF.setSelectedTextColor(new java.awt.Color(16, 65, 56));
-        adminApellido2TF.setSelectionColor(new java.awt.Color(63, 191, 168));
-        jPanel1.add(adminApellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 360, 50));
+        adminApellido2TF.setSelectionColor(new java.awt.Color(255, 255, 255));
+        jPanel1.add(adminApellido2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 360, 50));
 
         ingresarAdminB.setBackground(new java.awt.Color(204, 204, 204));
         ingresarAdminB.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        ingresarAdminB.setForeground(new java.awt.Color(63, 191, 168));
+        ingresarAdminB.setForeground(new java.awt.Color(255, 255, 255));
         ingresarAdminB.setText("Iniciar sesión administrador");
         ingresarAdminB.setBorder(null);
         ingresarAdminB.setContentAreaFilled(false);
@@ -224,7 +221,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
 
         ingresarPersonalB.setBackground(new java.awt.Color(204, 204, 204));
         ingresarPersonalB.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
-        ingresarPersonalB.setForeground(new java.awt.Color(63, 191, 168));
+        ingresarPersonalB.setForeground(new java.awt.Color(255, 255, 255));
         ingresarPersonalB.setText("Iniciar sesión personal médico");
         ingresarPersonalB.setBorder(null);
         ingresarPersonalB.setContentAreaFilled(false);
@@ -235,7 +232,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         });
         jPanel1.add(ingresarPersonalB, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 370, 30));
 
-        adminContrasenniaTF.setBackground(new java.awt.Color(63, 191, 168));
         adminContrasenniaTF.setEchoChar('\u25CF');
         adminContrasenniaTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         adminContrasenniaTF.setForeground(new java.awt.Color(16, 65, 56));
@@ -245,7 +241,6 @@ public class RegistroAdmin extends javax.swing.JFrame {
         adminContrasenniaTF.setSelectionColor(new java.awt.Color(16, 65, 56));
         jPanel1.add(adminContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 485, 370, 50));
 
-        adminContrasenniaTF1.setBackground(new java.awt.Color(63, 191, 168));
         adminContrasenniaTF1.setEchoChar('\u25CF');
         adminContrasenniaTF1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         adminContrasenniaTF1.setForeground(new java.awt.Color(16, 65, 56));
@@ -256,7 +251,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(adminContrasenniaTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 570, 370, 50));
 
         Fondo.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        Fondo.setForeground(new java.awt.Color(63, 191, 168));
+        Fondo.setForeground(new java.awt.Color(255, 255, 255));
         Fondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Registro_Admin.jpg"))); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 800));

@@ -34,7 +34,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPrincipal = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         ingresoB = new javax.swing.JButton();
@@ -49,16 +49,18 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         panelPrincipal.setLayout(new java.awt.BorderLayout());
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
-        panelPrincipal.add(jLabel4, java.awt.BorderLayout.PAGE_END);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Bienvenido.jpg"))); // NOI18N
+        panelPrincipal.add(jLabel1, java.awt.BorderLayout.CENTER);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(166, 199, 232));
 
-        jToolBar1.setRollover(true);
+        jToolBar1.setFloatable(false);
+        jToolBar1.setBorderPainted(false);
+        jToolBar1.setOpaque(false);
 
-        ingresoB.setText("Ingreso");
-        ingresoB.setBorder(null);
+        ingresoB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        ingresoB.setForeground(new java.awt.Color(16, 65, 56));
+        ingresoB.setText("  Ingreso  ");
         ingresoB.setFocusable(false);
         ingresoB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ingresoB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -69,8 +71,9 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         });
         jToolBar1.add(ingresoB);
 
-        egresoB.setText("Egreso");
-        egresoB.setBorder(null);
+        egresoB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        egresoB.setForeground(new java.awt.Color(16, 65, 56));
+        egresoB.setText("  Egreso  ");
         egresoB.setFocusable(false);
         egresoB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         egresoB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -81,8 +84,9 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         });
         jToolBar1.add(egresoB);
 
-        actualizacionB.setText("Actualización");
-        actualizacionB.setBorder(null);
+        actualizacionB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        actualizacionB.setForeground(new java.awt.Color(16, 65, 56));
+        actualizacionB.setText("  Actualización  ");
         actualizacionB.setFocusable(false);
         actualizacionB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         actualizacionB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -93,8 +97,9 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         });
         jToolBar1.add(actualizacionB);
 
-        reporteB.setText("Reporte");
-        reporteB.setBorder(null);
+        reporteB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        reporteB.setForeground(new java.awt.Color(16, 65, 56));
+        reporteB.setText("  Reporte  ");
         reporteB.setFocusable(false);
         reporteB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         reporteB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -105,8 +110,10 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         });
         jToolBar1.add(reporteB);
 
+        logoutB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        logoutB.setForeground(new java.awt.Color(16, 65, 56));
         logoutB.setText("Cerra sesión");
-        logoutB.setBorder(null);
+        logoutB.setActionCommand("  Cerra sesión  ");
         logoutB.setFocusable(false);
         logoutB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         logoutB.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -121,16 +128,16 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 1550, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,7 +152,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -223,7 +230,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
     private javax.swing.JButton actualizacionB;
     private javax.swing.JButton egresoB;
     private javax.swing.JButton ingresoB;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton logoutB;

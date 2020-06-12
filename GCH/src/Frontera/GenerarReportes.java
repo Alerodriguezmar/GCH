@@ -57,10 +57,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         jTableUCI = new javax.swing.JTable();
         registoUcimT = new javax.swing.JScrollPane();
         jTableUCIM = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
@@ -69,22 +66,34 @@ public class GenerarReportes extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(204, 204, 204));
         setMinimumSize(new java.awt.Dimension(755, 585));
-        setPreferredSize(new java.awt.Dimension(755, 585));
+        setPreferredSize(new java.awt.Dimension(1582, 800));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Registro");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 9, -1, -1));
 
-        aceptarB.setText("Aceptar");
+        aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
+        aceptarB.setContentAreaFilled(false);
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 580, 190, -1));
 
-        cancelarB.setText("Cancelar");
+        cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
+        cancelarB.setContentAreaFilled(false);
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 690, 190, -1));
 
+        fechaL.setForeground(new java.awt.Color(255, 255, 255));
         fechaL.setText("Fecha");
+        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 39, -1, -1));
 
+        jTable2.setBackground(new java.awt.Color(59, 175, 154));
+        jTable2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jTable2.setForeground(new java.awt.Color(255, 255, 255));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             mostrarEquipo(),
             new String [] {
@@ -106,8 +115,20 @@ public class GenerarReportes extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTable2.setToolTipText("");
+        jTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jTable2.setFillsViewportHeight(true);
+        jTable2.setGridColor(new java.awt.Color(63, 191, 168));
+        jTable2.setInheritsPopupMenu(true);
+        jTable2.setOpaque(false);
+        jTable2.setRowHeight(30);
+        jTable2.setRowMargin(2);
         registroEquiposT.setViewportView(jTable2);
 
+        add(registroEquiposT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 500, 270));
+
+        jTable3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jTable3.setForeground(new java.awt.Color(16, 65, 56));
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             mostrarPersonal(),
             new String [] {
@@ -129,8 +150,17 @@ public class GenerarReportes extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTable3.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jTable3.setOpaque(false);
+        jTable3.setRowHeight(25);
+        jTable3.setRowMargin(2);
         registroPersonalT.setViewportView(jTable3);
 
+        add(registroPersonalT, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 190, 490, 160));
+
+        jTableUCI.setBackground(new java.awt.Color(59, 175, 154));
+        jTableUCI.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jTableUCI.setForeground(new java.awt.Color(255, 255, 255));
         jTableUCI.setModel(new javax.swing.table.DefaultTableModel(
             mostrarCamaUCI(),
             new String [] {
@@ -154,6 +184,9 @@ public class GenerarReportes extends javax.swing.JPanel {
         });
         registroUciT.setViewportView(jTableUCI);
 
+        add(registroUciT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, 270, 60));
+
+        jTableUCIM.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jTableUCIM.setModel(new javax.swing.table.DefaultTableModel(
             mostrarCamaUCIM(),
             new String [] {
@@ -177,88 +210,12 @@ public class GenerarReportes extends javax.swing.JPanel {
         });
         registoUcimT.setViewportView(jTableUCIM);
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel5.setText("Personal médico");
+        add(registoUcimT, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 560, 310, 60));
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel6.setText("Camas UCI");
-
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel7.setText("Equipos disponibles");
-
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel8.setText("Camas UCIM");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(registroPersonalT, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registroEquiposT, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(fechaL)
-                            .addComponent(registoUcimT, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(registroUciT, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8))
-                        .addContainerGap(156, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(aceptarB, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cancelarB))
-                        .addGap(50, 50, 50))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(fechaL)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(registroUciT, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(registroEquiposT, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(registroPersonalT, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(registoUcimT, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(aceptarB)
-                        .addGap(18, 18, 18)
-                        .addComponent(cancelarB)
-                        .addGap(49, 49, 49))))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Reporte.jpg"))); // NOI18N
+        jLabel1.setFocusable(false);
+        jLabel1.setInheritsPopupMenu(false);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1580, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -270,12 +227,9 @@ public class GenerarReportes extends javax.swing.JPanel {
     private javax.swing.JButton aceptarB;
     private javax.swing.JButton cancelarB;
     private javax.swing.JLabel fechaL;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTableUCI;

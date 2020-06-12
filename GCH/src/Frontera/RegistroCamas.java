@@ -34,55 +34,58 @@ public class RegistroCamas extends javax.swing.JPanel {
 
         listaPabellonesCB = new javax.swing.JComboBox<>();
         camaUbicacionTF = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
         mensajeUsuario = new javax.swing.JLabel();
         mensajeUsuario1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        listaPabellonesCB.setBackground(new java.awt.Color(204, 204, 204));
+        listaPabellonesCB.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        listaPabellonesCB.setForeground(new java.awt.Color(16, 65, 56));
         listaPabellonesCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "UCI", "UCIM" }));
-        add(listaPabellonesCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 170, -1));
+        add(listaPabellonesCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 220, 50));
 
-        camaUbicacionTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(camaUbicacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 138, 166, -1));
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ubicación");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, 20));
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Pabellón");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, 20));
+        camaUbicacionTF.setBackground(new java.awt.Color(63, 191, 168));
+        camaUbicacionTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        camaUbicacionTF.setForeground(new java.awt.Color(255, 255, 255));
+        camaUbicacionTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        camaUbicacionTF.setBorder(null);
+        add(camaUbicacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 320, 360, 50));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setText("Aceptar");
+        aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
+        aceptarB.setContentAreaFilled(false);
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 301, 100, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 380, 190, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setText("Cancelar");
+        cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
+        cancelarB.setContentAreaFilled(false);
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBActionPerformed(evt);
             }
         });
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 100, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 490, 190, -1));
 
         mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 165, -1, -1));
+        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 390, -1, -1));
 
         mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 205, -1, -1));
+        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Registro_Cama.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -147,8 +150,7 @@ public class RegistroCamas extends javax.swing.JPanel {
     private javax.swing.JButton aceptarB;
     private javax.swing.JTextField camaUbicacionTF;
     private javax.swing.JButton cancelarB;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JComboBox<String> listaPabellonesCB;
     private javax.swing.JLabel mensajeUsuario;
     private javax.swing.JLabel mensajeUsuario1;

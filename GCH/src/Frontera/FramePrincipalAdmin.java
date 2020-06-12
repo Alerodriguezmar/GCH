@@ -39,7 +39,7 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         panelPrincipal = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         ingresoPersonalB = new javax.swing.JButton();
@@ -51,18 +51,27 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        panelPrincipal.setBackground(new java.awt.Color(63, 191, 168));
+        panelPrincipal.setOpaque(false);
         panelPrincipal.setLayout(new java.awt.BorderLayout());
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/login.png"))); // NOI18N
-        panelPrincipal.add(jLabel4, java.awt.BorderLayout.PAGE_END);
+        Fondo.setBackground(new java.awt.Color(63, 191, 168));
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Bienvenido.jpg"))); // NOI18N
+        panelPrincipal.add(Fondo, java.awt.BorderLayout.CENTER);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(166, 199, 232));
 
+        jToolBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
+        jToolBar1.setBorderPainted(false);
+        jToolBar1.setOpaque(false);
 
-        ingresoPersonalB.setText("Ingreso Personal");
+        ingresoPersonalB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        ingresoPersonalB.setForeground(new java.awt.Color(16, 65, 56));
+        ingresoPersonalB.setText("  Ingreso Personal  ");
+        ingresoPersonalB.setToolTipText("");
+        ingresoPersonalB.setActionCommand("Ingreso Personal");
         ingresoPersonalB.setBorder(null);
         ingresoPersonalB.setFocusable(false);
         ingresoPersonalB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -74,7 +83,10 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         });
         jToolBar1.add(ingresoPersonalB);
 
-        ingresoEquiposB.setText("Ingreso Equipos");
+        ingresoEquiposB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        ingresoEquiposB.setForeground(new java.awt.Color(16, 65, 56));
+        ingresoEquiposB.setText("  Ingreso Equipos  ");
+        ingresoEquiposB.setActionCommand("Ingreso Equipos");
         ingresoEquiposB.setBorder(null);
         ingresoEquiposB.setFocusable(false);
         ingresoEquiposB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -86,7 +98,9 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         });
         jToolBar1.add(ingresoEquiposB);
 
-        ingresoCamas.setText("Ingreso Camas");
+        ingresoCamas.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        ingresoCamas.setForeground(new java.awt.Color(16, 65, 56));
+        ingresoCamas.setText("  Ingreso Camas  ");
         ingresoCamas.setBorder(null);
         ingresoCamas.setFocusable(false);
         ingresoCamas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -98,7 +112,9 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         });
         jToolBar1.add(ingresoCamas);
 
-        reporteB.setText("Reporte");
+        reporteB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        reporteB.setForeground(new java.awt.Color(16, 65, 56));
+        reporteB.setText("  Reporte  ");
         reporteB.setBorder(null);
         reporteB.setFocusable(false);
         reporteB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -110,7 +126,9 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         });
         jToolBar1.add(reporteB);
 
-        logoutB.setText("Cerra sesión");
+        logoutB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        logoutB.setForeground(new java.awt.Color(16, 65, 56));
+        logoutB.setText("  Cerrar sesión  ");
         logoutB.setBorder(null);
         logoutB.setFocusable(false);
         logoutB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -127,15 +145,13 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(27, 27, 27)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 1505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,7 +166,7 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE))
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -226,10 +242,10 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JButton ingresoCamas;
     private javax.swing.JButton ingresoEquiposB;
     private javax.swing.JButton ingresoPersonalB;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton logoutB;

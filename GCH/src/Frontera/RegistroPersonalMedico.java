@@ -33,31 +33,18 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     private void initComponents() {
 
         personalEmailTF = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         personalUsuarioTF = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
         personalCargoCB = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
         personalReThusTF = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         personalNombreTF = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         personalApellidoTF = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         personalIdTF = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         personalCelularTF = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         personalDireccionlTF = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         personalNombreTF1 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
         personalApellidoTF1 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
         tipoSangreCB = new javax.swing.JComboBox<>();
         mensajeUsuario = new javax.swing.JLabel();
         mensajeUsuario1 = new javax.swing.JLabel();
@@ -72,184 +59,213 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         mensajeUsuario11 = new javax.swing.JLabel();
         mensajeUsuario12 = new javax.swing.JLabel();
         mensajeUsuario5 = new javax.swing.JLabel();
+        mensajeUsuario13 = new javax.swing.JLabel();
         personalContrasenniaTF = new javax.swing.JPasswordField();
+        personalContrasenniaTF1 = new javax.swing.JPasswordField();
+        jLabel14 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        personalEmailTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(personalEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 120, -1));
+        personalEmailTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalEmailTF.setForeground(new java.awt.Color(16, 65, 56));
+        personalEmailTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalEmailTF.setBorder(null);
+        add(personalEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 325, 370, 40));
 
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Email");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
-
-        personalUsuarioTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(personalUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 120, -1));
-
-        jLabel7.setText("Usuario");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, -1, -1));
+        personalUsuarioTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalUsuarioTF.setForeground(new java.awt.Color(16, 65, 56));
+        personalUsuarioTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalUsuarioTF.setBorder(null);
+        add(personalUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 410, 370, 40));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setText("Aceptar");
+        aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
+        aceptarB.setBorder(null);
+        aceptarB.setBorderPainted(false);
+        aceptarB.setContentAreaFilled(false);
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 102, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 680, 190, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setText("Cancelar");
+        cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
+        cancelarB.setToolTipText("");
+        cancelarB.setBorder(null);
+        cancelarB.setContentAreaFilled(false);
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBActionPerformed(evt);
             }
         });
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 102, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 680, 190, -1));
 
+        personalCargoCB.setBackground(new java.awt.Color(204, 204, 204));
+        personalCargoCB.setFont(new java.awt.Font("Century Gothic", 0, 17)); // NOI18N
+        personalCargoCB.setForeground(new java.awt.Color(16, 65, 56));
         personalCargoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Asistente enfermería", "Asistente médico profesional", "Médico especialista", "Médico general", "Profesional en enfermería" }));
+        personalCargoCB.setBorder(null);
+        personalCargoCB.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        personalCargoCB.setDoubleBuffered(true);
+        personalCargoCB.setOpaque(false);
         personalCargoCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalCargoCBActionPerformed(evt);
             }
         });
-        add(personalCargoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
+        add(personalCargoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 280, 40));
 
-        jLabel8.setText("Contraseña");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, -1));
-
-        personalReThusTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalReThusTF.setBackground(new java.awt.Color(63, 191, 168));
+        personalReThusTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalReThusTF.setForeground(new java.awt.Color(255, 255, 255));
+        personalReThusTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalReThusTF.setBorder(null);
         personalReThusTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalReThusTFActionPerformed(evt);
             }
         });
-        add(personalReThusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 117, -1));
+        add(personalReThusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 670, 360, 40));
 
-        jLabel9.setText("Tipo de sangre");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
-
-        personalNombreTF.setBackground(new java.awt.Color(204, 204, 204));
+        personalNombreTF.setBackground(new java.awt.Color(63, 191, 168));
+        personalNombreTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalNombreTF.setForeground(new java.awt.Color(255, 255, 255));
+        personalNombreTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalNombreTF.setBorder(null);
         personalNombreTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalNombreTFActionPerformed(evt);
             }
         });
-        add(personalNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 120, -1));
+        add(personalNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 360, 40));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Primer nombre");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+        personalApellidoTF.setBackground(new java.awt.Color(63, 191, 168));
+        personalApellidoTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalApellidoTF.setForeground(new java.awt.Color(255, 255, 255));
+        personalApellidoTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalApellidoTF.setBorder(null);
+        add(personalApellidoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 360, 40));
 
-        jLabel10.setText("Cargo");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, -1, -1));
+        personalIdTF.setBackground(new java.awt.Color(63, 191, 168));
+        personalIdTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalIdTF.setForeground(new java.awt.Color(255, 255, 255));
+        personalIdTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalIdTF.setBorder(null);
+        add(personalIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 360, 50));
 
-        personalApellidoTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(personalApellidoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 85, 120, -1));
+        personalCelularTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalCelularTF.setForeground(new java.awt.Color(16, 65, 56));
+        personalCelularTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalCelularTF.setBorder(null);
+        add(personalCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 240, 370, 40));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Primer apellido");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        personalDireccionlTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalDireccionlTF.setForeground(new java.awt.Color(16, 65, 56));
+        personalDireccionlTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalDireccionlTF.setBorder(null);
+        add(personalDireccionlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 130, 370, 40));
 
-        jLabel11.setText("ReTHUS");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, -1, -1));
-
-        personalIdTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(personalIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 120, -1));
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("No. Identificación");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
-
-        personalCelularTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(personalCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 120, -1));
-
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Celular");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, -1));
-
-        personalDireccionlTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(personalDireccionlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 120, -1));
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Dirección");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
-
-        personalNombreTF1.setBackground(new java.awt.Color(204, 204, 204));
+        personalNombreTF1.setBackground(new java.awt.Color(63, 191, 168));
+        personalNombreTF1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalNombreTF1.setForeground(new java.awt.Color(255, 255, 255));
+        personalNombreTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalNombreTF1.setBorder(null);
         personalNombreTF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personalNombreTF1ActionPerformed(evt);
             }
         });
-        add(personalNombreTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 116, -1));
+        add(personalNombreTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 235, 360, 40));
 
-        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Segundo nombre");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, -1, -1));
+        personalApellidoTF1.setBackground(new java.awt.Color(63, 191, 168));
+        personalApellidoTF1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalApellidoTF1.setForeground(new java.awt.Color(255, 255, 255));
+        personalApellidoTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalApellidoTF1.setBorder(null);
+        add(personalApellidoTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 360, 40));
 
-        personalApellidoTF1.setBackground(new java.awt.Color(204, 204, 204));
-        add(personalApellidoTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 116, -1));
-
-        jLabel13.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("Segundo apellido");
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, -1, -1));
-
+        tipoSangreCB.setBackground(new java.awt.Color(204, 204, 204));
+        tipoSangreCB.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        tipoSangreCB.setForeground(new java.awt.Color(16, 65, 56));
         tipoSangreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "O +", "O -", "A -", "A +", "B -", "B +", "AB -", "AB +" }));
-        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 92, -1));
+        tipoSangreCB.setBorder(null);
+        tipoSangreCB.setDoubleBuffered(true);
+        tipoSangreCB.setOpaque(false);
+        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 580, 90, 40));
 
         mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 67, -1, -1));
+        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 205, -1, -1));
 
         mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 66, -1, -1));
+        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
 
         mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 113, -1, -1));
+        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 375, -1, -1));
 
         mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 117, -1, -1));
+        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, -1, -1));
 
         mensajeUsuario4.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario4.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 156, -1, -1));
+        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 540, -1, -1));
 
         mensajeUsuario6.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario6.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 197, -1, -1));
+        add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 295, -1, -1));
 
         mensajeUsuario7.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario7.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 204, -1, -1));
+        add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, -1, -1));
 
         mensajeUsuario8.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario8.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
+        add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 190, -1, -1));
 
         mensajeUsuario9.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario9.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, -1, -1));
+        add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 725, -1, -1));
 
         mensajeUsuario10.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario10.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 287, -1, -1));
+        add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 380, -1, -1));
 
         mensajeUsuario11.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario11.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario11, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 337, -1, -1));
+        add(mensajeUsuario11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 465, -1, -1));
 
         mensajeUsuario12.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario12.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario12, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 386, -1, -1));
+        add(mensajeUsuario12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 550, -1, -1));
 
         mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 165, -1, -1));
-        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 120, -1));
+        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 630, -1, -1));
+
+        mensajeUsuario13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mensajeUsuario13.setForeground(new java.awt.Color(255, 102, 102));
+        add(mensajeUsuario13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 635, -1, 0));
+
+        personalContrasenniaTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalContrasenniaTF.setForeground(new java.awt.Color(16, 65, 56));
+        personalContrasenniaTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalContrasenniaTF.setBorder(null);
+        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 580, 370, 40));
+
+        personalContrasenniaTF1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalContrasenniaTF1.setForeground(new java.awt.Color(16, 65, 56));
+        personalContrasenniaTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        personalContrasenniaTF1.setBorder(null);
+        add(personalContrasenniaTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 490, 370, 40));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Registro_Personal_Medico.jpg"))); // NOI18N
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -400,24 +416,13 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarB;
     private javax.swing.JButton cancelarB;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel mensajeUsuario;
     private javax.swing.JLabel mensajeUsuario1;
     private javax.swing.JLabel mensajeUsuario10;
     private javax.swing.JLabel mensajeUsuario11;
     private javax.swing.JLabel mensajeUsuario12;
+    private javax.swing.JLabel mensajeUsuario13;
     private javax.swing.JLabel mensajeUsuario2;
     private javax.swing.JLabel mensajeUsuario3;
     private javax.swing.JLabel mensajeUsuario4;
@@ -431,6 +436,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> personalCargoCB;
     private javax.swing.JTextField personalCelularTF;
     private javax.swing.JPasswordField personalContrasenniaTF;
+    private javax.swing.JPasswordField personalContrasenniaTF1;
     private javax.swing.JTextField personalDireccionlTF;
     private javax.swing.JTextField personalEmailTF;
     private javax.swing.JTextField personalIdTF;

@@ -32,19 +32,13 @@ public class RegistroEquipo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         equipoMarcaTF = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        equipoDescripcionTF = new javax.swing.JTextArea();
         equipoTipoCB = new javax.swing.JComboBox<>();
         equipoRegistroTF = new javax.swing.JTextField();
         aceptarB = new javax.swing.JButton();
         equipoCantidadTF = new javax.swing.JTextField();
         cancelarB = new javax.swing.JButton();
-        equipoDescripcionTF = new javax.swing.JTextField();
-        TipoDeEquipo = new javax.swing.JLabel();
         TipoEquipo = new javax.swing.JComboBox<>();
         mensajeUsuario = new javax.swing.JLabel();
         mensajeUsuario1 = new javax.swing.JLabel();
@@ -52,98 +46,103 @@ public class RegistroEquipo extends javax.swing.JPanel {
         mensajeUsuario3 = new javax.swing.JLabel();
         mensajeUsuario4 = new javax.swing.JLabel();
         mensajeUsuario5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Marca");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 95, -1, -1));
+        equipoMarcaTF.setBackground(new java.awt.Color(63, 191, 168));
+        equipoMarcaTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        equipoMarcaTF.setForeground(new java.awt.Color(255, 255, 255));
+        equipoMarcaTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        equipoMarcaTF.setBorder(null);
+        add(equipoMarcaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 320, 370, 50));
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Tipo de uso");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 139, -1, -1));
+        equipoDescripcionTF.setBackground(new java.awt.Color(236, 236, 236));
+        equipoDescripcionTF.setColumns(20);
+        equipoDescripcionTF.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        equipoDescripcionTF.setForeground(new java.awt.Color(16, 65, 56));
+        equipoDescripcionTF.setLineWrap(true);
+        equipoDescripcionTF.setRows(5);
+        add(equipoDescripcionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 240, 460, 380));
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Registro Sanitario");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 183, -1, -1));
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Cantidad");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 228, -1, -1));
-
-        equipoMarcaTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(equipoMarcaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 89, 268, -1));
-
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Descripción");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 267, -1, -1));
-
+        equipoTipoCB.setBackground(new java.awt.Color(204, 204, 204));
+        equipoTipoCB.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        equipoTipoCB.setForeground(new java.awt.Color(16, 65, 56));
         equipoTipoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Soporte de vida", "Quirúrgica", "Cuidados intensivos", "Terapia física", "Equipos de tratamiento", "Monitorización quirúrgica", "Monitorización de Cuidados intensivos", "Monitorización general", "Diagnósticos fisiológicos", "Analítica de laboratorio", "Accesorios de laboratorio", "Procesado de datos del paciente", "Otro" }));
         equipoTipoCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 equipoTipoCBActionPerformed(evt);
             }
         });
-        add(equipoTipoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 134, 270, -1));
+        add(equipoTipoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, 450, 60));
 
-        equipoRegistroTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(equipoRegistroTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 177, 268, -1));
+        equipoRegistroTF.setBackground(new java.awt.Color(63, 191, 168));
+        equipoRegistroTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        equipoRegistroTF.setForeground(new java.awt.Color(255, 255, 255));
+        equipoRegistroTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        equipoRegistroTF.setBorder(null);
+        add(equipoRegistroTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 485, 370, 50));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setText("Aceptar");
+        aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
+        aceptarB.setContentAreaFilled(false);
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 400, 83, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 680, 190, -1));
 
-        equipoCantidadTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(equipoCantidadTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 222, 268, -1));
+        equipoCantidadTF.setBackground(new java.awt.Color(63, 191, 168));
+        equipoCantidadTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        equipoCantidadTF.setForeground(new java.awt.Color(255, 255, 255));
+        equipoCantidadTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        equipoCantidadTF.setBorder(null);
+        add(equipoCantidadTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 565, 370, 50));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setText("Cancelar");
+        cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
+        cancelarB.setContentAreaFilled(false);
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBActionPerformed(evt);
             }
         });
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 445, -1, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 680, 190, -1));
 
-        equipoDescripcionTF.setBackground(new java.awt.Color(204, 204, 204));
-        add(equipoDescripcionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 267, 196, 120));
-
-        TipoDeEquipo.setBackground(new java.awt.Color(0, 0, 0));
-        TipoDeEquipo.setText("Tipo De Equipo");
-        add(TipoDeEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 50, -1, -1));
-
+        TipoEquipo.setBackground(new java.awt.Color(204, 204, 204));
+        TipoEquipo.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        TipoEquipo.setForeground(new java.awt.Color(16, 65, 56));
         TipoEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ","VENTILADOR MECANICO", "SATUROMETRO", "BALA OXIGENO", "MONITOR", "BOMBA INFUSION CONTINUA", "BOMBA NUTRICION ENTERAL", "ASPIRADOR DE SECRECIONES","EQUIPO DE INTUBACION" }));
-        add(TipoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 270, -1));
+        add(TipoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 390, 60));
 
         mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 75, -1, -1));
+        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 305, -1, -1));
 
         mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 115, -1, -1));
+        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 385, -1, -1));
 
         mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 159, -1, -1));
+        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 475, -1, -1));
 
         mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 201, -1, -1));
+        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 550, -1, -1));
 
         mensajeUsuario4.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario4.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 248, -1, -1));
+        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 630, -1, -1));
 
         mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 385, -1, -1));
+        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 630, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Registro_Equipo.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 800));
     }// </editor-fold>//GEN-END:initComponents
 
     private void equipoTipoCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equipoTipoCBActionPerformed
@@ -232,20 +231,15 @@ public class RegistroEquipo extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel TipoDeEquipo;
     private javax.swing.JComboBox<String> TipoEquipo;
     private javax.swing.JButton aceptarB;
     private javax.swing.JButton cancelarB;
     private javax.swing.JTextField equipoCantidadTF;
-    private javax.swing.JTextField equipoDescripcionTF;
+    private javax.swing.JTextArea equipoDescripcionTF;
     private javax.swing.JTextField equipoMarcaTF;
     private javax.swing.JTextField equipoRegistroTF;
     private javax.swing.JComboBox<String> equipoTipoCB;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel mensajeUsuario;
     private javax.swing.JLabel mensajeUsuario1;
     private javax.swing.JLabel mensajeUsuario2;
