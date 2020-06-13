@@ -105,7 +105,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
 
         mensajeUsuario10.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         mensajeUsuario10.setForeground(new java.awt.Color(255, 102, 102));
-        jPanel1.add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 630, -1, 0));
+        jPanel1.add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 630, -1, -1));
 
         adminNombre1TF.setBackground(new java.awt.Color(63, 191, 168));
         adminNombre1TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
@@ -345,20 +345,25 @@ public class RegistroAdmin extends javax.swing.JFrame {
         } else {
             mensajeUsuario5.setText("");
         }
-         if (!validar.VerificarLongitudUsuarioAdmin(adminUsuarioTF.getText())) {
+        if (!validar.VerificarLongitudUsuarioAdmin(adminUsuarioTF.getText())) {
             mensajeUsuario8.setText("Longitud usuario incorrecta");
         } else {
             mensajeUsuario8.setText("");
         }
-          if (!validar.VerificarLongitudContraseniaAdmin(String.valueOf(adminContrasenniaTF.getPassword()))) {
-            mensajeUsuario9.setText("Longitud contraseña incorrecta o\n"+" incluye caracteres especiales");
+        if (!validar.VerificarLongitudContraseniaAdmin(String.valueOf(adminContrasenniaTF.getPassword()))) {
+            mensajeUsuario9.setText("Longitud contraseña incorrecta o\n" + " incluye caracteres especiales");
         } else {
             mensajeUsuario9.setText("");
         }
+        if (!validar.VerificarSimilitudContrasenia(String.valueOf(adminContrasenniaTF.getPassword()),String.valueOf(adminContrasenniaTF1.getPassword()))) {
+            mensajeUsuario10.setText("La contraseña no coincide");
+        } else {
+            mensajeUsuario10.setText("");
+        }
 
-        if("Datos ingresados correctamente".equals(resultado)){
+        if ("Datos ingresados correctamente".equals(resultado)) {
             dao.crear(admin);
-             JOptionPane.showMessageDialog(null, "Adminitrador Registrado", "", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Adminitrador Registrado", "", JOptionPane.INFORMATION_MESSAGE);
             new Login().setVisible(true);
             this.dispose();
         }
