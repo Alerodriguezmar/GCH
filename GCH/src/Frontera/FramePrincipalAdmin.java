@@ -55,7 +55,7 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         panelPrincipal.setOpaque(false);
         panelPrincipal.setLayout(new java.awt.BorderLayout());
 
-        Fondo.setBackground(new java.awt.Color(63, 191, 168));
+        Fondo.setBackground(new java.awt.Color(204, 255, 255));
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Bienvenido.jpg"))); // NOI18N
         panelPrincipal.add(Fondo, java.awt.BorderLayout.CENTER);
 
@@ -145,9 +145,8 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 1505, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 998, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

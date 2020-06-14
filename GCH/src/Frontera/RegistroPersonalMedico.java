@@ -64,20 +64,20 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         personalContrasenniaTF1 = new javax.swing.JPasswordField();
         jLabel14 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        personalEmailTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalEmailTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalEmailTF.setForeground(new java.awt.Color(16, 65, 56));
         personalEmailTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalEmailTF.setBorder(null);
-        add(personalEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 325, 370, 40));
+        add(personalEmailTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 200, 230, 30));
 
         personalUsuarioTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
         personalUsuarioTF.setForeground(new java.awt.Color(16, 65, 56));
         personalUsuarioTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalUsuarioTF.setBorder(null);
-        add(personalUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 410, 370, 40));
+        add(personalUsuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 255, 220, 30));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
         aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
@@ -89,7 +89,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 680, 190, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 430, 90, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
         cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
@@ -101,10 +101,10 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 cancelarBActionPerformed(evt);
             }
         });
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 680, 190, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 430, 90, -1));
 
         personalCargoCB.setBackground(new java.awt.Color(204, 204, 204));
-        personalCargoCB.setFont(new java.awt.Font("Century Gothic", 0, 17)); // NOI18N
+        personalCargoCB.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         personalCargoCB.setForeground(new java.awt.Color(16, 65, 56));
         personalCargoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Asistente enfermería", "Asistente médico profesional", "Médico especialista", "Médico general", "Profesional en enfermería" }));
         personalCargoCB.setBorder(null);
@@ -116,10 +116,10 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 personalCargoCBActionPerformed(evt);
             }
         });
-        add(personalCargoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 280, 40));
+        add(personalCargoCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 180, 30));
 
         personalReThusTF.setBackground(new java.awt.Color(63, 191, 168));
-        personalReThusTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalReThusTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalReThusTF.setForeground(new java.awt.Color(255, 255, 255));
         personalReThusTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalReThusTF.setBorder(null);
@@ -128,10 +128,10 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 personalReThusTFActionPerformed(evt);
             }
         });
-        add(personalReThusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 670, 360, 40));
+        add(personalReThusTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 415, 240, 30));
 
         personalNombreTF.setBackground(new java.awt.Color(63, 191, 168));
-        personalNombreTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalNombreTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalNombreTF.setForeground(new java.awt.Color(255, 255, 255));
         personalNombreTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalNombreTF.setBorder(null);
@@ -140,36 +140,36 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 personalNombreTFActionPerformed(evt);
             }
         });
-        add(personalNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 360, 40));
+        add(personalNombreTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 240, 30));
 
         personalApellidoTF.setBackground(new java.awt.Color(63, 191, 168));
-        personalApellidoTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalApellidoTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalApellidoTF.setForeground(new java.awt.Color(255, 255, 255));
         personalApellidoTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalApellidoTF.setBorder(null);
-        add(personalApellidoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 360, 40));
+        add(personalApellidoTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 195, 240, 30));
 
         personalIdTF.setBackground(new java.awt.Color(63, 191, 168));
-        personalIdTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalIdTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalIdTF.setForeground(new java.awt.Color(255, 255, 255));
         personalIdTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalIdTF.setBorder(null);
-        add(personalIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 360, 50));
+        add(personalIdTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 240, 30));
 
-        personalCelularTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalCelularTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalCelularTF.setForeground(new java.awt.Color(16, 65, 56));
         personalCelularTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalCelularTF.setBorder(null);
-        add(personalCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 240, 370, 40));
+        add(personalCelularTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 150, 220, 30));
 
-        personalDireccionlTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalDireccionlTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalDireccionlTF.setForeground(new java.awt.Color(16, 65, 56));
         personalDireccionlTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalDireccionlTF.setBorder(null);
-        add(personalDireccionlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 130, 370, 40));
+        add(personalDireccionlTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, 220, 30));
 
         personalNombreTF1.setBackground(new java.awt.Color(63, 191, 168));
-        personalNombreTF1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalNombreTF1.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalNombreTF1.setForeground(new java.awt.Color(255, 255, 255));
         personalNombreTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalNombreTF1.setBorder(null);
@@ -178,91 +178,96 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
                 personalNombreTF1ActionPerformed(evt);
             }
         });
-        add(personalNombreTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 235, 360, 40));
+        add(personalNombreTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 240, 30));
 
         personalApellidoTF1.setBackground(new java.awt.Color(63, 191, 168));
-        personalApellidoTF1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalApellidoTF1.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalApellidoTF1.setForeground(new java.awt.Color(255, 255, 255));
         personalApellidoTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalApellidoTF1.setBorder(null);
-        add(personalApellidoTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 360, 40));
+        personalApellidoTF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                personalApellidoTF1ActionPerformed(evt);
+            }
+        });
+        add(personalApellidoTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 240, 30));
 
         tipoSangreCB.setBackground(new java.awt.Color(204, 204, 204));
-        tipoSangreCB.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
+        tipoSangreCB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         tipoSangreCB.setForeground(new java.awt.Color(16, 65, 56));
         tipoSangreCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "O +", "O -", "A -", "A +", "B -", "B +", "AB -", "AB +" }));
         tipoSangreCB.setBorder(null);
         tipoSangreCB.setDoubleBuffered(true);
         tipoSangreCB.setOpaque(false);
-        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 580, 90, 40));
+        add(tipoSangreCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 70, 30));
 
-        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 205, -1, -1));
+        add(mensajeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
 
-        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario1.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, -1));
+        add(mensajeUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 185, -1, -1));
 
-        mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario2.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario2.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 375, -1, -1));
+        add(mensajeUsuario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
 
-        mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario3.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario3.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, -1, -1));
+        add(mensajeUsuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
 
-        mensajeUsuario4.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario4.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario4.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 540, -1, -1));
+        add(mensajeUsuario4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 345, -1, -1));
 
-        mensajeUsuario6.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario6.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario6.setForeground(new java.awt.Color(255, 0, 0));
         add(mensajeUsuario6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 295, -1, -1));
 
-        mensajeUsuario7.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario7.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario7.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, -1, -1));
+        add(mensajeUsuario7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 395, -1, -1));
 
-        mensajeUsuario8.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario8.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario8.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 190, -1, -1));
+        add(mensajeUsuario8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, -1, -1));
 
-        mensajeUsuario9.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
+        mensajeUsuario9.setFont(new java.awt.Font("DejaVu Sans", 0, 8)); // NOI18N
         mensajeUsuario9.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 725, -1, -1));
+        add(mensajeUsuario9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, -1, -1));
 
         mensajeUsuario10.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario10.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 380, -1, -1));
+        add(mensajeUsuario10, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, -1, -1));
 
         mensajeUsuario11.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario11.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 465, -1, -1));
+        add(mensajeUsuario11, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 240, -1, -1));
 
         mensajeUsuario12.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario12.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 550, -1, -1));
+        add(mensajeUsuario12, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 350, -1, -1));
 
         mensajeUsuario5.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario5.setForeground(new java.awt.Color(255, 0, 0));
-        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 630, -1, -1));
+        add(mensajeUsuario5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 395, -1, -1));
 
         mensajeUsuario13.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         mensajeUsuario13.setForeground(new java.awt.Color(255, 102, 102));
-        add(mensajeUsuario13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 635, -1, 0));
+        add(mensajeUsuario13, new org.netbeans.lib.awtextra.AbsoluteConstraints(755, 400, -1, -1));
 
-        personalContrasenniaTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalContrasenniaTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalContrasenniaTF.setForeground(new java.awt.Color(16, 65, 56));
         personalContrasenniaTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalContrasenniaTF.setBorder(null);
-        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 580, 370, 40));
+        add(personalContrasenniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, 240, 30));
 
-        personalContrasenniaTF1.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        personalContrasenniaTF1.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         personalContrasenniaTF1.setForeground(new java.awt.Color(16, 65, 56));
         personalContrasenniaTF1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         personalContrasenniaTF1.setBorder(null);
-        add(personalContrasenniaTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 490, 370, 40));
+        add(personalContrasenniaTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 305, 230, 30));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Registro_Personal_Medico.jpg"))); // NOI18N
         add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -384,6 +389,10 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
     private void personalCargoCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalCargoCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_personalCargoCBActionPerformed
+
+    private void personalApellidoTF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_personalApellidoTF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_personalApellidoTF1ActionPerformed
     public void borrar(){
       personalApellidoTF.setText("");
         personalApellidoTF1.setText("");

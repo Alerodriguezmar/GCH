@@ -56,10 +56,10 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(63, 191, 168));
         jLabel1.setText("Personal Médico");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
         usuarioTF.setBackground(new java.awt.Color(16, 65, 56));
-        usuarioTF.setFont(new java.awt.Font("Century Gothic", 0, 48)); // NOI18N
+        usuarioTF.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         usuarioTF.setForeground(new java.awt.Color(63, 191, 168));
         usuarioTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         usuarioTF.setText("Usuario");
@@ -81,7 +81,7 @@ public class Login extends javax.swing.JFrame {
                 usuarioTFActionPerformed(evt);
             }
         });
-        jPanel1.add(usuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 360, 60));
+        jPanel1.add(usuarioTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 205, 190, 30));
 
         ingresarB.setBackground(new java.awt.Color(18, 62, 54));
         ingresarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Iniciar_sesion.png"))); // NOI18N
@@ -93,15 +93,15 @@ public class Login extends javax.swing.JFrame {
                 ingresarBActionPerformed(evt);
             }
         });
-        jPanel1.add(ingresarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 680, 220, -1));
+        jPanel1.add(ingresarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 220, 30));
 
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 8)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(18, 62, 54));
         jLabel3.setText("Version 2.");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 940, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, -1, -1));
 
         registrarB.setBackground(new java.awt.Color(204, 204, 204));
-        registrarB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        registrarB.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         registrarB.setForeground(new java.awt.Color(63, 191, 168));
         registrarB.setText("Registrar un administrador");
         registrarB.setBorder(null);
@@ -111,10 +111,10 @@ public class Login extends javax.swing.JFrame {
                 registrarBActionPerformed(evt);
             }
         });
-        jPanel1.add(registrarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 830, 230, 30));
+        jPanel1.add(registrarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 420, 190, -1));
 
         iniciarAdminB.setBackground(new java.awt.Color(204, 204, 204));
-        iniciarAdminB.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        iniciarAdminB.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         iniciarAdminB.setForeground(new java.awt.Color(63, 191, 168));
         iniciarAdminB.setText("Iniciar cómo administrador");
         iniciarAdminB.setBorder(null);
@@ -124,7 +124,7 @@ public class Login extends javax.swing.JFrame {
                 iniciarAdminBActionPerformed(evt);
             }
         });
-        jPanel1.add(iniciarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 770, 240, -1));
+        jPanel1.add(iniciarAdminB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 200, -1));
 
         mensajeUsuario1.setFont(new java.awt.Font("DejaVu Sans", 0, 10)); // NOI18N
         mensajeUsuario1.setForeground(new java.awt.Color(204, 0, 0));
@@ -136,7 +136,7 @@ public class Login extends javax.swing.JFrame {
 
         contraseniaTF.setBackground(new java.awt.Color(16, 65, 56));
         contraseniaTF.setEchoChar('\u25CF');
-        contraseniaTF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        contraseniaTF.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         contraseniaTF.setForeground(new java.awt.Color(63, 191, 168));
         contraseniaTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         contraseniaTF.setText("contraseña");
@@ -157,7 +157,7 @@ public class Login extends javax.swing.JFrame {
                 contraseniaTFActionPerformed(evt);
             }
         });
-        jPanel1.add(contraseniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 550, 360, 70));
+        jPanel1.add(contraseniaTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 180, 30));
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
 
         Fondo.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
@@ -165,13 +165,13 @@ public class Login extends javax.swing.JFrame {
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Login.jpg"))); // NOI18N
         Fondo.setRequestFocusEnabled(false);
         Fondo.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-160, -20, 850, 1000));
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 490));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

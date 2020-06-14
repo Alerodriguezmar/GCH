@@ -63,7 +63,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         jLabel4.setText("Equipos usados");
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
         setForeground(new java.awt.Color(204, 204, 204));
         setMinimumSize(new java.awt.Dimension(755, 585));
         setPreferredSize(new java.awt.Dimension(1582, 800));
@@ -72,7 +72,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Registro");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 9, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
 
         aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
         aceptarB.setContentAreaFilled(false);
@@ -81,15 +81,15 @@ public class GenerarReportes extends javax.swing.JPanel {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 580, 190, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 340, 90, -1));
 
         cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
         cancelarB.setContentAreaFilled(false);
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 690, 190, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 400, 90, -1));
 
         fechaL.setForeground(new java.awt.Color(255, 255, 255));
         fechaL.setText("Fecha");
-        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 39, -1, -1));
+        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, -1));
 
         jTable2.setBackground(new java.awt.Color(59, 175, 154));
         jTable2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -125,7 +125,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         jTable2.setRowMargin(2);
         registroEquiposT.setViewportView(jTable2);
 
-        add(registroEquiposT, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 500, 270));
+        add(registroEquiposT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 320, 180));
 
         jTable3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jTable3.setForeground(new java.awt.Color(16, 65, 56));
@@ -156,7 +156,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         jTable3.setRowMargin(2);
         registroPersonalT.setViewportView(jTable3);
 
-        add(registroPersonalT, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 190, 490, 160));
+        add(registroPersonalT, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 300, 180));
 
         jTableUCI.setBackground(new java.awt.Color(59, 175, 154));
         jTableUCI.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -184,7 +184,7 @@ public class GenerarReportes extends javax.swing.JPanel {
         });
         registroUciT.setViewportView(jTableUCI);
 
-        add(registroUciT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 560, 270, 60));
+        add(registroUciT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 170, 60));
 
         jTableUCIM.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jTableUCIM.setModel(new javax.swing.table.DefaultTableModel(
@@ -210,12 +210,12 @@ public class GenerarReportes extends javax.swing.JPanel {
         });
         registoUcimT.setViewportView(jTableUCIM);
 
-        add(registoUcimT, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 560, 310, 60));
+        add(registoUcimT, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 360, 160, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Reporte.jpg"))); // NOI18N
         jLabel1.setFocusable(false);
         jLabel1.setInheritsPopupMenu(false);
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1580, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed

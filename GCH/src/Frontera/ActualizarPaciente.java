@@ -13,6 +13,7 @@ import Entidad.EquiposUsados;
 import Entidad.IngresoPaciente;
 import Entidad.Paciente;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -42,8 +43,6 @@ public class ActualizarPaciente extends javax.swing.JPanel {
 
         identificacionTF = new javax.swing.JTextField();
         nombre1L = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        observacionTF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         aceptarB = new javax.swing.JButton();
         cancelarB = new javax.swing.JButton();
@@ -54,11 +53,8 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         noCamaCB = new javax.swing.JComboBox<>();
-        regitroL = new javax.swing.JLabel();
         fechaL = new javax.swing.JLabel();
         rethusL = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        equiposT = new javax.swing.JTable();
         equiposUsados = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
@@ -80,101 +76,114 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         jCheckBox14 = new javax.swing.JCheckBox();
         jCheckBox15 = new javax.swing.JCheckBox();
         jCheckBox16 = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        equiposT = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         buscarB = new javax.swing.JButton();
+        observacionTF = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
         setMinimumSize(new java.awt.Dimension(755, 585));
         setPreferredSize(new java.awt.Dimension(755, 585));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        identificacionTF.setBackground(new java.awt.Color(102, 102, 102));
-        add(identificacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(581, 0, 145, -1));
+        identificacionTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        identificacionTF.setForeground(new java.awt.Color(16, 65, 56));
+        identificacionTF.setBorder(null);
+        add(identificacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 43, 140, 30));
 
         nombre1L.setBackground(new java.awt.Color(0, 0, 0));
+        nombre1L.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        nombre1L.setForeground(new java.awt.Color(255, 255, 255));
         nombre1L.setText("Nombre 1");
-        add(nombre1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 78, -1, -1));
+        add(nombre1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("No. Identificación");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 6, -1, -1));
-
-        observacionTF.setBackground(new java.awt.Color(102, 102, 102));
-        add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 454, 234, 124));
-
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel7.setText("Observaciones");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 466, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, -1, -1));
 
-        aceptarB.setText("Aceptar");
+        aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
+        aceptarB.setToolTipText("");
+        aceptarB.setBorder(null);
+        aceptarB.setContentAreaFilled(false);
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 501, 83, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 380, 83, -1));
 
-        cancelarB.setText("Cancelar");
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 540, -1, -1));
+        cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
+        cancelarB.setBorder(null);
+        cancelarB.setBorderPainted(false);
+        cancelarB.setContentAreaFilled(false);
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 440, -1, -1));
 
         nombre2L.setBackground(new java.awt.Color(0, 0, 0));
+        nombre2L.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        nombre2L.setForeground(new java.awt.Color(255, 255, 255));
         nombre2L.setText("Nombre 2");
-        add(nombre2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 99, -1, -1));
+        add(nombre2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         apellido1L.setBackground(new java.awt.Color(0, 0, 0));
+        apellido1L.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        apellido1L.setForeground(new java.awt.Color(255, 255, 255));
         apellido1L.setText("Apellido 1");
-        add(apellido1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 120, -1, -1));
+        add(apellido1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         apellido2L.setBackground(new java.awt.Color(0, 0, 0));
+        apellido2L.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        apellido2L.setForeground(new java.awt.Color(255, 255, 255));
         apellido2L.setText("Apellido 2");
-        add(apellido2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 147, -1, -1));
+        add(apellido2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        tipoAtencionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Uci (intermedios)", "Uci" }));
+        tipoAtencionCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        tipoAtencionCB.setForeground(new java.awt.Color(16, 65, 56));
+        tipoAtencionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "UCIM", "UCI" }));
         tipoAtencionCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoAtencionCBActionPerformed(evt);
             }
         });
-        add(tipoAtencionCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 78, -1, -1));
+        add(tipoAtencionCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
 
         jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Tipo de atención");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 83, -1, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, -1));
 
         jLabel12.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("No. de cama");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 114, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
 
+        noCamaCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        noCamaCB.setForeground(new java.awt.Color(16, 65, 56));
         noCamaCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 noCamaCBActionPerformed(evt);
             }
         });
-        add(noCamaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 109, 89, -1));
+        add(noCamaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 89, -1));
 
-        regitroL.setText("Registro");
-        add(regitroL, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 45, -1, -1));
-
+        fechaL.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fechaL.setForeground(new java.awt.Color(255, 255, 255));
         fechaL.setText("Fecha");
-        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 508, -1, -1));
+        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, -1, -1));
 
+        rethusL.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        rethusL.setForeground(new java.awt.Color(255, 255, 255));
         rethusL.setText("ReTHUS");
-        add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 540, -1, -1));
+        add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, -1, -1));
 
-        equiposT.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(equiposT);
+        equiposUsados.setBackground(new java.awt.Color(63, 191, 168));
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 210, 200));
-
+        jCheckBox1.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox1.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Ventiladores");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,16 +191,34 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             }
         });
 
+        jCheckBox2.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox2.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox2.setText("Saturometros");
 
+        jCheckBox3.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox3.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox3.setText("Balas de oxigeno");
 
+        jCheckBox4.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox4.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox4.setText("monitor cardíaco");
 
+        jCheckBox5.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox5.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox5.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox5.setText("Bomba de infusión continua");
 
+        jCheckBox6.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox6.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox6.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox6.setText("Bomba de nutrición");
 
+        jCheckBox7.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox7.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox7.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox7.setText("aspirador de secreciones");
         jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,6 +226,9 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             }
         });
 
+        jCheckBox8.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox8.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox8.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox8.setText("equipo de intubacón");
         jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,18 +278,27 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         add(equiposUsados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Equipos usados");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Equipos disponibles");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
 
-        registroTF.setBackground(new java.awt.Color(102, 102, 102));
-        add(registroTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(581, 33, 145, -1));
+        registroTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        registroTF.setForeground(new java.awt.Color(16, 65, 56));
+        registroTF.setBorder(null);
+        add(registroTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 140, 30));
 
+        equiposAdicionar.setBackground(new java.awt.Color(255, 255, 255));
+
+        jCheckBox9.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox9.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox9.setForeground(new java.awt.Color(16, 65, 56));
         jCheckBox9.setText("Ventiladores");
         jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -267,16 +306,34 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             }
         });
 
+        jCheckBox10.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox10.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox10.setForeground(new java.awt.Color(16, 65, 56));
         jCheckBox10.setText("Saturometros");
 
+        jCheckBox11.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox11.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox11.setForeground(new java.awt.Color(16, 65, 56));
         jCheckBox11.setText("Balas de oxigeno");
 
+        jCheckBox12.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox12.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox12.setForeground(new java.awt.Color(16, 65, 56));
         jCheckBox12.setText("monitor cardíaco");
 
+        jCheckBox13.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox13.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox13.setForeground(new java.awt.Color(16, 65, 56));
         jCheckBox13.setText("Bomba de infusión continua");
 
+        jCheckBox14.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox14.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox14.setForeground(new java.awt.Color(16, 65, 56));
         jCheckBox14.setText("Bomba de nutrición");
 
+        jCheckBox15.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox15.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox15.setForeground(new java.awt.Color(16, 65, 56));
         jCheckBox15.setText("aspirador de secreciones");
         jCheckBox15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -284,6 +341,9 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             }
         });
 
+        jCheckBox16.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox16.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox16.setForeground(new java.awt.Color(16, 65, 56));
         jCheckBox16.setText("equipo de intubacón");
         jCheckBox16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,7 +366,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
                     .addComponent(jCheckBox13)
                     .addComponent(jCheckBox14)
                     .addComponent(jCheckBox15))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         equiposAdicionarLayout.setVerticalGroup(
             equiposAdicionarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,20 +390,48 @@ public class ActualizarPaciente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(equiposAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 240, -1));
+        add(equiposAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 240, -1));
+
+        equiposT.setBackground(new java.awt.Color(236, 236, 236));
+        equiposT.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        equiposT.setForeground(new java.awt.Color(16, 65, 56));
+        equiposT.setModel(new javax.swing.table.DefaultTableModel(
+            mostrar(),
+            new String [] {
+                "ID", "EQUIPO", "CANTIDAD"
+            }
+        ));
+        equiposT.setGridColor(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(equiposT);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 210, 190));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         jLabel6.setText("Equipos adicionar");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, -1, -1));
 
-        buscarB.setText("Buscar");
+        buscarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Buscar.png"))); // NOI18N
+        buscarB.setBorder(null);
+        buscarB.setBorderPainted(false);
+        buscarB.setContentAreaFilled(false);
         buscarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarBActionPerformed(evt);
             }
         });
-        add(buscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, -1, -1));
+        add(buscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 110, -1, -1));
+
+        observacionTF.setBackground(new java.awt.Color(231, 231, 231));
+        observacionTF.setColumns(20);
+        observacionTF.setFont(new java.awt.Font("Century Gothic", 0, 13)); // NOI18N
+        observacionTF.setForeground(new java.awt.Color(16, 65, 56));
+        observacionTF.setRows(5);
+        observacionTF.setBorder(null);
+        add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 220, 70));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Actualizacion_Paciente.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -441,6 +529,28 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_buscarBActionPerformed
 
+    public String [][] mostrar(){
+        EquipoDAO edao = new EquipoDAO();
+        List<Equipo> eqs = new ArrayList();
+        
+        String[] nombres = new String[] {"EQUIPO DE INTUBACION", "SATUROMETRO", "BALA OXIGENO", "MONITOR", "BOMBA INFUSION CONTINUA", "BOMBA NUTRICION ENTERAL", "ASPIRADOR DE SECRECIONES","VENTILADOR MECANICO" };
+        for(int i = 0; i < nombres.length; i++){
+            Equipo e = new Equipo();
+            e.setIdEquipo(i);
+            e.setNombreEquipo(nombres[i]);
+            eqs.add(e);
+          
+        }
+        
+        String[][] matriz=new String[eqs.size()][3];
+        for(int i = 0; i<eqs.size(); i++){
+            matriz[i][0] = Integer.toString(eqs.get(i).getIdEquipo());
+            matriz[i][1] = eqs.get(i).getNombreEquipo();
+            matriz[i][2] = Long.toString(edao.leerEq(eqs.get(i).getNombreEquipo()));//10 se debe reemplazar por la consulta SQL
+        }
+        
+        return matriz;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarB;
@@ -469,9 +579,9 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -480,9 +590,8 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> noCamaCB;
     private javax.swing.JLabel nombre1L;
     private javax.swing.JLabel nombre2L;
-    private javax.swing.JTextField observacionTF;
+    private javax.swing.JTextArea observacionTF;
     private javax.swing.JTextField registroTF;
-    private javax.swing.JLabel regitroL;
     private javax.swing.JLabel rethusL;
     private javax.swing.JComboBox<String> tipoAtencionCB;
     // End of variables declaration//GEN-END:variables

@@ -45,7 +45,6 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
 
         identificacionTF = new javax.swing.JTextField();
         nombre1L = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         observacionTF = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         aceptarB = new javax.swing.JButton();
@@ -58,85 +57,112 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         fechaL = new javax.swing.JLabel();
         rethusL = new javax.swing.JLabel();
         BuscarB = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(204, 204, 204));
         setMinimumSize(new java.awt.Dimension(755, 585));
         setPreferredSize(new java.awt.Dimension(755, 585));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        identificacionTF.setBackground(new java.awt.Color(204, 204, 204));
+        identificacionTF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        identificacionTF.setForeground(new java.awt.Color(16, 65, 56));
+        identificacionTF.setBorder(null);
         identificacionTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 identificacionTFActionPerformed(evt);
             }
         });
-        add(identificacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 6, 145, -1));
+        add(identificacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 140, 20));
 
         nombre1L.setBackground(new java.awt.Color(0, 0, 0));
+        nombre1L.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        nombre1L.setForeground(new java.awt.Color(255, 255, 255));
         nombre1L.setText("Nombre 1");
-        add(nombre1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        add(nombre1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("No. Identificación");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 12, -1, -1));
+        observacionTF.setBackground(new java.awt.Color(236, 236, 236));
+        observacionTF.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 234, 124));
 
-        observacionTF.setBackground(new java.awt.Color(102, 102, 102));
-        add(observacionTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 234, 124));
-
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(16, 65, 56));
         jLabel7.setText("Observaciones");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, -1, -1));
 
         aceptarB.setBackground(new java.awt.Color(204, 204, 204));
-        aceptarB.setText("Aceptar");
+        aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
+        aceptarB.setBorder(null);
+        aceptarB.setContentAreaFilled(false);
         aceptarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aceptarBActionPerformed(evt);
             }
         });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 83, -1));
+        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 370, 83, -1));
 
         cancelarB.setBackground(new java.awt.Color(204, 204, 204));
-        cancelarB.setText("Cancelar");
+        cancelarB.setForeground(new java.awt.Color(16, 65, 56));
+        cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
+        cancelarB.setBorder(null);
+        cancelarB.setContentAreaFilled(false);
         cancelarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarBActionPerformed(evt);
             }
         });
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 280, -1, -1));
+        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, -1, -1));
 
         nombre2L.setBackground(new java.awt.Color(0, 0, 0));
+        nombre2L.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        nombre2L.setForeground(new java.awt.Color(255, 255, 255));
         nombre2L.setText("Nombre 2");
-        add(nombre2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        add(nombre2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
         apellido1L.setBackground(new java.awt.Color(0, 0, 0));
+        apellido1L.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        apellido1L.setForeground(new java.awt.Color(255, 255, 255));
         apellido1L.setText("Apellido 1");
-        add(apellido1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        add(apellido1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         apellido2L.setBackground(new java.awt.Color(0, 0, 0));
+        apellido2L.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        apellido2L.setForeground(new java.awt.Color(255, 255, 255));
         apellido2L.setText("Apellido 2");
-        add(apellido2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 81, -1, -1));
+        add(apellido2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         tipoAtencioL.setBackground(new java.awt.Color(0, 0, 0));
+        tipoAtencioL.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        tipoAtencioL.setForeground(new java.awt.Color(255, 255, 255));
         tipoAtencioL.setText("Tipo de atención");
-        add(tipoAtencioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 102, -1, -1));
+        add(tipoAtencioL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         tipoAtencionL.setBackground(new java.awt.Color(0, 0, 0));
+        tipoAtencionL.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
+        tipoAtencionL.setForeground(new java.awt.Color(255, 255, 255));
         tipoAtencionL.setText("No. de cama");
-        add(tipoAtencionL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 123, -1, -1));
+        add(tipoAtencionL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
 
+        fechaL.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        fechaL.setForeground(new java.awt.Color(16, 65, 56));
         fechaL.setText("Fecha");
-        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, -1, -1));
+        add(fechaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, -1, -1));
 
+        rethusL.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        rethusL.setForeground(new java.awt.Color(16, 65, 56));
         rethusL.setText("ReTHUS");
-        add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 410, -1, -1));
+        add(rethusL, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, -1, -1));
 
-        BuscarB.setText("Buscar");
+        BuscarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Buscar.png"))); // NOI18N
+        BuscarB.setContentAreaFilled(false);
         BuscarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuscarBActionPerformed(evt);
             }
         });
-        add(BuscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, -1, -1));
+        add(BuscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, 80, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Egreso_Paciente.jpg"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
@@ -254,7 +280,7 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JButton cancelarB;
     private javax.swing.JLabel fechaL;
     private javax.swing.JTextField identificacionTF;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel nombre1L;
     private javax.swing.JLabel nombre2L;
