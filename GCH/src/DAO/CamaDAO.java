@@ -115,7 +115,8 @@ public class CamaDAO {
             return usuario;
         }
     }
-
+      
+    // Selecciona la primera cama disponible que encuentre
     public Camas leerCamasDisp(){
         Camas c = new Camas();
         String query = "SELECT * FROM CAMAS WHERE ESTADO = 0";
@@ -128,13 +129,14 @@ public class CamaDAO {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
-                
-            System.out.println("Datos de la CAMA: ");
+               
+            System.out.println("SELECCIONANDO CAMA DISPONIBLE...");
             if (res.next()) {
-                System.out.println(res.getInt("idCamas") +
-                        res.getString("Ubicacion") + ", " +
-                        res.getString("pabellon") + ", " +
-                        res.getBoolean("estado"));
+                System.out.println("DATOS DE LA CAMA: ");
+                System.out.println("Id: " + res.getInt("idCamas") +
+                        " Ubicación: " + res.getString("Ubicacion") + ", " +
+                        " Tipo Atención: " + res.getString("pabellon") + ", " +
+                        " Estado: " + res.getBoolean("estado"));
                 //creo paciente
                         c.setIdCamas(res.getInt("idCamas"));
                         c.setUbicacion(res.getString("Ubicacion"));
@@ -174,6 +176,7 @@ public class CamaDAO {
         }
     }
     
+    // Lee una cama que cumpla con el idCama
     public Camas leerPorId(String idCama){
         Camas c = new Camas();
         String query = "SELECT * FROM CAMAS WHERE IDCAMAS ="+idCama;
@@ -186,13 +189,14 @@ public class CamaDAO {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
-                
-            System.out.println("Datos de la CAMA: ");
+            
+            System.out.println("SELECCIONANDO CAMA POR ID...");
             if (res.next()) {
-                System.out.println(res.getInt("idCamas") +
-                        res.getString("Ubicacion") + ", " +
-                        res.getString("pabellon") + ", " +
-                        res.getBoolean("estado"));
+                System.out.println("DATOS DE LA CAMA: ");
+                System.out.println("Id: " + res.getInt("idCamas") +
+                        " Ubicación: " + res.getString("Ubicacion") + ", " +
+                        " Tipo Atención: " + res.getString("pabellon") + ", " +
+                        " Estado: " + res.getBoolean("estado"));
                 //creo paciente
                         c.setIdCamas(res.getInt("idCamas"));
                         c.setUbicacion(res.getString("Ubicacion"));
@@ -210,6 +214,7 @@ public class CamaDAO {
         return c;
     }
     
+    // Lee cantidad de camas "nomca" disponibles
     public long leerCamasDisponibles(String nomca) {
         long eq=-1;
         String query = "SELECT COUNT(PABELLON) AS CANTIDAD FROM ROOT.CAMAS WHERE PABELLON='"+nomca+"' AND ESTADO=0";
@@ -222,10 +227,10 @@ public class CamaDAO {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
-                
-            System.out.println("CANTIDAD DE LAS CAMAS DISPONIBLES: ");
+            System.out.println("CALCULANDO CAMAS " + nomca +  " DISPONIBLES...");
             if (res.next()) {
                 eq=res.getLong("CANTIDAD");
+                System.out.println("CANTIDAD DE LAS CAMAS DISPONIBLES: " + Long.toString(eq));
             }
             res.close();
             stmt.execute(query);
@@ -237,6 +242,7 @@ public class CamaDAO {
         return eq;
     }
     
+    // Lee cantidad de camas "nomca" ocupadas
     public long leerCamasOcupadas(String nomca) {
         long eq=-1;
         String query = "SELECT COUNT(PABELLON) AS CANTIDAD FROM ROOT.CAMAS WHERE PABELLON='"+nomca+"' AND ESTADO=1";
@@ -250,9 +256,10 @@ public class CamaDAO {
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
                 
-            System.out.println("CANTIDAD DE LAS CAMAS DISPONIBLES: ");
+            System.out.println("CALCULANDO CAMAS " + nomca +  " OCUPADAS...");
             if (res.next()) {
                 eq=res.getLong("CANTIDAD");
+                System.out.println("CANTIDAD DE LAS CAMAS OCUPADAS: " + Long.toString(eq));                
             }
             res.close();
             stmt.execute(query);

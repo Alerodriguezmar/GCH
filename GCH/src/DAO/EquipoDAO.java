@@ -101,15 +101,16 @@ public class EquipoDAO {
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
                 
-            System.out.println("Datos del equipo: ");
+            System.out.println("LEYENDO EQUIPO POR ID Y NOMBRE...");
             if (res.next()) {
-                System.out.println(res.getInt("idEquipo") +
-                        res.getString("nombreEquipo") + ", " +
-                        res.getString("Marca") + ", " +
-                        res.getString("RegistroSanitario") + ", " +
-                        res.getString("DescripcionEquipo") + ", " +
-                        res.getBoolean("EstadoEquipo") + ", " + 
-                        res.getString("TipoUso"));
+                System.out.println("DATOS DEL EQUIPO: ");
+                System.out.println("Id: " + res.getInt("idEquipo") +
+                        " Nombre: " + res.getString("nombreEquipo") + ", " +
+                        " Marca: " + res.getString("Marca") + ", " +
+                        " Registro: " + res.getString("RegistroSanitario") + ", " +
+                        " Desc: " + res.getString("DescripcionEquipo") + ", " +
+                        " Estado: " + res.getBoolean("EstadoEquipo") + ", " + 
+                        " Tipo Uso: " + res.getString("TipoUso"));
                 //creo paciente
                         eq.setIdEquipo(res.getInt("idEquipo"));
                         eq.setNombreEquipo(res.getString("nombreEquipo"));
@@ -230,9 +231,10 @@ public class EquipoDAO {
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
                 
-            System.out.println("Datos del equipo: ");
+            System.out.println("CALCULANDO EQUIPOS \"" + nomeq + "\" DISPONIBLES...");
             if (res.next()) {
                 eq=res.getLong("CANTIDAD");
+                System.out.println("CANTIDAD DE " + nomeq + " DISPONIBLES: " + Long.toString(eq));
             }
             res.close();
             stmt.execute(query);

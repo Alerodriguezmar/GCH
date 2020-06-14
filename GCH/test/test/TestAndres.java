@@ -90,12 +90,23 @@ public class TestAndres {
         long n;
         n=edao.leerEq(nomeq);
         System.out.println(n);*/
-        IngresoPacienteDAO idao = new IngresoPacienteDAO();
-        Paciente p = new Paciente();
-        IngresoPaciente ip = new IngresoPaciente();
+        CamaDAO cdao = new CamaDAO();
         
-        ip = idao.leerPorPaciente("12345");
-        System.out.println(Long.toString(ip.getIdIngreso()) + " " + ip.getPaciente().getNombrePaciente1());
-                
+        for(int i = 0; i < 15; i++){ // CAMAS UCI
+            Camas cama = new Camas();
+            cama.setUbicacion("10-"+Integer.toString(i));
+            cama.setPabellon("UCI");
+            cama.setEstado(false);
+            cdao.crear(cama);
+        }
+        
+        for(int i = 0; i < 15; i++){ // CAMAS UCIM
+            Camas cama = new Camas();
+            cama.setUbicacion("20-"+Integer.toString(i));
+            cama.setPabellon("UCIM");
+            cama.setEstado(false);
+            cdao.crear(cama);
+        }
+        
     }
 }

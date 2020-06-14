@@ -512,6 +512,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                 LocalDateTime now = LocalDateTime.now();
                 String fecha = now.format(dtf);
                 System.out.println(fecha);
+                
                 //Generar Ingreso
                 ingresoP.setPaciente(paciente);
                 ingresoP.setCama(cama);

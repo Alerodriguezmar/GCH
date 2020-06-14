@@ -54,7 +54,7 @@ public class Paciente {
         a.setApellidoPaciente1("Rodriguez");
         a.setApellidoPaciente2("Martinez");
         a.setTipoSangre("O +");
-        a.setIdPaciente(123456);
+        a.setIdPaciente(12345690);
         
              
             Pacientes.add(a);

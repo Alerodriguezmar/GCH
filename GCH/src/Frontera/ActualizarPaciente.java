@@ -5,12 +5,25 @@
  */
 package Frontera;
 
+import DAO.EquipoDAO;
+import DAO.EquiposUsadosDAO;
+import DAO.IngresoPacienteDAO;
+import Entidad.Equipo;
+import Entidad.EquiposUsados;
+import Entidad.IngresoPaciente;
+import Entidad.Paciente;
+import java.util.ArrayList;
+
 /**
  *
  * @author tech
  */
 public class ActualizarPaciente extends javax.swing.JPanel {
-
+    
+    private IngresoPaciente ingp = new IngresoPaciente();
+    private Paciente paciente = new Paciente();
+    private ArrayList <Equipo> equipos = new ArrayList();
+    
     /**
      * Creates new form IngresoPaciente
      */
@@ -68,6 +81,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         jCheckBox15 = new javax.swing.JCheckBox();
         jCheckBox16 = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
+        buscarB = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(755, 585));
@@ -159,7 +173,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(equiposT);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 210, 200));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 210, 200));
 
         jCheckBox1.setText("Ventiladores");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -322,10 +336,57 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         jLabel6.setText("Equipos adicionar");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
+
+        buscarB.setText("Buscar");
+        buscarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarBActionPerformed(evt);
+            }
+        });
+        add(buscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        // TODO add your handling code here:
+        //IF INGRESO EXISTS
+        //Buscar equipos usados where ingreso id
+        //BUSCA EN EQUIPOS USADOS
+          //ACTUALIZA TODOS LOS EQUIPOS A 0         
+          //BORRA EQUIPOS USADOS -> CODIFICAR         
+          //SE VUELVE A INSERTAR EQUIPOS -> INGRESOPACIENTE FRONTERA
+        //Actualizar ingresop (obs, tipocama)       
+        
+        if(ingp.getIdIngreso() != 0){
+            //Actualiza los equipos a estado=false 
+            IngresoPacienteDAO ingpdao = new IngresoPacienteDAO();
+            IngresoPaciente ingpaux = new IngresoPaciente();
+            Equipo eqaux = new Equipo();
+            EquipoDAO eqdao = new EquipoDAO();
+            EquiposUsados equs = new EquiposUsados();
+            EquiposUsadosDAO equsdao = new EquiposUsadosDAO();
+            equsdao.actualizarEquipos(Long.toString(this.ingp.getIdIngreso()));
+            
+            //Borra registro en 'EquiposUsados' CODIFICAR****
+            
+            //Registra nuevos equipos usados
+            for(Equipo eq:equipos){
+                    equs.setEquipo(eq);
+                    equs.setIngresoP(this.ingp);
+                    equsdao.crear(equs);
+                    eqaux = eq;
+                    eqaux.setEstadoEquipo(true);
+                    eqdao.actualizar(eq, eqaux);
+                }
+            
+            //Actualiza IngresoPaciente
+            ingpaux = this.ingp;
+            ingpaux.setObservacion(observacionTF.getText());
+            ingpdao.actualizar(ingp, ingpaux);
+            
+        }
+        else {
+            System.out.println("NO ES POSIBLE REALIZAR LA ACTUALIZACIÓN: EL PACIENTE NO TIENE INGRESOS ACTIVOS");
+        }
+        
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void tipoAtencionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAtencionCBActionPerformed
@@ -360,11 +421,32 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox16ActionPerformed
 
+    private void buscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBActionPerformed
+        // TODO add your handling code here:
+        //Busca paciente por id
+        String idpaciente = identificacionTF.getText();
+        IngresoPacienteDAO ingpdao = new IngresoPacienteDAO();
+        this.ingp = ingpdao.leerPorPaciente(idpaciente);
+        if(this.ingp.getIdIngreso() != 0){
+            this.paciente = ingp.getPaciente();
+            nombre1L.setText("Nombre 1: " + this.paciente.getNombrePaciente1());
+            nombre2L.setText("Nombre 2: " + this.paciente.getNombrePaciente2());
+            apellido1L.setText("Apellido 1: " + this.paciente.getApellidoPaciente1());
+            apellido2L.setText("Apellido 2: " + this.paciente.getApellidoPaciente2());
+            fechaL.setText("Fecha: " + this.ingp.getFecha());
+            rethusL.setText("reTHUS: " + this.ingp.getPersonalm().getReTHUS());
+        }
+        else {
+            System.out.println("EL PACIENTE NO TIENE INGRESOS ACTIVOS...");
+        }
+    }//GEN-LAST:event_buscarBActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aceptarB;
     private javax.swing.JLabel apellido1L;
     private javax.swing.JLabel apellido2L;
+    private javax.swing.JButton buscarB;
     private javax.swing.JButton cancelarB;
     private javax.swing.JPanel equiposAdicionar;
     private javax.swing.JTable equiposT;
