@@ -454,6 +454,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             equsdao.actualizarEquipos(Long.toString(this.ingp.getIdIngreso()));
             
             //Borra registro en 'EquiposUsados' CODIFICAR****
+            equsdao.borrarPorIngresoId(Long.toString(this.ingp.getIdIngreso()));
             
             //Registra nuevos equipos usados
             for(Equipo eq:equipos){

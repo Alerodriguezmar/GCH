@@ -10,6 +10,7 @@ import Entidad.EquiposUsados;
 import DAO.EquipoDAO;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -57,6 +58,32 @@ public class EquiposUsadosDAO {
             em.close();
             return ret;
         }
+    }
+    
+    //Borrar por ingreso id
+    public boolean borrarPorIngresoId(String idIngreso){
+        boolean ret = false;
+        
+        String query = "DELETE FROM EquiposUsados WHERE INGRESOP_IDINGRESO=" + idIngreso;
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.prepareStatement(query);
+            ResultSet res = stmt.executeQuery(query);
+            stmt.executeUpdate(query);
+            res.close();
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        
+        return ret;
     }
 
     public EquiposUsados leer(EquiposUsados par) {

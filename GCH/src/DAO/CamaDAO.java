@@ -95,6 +95,7 @@ public class CamaDAO {
         return (no == 0);
 
     }
+    
     //consulta para revisar camas disponibles
       public Camas leerDisponibles() {
         EntityManager em = emf.createEntityManager();
@@ -227,6 +228,7 @@ public class CamaDAO {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
+            
             System.out.println("CALCULANDO CAMAS " + nomca +  " DISPONIBLES...");
             if (res.next()) {
                 eq=res.getLong("CANTIDAD");
