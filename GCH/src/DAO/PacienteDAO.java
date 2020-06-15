@@ -24,7 +24,7 @@ import javax.persistence.Query;
 public class PacienteDAO {
    private static EntityManagerFactory
             emf = Persistence.createEntityManagerFactory("GCHPU");
-
+    // método para crear un dato en la tabla paciente
     public void crear(Paciente object) {
 
         EntityManager em = emf.createEntityManager();
@@ -38,8 +38,9 @@ public class PacienteDAO {
         } finally {
             em.close();
         }
+        System.out.println("DATOS DEL PACIENTE REGISTRADOS");
     }
-
+    //metodo para eliminar un dato de la tabla paciente
     public boolean eliminar(Paciente object) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -56,7 +57,7 @@ public class PacienteDAO {
             return ret;
         }
     }
-
+    //Método para consultar información de un paciente determinado
     public Paciente leer(Paciente par) {
         EntityManager em = emf.createEntityManager();
         Paciente usuario = null;
@@ -85,7 +86,7 @@ public class PacienteDAO {
             return usuario;
         }
     }
-
+    //método para actualizar atributos de un dato de la tabla de pacientes
     public boolean actualizar(Paciente object, Paciente nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -109,7 +110,7 @@ public class PacienteDAO {
             return ret;
         }
     } 
-
+    //Método consulta para buscar los datos de un paciente con su identificación
     public Paciente leerPorId(String id){
         Paciente p = new Paciente();
         String query = "SELECT * FROM PACIENTES WHERE IDPACIENTE="+id;

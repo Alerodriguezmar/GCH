@@ -27,7 +27,8 @@ import javax.persistence.Query;
 public class EquiposUsadosDAO {
     private static EntityManagerFactory
         emf = Persistence.createEntityManagerFactory("GCHPU");
-
+    //crear registro de los equipos que están utilizando un paciente en 
+    //determinado ingreso
     public void crear(EquiposUsados object) {
 
         EntityManager em = emf.createEntityManager();
@@ -41,8 +42,9 @@ public class EquiposUsadosDAO {
         } finally {
             em.close();
         }
+        System.out.println("EQUIPO USADO REGISTRADO");
     }
-
+    //Eliminar un determinado registro de un equipo usado
     public boolean eliminar(EquiposUsados object) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -60,7 +62,7 @@ public class EquiposUsadosDAO {
         }
     }
     
-    //Borrar por ingreso id
+    //Borrar los equipos que se utilizaron en  un ingreso
     public boolean borrarPorIngresoId(String idIngreso){
         boolean ret = false;
         
@@ -85,10 +87,11 @@ public class EquiposUsadosDAO {
         
         return ret;
     }
-
+    //Consulta de los equipos usados en un determinado ingreso
     public EquiposUsados leer(EquiposUsados par) {
         EntityManager em = emf.createEntityManager();
         EquiposUsados usuario = null;
+        System.out.println("CONSULTANDO EQUIPO USADO...");
         Query q = em.createQuery("SELECT u FROM EquiposUsados u " +
                     "WHERE u.id LIKE :id" +
                     " AND u.ingresoP LIKE :ingresoP" +
@@ -108,7 +111,7 @@ public class EquiposUsadosDAO {
             return usuario;
         }
     }
-    
+    //Método Actualizar los atributos de un dato dentro de la tabla equipos usados
     public boolean actualizar(EquiposUsados object, EquiposUsados nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -130,6 +133,7 @@ public class EquiposUsadosDAO {
     //metodo
     /////selecta
     //while(){ actualizar E}
+     //Método actualizar los equipos que se usan dentro de un ingreso
     public void actualizarEquipos (String idingreso) {
         
         String query = "SELECT * FROM EquiposUsados WHERE INGRESOP_IDINGRESO=" + idingreso;
@@ -159,6 +163,7 @@ public class EquiposUsadosDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } 
+        System.out.println("EQUIUPOS USADOS ACTUALIZADOS");
         
     }
 }

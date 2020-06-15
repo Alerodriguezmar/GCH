@@ -27,7 +27,7 @@ import javax.persistence.Query;
 public class IngresoPacienteDAO {
     private static EntityManagerFactory
             emf = Persistence.createEntityManagerFactory("GCHPU");
-
+    // método para crear un dato en la tabla
     public void crear(IngresoPaciente object) {
 
         EntityManager em = emf.createEntityManager();
@@ -41,8 +41,9 @@ public class IngresoPacienteDAO {
         } finally {
             em.close();
         }
+        System.out.println("INGRESO REALIZADO");
     }
-
+    //mÉtodo para eliminar un dato de la tabla
     public boolean eliminar(IngresoPaciente object) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -59,10 +60,11 @@ public class IngresoPacienteDAO {
             return ret;
         }
     }
-
+    //Método para realizar una consulta de un ingreso
     public IngresoPaciente leer(IngresoPaciente par) {
         EntityManager em = emf.createEntityManager();
         IngresoPaciente usuario = null;
+        System.out.println("CONSULTANDO INGRESO...");
         Query q = em.createQuery("SELECT u FROM Ingreso_Paciente u " +
                     "WHERE u.paciente LIKE :paciente" +
                     " AND u.personalm LIKE :personalm" +
@@ -88,7 +90,7 @@ public class IngresoPacienteDAO {
             return usuario;
         }
     }
-    
+    //método para actualizar atributos de un dato de la tabla de base de datos
     public boolean actualizar(IngresoPaciente object, IngresoPaciente nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -115,7 +117,7 @@ public class IngresoPacienteDAO {
         }
     }
     
-    
+    //Método para consultar un paciente por su numero de indnetificación
     public Paciente leerPacientePorId(String id){    
         System.out.println("BUSCANDO PACIENTE...");
         Paciente p = new Paciente();

@@ -19,7 +19,7 @@ import javax.persistence.Query;
 public class AdminDAO {
     private static EntityManagerFactory
             emf = Persistence.createEntityManagerFactory("GCHPU");
-
+// método para crear un dato en la tabla
     public void crear(Administrador object) {
 
         EntityManager em = emf.createEntityManager();
@@ -33,8 +33,9 @@ public class AdminDAO {
         } finally {
             em.close();
         }
+        System.out.println("ADMINISTRADOR INGRESADO");
     }
-
+    //metodo para eliminar un dato de la tabla
     public boolean eliminar(Administrador object) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -51,10 +52,11 @@ public class AdminDAO {
             return ret;
         }
     }
-    
+    //consulta para buscar si el usuario y contraseña están en la base de datos
     public Administrador leerd(Administrador par){
         EntityManager em = emf.createEntityManager();
         Administrador usuario = null;
+        System.out.println("CONSULTANDO ADMINISTRADOR...");
         Query q = em.createQuery("SELECT u FROM Administrador u " +
                     "WHERE u.usuario LIKE :nombre" +
                     " AND u.contrasenia LIKE :password")
@@ -71,7 +73,7 @@ public class AdminDAO {
             return usuario;
         }
     }
-    
+    //consulta para buscar los datos de un administrador
     public Administrador leer(Administrador par) {
         EntityManager em = emf.createEntityManager();
         Administrador usuario = null;
@@ -94,6 +96,7 @@ public class AdminDAO {
                     .setParameter("celular", par.getCelular())
                     .setParameter("usuario", par.getUsuario())
                     .setParameter("contrasenia", par.getContrasenia());
+        System.out.println("CONSULTANDO ADMINISTRADOR...");
         try {
             usuario = (Administrador) q.getSingleResult();
         } catch (NonUniqueResultException e) {
@@ -105,7 +108,7 @@ public class AdminDAO {
             return usuario;
         }
     }
-
+    //método para actualizar atributos de un dato de la tabla administrador de base de datos
     public boolean actualizar(Administrador object, Administrador nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -124,6 +127,7 @@ public class AdminDAO {
             em.merge(object);
             em.getTransaction().commit();
             ret = true;
+             System.out.println("ACTUALIZANDO ADMINISTRADOR...");
         } catch (Exception e) {
             e.printStackTrace();
             em.getTransaction().rollback();

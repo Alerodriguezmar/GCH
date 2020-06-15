@@ -25,7 +25,7 @@ import javax.persistence.Query;
 public class PersonalMedicoDAO {
     private static EntityManagerFactory
             emf = Persistence.createEntityManagerFactory("GCHPU");
-
+    // método para crear un dato en la tabla PERSONALMEDICO  
     public void crear(PersonalMedico object) {
 
         EntityManager em = emf.createEntityManager();
@@ -39,8 +39,9 @@ public class PersonalMedicoDAO {
         } finally {
             em.close();
         }
+        System.out.println("PERSONAL MEDICO REGISTRADO");
     }
-
+    //metodo para eliminar un dato de la tabla PERSONALMEDICO
     public boolean eliminar(PersonalMedico object) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -57,10 +58,11 @@ public class PersonalMedicoDAO {
             return ret;
         }
     }
-
+    //Método para consultar los atributos de un personal medico determinado
     public PersonalMedico leer(PersonalMedico par) {
         EntityManager em = emf.createEntityManager();
         PersonalMedico usuario = null;
+        System.out.println("CONSULTANDO PERSPNAL MEDICO...");
         Query q = em.createQuery("SELECT u FROM personalMedico u " +
                     "WHERE u.nombre1 LIKE :nombre1" +
                     " AND u.nombre2 LIKE :nombre2" +
@@ -99,7 +101,7 @@ public class PersonalMedicoDAO {
             return usuario;
         }
     }
-
+    //método para actualizar atributos de un dato de la tabla personal medico de base de datos
     public boolean actualizar(PersonalMedico object, PersonalMedico nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -128,7 +130,7 @@ public class PersonalMedicoDAO {
             return ret;
         }
     }
-    
+    //Método para consultar si el usuario y contraseña si algun registro coincide  en la tabla personalmedico
     public PersonalMedico leerd(PersonalMedico par){
         EntityManager em = emf.createEntityManager();
         PersonalMedico usuario = null;
@@ -148,7 +150,7 @@ public class PersonalMedicoDAO {
             return usuario;
         }
     }
-    
+    //Método para consultar por el id, los atributos de un determinadoi personal medico
     public PersonalMedico leerPorId(String id){
         PersonalMedico p = new PersonalMedico();
         String query = "SELECT * FROM PERSONALMEDICO WHERE ID="+id;

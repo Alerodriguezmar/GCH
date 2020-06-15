@@ -6,8 +6,6 @@
 package DAO;
 
 import Entidad.EgresoPaciente;
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NonUniqueResultException;
@@ -22,6 +20,7 @@ public class EgresoPacienteDAO {
     private static EntityManagerFactory
             emf = Persistence.createEntityManagerFactory("GCHPU");
 
+    // método para crear un dato en la tabla de EGRESOPACIENTE
     public void crear(EgresoPaciente object) {
 
         EntityManager em = emf.createEntityManager();
@@ -35,8 +34,10 @@ public class EgresoPacienteDAO {
         } finally {
             em.close();
         }
+        System.out.println("EGRESO REGISTRADO");
     }
 
+    //metodo para eliminar un dato de la tabla
     public boolean eliminar(EgresoPaciente object) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -52,30 +53,35 @@ public class EgresoPacienteDAO {
             em.close();
             return ret;
         }
+        
     }
 
+    //consulta para buscar el egreso de un determinado paciente que 
+    //realizó un ingreso en centro hospitalario
     public EgresoPaciente leer(EgresoPaciente par) {
         EntityManager em = emf.createEntityManager();
         EgresoPaciente usuario = null;
-        Query q = em.createQuery("SELECT u FROM EgresoPacientes u " +
-                    "WHERE u.ingresopaciente_idingresopaciente LIKE :id" +
-                    " AND u.fecha LIKE :fecha" + 
-                    " AND u.observaciones LIKE: obs")
-                    .setParameter("id", par.getIngresoP())
-                    .setParameter("fecha", par.getFecha())
-                    .setParameter("obs", par.getObservaciones());
+        System.out.println("CONSULTANDO EGRESO...");
+        Query q = em.createQuery("SELECT u FROM EgresoPacientes u "
+                + "WHERE u.ingresopaciente_idingresopaciente LIKE :id"
+                + " AND u.fecha LIKE :fecha"
+                + " AND u.observaciones LIKE: obs")
+                .setParameter("id", par.getIngresoP())
+                .setParameter("fecha", par.getFecha())
+                .setParameter("obs", par.getObservaciones());
         try {
             usuario = (EgresoPaciente) q.getSingleResult();
         } catch (NonUniqueResultException e) {
             usuario = (EgresoPaciente) q.getResultList().get(0);
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             em.close();
             return usuario;
         }
     }
 
+    //método para actualizar atributos de un dato de la tabla de EGRESOPACIENTE de la base de datos
     public boolean actualizar(EgresoPaciente object, EgresoPaciente nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
