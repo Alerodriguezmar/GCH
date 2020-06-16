@@ -13,9 +13,16 @@ import Entidad.PersonalMedico;
  *
  * @author DAVID
  */
+//Clase para validar el inicio de sesion del administrador del programa.
 public class ValidarLoginAdmin {
     private final AdminDAO dao = new AdminDAO();
-
+    
+    //Se crea el método verificarLogin el cual sera utilizado para ver un objeto del tipo usuario en la clase Adiministrador
+    //Para poder leer sus datos, al llamar a los metodos 3 metodos de cada uno de los if.
+    //-En caso de fallar el primer if, retornará: "longitud nombre incorrecta".
+    //-En caso de fallar el segundo if, retornará: "longitud contraseña incorrecto".
+    //-Si existe un usuario que no es nulo al que se le puede ejecutar el metodo leerd, retorna: Bienvenido.
+    //-Por ultimo en caso de que no pueda ser ejecutado el método leerd en usuario el sistema retornara; Datos incorrectos.
     public ValidarLoginAdmin() {
     }
     public String verificarLogin (Administrador usuario){
@@ -39,10 +46,13 @@ public class ValidarLoginAdmin {
         */
     
     
+//Método para verificar la longitud del nombre la cual debe estar entre 5 y 32 digitos.
+
     public boolean VerificarLongitudNombre (String nombre){
         return(nombre.length() >= 5 && nombre.length() <= 32);
     }
-    
+ //Método para verificar la longitud de la contraseña la cual debe ser mayor o igual a 5 dígitos.
+
     public boolean VerificarLongitudPassword (String contrasenia){
         return(contrasenia.length() >= 5);
     }

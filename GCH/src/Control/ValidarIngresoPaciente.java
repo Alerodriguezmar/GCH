@@ -9,6 +9,8 @@ import Entidad.Paciente;
  *
  * @author Julio Munoz
  */
+
+//se declara la clase ValidarIngresoPaciente, la cual permitirá el registro exitoso de un paciente a la base de datos.
 public class ValidarIngresoPaciente {
 
     private final CamaDAO daoC = new CamaDAO();
@@ -16,9 +18,15 @@ public class ValidarIngresoPaciente {
     private final PacienteDAO daoP = new PacienteDAO();
     private final IngresoPacienteDAO daoIE = new IngresoPacienteDAO();
      
+    
+   //se instancia un objeto de la clase. 
     public ValidarIngresoPaciente(){
     }
-    //verificacion del paciente
+    //metodo funcional para verificar 
+    //que al ingresar un paciente se llenen 
+    //todos los datos y cada uno cumpla con los limites establecidos,
+    //limites que serán descritos al terminar este método.
+    
     public String VerificarIngresoPaciente(Paciente paciente) {
         if(!VerificarLongitudNombre1(paciente.getNombrePaciente1())){
             return("Longitud primer nombre incorrecta");
@@ -80,35 +88,36 @@ public class ValidarIngresoPaciente {
     
     
 //metodos
+     // verifica que la longitud del primer nombre este entre 4 y 14 digitos.
     public boolean VerificarLongitudNombre1(String nombre1) {
         return (nombre1.length() >= 4 && nombre1.length() <= 14);
     }
-
+    // verifica que la longitud del  segundo nombre no exceda los 14 digitos.
     public boolean VerificarLongitudNombre2(String nombre2) {
         return (nombre2.length() <= 14);
     }
-
+    // verifica que la longitud del primer apellido este entre 4 y 14 digitos.
     public boolean VerificarLongitudApellido1(String apellido1) {
         return (apellido1.length() >= 4 && apellido1.length() <= 14);
     }
-
+// verifica que la longitud del  segundo apellido no exceda los 14 digitos.
     public boolean VerificarLongitudApellido2(String apellido2) {
         return (apellido2.length() <= 14);
     }
-
+    //verifica que longitud de id este entre 2 y 13 dígitos.
     public boolean VerificarLongitudId(String id) {
         return ( id.length() >= 2 &&  id.length() < 13);
     }
-    
-
+    //verifica el tipo de sangre del paciente.
     public boolean VerificarSelectTipoSangre(String tipoSangre) {
         return (tipoSangre.isEmpty());
     }
-
+    //verifica que el tipo de atencion escogido sea válido.
     public boolean VerificarSelectTipoAtencion(String tipoAtencion) {
         return (tipoAtencion.isEmpty());
     }
-
+    //verifica que se haya hecho una eleccion en tipo de atencion para poder asignar cama.
+    
     public boolean VerificarSelectCama(String tipoAtencion) {
         return (tipoAtencion.isEmpty());
 

@@ -11,11 +11,13 @@ import Entidad.Equipo;
  *
  * @author Diego Irreño
  */
+
+
 public class ValidarRegistroEquipo {
 
     public ValidarRegistroEquipo() {
     }
-
+// Se declara el metodo VerificarRegistroEquipo que llama los métodos de verificación descritos al terminar este método.
     public String VerificarRegistroEquipo(Equipo equipo) {
 
         if (!VerificarLongitudMarca(equipo.getMarca())) {
@@ -31,17 +33,20 @@ public class ValidarRegistroEquipo {
         return ("Datos ingresados correctamente");
 
     }
-
+    //Método para verificar la longitud del texto ingresado en marca (2 y 32 dígitos).
     public boolean VerificarLongitudMarca(String marca) {
         return (marca.length() >= 2 && marca.length() < 33);
     }
-
+    //Método para verificar la longitud del texto ingresado en descripcion de equipo (1 y 256 dígitos).
     public boolean VerificarLongitudDescripcionEquipo(String descr) {
         return (descr.length() > 0 && descr.length() < 257);
     }
-      public boolean VerificarLongitudCantidadEquipo(int cant) {
+    //Método para verificar que la cantidad de equipo ingresada sea un entero.
+
+    public boolean VerificarLongitudCantidadEquipo(int cant) {
         return (cant > 0 );
     }
+    //Método para verificar la longitud del código de registro sanitario del equipo(6 y 30 dígitos)
     public boolean VerificarLongitudRegistroSanitarioEquipo(String reg) {
         return (reg.length() >= 6 && reg.length() < 31);
     }
