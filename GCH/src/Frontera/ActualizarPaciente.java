@@ -56,26 +56,26 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         fechaL = new javax.swing.JLabel();
         rethusL = new javax.swing.JLabel();
         equiposUsados = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
+        jCheckBox1ventilador = new javax.swing.JCheckBox();
+        jCheckBox2saturometro = new javax.swing.JCheckBox();
+        jCheckBox3balas = new javax.swing.JCheckBox();
+        jCheckBox4monitor = new javax.swing.JCheckBox();
+        jCheckBox5bombaInf = new javax.swing.JCheckBox();
+        jCheckBox6bombaNut = new javax.swing.JCheckBox();
+        jCheckBox7aspirador = new javax.swing.JCheckBox();
+        jCheckBox8intubacion = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         registroTF = new javax.swing.JTextField();
         equiposAdicionar = new javax.swing.JPanel();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox14 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
-        jCheckBox16 = new javax.swing.JCheckBox();
+        ventiladorJCB = new javax.swing.JCheckBox();
+        saturometroJCB = new javax.swing.JCheckBox();
+        balaJCB = new javax.swing.JCheckBox();
+        monitorJCB = new javax.swing.JCheckBox();
+        bombaJCB = new javax.swing.JCheckBox();
+        bombaNutJCB = new javax.swing.JCheckBox();
+        aspiradorJCB = new javax.swing.JCheckBox();
+        intubacionJCB = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         equiposT = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
@@ -118,6 +118,11 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         cancelarB.setBorder(null);
         cancelarB.setBorderPainted(false);
         cancelarB.setContentAreaFilled(false);
+        cancelarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelarBActionPerformed(evt);
+            }
+        });
         add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 440, -1, -1));
 
         nombre2L.setBackground(new java.awt.Color(0, 0, 0));
@@ -181,58 +186,58 @@ public class ActualizarPaciente extends javax.swing.JPanel {
 
         equiposUsados.setBackground(new java.awt.Color(63, 191, 168));
 
-        jCheckBox1.setBackground(new java.awt.Color(63, 191, 168));
-        jCheckBox1.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("Ventiladores");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox1ventilador.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox1ventilador.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox1ventilador.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox1ventilador.setText("Ventiladores");
+        jCheckBox1ventilador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                jCheckBox1ventiladorActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setBackground(new java.awt.Color(63, 191, 168));
-        jCheckBox2.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox2.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setText("Saturometros");
+        jCheckBox2saturometro.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox2saturometro.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox2saturometro.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox2saturometro.setText("Saturometros");
 
-        jCheckBox3.setBackground(new java.awt.Color(63, 191, 168));
-        jCheckBox3.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox3.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox3.setText("Balas de oxigeno");
+        jCheckBox3balas.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox3balas.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox3balas.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox3balas.setText("Balas de oxigeno");
 
-        jCheckBox4.setBackground(new java.awt.Color(63, 191, 168));
-        jCheckBox4.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox4.setText("monitor cardíaco");
+        jCheckBox4monitor.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox4monitor.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox4monitor.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox4monitor.setText("monitor cardíaco");
 
-        jCheckBox5.setBackground(new java.awt.Color(63, 191, 168));
-        jCheckBox5.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox5.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox5.setText("Bomba de infusión continua");
+        jCheckBox5bombaInf.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox5bombaInf.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox5bombaInf.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox5bombaInf.setText("Bomba de infusión continua");
 
-        jCheckBox6.setBackground(new java.awt.Color(63, 191, 168));
-        jCheckBox6.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox6.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox6.setText("Bomba de nutrición");
+        jCheckBox6bombaNut.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox6bombaNut.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox6bombaNut.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox6bombaNut.setText("Bomba de nutrición");
 
-        jCheckBox7.setBackground(new java.awt.Color(63, 191, 168));
-        jCheckBox7.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox7.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox7.setText("aspirador de secreciones");
-        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox7aspirador.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox7aspirador.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox7aspirador.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox7aspirador.setText("aspirador de secreciones");
+        jCheckBox7aspirador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox7ActionPerformed(evt);
+                jCheckBox7aspiradorActionPerformed(evt);
             }
         });
 
-        jCheckBox8.setBackground(new java.awt.Color(63, 191, 168));
-        jCheckBox8.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox8.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox8.setText("equipo de intubacón");
-        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox8intubacion.setBackground(new java.awt.Color(63, 191, 168));
+        jCheckBox8intubacion.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        jCheckBox8intubacion.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox8intubacion.setText("equipo de intubacón");
+        jCheckBox8intubacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox8ActionPerformed(evt);
+                jCheckBox8intubacionActionPerformed(evt);
             }
         });
 
@@ -243,35 +248,35 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             .addGroup(equiposUsadosLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(equiposUsadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox8)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox7))
+                    .addComponent(jCheckBox8intubacion)
+                    .addComponent(jCheckBox1ventilador)
+                    .addComponent(jCheckBox2saturometro)
+                    .addComponent(jCheckBox3balas)
+                    .addComponent(jCheckBox4monitor)
+                    .addComponent(jCheckBox5bombaInf)
+                    .addComponent(jCheckBox6bombaNut)
+                    .addComponent(jCheckBox7aspirador))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         equiposUsadosLayout.setVerticalGroup(
             equiposUsadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(equiposUsadosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jCheckBox1)
+                .addComponent(jCheckBox1ventilador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox2)
+                .addComponent(jCheckBox2saturometro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox3)
+                .addComponent(jCheckBox3balas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
+                .addComponent(jCheckBox4monitor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox5)
+                .addComponent(jCheckBox5bombaInf)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox6)
+                .addComponent(jCheckBox6bombaNut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox7)
+                .addComponent(jCheckBox7aspirador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox8)
+                .addComponent(jCheckBox8intubacion)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -296,58 +301,58 @@ public class ActualizarPaciente extends javax.swing.JPanel {
 
         equiposAdicionar.setBackground(new java.awt.Color(255, 255, 255));
 
-        jCheckBox9.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox9.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox9.setForeground(new java.awt.Color(16, 65, 56));
-        jCheckBox9.setText("Ventiladores");
-        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
+        ventiladorJCB.setBackground(new java.awt.Color(255, 255, 255));
+        ventiladorJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        ventiladorJCB.setForeground(new java.awt.Color(16, 65, 56));
+        ventiladorJCB.setText("Ventiladores");
+        ventiladorJCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox9ActionPerformed(evt);
+                ventiladorJCBActionPerformed(evt);
             }
         });
 
-        jCheckBox10.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox10.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox10.setForeground(new java.awt.Color(16, 65, 56));
-        jCheckBox10.setText("Saturometros");
+        saturometroJCB.setBackground(new java.awt.Color(255, 255, 255));
+        saturometroJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        saturometroJCB.setForeground(new java.awt.Color(16, 65, 56));
+        saturometroJCB.setText("Saturometros");
 
-        jCheckBox11.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox11.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox11.setForeground(new java.awt.Color(16, 65, 56));
-        jCheckBox11.setText("Balas de oxigeno");
+        balaJCB.setBackground(new java.awt.Color(255, 255, 255));
+        balaJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        balaJCB.setForeground(new java.awt.Color(16, 65, 56));
+        balaJCB.setText("Balas de oxigeno");
 
-        jCheckBox12.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox12.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox12.setForeground(new java.awt.Color(16, 65, 56));
-        jCheckBox12.setText("monitor cardíaco");
+        monitorJCB.setBackground(new java.awt.Color(255, 255, 255));
+        monitorJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        monitorJCB.setForeground(new java.awt.Color(16, 65, 56));
+        monitorJCB.setText("monitor cardíaco");
 
-        jCheckBox13.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox13.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox13.setForeground(new java.awt.Color(16, 65, 56));
-        jCheckBox13.setText("Bomba de infusión continua");
+        bombaJCB.setBackground(new java.awt.Color(255, 255, 255));
+        bombaJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        bombaJCB.setForeground(new java.awt.Color(16, 65, 56));
+        bombaJCB.setText("Bomba de infusión continua");
 
-        jCheckBox14.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox14.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox14.setForeground(new java.awt.Color(16, 65, 56));
-        jCheckBox14.setText("Bomba de nutrición");
+        bombaNutJCB.setBackground(new java.awt.Color(255, 255, 255));
+        bombaNutJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        bombaNutJCB.setForeground(new java.awt.Color(16, 65, 56));
+        bombaNutJCB.setText("Bomba de nutrición");
 
-        jCheckBox15.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox15.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox15.setForeground(new java.awt.Color(16, 65, 56));
-        jCheckBox15.setText("aspirador de secreciones");
-        jCheckBox15.addActionListener(new java.awt.event.ActionListener() {
+        aspiradorJCB.setBackground(new java.awt.Color(255, 255, 255));
+        aspiradorJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        aspiradorJCB.setForeground(new java.awt.Color(16, 65, 56));
+        aspiradorJCB.setText("aspirador de secreciones");
+        aspiradorJCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox15ActionPerformed(evt);
+                aspiradorJCBActionPerformed(evt);
             }
         });
 
-        jCheckBox16.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox16.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        jCheckBox16.setForeground(new java.awt.Color(16, 65, 56));
-        jCheckBox16.setText("equipo de intubacón");
-        jCheckBox16.addActionListener(new java.awt.event.ActionListener() {
+        intubacionJCB.setBackground(new java.awt.Color(255, 255, 255));
+        intubacionJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        intubacionJCB.setForeground(new java.awt.Color(16, 65, 56));
+        intubacionJCB.setText("equipo de intubacón");
+        intubacionJCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox16ActionPerformed(evt);
+                intubacionJCBActionPerformed(evt);
             }
         });
 
@@ -358,35 +363,35 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             .addGroup(equiposAdicionarLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(equiposAdicionarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox16)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox10)
-                    .addComponent(jCheckBox11)
-                    .addComponent(jCheckBox12)
-                    .addComponent(jCheckBox13)
-                    .addComponent(jCheckBox14)
-                    .addComponent(jCheckBox15))
+                    .addComponent(intubacionJCB)
+                    .addComponent(ventiladorJCB)
+                    .addComponent(saturometroJCB)
+                    .addComponent(balaJCB)
+                    .addComponent(monitorJCB)
+                    .addComponent(bombaJCB)
+                    .addComponent(bombaNutJCB)
+                    .addComponent(aspiradorJCB))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         equiposAdicionarLayout.setVerticalGroup(
             equiposAdicionarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(equiposAdicionarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jCheckBox9)
+                .addComponent(ventiladorJCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox10)
+                .addComponent(saturometroJCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox11)
+                .addComponent(balaJCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox12)
+                .addComponent(monitorJCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox13)
+                .addComponent(bombaJCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox14)
+                .addComponent(bombaNutJCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox15)
+                .addComponent(aspiradorJCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox16)
+                .addComponent(intubacionJCB)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -435,18 +440,12 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        //IF INGRESO EXISTS
-        //Buscar equipos usados where ingreso id
-        //BUSCA EN EQUIPOS USADOS
-          //ACTUALIZA TODOS LOS EQUIPOS A 0         
-          //BORRA EQUIPOS USADOS -> CODIFICAR         
-          //SE VUELVE A INSERTAR EQUIPOS -> INGRESOPACIENTE FRONTERA
-        //Actualizar ingresop (obs, tipocama)       
-        
+
         if(ingp.getIdIngreso() != 0){
             //Actualiza los equipos a estado=false 
             IngresoPacienteDAO ingpdao = new IngresoPacienteDAO();
             IngresoPaciente ingpaux = new IngresoPaciente();
+            
             Equipo eqaux = new Equipo();
             EquipoDAO eqdao = new EquipoDAO();
             EquiposUsados equs = new EquiposUsados();
@@ -486,29 +485,29 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_noCamaCBActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jCheckBox1ventiladorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ventiladorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jCheckBox1ventiladorActionPerformed
 
-    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+    private void jCheckBox7aspiradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7aspiradorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox7ActionPerformed
+    }//GEN-LAST:event_jCheckBox7aspiradorActionPerformed
 
-    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+    private void jCheckBox8intubacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8intubacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox8ActionPerformed
+    }//GEN-LAST:event_jCheckBox8intubacionActionPerformed
 
-    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
+    private void ventiladorJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventiladorJCBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox9ActionPerformed
+    }//GEN-LAST:event_ventiladorJCBActionPerformed
 
-    private void jCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox15ActionPerformed
+    private void aspiradorJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aspiradorJCBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox15ActionPerformed
+    }//GEN-LAST:event_aspiradorJCBActionPerformed
 
-    private void jCheckBox16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox16ActionPerformed
+    private void intubacionJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intubacionJCBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox16ActionPerformed
+    }//GEN-LAST:event_intubacionJCBActionPerformed
 
     private void buscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBActionPerformed
         // TODO add your handling code here:
@@ -530,6 +529,23 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_buscarBActionPerformed
 
+    private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
+        // TODO add your handling code here:
+        limpiar();
+    }//GEN-LAST:event_cancelarBActionPerformed
+        
+    public void limpiar(){
+        nombre1L.setText("Nombre 1");
+        nombre2L.setText("Nombre 2");
+        apellido1L.setText("Apellido 1");
+        apellido2L.setText("Apellido 2");
+        fechaL.setText("Fecha");
+        rethusL.setText("ReThus");
+        this.ingp = null;
+        this.paciente = null;
+        this.equipos = null;
+    }
+    
     public String [][] mostrar(){
         EquipoDAO edao = new EquipoDAO();
         List<Equipo> eqs = new ArrayList();
@@ -557,6 +573,10 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private javax.swing.JButton aceptarB;
     private javax.swing.JLabel apellido1L;
     private javax.swing.JLabel apellido2L;
+    private javax.swing.JCheckBox aspiradorJCB;
+    private javax.swing.JCheckBox balaJCB;
+    private javax.swing.JCheckBox bombaJCB;
+    private javax.swing.JCheckBox bombaNutJCB;
     private javax.swing.JButton buscarB;
     private javax.swing.JButton cancelarB;
     private javax.swing.JPanel equiposAdicionar;
@@ -564,22 +584,15 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private javax.swing.JPanel equiposUsados;
     private javax.swing.JLabel fechaL;
     private javax.swing.JTextField identificacionTF;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JCheckBox intubacionJCB;
+    private javax.swing.JCheckBox jCheckBox1ventilador;
+    private javax.swing.JCheckBox jCheckBox2saturometro;
+    private javax.swing.JCheckBox jCheckBox3balas;
+    private javax.swing.JCheckBox jCheckBox4monitor;
+    private javax.swing.JCheckBox jCheckBox5bombaInf;
+    private javax.swing.JCheckBox jCheckBox6bombaNut;
+    private javax.swing.JCheckBox jCheckBox7aspirador;
+    private javax.swing.JCheckBox jCheckBox8intubacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -588,12 +601,15 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JCheckBox monitorJCB;
     private javax.swing.JComboBox<String> noCamaCB;
     private javax.swing.JLabel nombre1L;
     private javax.swing.JLabel nombre2L;
     private javax.swing.JTextArea observacionTF;
     private javax.swing.JTextField registroTF;
     private javax.swing.JLabel rethusL;
+    private javax.swing.JCheckBox saturometroJCB;
     private javax.swing.JComboBox<String> tipoAtencionCB;
+    private javax.swing.JCheckBox ventiladorJCB;
     // End of variables declaration//GEN-END:variables
 }

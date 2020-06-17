@@ -812,7 +812,9 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         this.jCheckBox6.setSelected(false);
         this.jCheckBox7.setSelected(false);
         this.jCheckBox8.setSelected(false);
-
+        this.paciente = null;
+        this.cama = null;
+        this.equipos = null;
 // TODO add your handling code here:
     }//GEN-LAST:event_cancelarBActionPerformed
 
@@ -870,7 +872,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> tipoSangreCB;
     // End of variables declaration//GEN-END:variables
 
-  
+    //Modelo para jTable
     public String [][] mostrar(){
         EquipoDAO edao = new EquipoDAO();
         List<Equipo> eqs = new ArrayList();

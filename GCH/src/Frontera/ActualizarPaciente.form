@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -110,6 +110,9 @@
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelarBActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="880" y="440" width="-1" height="-1"/>
@@ -312,14 +315,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox7" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox8intubacion" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox1ventilador" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox2saturometro" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox3balas" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox4monitor" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox5bombaInf" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox6bombaNut" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox7aspirador" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="26" max="32767" attributes="0"/>
               </Group>
@@ -329,28 +332,28 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox1ventilador" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox2saturometro" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox3balas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox4monitor" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox5" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox5bombaInf" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox6" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox6bombaNut" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox7" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox7aspirador" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox8intubacion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+        <Component class="javax.swing.JCheckBox" name="jCheckBox1ventilador">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a8" green="bf" red="3f" type="rgb"/>
@@ -364,10 +367,10 @@
             <Property name="text" type="java.lang.String" value="Ventiladores"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ventiladorActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+        <Component class="javax.swing.JCheckBox" name="jCheckBox2saturometro">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a8" green="bf" red="3f" type="rgb"/>
@@ -381,7 +384,7 @@
             <Property name="text" type="java.lang.String" value="Saturometros"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+        <Component class="javax.swing.JCheckBox" name="jCheckBox3balas">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a8" green="bf" red="3f" type="rgb"/>
@@ -395,7 +398,7 @@
             <Property name="text" type="java.lang.String" value="Balas de oxigeno"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+        <Component class="javax.swing.JCheckBox" name="jCheckBox4monitor">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a8" green="bf" red="3f" type="rgb"/>
@@ -409,7 +412,7 @@
             <Property name="text" type="java.lang.String" value="monitor card&#xed;aco"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+        <Component class="javax.swing.JCheckBox" name="jCheckBox5bombaInf">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a8" green="bf" red="3f" type="rgb"/>
@@ -423,7 +426,7 @@
             <Property name="text" type="java.lang.String" value="Bomba de infusi&#xf3;n continua"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+        <Component class="javax.swing.JCheckBox" name="jCheckBox6bombaNut">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a8" green="bf" red="3f" type="rgb"/>
@@ -437,7 +440,7 @@
             <Property name="text" type="java.lang.String" value="Bomba de nutrici&#xf3;n"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+        <Component class="javax.swing.JCheckBox" name="jCheckBox7aspirador">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a8" green="bf" red="3f" type="rgb"/>
@@ -451,10 +454,10 @@
             <Property name="text" type="java.lang.String" value="aspirador de secreciones"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox7ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox7aspiradorActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox8">
+        <Component class="javax.swing.JCheckBox" name="jCheckBox8intubacion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a8" green="bf" red="3f" type="rgb"/>
@@ -468,7 +471,7 @@
             <Property name="text" type="java.lang.String" value="equipo de intubac&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox8intubacionActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -547,14 +550,14 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jCheckBox16" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox9" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox10" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox11" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox12" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox13" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox14" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox15" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="intubacionJCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ventiladorJCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="saturometroJCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="balaJCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="monitorJCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="bombaJCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="bombaNutJCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="aspiradorJCB" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
@@ -564,28 +567,28 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox9" min="-2" max="-2" attributes="0"/>
+                  <Component id="ventiladorJCB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
+                  <Component id="saturometroJCB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox11" min="-2" max="-2" attributes="0"/>
+                  <Component id="balaJCB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox12" min="-2" max="-2" attributes="0"/>
+                  <Component id="monitorJCB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox13" min="-2" max="-2" attributes="0"/>
+                  <Component id="bombaJCB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox14" min="-2" max="-2" attributes="0"/>
+                  <Component id="bombaNutJCB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox15" min="-2" max="-2" attributes="0"/>
+                  <Component id="aspiradorJCB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jCheckBox16" min="-2" max="-2" attributes="0"/>
+                  <Component id="intubacionJCB" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+        <Component class="javax.swing.JCheckBox" name="ventiladorJCB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -599,10 +602,10 @@
             <Property name="text" type="java.lang.String" value="Ventiladores"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox9ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ventiladorJCBActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+        <Component class="javax.swing.JCheckBox" name="saturometroJCB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -616,7 +619,7 @@
             <Property name="text" type="java.lang.String" value="Saturometros"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox11">
+        <Component class="javax.swing.JCheckBox" name="balaJCB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -630,7 +633,7 @@
             <Property name="text" type="java.lang.String" value="Balas de oxigeno"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+        <Component class="javax.swing.JCheckBox" name="monitorJCB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -644,7 +647,7 @@
             <Property name="text" type="java.lang.String" value="monitor card&#xed;aco"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox13">
+        <Component class="javax.swing.JCheckBox" name="bombaJCB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -658,7 +661,7 @@
             <Property name="text" type="java.lang.String" value="Bomba de infusi&#xf3;n continua"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox14">
+        <Component class="javax.swing.JCheckBox" name="bombaNutJCB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -672,7 +675,7 @@
             <Property name="text" type="java.lang.String" value="Bomba de nutrici&#xf3;n"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox15">
+        <Component class="javax.swing.JCheckBox" name="aspiradorJCB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -686,10 +689,10 @@
             <Property name="text" type="java.lang.String" value="aspirador de secreciones"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox15ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aspiradorJCBActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox16">
+        <Component class="javax.swing.JCheckBox" name="intubacionJCB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -703,7 +706,7 @@
             <Property name="text" type="java.lang.String" value="equipo de intubac&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox16ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="intubacionJCBActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

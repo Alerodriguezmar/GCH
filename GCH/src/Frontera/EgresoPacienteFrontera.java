@@ -270,6 +270,8 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
         apellido2L.setText("Apellido 2");
         observacionTF.setText("");
         identificacionTF.setText("");
+        this.ingp = null;
+        this.paciente = null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
