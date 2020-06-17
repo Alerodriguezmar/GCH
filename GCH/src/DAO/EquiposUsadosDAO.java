@@ -8,12 +8,14 @@ package DAO;
 import Entidad.Equipo;
 import Entidad.EquiposUsados;
 import DAO.EquipoDAO;
+import Entidad.IngresoPaciente;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NonUniqueResultException;
@@ -165,5 +167,47 @@ public class EquiposUsadosDAO {
         } 
         System.out.println("EQUIUPOS USADOS ACTUALIZADOS");
         
+    }
+    
+    //Busca todos los registros en equipos usados asociados a un ingreso
+    public ArrayList<EquiposUsados> equiposUsadosPorIngreso (String idingreso) {
+        ArrayList<EquiposUsados> equs = new ArrayList();
+        
+        String query = "SELECT * FROM EquiposUsados WHERE INGRESOP_IDINGRESO=" + idingreso;
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+                
+            System.out.println("Datos de la CAMA: ");
+            while (res.next()) {
+                Equipo equipo = new Equipo();
+                EquipoDAO edao = new EquipoDAO();
+                equipo = edao.leerPorId(Integer.toString(res.getInt("Equipo_idEquipo")));
+                IngresoPaciente ingp = new IngresoPaciente();
+                IngresoPacienteDAO ingpdao = new IngresoPacienteDAO();
+                ingp = ingpdao.leerPorId(Integer.toString(res.getInt("IngresoP_IdIngreso")));
+                EquiposUsados equsados = new EquiposUsados();
+                
+                equsados.setId(res.getLong("ID"));
+                equsados.setIngresoP(ingp);
+                equsados.setEquipo(equipo);
+                
+                equs.add(equsados);
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return equs;
     }
 }
