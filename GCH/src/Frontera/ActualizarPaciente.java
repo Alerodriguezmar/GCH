@@ -66,7 +66,6 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         jCheckBox8intubacion = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        registroTF = new javax.swing.JTextField();
         equiposAdicionar = new javax.swing.JPanel();
         ventiladorJCB = new javax.swing.JCheckBox();
         saturometroJCB = new javax.swing.JCheckBox();
@@ -294,11 +293,6 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         jLabel5.setText("Equipos disponibles");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, -1, -1));
 
-        registroTF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        registroTF.setForeground(new java.awt.Color(16, 65, 56));
-        registroTF.setBorder(null);
-        add(registroTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 140, 30));
-
         equiposAdicionar.setBackground(new java.awt.Color(255, 255, 255));
 
         ventiladorJCB.setBackground(new java.awt.Color(255, 255, 255));
@@ -425,7 +419,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
                 buscarBActionPerformed(evt);
             }
         });
-        add(buscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 110, -1, -1));
+        add(buscarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, -1, -1));
 
         observacionTF.setBackground(new java.awt.Color(231, 231, 231));
         observacionTF.setColumns(20);
@@ -606,7 +600,6 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private javax.swing.JLabel nombre1L;
     private javax.swing.JLabel nombre2L;
     private javax.swing.JTextArea observacionTF;
-    private javax.swing.JTextField registroTF;
     private javax.swing.JLabel rethusL;
     private javax.swing.JCheckBox saturometroJCB;
     private javax.swing.JComboBox<String> tipoAtencionCB;
