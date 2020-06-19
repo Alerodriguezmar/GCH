@@ -117,6 +117,32 @@ public class IngresoPacienteDAO {
         }
     }
     
+    public boolean actualizarL(IngresoPaciente object, IngresoPaciente nuevoObjeto) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        boolean ret = false;
+        try {
+            object = leerPorId(Long.toString(object.getIdIngreso()));
+            object.setIdIngreso(nuevoObjeto.getIdIngreso());
+            object.setPaciente(nuevoObjeto.getPaciente());
+            object.setPersonalm(nuevoObjeto.getPersonalm());
+            object.setFecha(nuevoObjeto.getFecha());
+            object.setObservacion(nuevoObjeto.getObservacion());
+            object.setCama(nuevoObjeto.getCama());
+            object.setEstado(true);
+            
+            em.merge(object);
+            em.getTransaction().commit();
+            ret = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+            return ret;
+        }
+    }
+    
     //Método para consultar un paciente por su numero de indnetificación
     public Paciente leerPacientePorId(String id){    
         System.out.println("BUSCANDO PACIENTE...");

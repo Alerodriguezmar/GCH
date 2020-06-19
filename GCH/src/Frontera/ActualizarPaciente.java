@@ -309,26 +309,51 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         saturometroJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         saturometroJCB.setForeground(new java.awt.Color(16, 65, 56));
         saturometroJCB.setText("Saturometros");
+        saturometroJCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saturometroJCBActionPerformed(evt);
+            }
+        });
 
         balaJCB.setBackground(new java.awt.Color(255, 255, 255));
         balaJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         balaJCB.setForeground(new java.awt.Color(16, 65, 56));
         balaJCB.setText("Balas de oxigeno");
+        balaJCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                balaJCBActionPerformed(evt);
+            }
+        });
 
         monitorJCB.setBackground(new java.awt.Color(255, 255, 255));
         monitorJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         monitorJCB.setForeground(new java.awt.Color(16, 65, 56));
         monitorJCB.setText("monitor cardíaco");
+        monitorJCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                monitorJCBActionPerformed(evt);
+            }
+        });
 
         bombaJCB.setBackground(new java.awt.Color(255, 255, 255));
         bombaJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         bombaJCB.setForeground(new java.awt.Color(16, 65, 56));
         bombaJCB.setText("Bomba de infusión continua");
+        bombaJCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bombaJCBActionPerformed(evt);
+            }
+        });
 
         bombaNutJCB.setBackground(new java.awt.Color(255, 255, 255));
         bombaNutJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         bombaNutJCB.setForeground(new java.awt.Color(16, 65, 56));
         bombaNutJCB.setText("Bomba de nutrición");
+        bombaNutJCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bombaNutJCBActionPerformed(evt);
+            }
+        });
 
         aspiradorJCB.setBackground(new java.awt.Color(255, 255, 255));
         aspiradorJCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
@@ -437,6 +462,23 @@ public class ActualizarPaciente extends javax.swing.JPanel {
 
         if(ingp.getIdIngreso() != 0){
             //Actualiza los equipos a estado=false 
+            this.jCheckBox1ventilador.setSelected(false);
+            this.jCheckBox2saturometro.setSelected(false);
+            this.jCheckBox3balas.setSelected(false);
+            this.jCheckBox4monitor.setSelected(false);
+            this.jCheckBox5bombaInf.setSelected(false);
+            this.jCheckBox6bombaNut.setSelected(false);
+            this.jCheckBox7aspirador.setSelected(false);
+            this.jCheckBox8intubacion.setSelected(false);
+            this.ventiladorJCB.setSelected(false);
+            this.saturometroJCB.setSelected(false);
+            this.balaJCB.setSelected(false);
+            this.monitorJCB.setSelected(false);
+            this.bombaJCB.setSelected(false);
+            this.bombaNutJCB.setSelected(false);
+            this.aspiradorJCB.setSelected(false);
+            this.intubacionJCB.setSelected(false);
+            
             IngresoPacienteDAO ingpdao = new IngresoPacienteDAO();
             IngresoPaciente ingpaux = new IngresoPaciente();
             
@@ -462,7 +504,8 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             //Actualiza IngresoPaciente
             ingpaux = this.ingp;
             ingpaux.setObservacion(observacionTF.getText());
-            ingpdao.actualizar(ingp, ingpaux);
+            ingpdao.actualizarL(ingp, ingpaux);
+            
             
         }
         else {
@@ -493,14 +536,77 @@ public class ActualizarPaciente extends javax.swing.JPanel {
 
     private void ventiladorJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventiladorJCBActionPerformed
         // TODO add your handling code here:
+        Equipo ventilador = new Equipo();
+        EquipoDAO eqdao = new EquipoDAO();
+        ventilador = eqdao.leerEquiposDisp("VENTILADOR MECANICO");
+        
+        if (ventiladorJCB.isSelected()) {
+        //    this.validarIngresoPaciente.setAspiradorSecreciones(true);
+            
+            if(ventilador.getNombreEquipo()!=null){
+                equipos.add(ventilador);
+            } else {
+                System.out.println("VENTILADOR MECANICO NO DISPONIBLE");
+            }
+            
+        } else {
+        //    this.validarIngresoPaciente.setAspiradorSecreciones(false);
+            for(Equipo e:equipos){
+                if(e.getNombreEquipo().equals("VENTILADOR MECANICO")){
+                    equipos.remove(e);
+                    break;
+                }
+            }
+            System.out.println("VENTILADOR REMOVIDO");
+        }
     }//GEN-LAST:event_ventiladorJCBActionPerformed
 
     private void aspiradorJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aspiradorJCBActionPerformed
         // TODO add your handling code here:
+        Equipo aspiradorSec = new Equipo();
+        EquipoDAO eqdao = new EquipoDAO();
+        aspiradorSec = eqdao.leerEquiposDisp("ASPIRADOR DE SECRECIONES");
+        
+        if (aspiradorJCB.isSelected()) {
+            if(aspiradorSec.getNombreEquipo()!=null){
+                equipos.add(aspiradorSec);
+            } else {
+                System.out.println("ASPIRADOR DE SECRECIONES NO DISPONIBLE");
+            }
+        } else {
+        //    this.validarIngresoPaciente.setBombaInfucionContinua(false);
+            for(Equipo e:equipos){
+                if(e.getNombreEquipo().equals("ASPIRADOR DE SECRECIONES")){
+                    equipos.remove(e);
+                    break;
+                }
+            }
+            System.out.println("ASPIRADOR REMOVIDO");
+        }
     }//GEN-LAST:event_aspiradorJCBActionPerformed
 
     private void intubacionJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_intubacionJCBActionPerformed
         // TODO add your handling code here:
+        Equipo eqIntub= new Equipo();
+        EquipoDAO eqdao = new EquipoDAO();
+        eqIntub = eqdao.leerEquiposDisp("EQUIPO DE INTUBACION");
+        if (intubacionJCB.isSelected()) {
+            
+            if(eqIntub.getNombreEquipo()!=null){
+                equipos.add(eqIntub);
+            } else {
+                System.out.println("EQUIPO DE INTUBACION NO DISPONIBLE");
+            }
+        } else {
+        //    this.validarIngresoPaciente.setEquipoIntubacion(false);
+            for(Equipo e:equipos){
+                if(e.getNombreEquipo().equals("EQUIPO DE INTUBACION")){
+                    equipos.remove(e);
+                    break;
+                }
+            }
+            System.out.println("EQUIPO DE INTUBACIÓN REMOVIDO");
+        }
     }//GEN-LAST:event_intubacionJCBActionPerformed
 
     private void buscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBActionPerformed
@@ -517,6 +623,64 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             apellido2L.setText("Apellido 2: " + this.paciente.getApellidoPaciente2());
             fechaL.setText("Fecha: " + this.ingp.getFecha());
             rethusL.setText("reTHUS: " + this.ingp.getPersonalm().getReTHUS());
+            observacionTF.setText(this.ingp.getObservacion());
+            
+            EquiposUsadosDAO equsdao = new EquiposUsadosDAO();
+            ArrayList<EquiposUsados> equsmostrar = new ArrayList();
+            equsmostrar = equsdao.equiposUsadosPorIngreso(Long.toString(this.ingp.getIdIngreso()));
+            equipos.removeAll(equipos);
+            for(EquiposUsados equsa : equsmostrar){
+                System.out.println("-->>EQUIPO SELECCIONADO<<--");
+                System.out.println(equsa.getEquipo().getNombreEquipo());
+                
+                switch(equsa.getEquipo().getNombreEquipo()){
+                    case "VENTILADOR MECANICO":
+                        this.ventiladorJCB.setSelected(true);
+                        this.jCheckBox1ventilador.setSelected(true);
+                        equipos.add(equsa.getEquipo());
+                        break;
+                    case "SATUROMETRO":
+                        this.saturometroJCB.setSelected(true);
+                        this.jCheckBox2saturometro.setSelected(true);
+                        equipos.add(equsa.getEquipo());
+                        break;
+                    case "BALA OXIGENO":
+                        this.balaJCB.setSelected(true);
+                        this.jCheckBox3balas.setSelected(true);
+                        equipos.add(equsa.getEquipo());
+                        break;
+                    case "MONITOR":
+                       this.monitorJCB.setSelected(true);
+                        this.jCheckBox4monitor.setSelected(true);
+                        equipos.add(equsa.getEquipo());
+                        break;
+                    case "BOMBA INFUSION CONTINUA":
+                        this.bombaJCB.setSelected(true);
+                        this.jCheckBox5bombaInf.setSelected(true);
+                        equipos.add(equsa.getEquipo());
+                        break;    
+                    case "BOMBA NUTRICION ENTERAL":
+                        this.bombaNutJCB.setSelected(true);
+                        this.jCheckBox6bombaNut.setSelected(true);
+                        equipos.add(equsa.getEquipo());
+                        break;    
+                    case "ASPIRADOR DE SECRECIONES":
+                        this.aspiradorJCB.setSelected(true);
+                        this.jCheckBox7aspirador.setSelected(true);
+                        equipos.add(equsa.getEquipo());
+                        break; 
+                    case "EQUIPO DE INTUBACION":
+                        this.intubacionJCB.setSelected(true);
+                        this.jCheckBox8intubacion.setSelected(true);
+                        equipos.add(equsa.getEquipo());
+                        break;    
+                    case "":
+                        break;
+                }
+                
+            }
+                        
+
         }
         else {
             System.out.println("EL PACIENTE NO TIENE INGRESOS ACTIVOS...");
@@ -527,6 +691,120 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         // TODO add your handling code here:
         limpiar();
     }//GEN-LAST:event_cancelarBActionPerformed
+
+    private void bombaJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bombaJCBActionPerformed
+        // TODO add your handling code here:
+        Equipo bombaInfC = new Equipo();
+        EquipoDAO eqdao = new EquipoDAO();
+        bombaInfC = eqdao.leerEquiposDisp("BOMBA INFUSION CONTINUA");
+        if (bombaJCB.isSelected()) {
+            
+            if(bombaInfC.getNombreEquipo()!=null){
+                equipos.add(bombaInfC);
+            } else {
+                System.out.println("BOMBA INFUSION CONTINUA NO DISPONIBLE");
+            }
+        } else {
+            for(Equipo e:equipos){
+                if(e.getNombreEquipo().equals("BOMBA INFUSION CONTINUA")){
+                    equipos.remove(e);
+                    break;
+                }
+            }
+            System.out.println("BOMBA INFUSION CONTINUA REMOVIDA");
+        }
+    }//GEN-LAST:event_bombaJCBActionPerformed
+
+    private void saturometroJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saturometroJCBActionPerformed
+        // TODO add your handling code here:
+        Equipo saturometro = new Equipo();
+        EquipoDAO eqdao = new EquipoDAO();
+        saturometro = eqdao.leerEquiposDisp("SATUROMETRO");
+        if (saturometroJCB.isSelected()) {
+            
+            if(saturometro.getNombreEquipo()!=null){
+                equipos.add(saturometro);
+            } else {
+                System.out.println("SATUROMETRO NO DISPONIBLE");
+            }            
+        } else {
+            for(Equipo e:equipos){
+                if(e.getNombreEquipo().equals("SATUROMETRO")){
+                    equipos.remove(e);
+                    break;
+                }}
+            System.out.println("SATUROMETRO REMOVIDO");
+        }   
+    }//GEN-LAST:event_saturometroJCBActionPerformed
+
+    private void balaJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balaJCBActionPerformed
+        // TODO add your handling code here:
+        Equipo balaOxig = new Equipo();
+        EquipoDAO eqdao = new EquipoDAO();
+        balaOxig = eqdao.leerEquiposDisp("BALA OXIGENO");
+        if (balaJCB.isSelected()) {
+            
+            if(balaOxig.getNombreEquipo()!=null){
+                equipos.add(balaOxig);
+            } else {
+                System.out.println("BALA OXIGENO NO DISPONIBLE");
+            }
+        } else {
+            for(Equipo e:equipos){
+                if(e.getNombreEquipo().equals("BALA OXIGENO")){
+                    equipos.remove(e);
+                    break;
+                }}
+            System.out.println("BALA OXIGENO REMOVIDA");
+            //this.validarIngresoPaciente.setBalasOxigeno(false);
+        }
+    }//GEN-LAST:event_balaJCBActionPerformed
+
+    private void monitorJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monitorJCBActionPerformed
+        // TODO add your handling code here:
+        Equipo monitor = new Equipo();
+            EquipoDAO eqdao = new EquipoDAO();
+            monitor = eqdao.leerEquiposDisp("MONITOR");
+        if (monitorJCB.isSelected()) {
+            
+            if(monitor.getNombreEquipo()!=null){
+                equipos.add(monitor);
+            } else {
+                System.out.println("MONITOR NO DISPONIBLE");
+            }
+        } else {
+            for(Equipo e:equipos){
+                if(e.getNombreEquipo().equals("MONITOR")){
+                    equipos.remove(e);
+                    break;
+                }}
+            System.out.println("MONITOR REMOVIDO");
+            //this.validarIngresoPaciente.setMonitor(false);
+        }
+    }//GEN-LAST:event_monitorJCBActionPerformed
+
+    private void bombaNutJCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bombaNutJCBActionPerformed
+        // TODO add your handling code here:
+        Equipo bombaNutricion = new Equipo();
+            EquipoDAO eqdao = new EquipoDAO();
+            bombaNutricion = eqdao.leerEquiposDisp("BOMBA NUTRICION ENTERAL");
+        if (bombaNutJCB.isSelected()) {
+            
+            if(bombaNutricion.getNombreEquipo()!=null){
+                equipos.add(bombaNutricion);
+            } else {
+                System.out.println("BOMBA NUTRICION ENTERAL NO DISPONIBLE");
+            }
+        } else {
+            for(Equipo e:equipos){
+                if(e.getNombreEquipo().equals("BOMBA NUTRICION ENTERAL")){
+                    equipos.remove(e);
+                    break;
+                }}
+            System.out.println("BOMBA NUTRICION ENTERAL REMOVIDA");
+            //this.validarIngresoPaciente.setBombasNutricion(false);
+        }
+    }//GEN-LAST:event_bombaNutJCBActionPerformed
         
     public void limpiar(){
         nombre1L.setText("Nombre 1");

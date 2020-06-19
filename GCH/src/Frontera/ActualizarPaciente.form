@@ -600,6 +600,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Saturometros"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saturometroJCBActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="balaJCB">
           <Properties>
@@ -614,6 +617,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Balas de oxigeno"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="balaJCBActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="monitorJCB">
           <Properties>
@@ -628,6 +634,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="monitor card&#xed;aco"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="monitorJCBActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="bombaJCB">
           <Properties>
@@ -642,6 +651,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Bomba de infusi&#xf3;n continua"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bombaJCBActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="bombaNutJCB">
           <Properties>
@@ -656,6 +668,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Bomba de nutrici&#xf3;n"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bombaNutJCBActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="aspiradorJCB">
           <Properties>

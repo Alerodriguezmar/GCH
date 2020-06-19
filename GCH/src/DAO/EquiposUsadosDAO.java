@@ -66,30 +66,32 @@ public class EquiposUsadosDAO {
     
     //Borrar los equipos que se utilizaron en  un ingreso
     public boolean borrarPorIngresoId(String idIngreso){
-        boolean ret = false;
-        
+        Boolean ret = false;
         String query = "DELETE FROM EquiposUsados WHERE INGRESOP_IDINGRESO=" + idIngreso;
         String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
         String username = "root";
         String password = "123456";
         Connection conn = null;
-        PreparedStatement stmt = null;
+        Statement stmt = null;
         
         try {
             conn = DriverManager.getConnection(url, username, password);
-            stmt = conn.prepareStatement(query);
-            ResultSet res = stmt.executeQuery(query);
+            stmt = conn.createStatement();
+            
             stmt.executeUpdate(query);
-            res.close();
+            
+            ret = true;
+            stmt.execute(query);
             conn.close();
             stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } 
-        
+        System.out.println("EQUIPOS USADOS BORRADOS");
         return ret;
     }
-    //Consulta de los equipos usados en un determinado ingreso
+    
+    //Consulta de los equipos usados en un  determinado ingreso
     public EquiposUsados leer(EquiposUsados par) {
         EntityManager em = emf.createEntityManager();
         EquiposUsados usuario = null;
@@ -149,7 +151,6 @@ public class EquiposUsadosDAO {
             conn = DriverManager.getConnection(url, username, password);
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
-                
             System.out.println("Datos de la CAMA: ");
             while (res.next()) {
                 Equipo equipo = new Equipo();
@@ -185,7 +186,7 @@ public class EquiposUsadosDAO {
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(query);
                 
-            System.out.println("Datos de la CAMA: ");
+            System.out.println("Datos del EQUIPO ");
             while (res.next()) {
                 Equipo equipo = new Equipo();
                 EquipoDAO edao = new EquipoDAO();
