@@ -134,5 +134,10 @@ public class ValidarRegistroPersonalMedico {
         return(reTHUS.length() >= 10 && reTHUS.length() < 25);
     }
     
+    //Analiza las dos contraseñas si coinciden
+    public boolean VerificarSimilitudContrasenia(String contrasenia1, String contrasenia2) {
+        return (contrasenia1.equals(contrasenia2));
+    }
+    
     
 }

@@ -360,7 +360,11 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         } else {
             mensajeUsuario12.setText("");
         }  
-         
+          if (!validar.VerificarSimilitudContrasenia(String.valueOf(personalContrasenniaTF.getPassword()),String.valueOf(personalContrasenniaTF1.getPassword()))) {
+            mensajeUsuario10.setText("La contraseña no coincide");
+        } else {
+            mensajeUsuario10.setText("");
+        }
         if (resultado == "Datos ingresados correctamente") {
             personalDAO.crear(personal);
             JOptionPane.showMessageDialog(null,personalCargoCB.getSelectedItem().toString() +" Registrado", "", JOptionPane.INFORMATION_MESSAGE);
@@ -420,6 +424,7 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         mensajeUsuario10.setText("");
         mensajeUsuario11.setText("");
         mensajeUsuario12.setText("");
+        mensajeUsuario13.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
