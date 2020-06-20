@@ -218,7 +218,7 @@ public class EgresoPacienteFrontera extends javax.swing.JPanel {
             cdao.actualizar(this.ingp.getCama(), camaaux);
             
             //MENSAJE EGRESO EXITOSO
-            JOptionPane.showMessageDialog(null, "EGRESO CON EXITO", "", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Egreso de paciente exitoso", "", JOptionPane.INFORMATION_MESSAGE);
             
             limpiar();
             

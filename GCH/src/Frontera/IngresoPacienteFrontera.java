@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -567,7 +568,8 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
                     eqdao.actualizar(eq, eqaux);
                 }
                 System.out.println("INGRESADO CON EXITO");
-                
+                //MENSAJE iNGRESO EXITOSO
+            JOptionPane.showMessageDialog(null, "Ingreso de paciente exitoso", "", JOptionPane.INFORMATION_MESSAGE);
                 DefaultTableModel model = new javax.swing.table.DefaultTableModel(
                     mostrar(),
                     new String [] {

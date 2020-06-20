@@ -14,6 +14,7 @@ import Entidad.IngresoPaciente;
 import Entidad.Paciente;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -506,7 +507,8 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             ingpaux.setObservacion(observacionTF.getText());
             ingpdao.actualizarL(ingp, ingpaux);
             
-            
+          //MENSAJE ACTIALIZACION EXITOSA
+            JOptionPane.showMessageDialog(null, "Actualización de paceinte exitosa", "", JOptionPane.INFORMATION_MESSAGE);  
         }
         else {
             System.out.println("NO ES POSIBLE REALIZAR LA ACTUALIZACIÓN: EL PACIENTE NO TIENE INGRESOS ACTIVOS");
