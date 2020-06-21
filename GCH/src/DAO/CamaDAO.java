@@ -273,5 +273,43 @@ public class CamaDAO {
         return eq;
     }
     
+    // Selecciona la primera cama UCI O UCIM disponible que encuentre
+    public Camas leerCamasDispTipo(String tipoatencion){
+        Camas c = new Camas();
+        String query = "SELECT * FROM CAMAS WHERE ESTADO = 0 AND PABELLON = '" + tipoatencion + "'";
+        String url = "jdbc:derby://localhost:1527/GCHDB_JPA";
+        String username = "root";
+        String password = "123456";
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery(query);
+               
+            System.out.println("SELECCIONANDO CAMA " + tipoatencion + " DISPONIBLE...");
+            if (res.next()) {
+                System.out.println("DATOS DE LA CAMA: ");
+                System.out.println("Id: " + res.getInt("idCamas") +
+                        " Ubicación: " + res.getString("Ubicacion") + ", " +
+                        " Tipo Atención: " + res.getString("pabellon") + ", " +
+                        " Estado: " + res.getBoolean("estado"));
+                //creo paciente
+                        c.setIdCamas(res.getInt("idCamas"));
+                        c.setUbicacion(res.getString("Ubicacion"));
+                        c.setPabellon(res.getString("pabellon"));
+                        c.setEstado(res.getBoolean("estado"));
+
+            }
+            res.close();
+            stmt.execute(query);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
+        return c;
+    }
+    
 }
 

@@ -533,6 +533,15 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
             
             //VERIFICAR SI LA CAMA ESTÁ DISPONIBLE
             cama = camadao.leerCamasDisp();
+            if(tipoAtencionCB.getSelectedItem().toString() == "Ucim"){
+                cama = camadao.leerCamasDispTipo("UCIM");
+            }
+            else if(tipoAtencionCB.getSelectedItem().toString() == "Uci"){
+                cama = camadao.leerCamasDispTipo("UCI");
+            }
+            else{
+                cama = camadao.leerCamasDisp();
+            }
             
             if(cama.getIdCamas()==0){
                 

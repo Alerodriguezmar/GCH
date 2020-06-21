@@ -25,6 +25,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private IngresoPaciente ingp = new IngresoPaciente();
     private Paciente paciente = new Paciente();
     private ArrayList <Equipo> equipos = new ArrayList();
+    private String tipoAtencion = new String();
     
     /**
      * Creates new form IngresoPaciente
@@ -52,8 +53,6 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         apellido2L = new javax.swing.JLabel();
         tipoAtencionCB = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        noCamaCB = new javax.swing.JComboBox<>();
         fechaL = new javax.swing.JLabel();
         rethusL = new javax.swing.JLabel();
         equiposUsados = new javax.swing.JPanel();
@@ -158,21 +157,6 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Tipo de atención");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, -1));
-
-        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("No. de cama");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
-
-        noCamaCB.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
-        noCamaCB.setForeground(new java.awt.Color(16, 65, 56));
-        noCamaCB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noCamaCBActionPerformed(evt);
-            }
-        });
-        add(noCamaCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 89, -1));
 
         fechaL.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         fechaL.setForeground(new java.awt.Color(255, 255, 255));
@@ -500,29 +484,26 @@ public class ActualizarPaciente extends javax.swing.JPanel {
                     eqaux = eq;
                     eqaux.setEstadoEquipo(true);
                     eqdao.actualizar(eq, eqaux);
-                }
-            
+            }
+                
             //Actualiza IngresoPaciente
             ingpaux = this.ingp;
             ingpaux.setObservacion(observacionTF.getText());
             ingpdao.actualizarL(ingp, ingpaux);
             
           //MENSAJE ACTIALIZACION EXITOSA
-            JOptionPane.showMessageDialog(null, "Actualización de paceinte exitosa", "", JOptionPane.INFORMATION_MESSAGE);  
+            JOptionPane.showMessageDialog(null, "Actualización de paciente exitosa", "", JOptionPane.INFORMATION_MESSAGE);  
         }
         else {
             System.out.println("NO ES POSIBLE REALIZAR LA ACTUALIZACIÓN: EL PACIENTE NO TIENE INGRESOS ACTIVOS");
+            JOptionPane.showMessageDialog(null, "El paciente no tiene ingresos activos", "", JOptionPane.INFORMATION_MESSAGE);
         }
         
     }//GEN-LAST:event_aceptarBActionPerformed
 
     private void tipoAtencionCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoAtencionCBActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_tipoAtencionCBActionPerformed
-
-    private void noCamaCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noCamaCBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_noCamaCBActionPerformed
 
     private void jCheckBox1ventiladorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ventiladorActionPerformed
         // TODO add your handling code here:
@@ -626,6 +607,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
             fechaL.setText("Fecha: " + this.ingp.getFecha());
             rethusL.setText("reTHUS: " + this.ingp.getPersonalm().getReTHUS());
             observacionTF.setText(this.ingp.getObservacion());
+            tipoAtencionCB.setSelectedItem(this.ingp.getCama().getPabellon());
             
             EquiposUsadosDAO equsdao = new EquiposUsadosDAO();
             ArrayList<EquiposUsados> equsmostrar = new ArrayList();
@@ -869,14 +851,12 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private javax.swing.JCheckBox jCheckBox8intubacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JCheckBox monitorJCB;
-    private javax.swing.JComboBox<String> noCamaCB;
     private javax.swing.JLabel nombre1L;
     private javax.swing.JLabel nombre2L;
     private javax.swing.JTextArea observacionTF;
