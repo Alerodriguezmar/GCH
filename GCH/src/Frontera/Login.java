@@ -1,24 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Frontera;
 
 import Control.ValidarLogin;
 import Entidad.PersonalMedico;
-import java.awt.Color;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author tech
- */
+
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form login
-     */
+ 
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
@@ -181,16 +171,23 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //instrucción cierra la ventana actual y liberas los recursos que esa ventana
+    //Muestra en pantalla la ventana LoginAdmin y Oculta la ventana Login
     private void iniciarAdminBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarAdminBActionPerformed
         new LoginAdmin().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_iniciarAdminBActionPerformed
 
+    //instrucción cierra la ventana actual y liberas los recursos que esa ventana
+    //Muestra en pantalla la ventana RegistroAdmin y Oculta la ventana Login
     private void registrarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarBActionPerformed
         new RegistroAdmin().setVisible(true);
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_registrarBActionPerformed
 
+    
+    //Metodo que verficia si se encuntra el usuario y si las credenciales son correctas.
+    // Utiliza la clase Validar e introduce los valores de los text en el Validar.
     private void ingresarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarBActionPerformed
         PersonalMedico usuario = new PersonalMedico();
         usuario.setNomUsuario(usuarioTF.getText());
@@ -220,7 +217,7 @@ public class Login extends javax.swing.JFrame {
         }
         System.out.println(resultado);         // TODO add your handling code here:
     }//GEN-LAST:event_ingresarBActionPerformed
-
+    //Ninguno
     private void contraseniaTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseniaTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_contraseniaTFActionPerformed
@@ -260,7 +257,7 @@ public class Login extends javax.swing.JFrame {
             contraseniaTF.setForeground(new java.awt.Color(63, 191, 168));
         }
     }//GEN-LAST:event_contraseniaTFFocusLost
-
+    // Main
     /**
      * @param args the command line arguments
      */

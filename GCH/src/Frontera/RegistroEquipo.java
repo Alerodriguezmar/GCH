@@ -141,6 +141,11 @@ public class RegistroEquipo extends javax.swing.JPanel {
         TipoEquipo.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         TipoEquipo.setForeground(new java.awt.Color(16, 65, 56));
         TipoEquipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ","VENTILADOR MECANICO", "SATUROMETRO", "BALA OXIGENO", "MONITOR", "BOMBA INFUSION CONTINUA", "BOMBA NUTRICION ENTERAL", "ASPIRADOR DE SECRECIONES","EQUIPO DE INTUBACION" }));
+        TipoEquipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoEquipoActionPerformed(evt);
+            }
+        });
         add(TipoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 230, 40));
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -218,6 +223,10 @@ public class RegistroEquipo extends javax.swing.JPanel {
     private void cancelarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarBActionPerformed
         borrar();
     }//GEN-LAST:event_cancelarBActionPerformed
+
+    private void TipoEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoEquipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TipoEquipoActionPerformed
     public void borrar() {
         equipoCantidadTF.setText("");
         equipoDescripcionTF.setText("");

@@ -39,7 +39,7 @@ public class ValidarLogin {
     if (dao.leerd(usuario) != null) {
             return ("Bienvenido");
         }
-        JOptionPane.showMessageDialog(null, "Datos incorrectos", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Datos incorrectos", "Advertencia", JOptionPane.WARNING_MESSAGE);
         return ("Datos incorrectos");
     }
         /*

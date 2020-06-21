@@ -18,9 +18,14 @@ import javax.persistence.Query;
  * @author tech
  */
 public class UsuarioDAO {
-    private static EntityManagerFactory
-            emf = Persistence.createEntityManagerFactory("GCHPU");
+    
+    
+    
+    
+    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("GCHPU");
 
+    
+    // método para crear/generar un registro en la tabla de PERSONALMEDICO
     public void crear(PersonalMedico object) {
 
         EntityManager em = emf.createEntityManager();
@@ -36,6 +41,8 @@ public class UsuarioDAO {
         }
     }
 
+    //metodo para eliminar un registro de la tabla PERSONALMEDICO
+    
     public boolean eliminar(PersonalMedico object) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -53,6 +60,11 @@ public class UsuarioDAO {
         }
     }
 
+    //Realiza una consulta en la tabla PERSONALOMEDICO con determinados atributos
+    //Verfica el registro y sus datos
+    
+    
+    
     public PersonalMedico leer(PersonalMedico par) {
         EntityManager em = emf.createEntityManager();
         PersonalMedico usuario = null;
@@ -72,7 +84,7 @@ public class UsuarioDAO {
             return usuario;
         }
     }
-
+    //método para actualizar atributos de un registro de la tabla de PERSONALMEDICO de la base de datos
     public boolean actualizar(PersonalMedico object, PersonalMedico nuevoObjeto) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
