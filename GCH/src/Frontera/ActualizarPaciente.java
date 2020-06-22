@@ -481,6 +481,7 @@ public class ActualizarPaciente extends javax.swing.JPanel {
                     equs.setEquipo(eq);
                     equs.setIngresoP(this.ingp);
                     equsdao.crear(equs);
+                    //ACTUALIZAR ESTADO DE EQUIPO
                     eqaux = eq;
                     eqaux.setEstadoEquipo(true);
                     eqdao.actualizar(eq, eqaux);
@@ -595,11 +596,30 @@ public class ActualizarPaciente extends javax.swing.JPanel {
     private void buscarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBActionPerformed
         // TODO add your handling code here:
         //Busca paciente por id
+        //limpiar();
+        this.jCheckBox1ventilador.setSelected(false);
+            this.jCheckBox2saturometro.setSelected(false);
+            this.jCheckBox3balas.setSelected(false);
+            this.jCheckBox4monitor.setSelected(false);
+            this.jCheckBox5bombaInf.setSelected(false);
+            this.jCheckBox6bombaNut.setSelected(false);
+            this.jCheckBox7aspirador.setSelected(false);
+            this.jCheckBox8intubacion.setSelected(false);
+            this.ventiladorJCB.setSelected(false);
+            this.saturometroJCB.setSelected(false);
+            this.balaJCB.setSelected(false);
+            this.monitorJCB.setSelected(false);
+            this.bombaJCB.setSelected(false);
+            this.bombaNutJCB.setSelected(false);
+            this.aspiradorJCB.setSelected(false);
+            this.intubacionJCB.setSelected(false);
+        
         String idpaciente = identificacionTF.getText();
         IngresoPacienteDAO ingpdao = new IngresoPacienteDAO();
         this.ingp = ingpdao.leerPorPaciente(idpaciente);
         if(this.ingp.getIdIngreso() != 0){
             this.paciente = ingp.getPaciente();
+            identificacionTF.setText(Integer.toString(this.paciente.getIdPaciente()));
             nombre1L.setText("Nombre 1: " + this.paciente.getNombrePaciente1());
             nombre2L.setText("Nombre 2: " + this.paciente.getNombrePaciente2());
             apellido1L.setText("Apellido 1: " + this.paciente.getApellidoPaciente1());
@@ -619,51 +639,51 @@ public class ActualizarPaciente extends javax.swing.JPanel {
                 
                 switch(equsa.getEquipo().getNombreEquipo()){
                     case "VENTILADOR MECANICO":
-                        this.ventiladorJCB.setSelected(true);
+                        //this.ventiladorJCB.setSelected(true);
                         this.jCheckBox1ventilador.setSelected(true);
-                        equipos.add(equsa.getEquipo());
+                        //equipos.add(equsa.getEquipo());
                         break;
                     case "SATUROMETRO":
-                        this.saturometroJCB.setSelected(true);
+                        //this.saturometroJCB.setSelected(true);
                         this.jCheckBox2saturometro.setSelected(true);
-                        equipos.add(equsa.getEquipo());
+                        //equipos.add(equsa.getEquipo());
                         break;
                     case "BALA OXIGENO":
-                        this.balaJCB.setSelected(true);
+                        //this.balaJCB.setSelected(true);
                         this.jCheckBox3balas.setSelected(true);
-                        equipos.add(equsa.getEquipo());
+                        //equipos.add(equsa.getEquipo());
                         break;
                     case "MONITOR":
-                       this.monitorJCB.setSelected(true);
+                        //this.monitorJCB.setSelected(true);
                         this.jCheckBox4monitor.setSelected(true);
-                        equipos.add(equsa.getEquipo());
+                        //equipos.add(equsa.getEquipo());
                         break;
                     case "BOMBA INFUSION CONTINUA":
-                        this.bombaJCB.setSelected(true);
+                        //this.bombaJCB.setSelected(true);
                         this.jCheckBox5bombaInf.setSelected(true);
-                        equipos.add(equsa.getEquipo());
+                        //equipos.add(equsa.getEquipo());
                         break;    
                     case "BOMBA NUTRICION ENTERAL":
-                        this.bombaNutJCB.setSelected(true);
+                        //this.bombaNutJCB.setSelected(true);
                         this.jCheckBox6bombaNut.setSelected(true);
-                        equipos.add(equsa.getEquipo());
+                        //equipos.add(equsa.getEquipo());
                         break;    
                     case "ASPIRADOR DE SECRECIONES":
                         this.aspiradorJCB.setSelected(true);
                         this.jCheckBox7aspirador.setSelected(true);
-                        equipos.add(equsa.getEquipo());
+                        //equipos.add(equsa.getEquipo());
                         break; 
                     case "EQUIPO DE INTUBACION":
-                        this.intubacionJCB.setSelected(true);
+                        //this.intubacionJCB.setSelected(true);
                         this.jCheckBox8intubacion.setSelected(true);
-                        equipos.add(equsa.getEquipo());
+                        //equipos.add(equsa.getEquipo());
                         break;    
                     case "":
                         break;
-                }
+                }   
                 
             }
-                        
+            equsmostrar.removeAll(equsmostrar);
 
         }
         else {
@@ -797,9 +817,27 @@ public class ActualizarPaciente extends javax.swing.JPanel {
         apellido2L.setText("Apellido 2");
         fechaL.setText("Fecha");
         rethusL.setText("ReThus");
+        observacionTF.setText("");
         this.ingp = null;
         this.paciente = null;
         this.equipos = null;
+            
+            /*this.jCheckBox1ventilador.setSelected(false);
+            this.jCheckBox2saturometro.setSelected(false);
+            this.jCheckBox3balas.setSelected(false);
+            this.jCheckBox4monitor.setSelected(false);
+            this.jCheckBox5bombaInf.setSelected(false);
+            this.jCheckBox6bombaNut.setSelected(false);
+            this.jCheckBox7aspirador.setSelected(false);
+            this.jCheckBox8intubacion.setSelected(false);
+            this.ventiladorJCB.setSelected(false);
+            this.saturometroJCB.setSelected(false);
+            this.balaJCB.setSelected(false);
+            this.monitorJCB.setSelected(false);
+            this.bombaJCB.setSelected(false);
+            this.bombaNutJCB.setSelected(false);
+            this.aspiradorJCB.setSelected(false);
+            this.intubacionJCB.setSelected(false);}*/
     }
     
     public String [][] mostrar(){
