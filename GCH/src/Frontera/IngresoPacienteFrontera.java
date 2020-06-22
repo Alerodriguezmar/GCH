@@ -85,6 +85,8 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nombre1TF.setBackground(new java.awt.Color(63, 191, 168));
+        nombre1TF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        nombre1TF.setForeground(new java.awt.Color(255, 255, 255));
         nombre1TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nombre1TF.setBorder(null);
         nombre1TF.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +134,8 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 430, -1, -1));
 
         nombre2TF.setBackground(new java.awt.Color(63, 191, 168));
+        nombre2TF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        nombre2TF.setForeground(new java.awt.Color(255, 255, 255));
         nombre2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nombre2TF.setBorder(null);
         nombre2TF.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +146,8 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         add(nombre2TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 135, 170, 30));
 
         apellido1TF.setBackground(new java.awt.Color(63, 191, 168));
+        apellido1TF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        apellido1TF.setForeground(new java.awt.Color(255, 255, 255));
         apellido1TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         apellido1TF.setBorder(null);
         apellido1TF.addActionListener(new java.awt.event.ActionListener() {
@@ -152,6 +158,7 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         add(apellido1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 170, 30));
 
         apellido2TF.setBackground(new java.awt.Color(63, 191, 168));
+        apellido2TF.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         apellido2TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         apellido2TF.setBorder(null);
         apellido2TF.addActionListener(new java.awt.event.ActionListener() {
@@ -259,7 +266,6 @@ public class IngresoPacienteFrontera extends javax.swing.JPanel {
         jCheckBox4.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         jCheckBox4.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox4.setText("monitor cardíaco");
-        jCheckBox4.setActionCommand("monitor cardíaco");
         jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox4ActionPerformed(evt);

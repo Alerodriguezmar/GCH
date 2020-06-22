@@ -124,7 +124,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
         jPanel1.add(adminNombre1TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 230, 30));
 
         adminApellido1TF.setBackground(new java.awt.Color(63, 191, 168));
-        adminApellido1TF.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        adminApellido1TF.setFont(new java.awt.Font("Century Gothic", 0, 23)); // NOI18N
         adminApellido1TF.setForeground(new java.awt.Color(255, 255, 255));
         adminApellido1TF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         adminApellido1TF.setBorder(null);
