@@ -288,7 +288,8 @@ public class RegistroPersonalMedico extends javax.swing.JPanel {
         personal.setReTHUS(personalReThusTF.getText());
         personal.setNomUsuario(personalUsuarioTF.getText());
         personal.setPasswordAux(String.valueOf(personalContrasenniaTF.getPassword()));
-
+        personal.setDireccion(personalDireccionlTF.getText());
+        
         ValidarRegistroPersonalMedico validar = new ValidarRegistroPersonalMedico();
         System.out.println("-------");
         String resultado = validar.VerificarRegistroPersonalMedico(personal);
