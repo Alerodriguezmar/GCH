@@ -1,17 +1,20 @@
 package Frontera;
 
+import javax.swing.ImageIcon;
+
 public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
 
     //Inicializacion de las Clases a utilizar
     private IngresoPacienteFrontera ingresoP = new IngresoPacienteFrontera();
     private ActualizarPaciente actualizarP = new ActualizarPaciente();
     private EgresoPacienteFrontera egresoP = new EgresoPacienteFrontera();
-    private GenerarReportes genReportes = new GenerarReportes();
+    private GenerarReportes genReportes;
     private Login login = new Login();
 
     public FramePrincipalPersonalMedico() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/Logo_Grande.png")).getImage());
     }
 
     @SuppressWarnings("unchecked")
@@ -175,6 +178,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
 
     //Muestra en pantalla la ventana GenerarReporte y Oculta la ventana FramePrincipalMedico
     private void reporteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteBActionPerformed
+       genReportes = new GenerarReportes();
         panelPrincipal.setVisible(false);
         panelPrincipal.removeAll();
         panelPrincipal.add(genReportes);

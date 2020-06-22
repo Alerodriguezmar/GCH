@@ -6,7 +6,7 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
     private RegistroPersonalMedico ingresoPM = new RegistroPersonalMedico();
     private RegistroEquipo ingresoE = new RegistroEquipo();
     private RegistroCamas ingresoC = new RegistroCamas();
-    private GenerarReportes genReportes = new GenerarReportes();
+    private GenerarReportes genReportes;
     private Login login = new Login();
 
     public FramePrincipalAdmin() {
@@ -182,6 +182,7 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
 
     //Muestra en pantalla la ventana GenerarReporte y Oculta la ventana LoginAdmin
     private void reporteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteBActionPerformed
+        genReportes = new GenerarReportes();
         panelPrincipal.setVisible(false);
         panelPrincipal.removeAll();
         panelPrincipal.add(genReportes);
