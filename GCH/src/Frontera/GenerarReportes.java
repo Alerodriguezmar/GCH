@@ -46,8 +46,6 @@ public class GenerarReportes extends javax.swing.JPanel {
 
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        aceptarB = new javax.swing.JButton();
-        cancelarB = new javax.swing.JButton();
         fechaL = new javax.swing.JLabel();
         registroEquiposT = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -73,19 +71,6 @@ public class GenerarReportes extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Registro");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
-
-        aceptarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Aceptar.png"))); // NOI18N
-        aceptarB.setContentAreaFilled(false);
-        aceptarB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aceptarBActionPerformed(evt);
-            }
-        });
-        add(aceptarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 340, 90, -1));
-
-        cancelarB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Cancelar.png"))); // NOI18N
-        cancelarB.setContentAreaFilled(false);
-        add(cancelarB, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 400, 90, -1));
 
         fechaL.setForeground(new java.awt.Color(255, 255, 255));
         fechaL.setText("Fecha");
@@ -218,14 +203,8 @@ public class GenerarReportes extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_aceptarBActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton aceptarB;
-    private javax.swing.JButton cancelarB;
     private javax.swing.JLabel fechaL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
