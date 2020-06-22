@@ -10,6 +10,7 @@ import DAO.AdminDAO;
 import Entidad.Administrador;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,6 +25,7 @@ public class RegistroAdmin extends javax.swing.JFrame {
     public RegistroAdmin() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/Logo_Grande1.png")).getImage());
     }
 
     /**

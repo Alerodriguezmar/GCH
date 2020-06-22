@@ -1,5 +1,7 @@
 package Frontera;
 
+import javax.swing.ImageIcon;
+
 public class FramePrincipalAdmin extends javax.swing.JFrame {
 
     //Inicializacion de las Clases a utilizar
@@ -12,6 +14,8 @@ public class FramePrincipalAdmin extends javax.swing.JFrame {
     public FramePrincipalAdmin() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/Logo_Grande1.png")).getImage());
+        
     }
 
     @SuppressWarnings("unchecked")

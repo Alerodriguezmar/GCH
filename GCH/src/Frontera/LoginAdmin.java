@@ -3,6 +3,7 @@ package Frontera;
 
 import Control.ValidarLoginAdmin;
 import Entidad.Administrador;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +18,7 @@ public class LoginAdmin extends javax.swing.JFrame {
     public LoginAdmin() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/Logo_Grande1.png")).getImage());
     }
 
     

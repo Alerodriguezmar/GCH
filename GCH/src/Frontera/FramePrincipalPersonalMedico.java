@@ -14,7 +14,7 @@ public class FramePrincipalPersonalMedico extends javax.swing.JFrame {
     public FramePrincipalPersonalMedico() {
         initComponents();
         setLocationRelativeTo(null);
-        setIconImage(new ImageIcon(getClass().getResource("/Resources/Logo_Grande.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/Logo_Grande1.png")).getImage());
     }
 
     @SuppressWarnings("unchecked")

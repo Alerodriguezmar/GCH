@@ -3,6 +3,7 @@ package Frontera;
 
 import Control.ValidarLogin;
 import Entidad.PersonalMedico;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -12,6 +13,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/Logo_Grande1.png")).getImage());
     }
 
     /**
