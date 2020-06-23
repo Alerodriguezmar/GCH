@@ -5,6 +5,9 @@
  */
 package Control;
 
+import DAO.PacienteDAO;
+import DAO.PacienteDAO_prov;
+import Entidad.Paciente;
 import Frontera.ActualizarPaciente;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,7 +23,10 @@ import static org.junit.Assert.*;
 public class ActualizarPacienteTest {
     
    
-    
+   private static ValidarActualizacionPaciente Valiact = new ValidarActualizacionPaciente();
+    private String ID_INCORRECTA = "Longitud id incorrecta";
+    private String NO_RESGISTRADO = "No esta registrado el paciente";
+    private String ACTUALIZADO = "Usuario Actualizado";
     
     public ActualizarPacienteTest() {
     }
@@ -45,5 +51,34 @@ public class ActualizarPacienteTest {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void hello() {}
-}
+     public void longitudIdIconrrecta() {
+         
+         Paciente paci = new Paciente();
+         paci.setIdPaciente(7);
+         paci.setNombrePaciente1("Juan");
+         paci.setNombrePaciente2("Carlos");
+         paci.setApellidoPaciente1("Rodriguez");
+         paci.setApellidoPaciente2("");
+         paci.setTipoSangre("O +");
+         assertEquals(Valiact.VerificarActualizacionPaciente(String.valueOf(paci.getIdPaciente())),ID_INCORRECTA );
+         
+     }
+     
+ 
+     @Test
+     public void PacienteActualizado(){
+          Paciente paci = new Paciente();
+         paci.setIdPaciente(789878);
+         paci.setNombrePaciente1("Juan");
+         paci.setNombrePaciente2("Carlos");
+         paci.setApellidoPaciente1("Rodriguez");
+         paci.setApellidoPaciente2("");
+         paci.setTipoSangre("O +");
+         assertEquals(Valiact.VerificarActualizacionPaciente(String.valueOf(paci.getIdPaciente())),ACTUALIZADO);
+     }
+     
+     
+
+
+     }
+

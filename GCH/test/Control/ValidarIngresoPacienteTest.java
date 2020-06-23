@@ -69,8 +69,8 @@ public class ValidarIngresoPacienteTest {
     a.setTipoSangre("");
     assertEquals(ingreso.VerificarIngresoPaciente(a),PACIENTE_REGISTRADO );
     }
-    
     */
+    
     
      @Test
     public void LongitudIdIncorrecto() {

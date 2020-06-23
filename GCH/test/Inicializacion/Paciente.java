@@ -54,10 +54,20 @@ public class Paciente {
         a.setApellidoPaciente1("Rodriguez");
         a.setApellidoPaciente2("Martinez");
         a.setTipoSangre("O +");
-        a.setIdPaciente(12345690);
+        a.setIdPaciente(123456);
         
-             
+       Entidad.Paciente paci = new Entidad.Paciente();
+         paci.setIdPaciente(78189606);
+         paci.setNombrePaciente1("Juan");
+         paci.setNombrePaciente2("Carlos");
+         paci.setApellidoPaciente1("Rodriguez");
+         paci.setApellidoPaciente2("");
+         paci.setTipoSangre("O +");
+         
+      
+            Pacientes.add(paci);
             Pacientes.add(a);
+            
               for (Entidad.Paciente u: Pacientes ){
             System.out.println(u.getIdPaciente());
             System.out.println(u.getNombrePaciente1());

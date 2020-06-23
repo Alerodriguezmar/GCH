@@ -5,24 +5,38 @@
  */
 package Control;
 
+import DAO.PacienteDAO;
+
 /**
  *
  * @author DAVID
  */
 public class ValidarActualizacionPaciente {
+    private final PacienteDAO daoP = new PacienteDAO();
     
     public ValidarActualizacionPaciente() {
     }
     
     public String VerificarActualizacionPaciente(String id){
         if(!VerificarLongitudId(id)){
-            return ("Longitud id incorrecta");
+
+            return ("Longitud id incorrecta" + id);
         }
-        return("Longitud id correcta");
+        
+         if(!VerificarIsRegistrado(id)){
+            return("No esta registrado el paciente");
+        }
+        return("Usuario Actualizado");
     }
     
     //verifica que longitud de id este entre 2 y 13 dígitos.
     public boolean VerificarLongitudId(String id) {
         return ( id.length() >= 2 &&  id.length() < 13);
     } 
+    
+        //revisa si el paciente ya está registrado
+     public boolean VerificarIsRegistrado(String id) {
+        return (daoP.leerPorId(id) != null);
+    }
+     
 }

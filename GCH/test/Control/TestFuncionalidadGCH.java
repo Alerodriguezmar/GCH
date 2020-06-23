@@ -30,6 +30,9 @@ import static org.junit.Assert.*;
  */
 public class TestFuncionalidadGCH {
     
+    ValidarActualizacionPaciente act = new ValidarActualizacionPaciente();
+    private String ACTUALIZADO = "Usuario Actualizado";
+    
     public TestFuncionalidadGCH() {
     }
     
@@ -49,17 +52,11 @@ public class TestFuncionalidadGCH {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
+    
      Administrador ad = new Administrador();
      @Test
      public void RegistroAdmin() {
         AdminDAO dao= new AdminDAO();
-        
-       
-      
-        
         ad.setNombre1("Juan");  
         ad.setNombre2("Camilo");
         ad.setApellido1("Rodriguez");
@@ -80,24 +77,25 @@ public class TestFuncionalidadGCH {
          ad.setContrasenia("adasd");
          
      }
+     
      Entidad.PersonalMedico med = new Entidad.PersonalMedico();
      @Test
      public void RegistroMedico(){
          UsuarioDAO dao = new UsuarioDAO();
         
-        med.setId(595);
+        med.setId(59510);
         med.setNombre1("juan");
         med.setNombre2("daniel");
         med.setApellido1("perez");
         med.setApellido2("alvear");
         med.setCargo("asistente enfermeria");
-        med.setReTHUS("123456");
+        med.setReTHUS("1234567879");
         med.setNomUsuario("juan");
         med.setPasswordAux("315521");
         med.setTipo_sangre("O +");
-        med.setEmail("juanp@unal.edu.co");
+        med.setEmail("juanp@unal.co");
         med.setDireccion("Kr10#16–69");
-        med.setCelular("31552261");
+        med.setCelular("315522611");
         dao.crear(med);
      }
      @Test
@@ -105,6 +103,7 @@ public class TestFuncionalidadGCH {
          med.setNomUsuario("asdad");
          med.setPasswordAux("adasd");
      }
+     
       Entidad.Camas b = new Entidad.Camas();
      @Test
      public void Camas(){
@@ -119,34 +118,42 @@ public class TestFuncionalidadGCH {
         
      }
      
-     @Test
-     public void Equipos(){
-         
-     }
      
-      IngresoPaciente ingre = new IngresoPaciente();
+     
+     
+    public static IngresoPaciente ingre = new IngresoPaciente();
+    public static Paciente a = new Paciente();
      @Test
-     public void Ingreso(){
-    
-    PacienteDAO dao = new PacienteDAO();
-    Paciente a = new Paciente();
-    a.setIdPaciente(123455);
+     
+    public void ingresoU(){
+    PacienteDAO daos = new PacienteDAO();
+    a.setIdPaciente(981231025);
     a.setNombrePaciente1("Dylan");
     a.setNombrePaciente2("Felupe");
     a.setApellidoPaciente1("Rodriguez");
     a.setApellidoPaciente2("Martinez");
     a.setTipoSangre("O +");
     
-    dao.crear(a);
+    daos.crear(a);
+    }
+     
+     
+     
+     public void Ingreso(){
+    
+   
+    
+   
     
     IngresoPacienteDAO dao2 = new IngresoPacienteDAO();
-   
+   ingre.setIdIngreso(1269);
     ingre.setPaciente(a);
     ingre.setPersonalm(med);
     ingre.setCama(b);
     ingre.setEstado(true);
     ingre.setFecha(String.valueOf(Calendar.getInstance()));
     ingre.setObservacion("Ingresado paciente Con covid");
+    
     dao2.crear(ingre);
    
  
@@ -155,10 +162,10 @@ public class TestFuncionalidadGCH {
      @Test
      public void Actualizacion(){
          
-         
-         
+        assertEquals(act.VerificarActualizacionPaciente(String.valueOf(a.getIdPaciente())), ACTUALIZADO);
+             
      }
-     
+    
      @Test
      public void Egreso(){
          EgresoPacienteDAO egre = new EgresoPacienteDAO();
@@ -166,7 +173,7 @@ public class TestFuncionalidadGCH {
          egreso.setIngresoP(ingre);
          egreso.setFecha(String.valueOf(Calendar.getInstance()));
          egreso.setObservaciones("Se curo satisfactoriamente de covid");
-         egre.crear(egreso);
+         //egre.crear(egreso);
          
          
      }
