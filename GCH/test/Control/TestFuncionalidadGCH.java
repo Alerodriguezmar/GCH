@@ -31,7 +31,23 @@ import static org.junit.Assert.*;
 public class TestFuncionalidadGCH {
     
     ValidarActualizacionPaciente act = new ValidarActualizacionPaciente();
+    private static ValidarRegistroAdministrador registroAdmin = new ValidarRegistroAdministrador();
+    private static ValidarLoginAdmin loginAdmin = new ValidarLoginAdmin();
+    private static ValidarRegistroPersonalMedico RegistroMedico = new ValidarRegistroPersonalMedico();
+    private static ValidarLogin login = new ValidarLogin();
+    private static ValidarRegistroCamas regisCamas = new ValidarRegistroCamas();
+    private static ValidarIngresoPaciente ingreso = new ValidarIngresoPaciente();
+private static ValidarEgresoPaciente engreso = new ValidarEgresoPaciente();
     private String ACTUALIZADO = "Usuario Actualizado";
+     private String REGISTRO_COMPLETO = "Datos ingresados correctamente";
+     private String USUARIO_AUTORIZADO = "Bienvenido";
+ 
+       private String REGISTRO_COMPLETO2 = "Cama Registrada Correctamente";
+       private String REGISTRO_COMPLETO3 = "Datos incorrectos";
+       private String PACIENTE_REGISTRADO ="Paciente está registrado";
+           
+    private String PACIENTE_RECUPERADO = "El paciente fue dado de Alta";
+    
     
     public TestFuncionalidadGCH() {
     }
@@ -64,8 +80,9 @@ public class TestFuncionalidadGCH {
         ad.setEmail("jcrod@unal.edu");
         ad.setCelular("3132202222");
         ad.setNidentificacion("1223456");
-        ad.setUsuario("jcro");
+        ad.setUsuario("jcrod");
         ad.setContrasenia("123456");
+         assertEquals(registroAdmin.VerificarRegistroAdministrador(ad),REGISTRO_COMPLETO);
       
         dao.crear(ad);
      }
@@ -73,8 +90,9 @@ public class TestFuncionalidadGCH {
      @Test
      public void LoginAdmin(){
          
-         ad.setUsuario("ada");
-         ad.setContrasenia("adasd");
+         ad.setUsuario("jcrod");
+         ad.setContrasenia("123456");
+         assertEquals(loginAdmin.verificarLogin(ad), USUARIO_AUTORIZADO);
          
      }
      
@@ -83,25 +101,27 @@ public class TestFuncionalidadGCH {
      public void RegistroMedico(){
          UsuarioDAO dao = new UsuarioDAO();
         
-        med.setId(59510);
+        med.setId(569896);
         med.setNombre1("juan");
         med.setNombre2("daniel");
         med.setApellido1("perez");
         med.setApellido2("alvear");
         med.setCargo("asistente enfermeria");
         med.setReTHUS("1234567879");
-        med.setNomUsuario("juan");
-        med.setPasswordAux("315521");
+        med.setNomUsuario("juana");
+        med.setPasswordAux("315521121");
         med.setTipo_sangre("O +");
         med.setEmail("juanp@unal.co");
         med.setDireccion("Kr10#16–69");
-        med.setCelular("315522611");
+        med.setCelular("3112897557");
+        assertEquals(RegistroMedico.VerificarRegistroPersonalMedico(med), REGISTRO_COMPLETO);
         dao.crear(med);
      }
      @Test
      public void login(){
-         med.setNomUsuario("asdad");
-         med.setPasswordAux("adasd");
+         med.setNomUsuario("juana");
+         med.setPasswordAux("315521121");
+         assertEquals(login.verificarLogin(med),REGISTRO_COMPLETO3);
      }
      
       Entidad.Camas b = new Entidad.Camas();
@@ -109,11 +129,12 @@ public class TestFuncionalidadGCH {
      public void Camas(){
        CamaDAO dao = new CamaDAO();
         Entidad.Camas a = new Entidad.Camas();
-        b.setIdCamas(23);
+     
         b.setEstado(false);
         b.setPabellon("UCIM");
-        b.setUbicacion("201");
-        
+        b.setUbicacion("236");
+         assertEquals(regisCamas.VerificarRegistroCamas(b), REGISTRO_COMPLETO2);
+           b.setIdCamas(236);
         dao.crear(b);
         
      }
@@ -140,11 +161,6 @@ public class TestFuncionalidadGCH {
      
      
      public void Ingreso(){
-    
-   
-    
-   
-    
     IngresoPacienteDAO dao2 = new IngresoPacienteDAO();
    ingre.setIdIngreso(1269);
     ingre.setPaciente(a);
@@ -153,7 +169,7 @@ public class TestFuncionalidadGCH {
     ingre.setEstado(true);
     ingre.setFecha(String.valueOf(Calendar.getInstance()));
     ingre.setObservacion("Ingresado paciente Con covid");
-    
+    assertEquals(ingreso.VerificarIngresoPaciente(a),PACIENTE_REGISTRADO );
     dao2.crear(ingre);
    
  
@@ -173,8 +189,8 @@ public class TestFuncionalidadGCH {
          egreso.setIngresoP(ingre);
          egreso.setFecha(String.valueOf(Calendar.getInstance()));
          egreso.setObservaciones("Se curo satisfactoriamente de covid");
-         //egre.crear(egreso);
-         
+        // egre.crear(egreso);
+          assertEquals(PACIENTE_RECUPERADO,PACIENTE_RECUPERADO );
          
      }
 }

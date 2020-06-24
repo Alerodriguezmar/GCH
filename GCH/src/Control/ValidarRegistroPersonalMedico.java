@@ -119,7 +119,7 @@ public class ValidarRegistroPersonalMedico {
     //debe ser mayor a 4 dígitos y debe contener solo caracteres entre (a-z,A-Z,0-9).
     
     public boolean VerificarLongitudContraseniapersonalMedico(String contrasenia){
-        return(contrasenia.length() >= 5 && contrasenia.matches(".*[^A-Za-z_0-9].*") );
+        return(contrasenia.length() >= 5 /*&& /*contrasenia.matches(".*[^A-Za-z_0-9].*")*/ );
     }
     
     //Método para verificar la longitud del cargo al que quedara registrado el personal en cuestión(2 y 31 dígitos).

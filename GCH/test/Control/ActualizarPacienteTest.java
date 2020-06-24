@@ -54,7 +54,7 @@ public class ActualizarPacienteTest {
      public void longitudIdIconrrecta() {
          
          Paciente paci = new Paciente();
-         paci.setIdPaciente(7);
+            paci.setIdPaciente(7);
          paci.setNombrePaciente1("Juan");
          paci.setNombrePaciente2("Carlos");
          paci.setApellidoPaciente1("Rodriguez");
@@ -68,7 +68,7 @@ public class ActualizarPacienteTest {
      @Test
      public void PacienteActualizado(){
           Paciente paci = new Paciente();
-         paci.setIdPaciente(789878);
+         paci.setIdPaciente(78189606);
          paci.setNombrePaciente1("Juan");
          paci.setNombrePaciente2("Carlos");
          paci.setApellidoPaciente1("Rodriguez");

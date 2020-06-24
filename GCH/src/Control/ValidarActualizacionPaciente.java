@@ -20,7 +20,7 @@ public class ValidarActualizacionPaciente {
     public String VerificarActualizacionPaciente(String id){
         if(!VerificarLongitudId(id)){
 
-            return ("Longitud id incorrecta" + id);
+            return ("Longitud id incorrecta");
         }
         
          if(!VerificarIsRegistrado(id)){
